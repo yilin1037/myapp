@@ -1,0 +1,39 @@
+html,body{
+	height:99%;
+}
+.all{
+	height:100%;
+	position:relative;
+	padding:15px;
+	margin-top:10px;
+}
+.leftTree{
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:200px;
+	border-right:1px solid #ddd;
+	overflow:auto;
+}
+.rightTable{
+	position:absolute;
+	top:0px;
+	left:200px;
+}
+.layui-laypage-limits select{
+	height:30px;
+}
+
+.rightTable .layui-input, .layui-select, .layui-textarea {height: 32px;width: 150px;}
+.rightTable .layui-form-select dl dd, .layui-form-select dl dt {line-height: 26px;}
+.rightTable .layui-form-item {margin-bottom: 0px;}
+.rightTable .layui-table{margin: 0;}
+.rightTable .layui-table-view {margin: 0;}
+.rightTable .layui-input-block {width: 120px;}
+.rightTable .layui-btn-sm {margin-top: -10px;}
+.rightTable .layui-form-label {padding: 7px 0px 7px 5px;width: 80px;}
+
+.layui-table-cell {
+	height: 55px;
+}

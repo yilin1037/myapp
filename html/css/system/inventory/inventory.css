@@ -1,0 +1,18 @@
+html,body{
+	height:100%;
+}
+
+.btn{
+	height:30px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:80px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+#look th,#look td{
+	border:1px solid #dddddd;
+	padding:5px;
+}

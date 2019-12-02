@@ -1,0 +1,525 @@
+html,body{
+	width:100%;
+	height:100%;
+	border:0;
+	margin:0;
+	padding:0;
+	overflow:visible;
+}
+
+body .mini-pager-num {
+	height: 22px;
+}
+
+.mini-grid-headerCell-inner {
+	font-size: 8pt;
+	line-height: 26px;
+}
+
+.mini-grid-table {
+	height: 34px;
+}
+
+.mini-textbox {
+	height: 30px;
+}
+
+.mini-buttonedit{
+	height: 30px;
+}
+
+.mini-textbox-input {
+	height: 30px;
+	font-size: 8pt;
+}
+
+.mini-buttonedit-input {
+	height: 30px;
+	font-size: 8pt;
+}
+
+.mini-textbox-focus {
+	height: 30px;
+}
+
+.mini-buttonedit-focus{
+	height: 30px;
+}
+
+.mini-textbox-border{
+	height: 28px;
+}
+
+.mini-buttonedit-border{
+	height: 28px;
+}
+
+.mini-grid-cell-inner {
+	font-size: 8pt;
+	line-height:28px;
+}
+
+.second{
+	margin-top:10px;
+}
+
+.third{
+	margin-top:10px;
+}
+
+.four{
+	margin-top:10px;
+}
+
+.banner{
+	width:28px;
+	background-size:100% 100%;
+}
+
+#dateBegin{
+	width:123px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+	margin-left:5px;
+}
+
+#dateBegin:hover{
+	border-color:grey!important;
+}
+
+#dateEnd{
+	width:122px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+	margin-left:5px;
+}
+
+#dateEnd:hover{
+	border-color:grey!important;
+}
+
+select {
+    transition:all 0.3s;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #000;
+
+  /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+
+select:hover{
+	border-color:grey!important;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.sty{
+	width:100%;
+	height:26px;
+	font-size:12px;
+	padding-top:4px;
+	padding-left:3px;
+	resize: none;
+	z-index:10000;
+}
+
+.inp{
+	width:100%;
+	height:26px;
+	padding-left:3px;
+	border:1px solid #c2c2c2!important;
+}
+
+input::-webkit-outer-spin-button,  
+input::-webkit-inner-spin-button {  
+    -webkit-appearance: none;  
+}  
+  
+input[type="number"] {  
+    -moz-appearance: textfield;  
+} 
+
+input{
+	transition:all 0.3s;
+	font-size:12px;
+}
+
+input:hover{
+	border-color:grey!important;
+}
+
+textarea{
+	border:1px solid #c2c2c2;
+	transition:all 0.3s;
+}
+
+textarea:hover{
+	border-color:grey!important;
+}
+
+.separator{
+	width:100%;
+	height:26px;
+	border-radius:0;
+	font-size:12px;
+	padding:0;
+	padding-left:3px;
+}
+
+.btn{
+	height:26px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+.btn:hover{
+	background-color:#1E9FFF!important;
+	color:white!important;
+}
+
+.must{
+	border:1px solid #1E9FFF!important;
+	color:#1E9FFF!important;
+}
+
+.create:hover .fil{
+	display:block!important;
+}
+
+.orderBy{
+	border-bottom:1px dashed #dddddd;
+	padding-bottom:10px;
+}
+
+.orderByDiv{
+	width:80px;
+	height:26px;
+	border:1px solid #dddddd;
+	float:right;
+	line-height:26px;
+	font-size:12px;
+	text-align:center;
+	position:relative;
+	cursor:pointer;
+}
+
+.orderImg{
+	width:20px;
+	height:24px;
+	display:inline-block;
+}
+
+.orderHide{
+	width:135px;
+	border:1px solid #dddddd;
+	position:absolute;
+	top:25px;
+	left:-1px;
+	display:none;
+	z-index:10000;
+	background-color:white;
+}
+
+.UL{
+	list-style:none;
+	
+}
+
+.UL li{
+	text-align:center;
+	
+}
+
+.UL li:hover{
+	font-weight:600;
+}
+
+.btnArr{
+	margin:10px;
+	padding:10px 0;
+	border-top:1px dashed #dddddd;
+	border-bottom:1px dashed #dddddd;
+}
+
+.btnFen{
+	width:44px;
+	height:30px;
+	outline:none;
+	border:none;
+	background-color:white;
+}
+
+.btnFen:hover{
+	background-color:#1E9FFF!important;
+	color:white!important;
+}
+
+.pageNumber{
+	
+	width:30px;
+	height:30px;
+	color:white;
+	outline:none;
+	border:none;
+	background-color:#1E9FFF;
+	border-radius:2px;
+}
+
+.page{
+	float:left;
+	margin-right:15px;
+	line-height:30px;
+	font-size:12px;
+}
+
+.spanInpuit{
+	position:relative;
+	top:-3px;
+}
+
+.add:hover .dele{
+	display:block!important;
+}
+
+.bannerA{
+	width:14px;
+	height:14px;
+	display:inline-block;
+	position:relative;
+	top:3px;
+}
+
+.banner_img{
+	width:14px;
+	height:14px;
+}
+
+.placeBtn{
+	display:inline-block;
+	padding:0 5px;
+	line-height:20px;
+	border-radius:2px;
+	border:1px solid #1E9FFF;
+	cursor:pointer;
+	color:white;
+	background-color:#1E9FFF;
+}
+
+.layui-icon{
+	color:#1E9FFF;
+}
+
+.placeAdd:hover .positionSpan{
+	display:block;
+}
+
+.a{
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.banner_i{
+	display:inline-block;
+	width:15px;
+	height:15px;
+	position:relative;
+	top:2px;
+	left:-2px;
+}
+
+.add{
+	display:inline-block;
+	padding:0 4px;
+	background-color:#dddddd;
+	color:black;
+	line-height:18px;
+	border-radius:2px;
+	position:relative;
+	cursor:pointer;
+	margin-left:2px;
+}
+
+.dele{
+	width:12px;
+	height:12px;
+	background-image:url('../../../images/delete.png');
+	background-size:100% 100%;
+	position:absolute;
+	top:-5px;
+	right:-4px;
+	cursor:pointer;
+	display:none;
+	z-index:10000;
+}
+
+.add:hover .dele{
+	display:block!important;
+}
+
+table{
+	width:100%;
+}
+
+.inputTe{
+	font-size:14px!important;
+	color:white;
+	background-color:white;
+	margin-right:4px;
+}
+
+.btnArrFixed{
+	z-index: 999;
+	vertical-align: top;
+	position: fixed;
+	background-color: white;
+	left: 0;
+	top: 5px;
+	width: 100%;
+	margin-top: -5px;
+}
+
+.scrollReturnTop{
+	width: 40px;
+	height: 40px;
+	line-height: 20px;
+	text-align: center;
+	padding: 2px;
+	background: red;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	font-size: 15px;
+	cursor: pointer;
+	color: white;
+	background-image:url('../../../images/scrollTop.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	display: none;
+}
+
+.btnPageFixed{
+	z-index: 999;
+	vertical-align: top;
+	position: fixed;
+	background-color: white;
+	left: 0;
+	top: 42px;
+	width: 100%;
+	padding-top: 5px;
+}
+
+.radio_ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.radio_ul li{
+	width:33%;
+	float:left;
+	text-align:left;
+}
+
+.btnGroup li{
+	float:left;
+	height: 30px;
+    border: 1px solid #c2c2c2;
+    text-align: center;
+    line-height: 26px;
+    font-size: 12px;
+    margin-left: 1px;
+    cursor: pointer;
+	padding:2px 15px;
+	position:relative;
+}
+#addOrdersbtn:hover{
+	border:1px solid #4CAE4C !important;
+	background: #4CAE4C !important;
+}
+#createUnique:hover{
+	border:1px solid #EEA236 !important;
+	background: #EEA236 !important;
+}
+.anBgHover:hover{
+	opacity: .8;
+    filter: alpha(opacity=80);
+}
+.btnGroupList{
+	padding:2px 20px 2px 15px !important;
+}
+.btnGroup li i{
+	position: absolute;
+	top: 4px;
+	right: 4px;
+}
+.showList{
+	position: absolute;
+	top: 29px;
+	left: 0px;
+	z-index: 30;
+	background:#FFFFFF;
+	border:1px solid #2495E7;
+	width: 200%;
+	text-align: left;
+	display:none;
+	text-indent:1em;
+}
+.btnGroup li:hover .showList{
+	display:block;
+}
+.showList div:hover{
+	background-color: #34A8FF !important;
+	color: #FFFFFF !important;
+}
+.btnGroupImportant li{
+	text-indent: 1em !important;
+}
+.btnGroupImportant li i{
+	position: absolute;
+	top: 7px;
+	left: 7px;
+}
+.btnGroupDistance li{
+	margin-left: 5px;
+}
+.btnOnlyStyle{
+	height: 26px;
+    border: 1px solid #E6E6E6 !important;
+    background-color: #FBFBFB !important;
+    width: 64px;
+    border-radius: 3px;
+    color: #C9C9C9 !important;
+    padding: 2px 12px;
+}
+
+.orderHide{
+	width:135px;
+	border:1px solid #dddddd;
+	position:absolute;
+	top:25px;
+	left:-1px;
+	display:none;
+	z-index:10000;
+	background-color:white;
+}
+
+.timePay{
+	width:135px;
+	text-align:left;
+	padding-left:5px;
+}

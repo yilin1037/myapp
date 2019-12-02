@@ -1,0 +1,185 @@
+html,body{
+	margin:0;
+	padding:0;
+	min-width:1440px;
+}
+
+.UL{
+	margin:0;
+	padding:0;
+	margin-left:15px;
+	margin-right:15px;
+	border-bottom:1px solid #dddddd;
+	list-style:none;
+}
+
+.UL li {
+	float:left;
+	width:100px;
+	height:40px;
+	line-height:40px;
+	cursor:pointer;
+}
+
+.UL li:hover{
+	background-color:#dddddd;
+}
+
+.UL li div{
+	height:40px;
+	text-align:center;
+	margin-bottom:0;
+}
+
+.UL li .number{
+	display:inline-block;
+	padding-left:5px;
+	padding-right:5px;
+	height:18px;
+	background-color:green;
+	color:white;
+	border-radius:4px;
+	font-weight:normal;
+	line-height: 18px;
+    margin-left: 5px;
+}
+
+.Options{
+	margin-left:15px;
+}
+
+.spanA{
+	color:white;
+	margin-left:3px;
+}
+
+.spanInpuit{
+	position:relative;
+	top:-3px;
+}
+
+.page{
+	padding-top:10px;
+}
+
+.ULpage{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.ULpage li{
+	float:left;
+	padding:10px;
+	cursor:pointer;
+	color:white;
+	margin-left:10px;
+}
+
+.allTable{
+	padding-left:15px;
+	padding-right:15px;
+	margin-top:10px;
+}
+
+.allTable .tableFor{
+	border:1px solid #dddddd;
+	border-top:none;
+}
+
+.allTable .tableFor .tableOut{
+	height:42px;
+	line-height:42px;
+	margin-left:0;
+	margin-right:0;
+	padding-left:10px;
+	position:relative;
+	cursor:pointer;
+	font-weight:700;
+}
+
+.tableOut:hover{
+	background-color:#e9f1f4;
+}
+
+.allTable .tableFor:nth-of-type(1){
+	border-top:1px solid #dddddd;
+}
+
+.tableIn{
+	padding-left:10px;
+	padding-right:10px;
+	border-top:1px solid #dddddd;
+	padding-top:10px;
+	padding-bottom:10px;
+	display:none;
+}
+
+.tableIn1{
+	padding-left:10px;
+	padding-right:10px;
+	border-top:1px solid #dddddd;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.tableP{
+	font-weight:normal;
+	color:#9c9c9c;
+}
+
+.tableText{
+	font-weight:normal;
+}
+
+.tableTitle{
+	display:inline-block;
+	width:108px;
+	text-align:right;
+}
+
+table{
+	width:100%;
+}
+
+.tr{
+	border:1px solid #dddddd;
+}
+
+.btnFen{
+	width:44px;
+	height:30px;
+	outline:none;
+	border:none;
+	background-color:white;
+}
+
+.btnFen:hover{
+	background-color:#1E9FFF;
+	color:white;
+}
+
+.pageNumber{
+	
+	width:30px;
+	height:30px;
+	color:white;
+	outline:none;
+	border:none;
+	background-color:#1E9FFF;
+	border-radius:2px;
+}
+
+.pagemsg{
+	position:fixed;
+	width:300px;
+	height:300px;
+	top:50%;
+	left:50%;
+	margin-left:-150px;
+	margin-top:-150px;
+	font-size:25px;
+	text-align:center;
+	color:#707070;
+	z-index:1000;
+}

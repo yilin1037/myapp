@@ -1,0 +1,105 @@
+.template-list {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+.template-list .item {
+    width: 180px;
+    height: auto!important;
+    border-radius: 4px;
+    background-color: #FFF;
+    float: left;
+    margin-left: 21px;
+    margin-bottom: 30px;
+    border: 2px solid #FFF;
+    box-sizing: border-box;
+    position: relative;
+}
+.template-list .itemSelect {
+    border: 2px solid #9BD6EF !important;
+}
+.template-list .editSelect{
+    background-color: #008CFF !important;
+}
+.template-list .deleteSelect{
+    background-color: #9BD6EF !important;
+}
+.template-list .template-name {
+    height: 212px;
+    line-height: 212px!important;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    background-color: #FFF;
+    color: #3A3D5A;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.template-list .template-title{
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    background-color: #FFF;
+    color: #3A3D5A;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.template-list .template-img {
+    height: 193px;
+    line-height: 193px!important;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: #3A3D5A;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #FFF url(/images/bq.png) no-repeat center 7px;
+}
+.template-list .edit {
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    background-color: #9B9B9B;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+.template-list .delete {
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #CCCCCC;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+.template-list .template-name .layui-icon{
+    font-size: 32px;
+}
+.template-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

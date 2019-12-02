@@ -1,0 +1,19 @@
+.my-tab li{
+    padding : 0 30px;
+}
+.my-tab{
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin: 0;
+}
+.my-tab .layui-tab-title{
+    /*background-color: #FFF;*/  
+}
+.my-tab .layui-tab-content{
+    padding: 0;
+}
+.my-tab .layui-tab-content iframe{
+    width: 100%;
+    border: 0;
+}
+::-webkit-scrollbar  
+{  width: 0px; height: 0px } 

@@ -1,0 +1,139 @@
+.fi{
+	float:left;
+	position:relative;
+	/*transition:border-color 0.3s;*/
+}
+
+.fi:hover{
+	/*border-color:grey!important;*/
+}
+
+.fiText{
+	width:80px;
+	text-align:right;
+}
+
+#dateBegin{
+	width:180px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+	margin-left:5px;
+}
+
+#dateBegin:hover{
+	border-color:grey!important;
+}
+
+#dateEnd{
+	width:180px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+	margin-left:5px;
+}
+
+#dateEnd:hover{
+	border-color:grey!important;
+}
+
+#exceedBegin{
+	width:170px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+	margin-left:5px;
+}
+
+#exceedBegin:hover{
+	border-color:grey!important;
+}
+
+#exceedEnd{
+	width:170px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+	margin-left:5px;
+}
+
+#exceedEnd:hover{
+	border-color:grey!important;
+}
+
+.separator {
+    width: 100%;
+    height: 26px;
+    border-radius: 0;
+    font-size: 12px;
+    padding: 0;
+    padding-left: 3px;
+}
+
+select:hover {
+    border-color: grey!important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+select {
+    transition: all 0.3s;
+    border: solid 1px #000;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-right: 14px;
+}
+
+.inp {
+    width: 100%;
+    height: 26px;
+    padding-left: 3px;
+    border: 1px solid #c2c2c2!important;
+}
+
+input {
+    transition: all 0.3s;
+    font-size: 12px;
+}
+
+.btn {
+    height: 26px;
+    border: 1px solid #1E9FFF;
+    background-color: white;
+    width: 64px;
+    border-radius: 3px;
+    color: #1E9FFF;
+    padding: 2px 12px;
+}
+
+.btn:hover{
+	background-color:#1E9FFF!important;
+	color:white!important;
+}
+
+.draw{
+	width:100%;
+	overflow: hidden;  
+	white-space: nowrap;  
+	text-overflow: ellipsis;    
+}
+
+.spanInpuit {
+    position: relative;
+    top: -3px;
+}
+
+#dateTable_paginate{
+	position: absolute;
+    right: 0;
+    top: -50px;
+	font-size:12px;
+}
+
+.baby_title_1{
+	width:150px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}

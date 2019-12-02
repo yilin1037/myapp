@@ -1,0 +1,170 @@
+[v-cloak] {
+	display: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	background: #FFFFFF;
+}
+.vueHtml{
+	width: 100%;
+	min-width: 1650px;
+	height: 100%;
+}
+.outerFrame{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.typeSelection{
+	flex-direction: row;
+	width: 170px;
+	max-width: 170px;
+	min-width: 170px;
+	height: 100%;
+	overflow-Y: auto;
+}
+.operationPage{
+	flex-direction: row;
+	width: 100%;
+}
+.smsIcon{
+	width: 100px;
+	height: 100px;
+	margin: 25px;
+	border: 1px solid #DDDDDD;
+	text-align: center;
+}
+.smsIconImg{
+	margin-top: 10px;
+	width: 60%;
+	height: 60%;
+}
+.smsIconNote{
+	color: #333333; 
+}
+.smsTX{
+	display: inline-block;
+	width: 50%;
+}
+.smsHaveNum{
+	display: inline-block;
+	width: 50%;
+	float: right;
+	text-align: right;
+	font-size: 14px;
+}
+.danger{
+	color: #FF0000;
+}
+.chooseAnno{
+	height: 40px;
+	line-height: 40px;
+	text-indent: 2em;
+	background: #DDDDDD;
+	color: #666666;
+	font-size: 16px;
+}
+.tplOperation{
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+.tplListAdd{
+	width: 100%;
+}
+.tplShow{
+	width: 422px;
+	max-width: 422px;
+	min-width: 422px;
+}
+.imgBack{
+	min-height: 450px;
+	width: 400px;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+.imgSizeLocation{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+.smsContent{
+	width: 250px;
+    position: absolute;
+    top: 130px;
+    left: 70px;
+    background: #9EE951;
+    border-radius: 8px;
+	padding: 2px 10px;
+    font-size: 16px;
+}
+.smsTplSetup{
+	width: 100%;
+}
+.smsTplSetupList{
+	width: 100%;
+	height: 50px;
+}
+.labelTitle{
+	width: 80px;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	margin: 10px 5px 10px 20px;
+	font-size: 16px;
+}
+.labelCont{
+	width: 120px;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	margin: 10px 5px;
+	background: #DDDDDD;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 17px;
+	cursor: pointer;
+}
+.smsTextarea{
+	text-indent: 1em;
+	position:relative;
+}
+.rulesList{
+	width: 300px;
+	border: 1px solid #B0B0B0;
+	background: #FDF1A4;
+	padding: 2px 5px;
+	position: absolute;
+	bottom: 25px;
+	left: 110px;
+	display: none;
+}
+.smsTextarea:hover .rulesList{
+	display: block;
+}
+
+.layui-form-switch {
+    height: 23px;
+    line-height: 23px;
+    width: 55px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

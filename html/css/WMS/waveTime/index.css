@@ -1,0 +1,7 @@
+.layui-form-item{margin-bottom:0px;}
+.ifTit{height:35px; line-height:35px; width:780px; border-bottom:1px solid #A7A7AB; margin-left:20px;}
+.ifTit span{display: inline-block; width: 114px; border-bottom:2px solid #A7A7AB; line-height:33px; height:34px; text-align: center;font-weight:900;}
+.layui-checkbox-disbaled span {background-color: #5FB878 !important}
+.layui-checkbox-disbaled {border-color: #5FB878 !important}
+.layui-table, .layui-table-view {margin: 0;}
+.layui-textarea {min-height: 60px;margin-bottom: 14px;}

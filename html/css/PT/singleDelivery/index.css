@@ -1,0 +1,42 @@
+.tips{
+	border:1px solid #dddddd;
+	margin-top:20px;
+	padding:10px;
+}
+
+.tips_all{
+	float:left;
+	width:20%;
+}
+
+.tips_all1{
+	width:40%;
+}
+
+.tips_a{
+	float:left;
+	width:33.333%;
+}
+
+.tip_text{
+	width:100px;
+	text-align:right;
+	display:inline-block;
+}
+
+th{
+	border:1px solid #dddddd;
+}
+
+td{
+	padding:8px;
+	border:1px solid #dddddd;
+	font-size:12px;
+}
+
+#onlySendWlList{
+	height:24px;
+	outline:none;
+	border:none;
+	width:129px;
+}

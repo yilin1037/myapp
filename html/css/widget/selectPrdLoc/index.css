@@ -1,0 +1,13 @@
+body{
+    background-color: #fff;
+    margin: 10px;
+}
+.layui-laypage-limits{
+    display: none !important;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #34A8FF;
+}
+.layui-table-cell .layui-form-checkbox{
+	top:5px!important;
+}

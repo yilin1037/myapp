@@ -1,0 +1,56 @@
+.title_text{
+	height:27px;
+	line-height:27px;
+	border-bottom:2px solid #1e9fff;
+	display:inline-block;
+	width:80px;
+	text-align:center;
+	position:relative;
+	top:1px;
+}
+
+.title_out{
+	padding-left:10px;
+	border-bottom:1px solid #dddddd;
+	font-size:18px;
+	font-weight:600;
+}
+
+.separator{
+	width:100%;
+	height:26px;
+	border-radius:0;
+	font-size:12px;
+	padding:0;
+	padding-left:3px;
+	 appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+.btn1{
+	height:26px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+.center_btn{
+    height: 30px;
+    line-height: 30px;
+	background-color:#1e9fff;
+}
+
+.inputTe{
+	font-size:14px!important;
+	color:white;
+	background-color:white;
+	margin-right:4px;
+}
+
+#dateTable_length{
+	display:none!important;
+}

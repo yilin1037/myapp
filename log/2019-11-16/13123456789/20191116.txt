@@ -1,0 +1,14 @@
+1573885104--select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1573885104--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1573885104--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1573885104--select configValue from u13123456789_base_config where `type` = 'aftersaleSwitch' and configKey = '13123456789' 
+1573885104--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1573885104--select username,password,status,type from u13123456789_usertable where userid='13123456789'
+1573885104--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1573885104--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1573885104','','用户名或密码错误!！')
+1573885104--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '13123456789'
+					AND status = '0'
+					AND login_time > '1573884800'

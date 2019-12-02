@@ -1,0 +1,185 @@
+body{
+    overflow: hidden;
+}
+.layui-table{
+    margin: 0;
+}
+.my-ud-btn {
+    height: 60px;
+    line-height: 60px;
+}
+.my-ud-btn div{
+    height: 20px;
+    line-height: 20px;
+}
+.my-ud-btn .layui-icon {
+    font-size: 25px;
+}
+.umar-l2 {
+    margin-left: 80px !important;
+}
+.designer-toolbar{
+    background-color: #FFF;
+    padding: 10px;
+}
+.designer{
+}
+.designer-left{
+    float: left;
+}
+.designer-toolbar{
+    border-bottom: 10px solid #E2E2E2;
+    border-right: 10px solid #E2E2E2;
+}
+.desiginer-canvas{
+    height: 100%;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    overflow:auto;
+    text-align: -webkit-center;
+}
+.desiginer-propertypanel{
+    width: 370px;
+    height: 100%;
+    background-color: #FFF;
+    float: left;
+    overflow-y: scroll;
+}
+.desiginer-canvas #CNPrintDesigner_DrawPanel{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #CCCCCC;
+    border-left: 0px;
+    border-top: 0px;
+    background: -webkit-linear-gradient(top,transparent 39px,#CCCCCC 40px), -webkit-linear-gradient(left,transparent 39px,#CCCCCC 40px);
+    background-size: 40px 40px;
+}
+#CNPrintDesigner_DrawPanel{
+    position: relative;
+    background-color:#FFF;
+}
+#STANDARD_AREA {
+    background: url(/images/KD_BG.png) rgba(0, 0, 0, 0.5);
+    background-size: 100%;
+    height: 100%;
+}
+#STANDARD_AREA:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.JDKD #STANDARD_AREA {
+    background-image: url(/images/JD_BG.png);
+}
+.JDKD_YTH #STANDARD_AREA {
+    background-image: url(/images/JD_YTH_BG.png);
+}
+#CUSTOM_AREA{
+    left: 0;
+    top: 140mm;
+    height: 40mm;
+    width: 100mm;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2;
+    overflow: hidden;
+}
+#CUSTOM_AREA .field, #CUSTOM_AREA .gridList {
+    position: absolute;
+    background: #eee;
+    overflow: hidden;
+}
+#CUSTOM_AREA .field2 {
+    position: absolute;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+#CUSTOM_AREA .field, #CUSTOM_AREA .tableGrid {
+    font-size: 9pt;
+    text-align: left;
+}
+.my-table{
+    font-size: 14px;
+    width: 100%;
+}
+.my-table td{
+    padding: 9px 10px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+.my-table .titleTd{
+    background-color: #EDEEF3;
+    color: #000;
+}
+.my-table-div{
+    font-size: 12pt;
+    border-bottom: 1px solid #000;
+}
+.layui-form-checkbox{
+    margin-bottom: 10px;
+}
+.my-label{
+    width: auto;
+}
+.my-text{
+    width: 120px;
+}
+.my-font-size{
+    width: 70px;
+}
+.my-field{
+    width: 70px;
+}
+.my-font-weight-div{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.my-font-code-div{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+/*--jQuery UI css -自定义------------------------*/
+.ui-icon-gripsmall-diagonal-se {
+    background-position: -64px -224px;
+}
+.ui-icon, .ui-widget-content .ui-icon {
+    background-image: url("/images/ui-icons_444444_256x240.png");
+}
+.ui-icon {
+    width: 16px;
+    height: 16px;
+}
+.ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px;
+}
+.ui-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -.25em;
+    position: relative;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+.ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+.fieldSelected{
+    background-color: #CEE8FD !important;
+}

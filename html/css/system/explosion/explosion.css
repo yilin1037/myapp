@@ -1,0 +1,38 @@
+.title_text{
+	height:27px;
+	line-height:27px;
+	border-bottom:2px solid #1e9fff;
+	display:inline-block;
+	width:80px;
+	text-align:center;
+	position:relative;
+	top:1px;
+}
+
+.title_out{
+	padding-left:10px;
+	border-bottom:1px solid #dddddd;
+	font-size:18px;
+	font-weight:600;
+}
+
+.help{
+	cursor:pointer;
+	display:inline-block;
+	padding:2px;
+	width:24px;
+	height:24px;
+	text-align:center;
+	position:relative;
+	top:-1px;
+}
+
+.help:hover{
+	background-color:#EBEDF2;
+}
+
+th,td{
+	padding:4px;
+	border:1px solid #e6e6e6;
+	text-align:center;
+}

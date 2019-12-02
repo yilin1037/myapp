@@ -1,0 +1,3 @@
+var bootPathParam = __CreateJSParam("myAppBoot.js");
+document.write('<script src="js/'+bootPathParam['MODULE']+'/'+bootPathParam['CONTROLLER']+'/'+bootPathParam['ACTION']+'.js?V='+bootPathParam['V']+'" type="text/javascript" ></script>');
+document.write('<link href="css/'+bootPathParam['MODULE']+'/'+bootPathParam['CONTROLLER']+'/'+bootPathParam['ACTION']+'.css?V='+bootPathParam['V']+'" rel="stylesheet" type="text/css" />');

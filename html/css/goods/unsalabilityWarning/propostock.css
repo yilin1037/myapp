@@ -1,0 +1,15 @@
+.layui-table-view select[lay-ignore] {height:24px;}
+.layui-form-item .layui-inline {margin-bottom: 0px;margin-right: 0px;}
+.layui-form-label {padding: 9px 0px;}
+.layui-input-block {margin-left: 80px;}
+.layui-table, .layui-table-view {margin: 10px 0 0;}
+#alertTable thead .layui-icon:nth-of-type(1){display:none;}
+#whSetChoose thead .layui-icon:nth-of-type(1){display:none;}
+#topSearch .layui-input, .layui-select, .layui-textarea {height: 32px;}
+#topSearch .layui-form-select dl dd, .layui-form-select dl dt {line-height: 26px;}
+#topSearch .layui-form-item {margin-bottom: 0px;}
+#topSearch .layui-table{margin: 0;}
+#topSearch .layui-table-view {margin: 0;}
+#topSearch .layui-input-block {width: 150px;}
+#topSearch .layui-btn-sm {margin-top: -10px;}
+.layui-table, .layui-table-view {margin: 0;}

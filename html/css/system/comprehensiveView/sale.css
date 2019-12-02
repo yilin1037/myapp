@@ -1,0 +1,26 @@
+.btn{
+	height:30px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+.hide_1{
+	display:inline-block;
+	width:180px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	line-height: 14px;
+    position: relative;
+    top: 3px;
+}
+
+th,td{
+	border:1px solid #dddddd;
+	padding:5px;
+	font-size:12px;
+}

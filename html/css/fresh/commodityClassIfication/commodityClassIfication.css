@@ -1,0 +1,14 @@
+span{
+	display:inline-block;
+}
+
+a{
+	cursor:pointer;
+	color: #2a6496;
+}
+
+.new_add_input{
+	display:inline-block;
+	width:150px;
+	height:34px;
+}

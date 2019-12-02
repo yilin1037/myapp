@@ -1,0 +1,45 @@
+var tableList = new Vue({
+	el: '#tableList',
+	data: {
+		shopArr:[],
+		show:false,
+	},
+	mounted: function() {
+		var self = this;
+		
+		//获取网店
+		$.ajax({																				
+			url: "/index.php?m=afterSale&c=aftersaleManage&a=getShop",										
+			type: 'post',																		
+			data: {},																	
+			dataType: 'json',																	
+			success: function (data) {			
+				self.shopArr = data;
+				$(document).ready(function(){
+					$('.skin-minimal input').iCheck({
+						checkboxClass: 'icheckbox_minimal',
+						radioClass: 'iradio_minimal',
+						increaseArea: '20%'
+					});
+				});	
+			}																					
+		});	
+		
+	},
+	methods: {
+		
+	},
+																																																	
+});	
+
+
+
+
+		
+
+
+
+
+
+
+																																																

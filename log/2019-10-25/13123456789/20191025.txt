@@ -1,0 +1,1552 @@
+1571972410--select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1571972410--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1571972410--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1571972410--select configValue from u13123456789_base_config where `type` = 'aftersaleSwitch' and configKey = '13123456789' 
+1571972410--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1571972410--select username,password,status,type from u13123456789_usertable where userid='13123456789'
+1571972410--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='13123456789'
+1571972410--update userlist set last_login_time='1571972410' where system_id='13123456789'
+1571972410--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571972410--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571972410','1','登录IP地址：127.0.0.1')
+1571972410--SELECT sync_orders FROM drop_shipping_list WHERE system_id='13123456789'
+1571972410--SELECT name FROM unique_code_supply WHERE system_id='13123456789'
+1571972410--SELECT to_system_id FROM system_sync_list WHERE to_system_id='13123456789'
+1571972410--SELECT DISTINCT shopid,express_id,drop_shipping_id from u13123456789_express where is_drop_shipping = 1 and del_logo=0
+1571972410--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '13123456789'
+					AND status = '0'
+					AND login_time > '1571972106'
+1571972410--select username,expire_time from userlist where system_id='13123456789'
+1571972410--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972410--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1571972410--select sum(balance) as balance from u13123456789_tid_pay
+1571972410--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1571972410--select sms_count from userlist where system_id='13123456789'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1571972410--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1571972411--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972411--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1571972412--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972412--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1571972412--SELECT id,title,content,begin_time FROM notice where '1571972412' BETWEEN begin_time AND end_time 
+1571972413--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1571972413--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1571972414--SELECT title,content,create_time FROM question limit 0,7
+1571972414--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972414--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1571972414--select username,expire_time from userlist where system_id='13123456789'
+1571972414--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1571972414--select sum(balance) as balance from u13123456789_tid_pay
+1571972414--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1571972421--select shopid,appkey,secretkey,sessionkey from u13123456789_shop_config where shoptype = 'JD'
+1571972522--select username,expire_time from userlist where system_id='13123456789'
+1571972522--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972522--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1571972522--select sum(balance) as balance from u13123456789_tid_pay
+1571972522--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1571972522--select sms_count from userlist where system_id='13123456789'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1571972522--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1571972522--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972522--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1571972522--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972522--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1571972522--SELECT id,title,content,begin_time FROM notice where '1571972522' BETWEEN begin_time AND end_time 
+1571972522--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1571972522--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972522--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1571972522--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1571972523--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972523--select count(1) AS shopBang from u13123456789_shop_config where status = 1
+1571972523--SELECT COUNT(1) AS placeBang FROM u13123456789_express WHERE STATUS = 0 
+1571972523--SELECT COUNT(1) AS expressBang FROM u13123456789_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1571972523--SELECT COUNT(1) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1571972523--select count(1) AS labelBang from u13123456789_user_printer where usr = '13123456789' AND type = 'unique_code' AND printer <> ''
+1571972523--select count(1) AS printBang from u13123456789_user_printer where usr = '13123456789' AND type = 'waybill' AND printer <> ''
+1571972523--select count(1) AS express_no from u13123456789_user_printer where usr = '13123456789' AND type = 'express_no' AND printer <> ''
+1571972523--SELECT COUNT(1) AS orderBang FROM u13123456789_unique_code_config
+1571972523--SELECT configValue FROM u13123456789_base_config WHERE configKey='albbSplit'
+1571972523--SELECT configValue FROM u13123456789_base_config WHERE configKey='mgjSplit'
+1571972523--SELECT configValue FROM u13123456789_base_config WHERE configKey='pddSplit'
+1571972523--SELECT configValue FROM u13123456789_base_config WHERE `type`='storage_type'
+1571972523--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u13123456789_express) AS a
+			  LEFT JOIN u13123456789_base_config AS b ON a.ids=b.configKey
+1571972523--SELECT configValue FROM u13123456789_base_config where configKey = 'library_number'
+1571972523--SELECT configValue FROM u13123456789_base_config where configKey = 'num_library'
+1571972523--SELECT title,content,create_time FROM question limit 0,7
+1571972523--select username,expire_time from userlist where system_id='13123456789'
+1571972523--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1571972523--select sum(balance) as balance from u13123456789_tid_pay
+1571972523--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1571972525--select username,expire_time from userlist where system_id='13123456789'
+1571972525--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972525--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1571972525--select sum(balance) as balance from u13123456789_tid_pay
+1571972525--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1571972525--select sms_count from userlist where system_id='13123456789'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1571972525--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1571972525--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972525--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1571972525--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972525--SELECT id,title,content,begin_time FROM notice where '1571972525' BETWEEN begin_time AND end_time 
+1571972525--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1571972526--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972526--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1571972526--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1571972526--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1571972526--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1571972527--select count(1) AS shopBang from u13123456789_shop_config where status = 1
+1571972527--SELECT COUNT(1) AS placeBang FROM u13123456789_express WHERE STATUS = 0 
+1571972527--SELECT COUNT(1) AS expressBang FROM u13123456789_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1571972527--SELECT COUNT(1) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1571972527--select count(1) AS labelBang from u13123456789_user_printer where usr = '13123456789' AND type = 'unique_code' AND printer <> ''
+1571972527--select count(1) AS printBang from u13123456789_user_printer where usr = '13123456789' AND type = 'waybill' AND printer <> ''
+1571972527--select count(1) AS express_no from u13123456789_user_printer where usr = '13123456789' AND type = 'express_no' AND printer <> ''
+1571972527--SELECT COUNT(1) AS orderBang FROM u13123456789_unique_code_config
+1571972527--SELECT configValue FROM u13123456789_base_config WHERE configKey='albbSplit'
+1571972527--SELECT configValue FROM u13123456789_base_config WHERE configKey='mgjSplit'
+1571972527--SELECT configValue FROM u13123456789_base_config WHERE configKey='pddSplit'
+1571972527--SELECT configValue FROM u13123456789_base_config WHERE `type`='storage_type'
+1571972527--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u13123456789_express) AS a
+			  LEFT JOIN u13123456789_base_config AS b ON a.ids=b.configKey
+1571972527--SELECT configValue FROM u13123456789_base_config where configKey = 'library_number'
+1571972527--SELECT configValue FROM u13123456789_base_config where configKey = 'num_library'
+1571972527--SELECT title,content,create_time FROM question limit 0,7
+1571972527--select username,expire_time from userlist where system_id='13123456789'
+1571972527--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1571972527--select sum(balance) as balance from u13123456789_tid_pay
+1571972527--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1571972745--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571972745--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571972745','1','登录IP地址：192.168.100.104')
+1571972745--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571972885--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571972885--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571972885','1','登录IP地址：192.168.100.104')
+1571972885--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571972976--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571972976--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571972976','1','登录IP地址：192.168.100.104')
+1571972976--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571972999--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571972999--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571972999','1','登录IP地址：192.168.100.104')
+1571973035--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973035--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973035','1','登录IP地址：192.168.100.104')
+1571973072--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973072--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973072','1','登录IP地址：192.168.100.104')
+1571973072--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973111--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973111--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973111','1','登录IP地址：192.168.100.104')
+1571973142--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973142--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973142','1','登录IP地址：192.168.100.104')
+1571973142--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973273--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973273--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973273','1','登录IP地址：192.168.100.104')
+1571973273--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973303--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973303--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973303','1','登录IP地址：192.168.100.104')
+1571973303--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973330--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973330--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973330','1','登录IP地址：192.168.100.104')
+1571973330--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973366--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973366--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973366','1','登录IP地址：192.168.100.104')
+1571973366--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973402--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973402--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973402','1','登录IP地址：192.168.100.104')
+1571973402--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973564--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973564--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973564','1','登录IP地址：192.168.100.104')
+1571973564--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973578--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973578--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973578','1','登录IP地址：192.168.100.104')
+1571973612--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973612--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973612','1','登录IP地址：192.168.100.104')
+1571973630--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973630--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973630','1','登录IP地址：192.168.100.104')
+1571973630--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973758--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973758--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973758','1','登录IP地址：192.168.100.104')
+1571973758--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973927--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973927--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973927','1','登录IP地址：192.168.100.104')
+1571973927--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571973959--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973959--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973959','1','登录IP地址：192.168.100.104')
+1571973964--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571973964--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571973964','1','登录IP地址：192.168.100.104')
+1571973964--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974011--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974011--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974011','1','登录IP地址：192.168.100.104')
+1571974047--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974047--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974047','1','登录IP地址：192.168.100.104')
+1571974047--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974435--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974435--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974435','1','登录IP地址：192.168.100.104')
+1571974435--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974454--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974454--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974454','1','登录IP地址：192.168.100.104')
+1571974454--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974620--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974620--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974620','1','登录IP地址：192.168.100.104')
+1571974620--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974667--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974667--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974667','1','登录IP地址：192.168.100.104')
+1571974667--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974672--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974672--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974672','1','登录IP地址：192.168.100.104')
+1571974872--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974872--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974872','1','登录IP地址：192.168.100.104')
+1571974872--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974934--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974934--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974934','1','登录IP地址：192.168.100.104')
+1571974934--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571974954--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571974954--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571974954','1','登录IP地址：192.168.100.104')
+1571974954--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571975071--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571975071--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571975071','1','登录IP地址：192.168.100.104')
+1571975071--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571975113--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571975113--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571975113','1','登录IP地址：192.168.100.104')
+1571975113--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571975216--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571975216--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571975216','1','登录IP地址：192.168.100.104')
+1571975216--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571975260--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571975260--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571975260','1','登录IP地址：192.168.100.104')
+1571975261--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571975300--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571975300--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571975300','1','登录IP地址：192.168.100.104')
+1571975300--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571979771--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571979771--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571979771','1','登录IP地址：192.168.100.104')
+1571979771--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571979901--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571979901--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571979901','1','登录IP地址：192.168.100.104')
+1571979901--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980071--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980071--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980071','1','登录IP地址：192.168.100.104')
+1571980071--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980135--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980135--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980135','1','登录IP地址：192.168.100.104')
+1571980135--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980191--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980191--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980191','1','登录IP地址：192.168.100.104')
+1571980191--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980409--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980409--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980409','1','登录IP地址：192.168.100.104')
+1571980409--select c.id,c.cus_no,c.cus_name,c.mobile,c.level,c.payment_type,c.payment_day,c.addtime,b.configValue from u13123456789_cust as c left join (select configKey,configValue from u13123456789_base_config) AS b on b.configKey = c.level where cus_type='1'order by id DESC limit 0,10
+1571980409--select count(1) as count from u13123456789_cust where cus_type='1'
+1571980424--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980424--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980424','1','登录IP地址：192.168.100.104')
+1571980424--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980489--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980489--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980489','1','登录IP地址：192.168.100.104')
+1571980489--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980590--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980590--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980590','1','登录IP地址：192.168.100.104')
+1571980590--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980668--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980668--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980668','1','登录IP地址：192.168.100.104')
+1571980668--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571980800--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571980800--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571980800','1','登录IP地址：192.168.100.104')
+1571981029--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981029--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981029','1','登录IP地址：192.168.100.104')
+1571981030--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571981036--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981036--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981036','1','登录IP地址：192.168.100.104')
+1571981642--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981642--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981642','1','登录IP地址：192.168.100.104')
+1571981642--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571981647--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981647--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981647','1','登录IP地址：192.168.100.104')
+1571981839--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981839--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981839','1','登录IP地址：192.168.100.104')
+1571981886--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981886--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981886','1','登录IP地址：192.168.100.104')
+1571981899--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981899--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981899','1','登录IP地址：192.168.100.104')
+1571981907--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981907--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981907','1','登录IP地址：192.168.100.104')
+1571981947--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571981947--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571981947','1','登录IP地址：192.168.100.104')
+1571981947--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571982553--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571982553--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571982553','1','登录IP地址：192.168.100.104')
+1571982553--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571982636--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571982636--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571982635','1','登录IP地址：192.168.100.104')
+1571982637--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571982655--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571982655--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571982655','1','登录IP地址：192.168.100.104')
+1571982655--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571982718--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571982718--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571982718','1','登录IP地址：192.168.100.104')
+1571982718--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571982780--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571982780--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571982780','1','登录IP地址：192.168.100.104')
+1571982780--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571982801--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571982801--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571982801','1','登录IP地址：192.168.100.104')
+1571982801--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571982979--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571982979--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571982979','1','登录IP地址：192.168.100.104')
+1571982979--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983175--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983175--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983175','1','登录IP地址：192.168.100.104')
+1571983175--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983206--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983206--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983206','1','登录IP地址：192.168.100.104')
+1571983206--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983243--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983243--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983243','1','登录IP地址：192.168.100.104')
+1571983243--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983280--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983280--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983280','1','登录IP地址：192.168.100.104')
+1571983280--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983427--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983427--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983427','1','登录IP地址：192.168.100.104')
+1571983427--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983751--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983751--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983751','1','登录IP地址：192.168.100.104')
+1571983751--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983785--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983785--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983785','1','登录IP地址：192.168.100.104')
+1571983785--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983864--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983864--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983864','1','登录IP地址：192.168.100.104')
+1571983864--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983898--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983898--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983898','1','登录IP地址：192.168.100.104')
+1571983898--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571983933--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571983933--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571983933','1','登录IP地址：192.168.100.104')
+1571983933--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984096--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984096--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984096','1','登录IP地址：192.168.100.104')
+1571984096--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984130--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984130--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984130','1','登录IP地址：192.168.100.104')
+1571984130--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984236--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984236--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984236','1','登录IP地址：192.168.100.104')
+1571984236--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984348--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984348--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984348','1','登录IP地址：192.168.100.104')
+1571984348--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984416--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984416--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984416','1','登录IP地址：192.168.100.104')
+1571984416--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984478--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984478--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984478','1','登录IP地址：192.168.100.104')
+1571984478--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984687--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984687--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984687','1','登录IP地址：192.168.100.104')
+1571984687--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984878--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984878--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984878','1','登录IP地址：192.168.100.104')
+1571984878--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984948--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984948--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984948','1','登录IP地址：192.168.100.104')
+1571984948--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571984996--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571984996--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571984996','1','登录IP地址：192.168.100.104')
+1571984996--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985002--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985002--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985002','1','登录IP地址：192.168.100.104')
+1571985002--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985035--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985035--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985035','1','登录IP地址：192.168.100.104')
+1571985035--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985067--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985067--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985067','1','登录IP地址：192.168.100.104')
+1571985067--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985110--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985110--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985110','1','登录IP地址：192.168.100.104')
+1571985110--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985129--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985129--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985129','1','登录IP地址：192.168.100.104')
+1571985129--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985152--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985152--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985152','1','登录IP地址：192.168.100.104')
+1571985152--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985173--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985173--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985173','1','登录IP地址：192.168.100.104')
+1571985173--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985207--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985207--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985207','1','登录IP地址：192.168.100.104')
+1571985207--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985231--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985231--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985231','1','登录IP地址：192.168.100.104')
+1571985231--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985271--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985271--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985271','1','登录IP地址：192.168.100.104')
+1571985271--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985338--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985338--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985338','1','登录IP地址：192.168.100.104')
+1571985338--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985356--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985356--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985356','1','登录IP地址：192.168.100.104')
+1571985356--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985658--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985658--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985658','1','登录IP地址：192.168.100.104')
+1571985658--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985952--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985952--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985952','1','登录IP地址：192.168.100.104')
+1571985952--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571985987--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571985987--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571985987','1','登录IP地址：192.168.100.104')
+1571985987--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986175--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986175--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986175','1','登录IP地址：192.168.100.104')
+1571986175--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986223--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986223--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986223','1','登录IP地址：192.168.100.104')
+1571986223--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986289--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986289--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986289','1','登录IP地址：192.168.100.104')
+1571986289--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986311--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986311--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986311','1','登录IP地址：192.168.100.104')
+1571986311--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986359--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986359--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986359','1','登录IP地址：192.168.100.104')
+1571986359--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986385--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986385--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986385','1','登录IP地址：192.168.100.104')
+1571986385--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986448--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986448--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986448','1','登录IP地址：192.168.100.104')
+1571986448--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986504--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986504--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986504','1','登录IP地址：192.168.100.104')
+1571986577--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986577--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986577','1','登录IP地址：192.168.100.104')
+1571986577--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986635--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986635--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986635','1','登录IP地址：192.168.100.104')
+1571986635--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986640--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986640--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986640','1','登录IP地址：192.168.100.104')
+1571986797--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986797--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986797','1','登录IP地址：192.168.100.104')
+1571986797--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986805--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986805--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986805','1','登录IP地址：192.168.100.104')
+1571986837--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986837--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986837','1','登录IP地址：192.168.100.104')
+1571986837--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986842--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986842--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986842','1','登录IP地址：192.168.100.104')
+1571986863--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986863--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986863','1','登录IP地址：192.168.100.104')
+1571986863--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571986868--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571986868--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571986868','1','登录IP地址：192.168.100.104')
+1571987004--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987004--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987004','1','登录IP地址：192.168.100.104')
+1571987004--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987023--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987023--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987023','1','登录IP地址：192.168.100.104')
+1571987023--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987052--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987052--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987052','1','登录IP地址：192.168.100.104')
+1571987052--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987121--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987121--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987121','1','登录IP地址：192.168.100.104')
+1571987121--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987172--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987172--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987172','1','登录IP地址：192.168.100.104')
+1571987172--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987209--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987209--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987209','1','登录IP地址：192.168.100.104')
+1571987209--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987338--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987338--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987338','1','登录IP地址：192.168.100.104')
+1571987338--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987489--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987489--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987489','1','登录IP地址：192.168.100.104')
+1571987489--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987589--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987589--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987589','1','登录IP地址：192.168.100.104')
+1571987609--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987609--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987609','1','登录IP地址：192.168.100.104')
+1571987609--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571987609--select id,name from market order by id
+1571987623--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987623--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987623','1','登录IP地址：192.168.100.104')
+1571987627--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987627--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987627','1','登录IP地址：192.168.100.104')
+1571987630--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987630--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987630','1','登录IP地址：192.168.100.104')
+1571987651--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987651--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987651','1','登录IP地址：192.168.100.104')
+1571987676--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571987676--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571987676','1','登录IP地址：192.168.100.104')
+1571988058--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988058--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988058','1','登录IP地址：192.168.100.104')
+1571988058--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988058--select id,name from market order by id
+1571988141--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988141--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988141','1','登录IP地址：192.168.100.104')
+1571988149--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988149--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988149','1','登录IP地址：192.168.100.104')
+1571988250--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988250--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988250','1','登录IP地址：192.168.100.104')
+1571988250--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988250--select id,name from market order by id
+1571988279--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988279--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988279','1','登录IP地址：192.168.100.104')
+1571988279--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988279--select id,name from market order by id
+1571988289--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988289--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988289','1','登录IP地址：192.168.100.104')
+1571988292--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988292--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988292','1','登录IP地址：192.168.100.104')
+1571988295--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988295--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988295','1','登录IP地址：192.168.100.104')
+1571988319--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988319--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988319','1','登录IP地址：192.168.100.104')
+1571988337--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988337--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988337','1','登录IP地址：192.168.100.104')
+1571988337--select  phone from stalls where phone='13042497918' limit 1
+1571988337--insert into stalls (business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no,openid) values ('"http://192.168.100.104/html/upload/2019-10-25/1571988289.png"','"http:\/\/192.168.100.104\/html\/upload\/2019-10-25\/1571988292.png"','"http:\/\/192.168.100.104\/html\/upload\/2019-10-25\/1571988295.png"','万佳','13042497918','1','12','yi','万佳 1 12','sns_wa_')
+1571988348--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988348--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988348','1','登录IP地址：192.168.100.104')
+1571988348--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988515--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988515--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988515','1','登录IP地址：192.168.100.104')
+1571988515--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988522--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988522--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988522','1','登录IP地址：192.168.100.104')
+1571988526--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988526--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988526','1','登录IP地址：192.168.100.104')
+1571988529--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988529--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988529','1','登录IP地址：192.168.100.104')
+1571988553--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988553--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988553','1','登录IP地址：192.168.100.104')
+1571988553--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988609--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988609--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988609','1','登录IP地址：192.168.100.104')
+1571988609--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988663--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988663--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988663','1','登录IP地址：192.168.100.104')
+1571988663--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988706--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988706--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988706','1','登录IP地址：192.168.100.104')
+1571988706--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988712--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988712--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988712','1','登录IP地址：192.168.100.104')
+1571988723--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988723--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988723','1','登录IP地址：192.168.100.104')
+1571988723--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988891--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988891--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988891','1','登录IP地址：192.168.100.104')
+1571988891--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988936--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988936--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988936','1','登录IP地址：192.168.100.104')
+1571988936--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988953--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988953--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988953','1','登录IP地址：192.168.100.104')
+1571988953--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571988979--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571988979--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571988979','1','登录IP地址：192.168.100.104')
+1571988979--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571989004--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989004--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989004','1','登录IP地址：192.168.100.104')
+1571989004--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571989066--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989066--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989066','1','登录IP地址：192.168.100.104')
+1571989066--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571989171--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989171--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989171','1','登录IP地址：192.168.100.104')
+1571989171--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571989260--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989260--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989260','1','登录IP地址：192.168.100.104')
+1571989265--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989265--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989265','1','登录IP地址：192.168.100.104')
+1571989265--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571989362--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989362--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989362','1','登录IP地址：192.168.100.104')
+1571989362--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571989429--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989429--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989429','1','登录IP地址：192.168.100.104')
+1571989429--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571989435--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989435--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989435','1','登录IP地址：192.168.100.104')
+1571989454--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989454--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989454','1','登录IP地址：192.168.100.104')
+1571989693--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571989693--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571989693','1','登录IP地址：192.168.100.104')
+1571989693--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990026--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990026--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990026','1','登录IP地址：192.168.100.104')
+1571990026--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990129--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990129--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990129','1','登录IP地址：192.168.100.104')
+1571990129--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990258--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990258--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990258','1','登录IP地址：192.168.100.104')
+1571990258--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990312--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990312--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990312','1','登录IP地址：192.168.100.104')
+1571990312--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990418--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990418--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990418','1','登录IP地址：192.168.100.104')
+1571990418--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990460--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990460--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990460','1','登录IP地址：192.168.100.104')
+1571990460--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990507--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990507--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990507','1','登录IP地址：192.168.100.104')
+1571990507--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990597--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990597--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990597','1','登录IP地址：192.168.100.104')
+1571990597--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990672--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990672--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990672','1','登录IP地址：192.168.100.104')
+1571990672--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990707--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990707--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990707','1','登录IP地址：192.168.100.104')
+1571990707--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990791--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990791--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990791','1','登录IP地址：192.168.100.104')
+1571990791--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990814--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990814--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990814','1','登录IP地址：192.168.100.104')
+1571990814--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990873--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990873--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990873','1','登录IP地址：192.168.100.104')
+1571990873--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990924--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990924--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990924','1','登录IP地址：192.168.100.104')
+1571990924--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571990975--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571990975--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571990975','1','登录IP地址：192.168.100.104')
+1571990975--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991023--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991023--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991023','1','登录IP地址：192.168.100.104')
+1571991023--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991065--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991065--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991065','1','登录IP地址：192.168.100.104')
+1571991065--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991113--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991113--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991113','1','登录IP地址：192.168.100.104')
+1571991113--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991243--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991243--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991243','1','登录IP地址：192.168.100.104')
+1571991243--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991267--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991267--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991267','1','登录IP地址：192.168.100.104')
+1571991267--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991301--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991301--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991301','1','登录IP地址：192.168.100.104')
+1571991301--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991398--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991398--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991398','1','登录IP地址：192.168.100.104')
+1571991398--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991438--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991438--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991438','1','登录IP地址：192.168.100.104')
+1571991438--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991471--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991471--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991471','1','登录IP地址：192.168.100.104')
+1571991471--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991598--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991598--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991598','1','登录IP地址：192.168.100.104')
+1571991598--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991659--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991659--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991659','1','登录IP地址：192.168.100.104')
+1571991659--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991792--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991792--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991792','1','登录IP地址：192.168.100.104')
+1571991792--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991909--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991909--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991909','1','登录IP地址：192.168.100.104')
+1571991909--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571991988--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571991988--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571991988','1','登录IP地址：192.168.100.104')
+1571991988--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992327--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992327--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992327','1','登录IP地址：192.168.100.104')
+1571992327--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992356--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992356--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992356','1','登录IP地址：192.168.100.104')
+1571992356--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992389--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992389--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992389','1','登录IP地址：192.168.100.104')
+1571992389--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992441--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992441--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992441','1','登录IP地址：192.168.100.104')
+1571992441--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992698--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992698--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992698','1','登录IP地址：192.168.100.104')
+1571992698--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992729--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992729--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992729','1','登录IP地址：192.168.100.104')
+1571992729--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992835--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992835--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992835','1','登录IP地址：192.168.100.104')
+1571992835--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992887--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992887--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992887','1','登录IP地址：192.168.100.104')
+1571992887--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992929--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992929--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992929','1','登录IP地址：192.168.100.104')
+1571992929--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571992985--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571992985--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571992985','1','登录IP地址：192.168.100.104')
+1571992985--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993012--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993012--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993012','1','登录IP地址：192.168.100.104')
+1571993012--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993061--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993061--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993061','1','登录IP地址：192.168.100.104')
+1571993061--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993096--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993096--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993096','1','登录IP地址：192.168.100.104')
+1571993096--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993161--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993161--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993161','1','登录IP地址：192.168.100.104')
+1571993161--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993288--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993288--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993288','1','登录IP地址：192.168.100.104')
+1571993288--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993336--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993336--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993336','1','登录IP地址：192.168.100.104')
+1571993336--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993395--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993395--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993395','1','登录IP地址：192.168.100.104')
+1571993395--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993448--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993448--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993448','1','登录IP地址：192.168.100.104')
+1571993448--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993469--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993469--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993469','1','登录IP地址：192.168.100.104')
+1571993469--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993501--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993501--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993501','1','登录IP地址：192.168.100.104')
+1571993501--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993541--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993541--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993541','1','登录IP地址：192.168.100.104')
+1571993541--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993567--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993567--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993567','1','登录IP地址：192.168.100.104')
+1571993567--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993621--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993621--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993621','1','登录IP地址：192.168.100.104')
+1571993621--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571993839--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571993839--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571993839','1','登录IP地址：192.168.100.104')
+1571993839--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994188--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994188--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994188','1','登录IP地址：192.168.100.104')
+1571994188--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994312--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994312--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994312','1','登录IP地址：192.168.100.104')
+1571994312--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994312--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994312','1','登录IP地址：192.168.100.104')
+1571994312--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994312--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994375--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994375--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994375','1','登录IP地址：192.168.100.104')
+1571994375--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994375--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994375--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994375','1','登录IP地址：192.168.100.104')
+1571994375--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994543--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994543--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994543','1','登录IP地址：192.168.100.104')
+1571994543--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994544--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994544--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994544','1','登录IP地址：192.168.100.104')
+1571994544--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994602--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994602--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994602','1','登录IP地址：192.168.100.104')
+1571994602--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994603--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994603--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994603','1','登录IP地址：192.168.100.104')
+1571994603--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994638--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994638--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994638','1','登录IP地址：192.168.100.104')
+1571994638--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994638--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994638--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994638','1','登录IP地址：192.168.100.104')
+1571994638--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994699--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994699--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994699','1','登录IP地址：192.168.100.104')
+1571994699--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994699--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994699--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994699','1','登录IP地址：192.168.100.104')
+1571994699--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994745--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994745--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994745','1','登录IP地址：192.168.100.104')
+1571994745--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994745--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994745--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994745','1','登录IP地址：192.168.100.104')
+1571994745--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994775--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994775--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994775','1','登录IP地址：192.168.100.104')
+1571994775--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994775--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994775--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994775','1','登录IP地址：192.168.100.104')
+1571994775--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994815--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994815--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994815','1','登录IP地址：192.168.100.104')
+1571994815--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994816--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994816--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994816','1','登录IP地址：192.168.100.104')
+1571994816--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994844--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994844--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994844','1','登录IP地址：192.168.100.104')
+1571994844--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994844--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994844--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994844','1','登录IP地址：192.168.100.104')
+1571994844--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994911--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994911--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994911','1','登录IP地址：192.168.100.104')
+1571994911--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571994911--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571994911--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571994911','1','登录IP地址：192.168.100.104')
+1571994911--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571995256--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571995256--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571995256','1','登录IP地址：192.168.100.104')
+1571995256--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571995328--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571995328--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571995328','1','登录IP地址：192.168.100.104')
+1571995328--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571995414--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571995414--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571995414','1','登录IP地址：192.168.100.104')
+1571995710--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571995710--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571995710','1','登录IP地址：192.168.100.104')
+1571995710--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571995992--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571995992--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571995992','1','登录IP地址：192.168.100.104')
+1571995992--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996180--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996180--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996180','1','登录IP地址：192.168.100.104')
+1571996180--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996270--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996270--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996270','1','登录IP地址：192.168.100.104')
+1571996271--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996293--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996293--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996293','1','登录IP地址：192.168.100.104')
+1571996293--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996501--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996501--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996501','1','登录IP地址：192.168.100.104')
+1571996501--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996608--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996608--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996608','1','登录IP地址：192.168.100.104')
+1571996608--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996653--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996653--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996653','1','登录IP地址：192.168.100.104')
+1571996653--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996736--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996736--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996736','1','登录IP地址：192.168.100.104')
+1571996736--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996746--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996746--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996746','1','登录IP地址：192.168.100.104')
+1571996746--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996775--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996775--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996775','1','登录IP地址：192.168.100.104')
+1571996775--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996804--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996804--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996804','1','登录IP地址：192.168.100.104')
+1571996805--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996866--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996866--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996866','1','登录IP地址：192.168.100.104')
+1571996866--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996907--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996907--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996907','1','登录IP地址：192.168.100.104')
+1571996907--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996945--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996945--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996945','1','登录IP地址：192.168.100.104')
+1571996945--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996954--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996954--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996954','1','登录IP地址：192.168.100.104')
+1571996954--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571996962--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571996962--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571996962','1','登录IP地址：192.168.100.104')
+1571996962--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997025--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997025--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997025','1','登录IP地址：192.168.100.104')
+1571997025--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997241--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997241--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997241','1','登录IP地址：192.168.100.104')
+1571997241--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997277--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997277--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997277','1','登录IP地址：192.168.100.104')
+1571997277--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997354--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997354--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997354','1','登录IP地址：192.168.100.104')
+1571997354--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997376--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997376--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997376','1','登录IP地址：192.168.100.104')
+1571997376--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997394--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997394--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997394','1','登录IP地址：192.168.100.104')
+1571997394--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997441--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997441--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997441','1','登录IP地址：192.168.100.104')
+1571997441--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997501--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997501--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997501','1','登录IP地址：192.168.100.104')
+1571997501--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997527--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997527--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997527','1','登录IP地址：192.168.100.104')
+1571997527--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997576--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997576--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997576','1','登录IP地址：192.168.100.104')
+1571997576--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997618--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997618--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997618','1','登录IP地址：192.168.100.104')
+1571997618--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997662--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997662--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997662','1','登录IP地址：192.168.100.104')
+1571997662--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997690--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997690--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997690','1','登录IP地址：192.168.100.104')
+1571997690--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997826--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997826--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997826','1','登录IP地址：192.168.100.104')
+1571997826--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997854--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997854--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997854','1','登录IP地址：192.168.100.104')
+1571997854--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997860--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997860--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997860','1','登录IP地址：192.168.100.104')
+1571997860--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997885--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997885--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997885','1','登录IP地址：192.168.100.104')
+1571997885--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997934--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997934--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997934','1','登录IP地址：192.168.100.104')
+1571997934--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571997956--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571997956--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571997956','1','登录IP地址：192.168.100.104')
+1571997956--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998126--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998126--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998126','1','登录IP地址：192.168.100.104')
+1571998126--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998235--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998235--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998235','1','登录IP地址：192.168.100.104')
+1571998235--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998316--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998316--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998316','1','登录IP地址：192.168.100.104')
+1571998316--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998323--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998323--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998323','1','登录IP地址：192.168.100.104')
+1571998418--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998418--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998418','1','登录IP地址：192.168.100.104')
+1571998418--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998446--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998446--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998446','1','登录IP地址：192.168.100.104')
+1571998446--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998629--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998629--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998629','1','登录IP地址：192.168.100.104')
+1571998629--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998686--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998686--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998686','1','登录IP地址：192.168.100.104')
+1571998686--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998718--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998718--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998718','1','登录IP地址：192.168.100.104')
+1571998718--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998812--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998812--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998812','1','登录IP地址：192.168.100.104')
+1571998812--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998847--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998847--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998847','1','登录IP地址：192.168.100.104')
+1571998847--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571998882--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571998882--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571998882','1','登录IP地址：192.168.100.104')
+1571998882--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999035--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999035--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999035','1','登录IP地址：192.168.100.104')
+1571999035--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999193--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999193--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999193','1','登录IP地址：192.168.100.104')
+1571999193--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999305--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999305--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999305','1','登录IP地址：192.168.100.104')
+1571999305--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999346--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999346--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999346','1','登录IP地址：192.168.100.104')
+1571999346--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999440--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999440--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999440','1','登录IP地址：192.168.100.104')
+1571999440--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999490--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999490--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999490','1','登录IP地址：192.168.100.104')
+1571999490--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999533--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999533--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999533','1','登录IP地址：192.168.100.104')
+1571999533--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999593--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999593--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999593','1','登录IP地址：192.168.100.104')
+1571999593--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999634--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999634--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999634','1','登录IP地址：192.168.100.104')
+1571999634--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999715--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999715--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999715','1','登录IP地址：192.168.100.104')
+1571999715--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999821--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999821--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999821','1','登录IP地址：192.168.100.104')
+1571999821--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999884--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999884--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999884','1','登录IP地址：192.168.100.104')
+1571999884--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999928--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999928--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999928','1','登录IP地址：192.168.100.104')
+1571999928--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999936--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999936--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999936','1','登录IP地址：192.168.100.104')
+1571999936--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999952--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999952--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999952','1','登录IP地址：192.168.100.104')
+1571999952--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999968--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999968--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999968','1','登录IP地址：192.168.100.104')
+1571999968--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1571999989--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1571999989--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1571999989','1','登录IP地址：192.168.100.104')
+1571999989--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000070--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000070--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000070','1','登录IP地址：192.168.100.104')
+1572000070--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000074--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000074--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000074','1','登录IP地址：192.168.100.104')
+1572000074--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000079--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000079--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000079','1','登录IP地址：192.168.100.104')
+1572000079--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000096--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000096--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000096','1','登录IP地址：192.168.100.104')
+1572000096--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000154--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000154--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000154','1','登录IP地址：192.168.100.104')
+1572000154--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000204--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000204--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000204','1','登录IP地址：192.168.100.104')
+1572000204--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000244--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000244--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000244','1','登录IP地址：192.168.100.104')
+1572000244--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000261--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000261--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000261','1','登录IP地址：192.168.100.104')
+1572000261--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000276--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000276--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000276','1','登录IP地址：192.168.100.104')
+1572000276--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000348--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000348--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000348','1','登录IP地址：192.168.100.104')
+1572000348--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000399--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000399--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000399','1','登录IP地址：192.168.100.104')
+1572000400--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000508--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000508--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000508','1','登录IP地址：192.168.100.104')
+1572000509--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000619--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000619--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000619','1','登录IP地址：192.168.100.104')
+1572000619--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000634--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000634--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000634','1','登录IP地址：192.168.100.104')
+1572000692--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000692--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000692','1','登录IP地址：192.168.100.104')
+1572000692--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000773--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000773--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000773','1','登录IP地址：192.168.100.104')
+1572000773--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000781--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000781--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000781','1','登录IP地址：192.168.100.104')
+1572000781--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000838--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000838--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000838','1','登录IP地址：192.168.100.104')
+1572000838--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000869--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000869--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000869','1','登录IP地址：192.168.100.104')
+1572000869--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000912--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000912--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000912','1','登录IP地址：192.168.100.104')
+1572000912--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000919--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000919--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000919','1','登录IP地址：192.168.100.104')
+1572000919--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000926--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000926--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000926','1','登录IP地址：192.168.100.104')
+1572000926--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000934--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000934--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000934','1','登录IP地址：192.168.100.104')
+1572000934--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000948--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000948--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000948','1','登录IP地址：192.168.100.104')
+1572000948--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572000955--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572000955--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572000955','1','登录IP地址：192.168.100.104')
+1572000955--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001061--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001061--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001061','1','登录IP地址：192.168.100.104')
+1572001061--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001171--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001171--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001171','1','登录IP地址：192.168.100.104')
+1572001171--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001244--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001244--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001244','1','登录IP地址：192.168.100.104')
+1572001244--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001317--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001317--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001316','1','登录IP地址：192.168.100.104')
+1572001317--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001459--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001459--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001459','1','登录IP地址：192.168.100.104')
+1572001459--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001496--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001496--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001496','1','登录IP地址：192.168.100.104')
+1572001496--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001627--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001627--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001627','1','登录IP地址：192.168.100.104')
+1572001627--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001667--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001667--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001667','1','登录IP地址：192.168.100.104')
+1572001667--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001822--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001822--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001822','1','登录IP地址：192.168.100.104')
+1572001822--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001856--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001856--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001856','1','登录IP地址：192.168.100.104')
+1572001856--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572001989--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572001989--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572001989','1','登录IP地址：192.168.100.104')
+1572001989--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002137--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002137--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002137','1','登录IP地址：192.168.100.104')
+1572002137--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002179--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002179--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002179','1','登录IP地址：192.168.100.104')
+1572002179--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002223--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002223--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002223','1','登录IP地址：192.168.100.104')
+1572002223--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002248--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002248--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002248','1','登录IP地址：192.168.100.104')
+1572002248--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002419--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002419--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002419','1','登录IP地址：192.168.100.104')
+1572002419--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002564--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002564--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002564','1','登录IP地址：192.168.100.104')
+1572002564--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002593--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002593--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002593','1','登录IP地址：192.168.100.104')
+1572002593--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572002799--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572002799--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572002799','1','登录IP地址：192.168.100.104')
+1572002799--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003098--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003098--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003098','1','登录IP地址：192.168.100.104')
+1572003098--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003141--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003141--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003141','1','登录IP地址：192.168.100.104')
+1572003141--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003183--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003183--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003183','1','登录IP地址：192.168.100.104')
+1572003183--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003224--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003224--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003224','1','登录IP地址：192.168.100.104')
+1572003224--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003276--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003276--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003276','1','登录IP地址：192.168.100.104')
+1572003276--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003664--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003664--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003664','1','登录IP地址：192.168.100.104')
+1572003664--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003692--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003692--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003692','1','登录IP地址：192.168.100.104')
+1572003692--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'
+1572003719--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572003719--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572003719','1','登录IP地址：192.168.100.104')
+1572003719--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_'

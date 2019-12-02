@@ -1,0 +1,61 @@
+#flow{width:1200px;margin:auto;position:relative;}
+.flowLeft{width:400px;position:absolute;top:50px;left:0px;}
+.flowRight{width:700px;position:absolute;top:20px;left:500px;}
+#prdBarcode{font-size:18px;}
+.proDetails{}
+.proDetails li{line-height:35px;display:inline-block;}
+.proTitle{width:137px;text-align:right;float:left;font-size:14px;}
+.proCont{width:250px;float:left;text-indent:1em;}
+.proImg{width:150px;}
+.proImg img{width:100%;}
+
+#alertTable thead .layui-icon:nth-of-type(1){display:none;}
+.impTOP{
+	height: 50px;
+}
+#fileTpl{
+	margin-top: 10px;
+	margin-left: 50px;
+	border: 0px solid;
+	height: 30px;
+	width: 100px;
+	background: #1E9FFF;
+	color: #FFFFFF;
+}
+.impBottom{
+	height: 50px;
+	position: relative;
+}
+.impTitle{
+	width: 100px;
+	margin-left: 50px;
+	float: left;
+	line-height: 30px;
+}
+.impName{
+	width: 300px;
+	float: left;
+}
+#fileName{
+	width: 95%;
+	height: 30px;
+}
+.impFile{
+	width:100px;
+	float: left;
+}
+#fileExcel{
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.fileBtn{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #1E9FFF;
+	color: #FFFFFF;
+	display: inline-block;
+	cursor: pointer;
+}

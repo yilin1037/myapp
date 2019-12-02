@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page
+        xmlns="http://cloudprint.cainiao.com/print"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cloudprint.cainiao.com/print http://cloudprint-docs-resource.oss-cn-shanghai.aliyuncs.com/lpml_schema.xsd"
+        xmlns:editor="http://cloudprint.cainiao.com/schema/editor"
+        width="100" height="113"  splitable="false">
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="2" 
+                    endX="2"
+                    endY="56"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="2" 
+                    endX="98"
+                    endY="2"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="98" 
+                    startY="2" 
+                    endX="98"
+                    endY="56"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="56" 
+                    endX="98"
+                    endY="56"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="61" 
+                    endX="98"
+                    endY="61"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="61" 
+                    endX="2"
+                    endY="104"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="98" 
+                    startY="61" 
+                    endX="98"
+                    endY="104"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="22" 
+                    endX="98"
+                    endY="22"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="34" 
+                    endX="98"
+                    endY="34"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="40" 
+                    endX="98"
+                    endY="40"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="50" 
+                    startY="22" 
+                    endX="50"
+                    endY="40"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="9" 
+                    startY="34" 
+                    endX="9"
+                    endY="56"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="60" 
+                    startY="34" 
+                    endX="60"
+                    endY="56"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="60" 
+                    startY="48" 
+                    endX="98"
+                    endY="48"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="70" 
+                    startY="40" 
+                    endX="70"
+                    endY="56"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="67" 
+                    endX="98"
+                    endY="67"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="84" 
+                    endX="98"
+                    endY="84"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="91" 
+                    endX="98"
+                    endY="91"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="98" 
+                    endX="98"
+                    endY="98"
+                    >
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="60" 
+                    startY="67" 
+                    endX="60"
+                    endY="104"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="26" 
+                    startY="84" 
+                    endX="26"
+                    endY="91"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="82" 
+                    startY="84" 
+                    endX="82"
+                    endY="91"
+                    editor:_deg_="90">
+                </line>
+                
+		<line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="2" 
+                    startY="104" 
+                    endX="98"
+                    endY="104"
+                    >
+                </line>
+                
+		<layout 
+            editor:_for_="152370046854351"
+            
+            id="1523700468554741" width="83.66" height="11.3" left="6.03" top="4.18"  style="zIndex:24;"><barcode type="code128" style="opacity:1;hideText:true;rotation:0" value="<%=_data.waybillCode%>-1-1-" ratioMode="keepRatio"><![CDATA[]]></barcode>
+		</layout>
+		<layout 
+            editor:_for_="1523700504669742"
+            
+            id="1523700504669827" width="60" height="5" left="10.53" top="16.09"  style="zIndex:25;">
+            <text  
+                style="fontFamily:SimHei;fontWeight:bold;fontUnderline:true;fontSize:10;align:center;">
+                <![CDATA[<%=_data.waybillCode%>-1-1-]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="152370053908565"
+            
+            id="152370053908633" width="19.71" height="5" left="76.15" top="16.61"  style="zIndex:26;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[0]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700650180552"
+            
+            id="1523700650181331" width="12.04" height="4.47" left="2.59" top="22.43"  style="zIndex:27;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[始发地:]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700658668577"
+            
+            id="1523700658668760" width="45.63" height="6.06" left="3.39" top="27.2"  style="zIndex:28;">
+            <text  
+                style="fontFamily:SimHei;fontWeight:bold;fontSize:14;align:center;">
+                <![CDATA[<%=_data.routingInfo.consolidation.code%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700756765698"
+            
+            id="1523700756765801" width="13.62" height="5" left="51.54" top="22.7"  style="zIndex:29;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[目的地:]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="152370075981330"
+            
+            id="1523700759813702" width="45.37" height="6.32" left="51.54" top="27.19"  style="zIndex:30;">
+            <text  
+                style="fontFamily:SimHei;fontWeight:bold;fontSize:14;align:center;">
+                <![CDATA[<%=_data.routingInfo.sortation.code%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700819739398"
+            
+            id="1523700819740225" width="38.76" height="5" left="10.26" top="34.87"  style="zIndex:31;">
+            <text  
+                style="fontFamily:SimHei;fontWeight:bold;fontSize:11;">
+                <![CDATA[<%=_data.routingInfo.origin.code%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="152370087228578"
+            
+            id="1523700872285371" width="4.15" height="15" left="3.38" top="40.49"  style="zIndex:32;">
+            <text  
+                style="fontFamily:SimHei;fontWeight:bold;orientation:vertical;fontSize:9;align:center;">
+                <![CDATA[客户信息]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700919621901"
+            
+            id="1523700919622689" width="48.79" height="7.37" left="10.54" top="41.16"  style="zIndex:33;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[<%=_data.recipient.address.province%><%=_data.recipient.address.city %><%=_data.recipient.address.district%><%=_data.recipient.address.town%><%=_data.recipient.address.detail%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700935677638"
+            
+            id="1523700935677696" width="12.04" height="5" left="10.53" top="48.89"  style="zIndex:34;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[<%=_data.recipient.name%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700958476230"
+            
+            id="152370095847737" width="33.47" height="5" left="24.55" top="48.89"  style="zIndex:35;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[<%=_data.recipient.phone%>   <%=_data.recipient.mobile%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523700981780642"
+            
+            id="1523700981781245" width="7.8" height="6.85" left="62.12" top="40.43"  style="zIndex:36;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[客户签字]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701030878575"
+            
+            id="1523701030879919" width="8.07" height="7.38" left="61.59" top="48.37"  style="zIndex:37;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[应收金额]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="152370106319728"
+            id="1523701063198599" width="24.74" height="5" left="71.12" top="49.95"  style="zIndex:38;">
+			<%
+                var codServiceValue = 0;
+            	if(_data.shippingOption.title == '代收货款'){
+            		var services = ((_data || {}).shippingOption ||{}||{}).services||"";
+            		if(services){
+                		if (services["SVC-COD"]) {
+                		  codServiceValue = services["SVC-COD"]["value"];
+                		}
+            		}
+					%>
+					<text  
+						style="fontFamily:SimHei;fontSize:10;">
+						<![CDATA[￥<%=codServiceValue%>元]]>
+					</text>
+					<%
+				}else{
+					%>
+					<text  
+						style="fontFamily:SimHei;fontSize:10;">
+						<![CDATA[在线支付]]>
+					</text>
+					<%
+				}
+			%>
+            
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701095469639"
+            
+            id="1523701095469710" width="70.51" height="5" left="15.82" top="61.59"  style="zIndex:39;">
+            <text  
+                style="fontFamily:SimHei;fontWeight:bold;fontSize:12;align:center;">
+                <![CDATA[运单号<%=_data.waybillCode%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701132917974"
+            
+            id="1523701132918581" width="11.62" height="5" left="3.65" top="67.68"  style="zIndex:40;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[客户信息]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701147532779"
+            
+            id="1523701147533429" width="11.83" height="5" left="17.47" top="67.68"  style="zIndex:41;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_data.recipient.name%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701162084288"
+            
+            id="1523701162084300" width="27.91" height="5" left="28.9" top="67.94"  style="zIndex:42;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+				<![CDATA[<%=_data.recipient.phone%>   <%=_data.recipient.mobile%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701183580801"
+            
+            id="1523701183582853" width="51.38" height="7.33" left="5.24" top="72.44"  style="zIndex:43;"><barcode type="code128" style="opacity:1;hideText:true;rotation:0" value="<%=_data.waybillCode%>" ratioMode="keepRatio"><![CDATA[]]></barcode>
+		</layout>
+		<layout 
+            editor:_for_="152370119633264"
+            
+            id="1523701196333933" width="49.87" height="3.68" left="6.3" top="79.85"  style="zIndex:44;">
+            <text  
+                style="fontFamily:SimHei;fontWeight:bold;align:center;">
+                <![CDATA[<%=_data.waybillCode%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701245669580"
+            
+            id="1523701245669449" width="35.05" height="14.26" left="61.59" top="68.47"  style="zIndex:45;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[<%=_data.rem%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="152370129366865"
+            
+            id="1523701293668105" width="25" height="4.47" left="57.62" top="56.57"  style="zIndex:46;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_context.formatStartTime("yyyy-MM-dd")%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701309587107"
+            
+            id="1523701309587463" width="25" height="4.47" left="55.45" top="104.41"  style="zIndex:47;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_context.formatStartTime("yyyy-MM-dd")%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701332077337"
+            
+            id="1523701332078203" width="56.75" height="3.68" left="2.86" top="91.1"  style="zIndex:48;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_data.sender.address.province%><%=_data.sender.address.city %><%=_data.sender.address.district%><%=_data.sender.address.town%><%=_data.sender.address.detail%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701405139410"
+            
+            id="1523701405139659" width="12.04" height="2.89" left="4.12" top="95.5"  style="zIndex:49;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_data.sender.name%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701405177978"
+            
+            id="1523701405177418" width="33.47" height="3.68" left="25.03" top="95.5"  style="zIndex:50;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_data.sender.phone%>   <%=_data.sender.mobile%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701923614876"
+            
+            id="1523701923615569" width="18.65" height="3.41" left="60.8" top="91.23"  style="zIndex:51;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[商家ID:]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523701932069371"
+            
+            id="1523701932069501" width="18.66" height="3.41" left="60.74" top="94.35"  style="zIndex:52;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[商家订单号:]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523702000462946"
+            
+            id="1523702000462579" width="17.86" height="3.41" left="79.53" top="91.18"  style="zIndex:53;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_data.routingInfo.origin.customerCode%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523702008164362"
+            
+            id="1523702008163410" width="17.86" height="3.41" left="79.74" top="94.57"  style="zIndex:54;">
+            <text  
+                style="fontFamily:SimHei;fontSize:6;">
+                <![CDATA[<%=_data.routingInfo.tid%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="152370204089238"
+            
+            id="1523702040893458" width="14.15" height="3.68" left="60.27" top="98.11"  style="zIndex:55;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[始发城市]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523702064900598"
+            
+            id="1523702064900129" width="21.3" height="5" left="75.35" top="98.64"  style="zIndex:56;">
+            <text  
+                style="fontFamily:SimHei;fontSize:12;">
+                <![CDATA[<%=_data.sender.address.city%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523702187348892"
+            
+            id="1523702187348143" width="56.22" height="5" left="3.12" top="98.64"  style="zIndex:57;">
+            <text  
+                style="fontFamily:SimHei;fontSize:5;">
+                <![CDATA[请您确认包裹完好,保留此包裹联时,代表您已经正常签收并确认外包裹完好。http://www.jd-ex.com 客服电话:400-603-3600]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="1523702455029566"
+            
+            id="1523702455030826" width="33.73" height="5" left="14.5" top="22.7"  style="zIndex:58;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[<%=_data.routingInfo.consolidation.name%>]]>
+            </text>
+        
+		</layout>
+		<layout 
+            editor:_for_="152370246670011"
+            
+            id="152370246670066" width="34" height="5" left="62.86" top="22.65"  style="zIndex:59;">
+            <text  
+                style="fontFamily:SimHei;">
+                <![CDATA[<%=_data.routingInfo.sortation.name%>]]>
+            </text>
+        
+		</layout>
+</page>

@@ -1,0 +1,118 @@
+body{
+    background-color: #fff;
+}
+.layui-form-label{
+    box-sizing: initial;
+}
+
+select {
+    transition:all 0.3s;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #000;
+
+  /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+
+select:hover{
+	border-color:grey!important;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.sty{
+	width:100%;
+	height:26px;
+	font-size:12px;
+	padding-top:4px;
+	padding-left:3px;
+	resize: none;
+	z-index:10000;
+}
+
+.inp{
+	width:100%;
+	height:26px;
+	padding-left:3px;
+	border:1px solid #c2c2c2!important;
+}
+
+input::-webkit-outer-spin-button,  
+input::-webkit-inner-spin-button {  
+    -webkit-appearance: none;  
+}  
+  
+input[type="number"] {  
+    -moz-appearance: textfield;  
+} 
+
+input{
+	transition:all 0.3s;
+	font-size:12px;
+}
+
+input:hover{
+	border-color:grey!important;
+}
+
+textarea{
+	border:1px solid #c2c2c2;
+	transition:all 0.3s;
+}
+
+textarea:hover{
+	border-color:grey!important;
+}
+.int{
+	height:26px;
+	border:1px solid #dddddd;
+	width:430px;
+	padding-left:3px;
+}
+.saveBtn{
+	width:140px;
+	height:30px;
+	outline:none;
+	border:1px solid #1E9FFF;
+	color:white;
+	background-color:#1E9FFF;
+	font-size:14px;
+	border-radius:3px;
+}
+.searchBtn{
+	width:120px;
+	height:30px;
+	outline:none;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	color:#1E9FFF;
+	font-size:14px;
+	border-radius:3px;
+}
+
+.mini-buttonedit-border{
+	height: 32px;
+	border-radius: 4px;
+}
+
+.mini-buttonedit{
+	height: 34px;
+	border-radius: 4px;
+}
+
+.mini-buttonedit-button{
+	height: 28px;
+	font-size: 14px;
+}
+
+.mini-htmlfile .mini-buttonedit-button{
+	font-size: 14px;
+	background: #1E9FFF;
+	border-color: #1E9FFF;
+	line-height: 30px;
+}

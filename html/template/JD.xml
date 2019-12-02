@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page
+        xmlns="http://cloudprint.cainiao.com/print"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cloudprint.cainiao.com/print http://cloudprint-docs-resource.oss-cn-shanghai.aliyuncs.com/lpml_schema.xsd"
+        xmlns:editor="http://cloudprint.cainiao.com/schema/editor"
+        width="100" height="114"  >
+		<layout 
+            width="100" height="114"  style="overflow:visible;zIndex:1;">
+            <layout 
+                width="80.68" height="14.02" 
+                left="11.64" top="4.23"  style="overflow:visible;zIndex:39;">
+                <barcode type="code128" style="opacity:1;hideText:false;rotation:0" 
+                value="<%=_data.waybillCode%>" ratioMode="keepRatio" />
+    		</layout>
+            <layout 
+                width="17.98" height="5.02" left="6.34" top="19.84"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[收货信息:]]>
+                </text>
+    		</layout>
+            <layout 
+                width="25.31" height="6.34" left="5.29" top="25.13"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[买家姓名:<%=_data.recipient.name%>]]>
+                </text>
+    		</layout>
+            <layout 
+                width="57.93" height="6.34" left="37.56" top="25.13"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[联系电话:<%=_data.recipient.phone%>   <%=_data.recipient.mobile%>]]>
+                </text>
+    		</layout>
+            <layout 
+                width="63.49" height="10.58" left="5.29" top="30.95"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[收货地址:<%=_data.recipient.address.province%><%=_data.recipient.address.city %><%=_data.recipient.address.district%><%=_data.recipient.address.town%><%=_data.recipient.address.detail%>]]>
+                </text>
+    		</layout>
+            <%
+                var codServiceValue = 0;
+            	if(_data.shippingOption.title == '代收货款'){
+            		var services = ((_data || {}).shippingOption ||{}||{}).services||"";
+            		if(services){
+                		if (services["SVC-COD"]) {
+                		  codServiceValue = services["SVC-COD"]["value"];
+                		}
+            		}
+                    %>
+                    <layout 
+                        width="23.28" height="5.02" left="72.75" top="30.68"  style="overflow:visible;zIndex:4;">
+                        <text  
+                            style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                            <![CDATA[代收金额:]]>
+                        </text>
+            		</layout>
+                    <layout 
+                        width="26.19" height="5.29" left="69.04" top="35.71"  style="overflow:visible;zIndex:4;">
+                        
+                        <text  
+                            style="fontFamily:黑体;fontWeight:bold;fontSize:auto;align:right;">
+                            <![CDATA[￥<%=codServiceValue%>元]]>
+                        </text>
+            		</layout>
+                    <%
+                }else{
+                    %>
+                    <layout 
+                        width="23.28" height="5.02" left="72.75" top="30.68"  style="overflow:visible;zIndex:4;">
+                        <text  
+                            style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                            <![CDATA[在线支付]]>
+                        </text>
+            		</layout>
+                    <%
+                }
+            %>
+            <layout 
+                width="17.98" height="5.02" left="6.34" top="41.26"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[寄方信息:]]>
+                </text>
+    		</layout>
+            <layout 
+                width="25.31" height="6.34" left="5.29" top="45.55"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[寄方姓名:<%=_data.sender.name%>]]>
+                </text>
+    		</layout>
+            <layout 
+                width="57.93" height="6.34" left="37.56" top="45.55"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[联系电话:<%=_data.sender.phone%>   <%=_data.sender.mobile%>]]>
+                </text>
+    		</layout>
+            <layout 
+                width="92.59" height="6.34" left="5.29" top="52.37"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[寄件地址:<%=_data.sender.address.province%><%=_data.sender.address.city %><%=_data.sender.address.district%><%=_data.sender.address.town%><%=_data.sender.address.detail%>]]>
+                </text>
+    		</layout>
+            <layout 
+                width="18.51" height="5.02" left="58.78" top="57.14"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[客户签名:]]>
+                </text>
+    		</layout>
+            <layout 
+                width="38.62" height="6.34" left="18.25" top="62.16"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[快递单号:<%=_data.waybillCode%>]]>
+                </text>
+    		</layout>
+            <layout 
+                width="38.35" height="6.34" left="57.93" top="62.16"  style="overflow:visible;zIndex:4;">
+                <text  
+                    style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                    <![CDATA[打印时间:<%=_context.formatStartTime("yyyy-MM-dd")%>]]>
+                </text>
+    		</layout>
+            <layout 
+                ref="CUSTOM_AREA"
+                width="100" height="40" left="1" top="74"  style="overflow:hidden;">
+    		</layout>
+		</layout>
+</page>

@@ -1,0 +1,447 @@
+[v-cloak] {
+	display: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	background: #FFFFFF;
+}
+.vueHtml{
+	width: 100%;
+	height: 100%;
+}
+.outerFrame{
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+.typeSelection{
+	flex-direction: row;
+	width: 170px;
+	max-width: 170px;
+	min-width: 170px;
+	height: 100%;
+	overflow-Y: auto;
+}
+.operationPage{
+	flex-direction: row;
+	width: 100%;
+}
+.smsIcon{
+	width: 100px;
+	height: 100px;
+	margin: 25px;
+	border: 1px solid #DDDDDD;
+	text-align: center;
+}
+.smsIconImg{
+	margin-top: 10px;
+	width: 60%;
+	height: 60%;
+}
+.smsIconNote{
+	color: #333333; 
+}
+.smsTX{
+	display: inline-block;
+	width: 50%;
+}
+.smsTS{
+	font-size: 14px;
+	color: #FF0000;
+}
+.smsHaveNum{
+	display: inline-block;
+	width: 50%;
+	float: right;
+	text-align: right;
+	font-size: 14px;
+}
+.danger{
+	color: #FF0000;
+}
+.chooseAnno{
+	height: 40px;
+	line-height: 40px;
+	text-indent: 2em;
+	background: #DDDDDD;
+	color: #666666;
+	font-size: 16px;
+}
+.tplOperation{
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+.tplListAdd{
+	width: 100%;
+}
+.tplShow{
+	width: 422px;
+	max-width: 422px;
+	min-width: 422px;
+}
+.imgBack{
+	min-height: 450px;
+	width: 400px;
+	position: absolute;
+	bottom: 60px;
+	right: 20px;
+}
+.imgSizeLocation{
+	position: absolute;
+	bottom: 60px;
+	right: 20px;
+}
+.smsContent{
+	width: 250px;
+    position: absolute;
+    top: 130px;
+    left: 70px;
+    background: #9EE951;
+    border-radius: 8px;
+	padding: 2px 10px;
+    font-size: 16px;
+}
+.smsTplSetup{
+	width: 100%;
+}
+.smsTplSetupList{
+	width: 100%;
+	height: 50px;
+}
+.labelTitle{
+	width: 80px;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	margin: 10px 5px 10px 20px;
+	font-size: 16px;
+}
+.labelCont{
+	width: 120px;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	margin: 10px 5px;
+	background: #DDDDDD;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 17px;
+	cursor: pointer;
+}
+.smsTextarea{
+	text-indent: 1em;
+	position:relative;
+}
+.rulesList{
+	width: 300px;
+	border: 1px solid #B0B0B0;
+	background: #FDF1A4;
+	padding: 2px 5px;
+	position: absolute;
+	bottom: 25px;
+	left: 110px;
+	display: none;
+}
+.smsTextarea:hover .rulesList{
+	display: block;
+}
+
+.layui-form-switch {
+    height: 23px;
+    line-height: 23px;
+    width: 55px;
+}
+.massSendPage{
+	display: flex;
+	width: 1200px;
+	height: 500px !important;
+	padding-top: 30px;
+	margin: auto;
+}
+.massEditor{
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+.massView{
+	flex-direction: row;
+	width: 450px;
+	max-width: 450px;
+	min-width: 450px;
+	height: 100%;
+	position: relative;
+}
+.textMessage{
+	height: 60px;
+	line-height: 60px;
+	text-indent: 60px; 
+}
+.accountingText{
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+.accountingRules{
+	width: 100px;
+	display: inline-block;
+	float: right;
+	text-align: center;
+	border: 1px solid #DDDDDD;
+	position: relative;
+	background: #F8F8F8;
+	border-radius: 4px;
+}
+.accountingShow{
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	border: 1px solid #b0b0b0;
+	border-radius: 4px;
+	background: #EEEEEE;
+	display: none;
+	z-index: 9;
+}
+.accountingRules:hover .accountingShow{
+	display: block;
+}
+.callChoose{
+	width: 100%;
+	height: 65px;
+	display: flex;
+	padding-top: 15px;
+}
+.callInput{
+	flex-direction: row;
+	width: 100%; 
+	position: relative;
+}
+#callList{
+	width: 95%;
+	height: 29px;
+}
+.callNum{
+	width: 26px;
+	height: 26px;
+	background: #FFFFFF;
+	position: absolute;
+	right: 5.1%;
+	top: 1px;
+	text-align: center;
+	line-height: 26px;
+}
+.numStyle{
+	width: 20px;
+	height: 20px;
+	display:inline-block;
+	border-radius: 50%;
+	background: #D5514F;
+	color: #FFFFFF;
+	margin: 3px;
+	line-height: 20px;
+}
+.callButton{
+	flex-direction: row;
+	width: 100px;
+	max-width: 100px;
+	min-width: 100px;
+}
+.callBtn{
+	border: 0px solid;
+	background: #4E96E9;
+	color: #FFFFFF;
+	padding: 2px 8px;
+	border-radius: 3px;
+	height: 29px;
+}
+.importantNote{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+}
+.addShortList{
+	width: 100%;
+}
+.rightNumber{
+	width: 49%;
+	height: 98%;
+	padding: 1% 1% 0 1%;
+	float: left;
+}
+.rightTitle{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.rightNumberText{
+	height: 230px;
+	width: 100%;
+}
+.rightTextarea{
+	width: 100%;
+	height: 230px;
+	resize:none;
+}
+.wrongNumber{
+	width: 49%;
+	height: 98%;
+	padding: 1% 1% 0;
+	float: left;
+}
+.wrongTitle{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.wrongNumberText{
+	height: 230px;
+	width: 100%;
+}
+.wrongTextarea{
+	width: 100%;
+	height: 230px;
+	resize:none;
+}
+.smscontent{
+	resize:none;
+}
+.shopChoose{
+	padding-top: 15px;
+	height: 70px;
+}
+.shopSignature{
+	float: right;
+}
+.agreeTerms{
+	position: relative;
+	color: #25B4FB;
+}
+.termsList{
+	color: #333333;
+	position: absolute;
+	top: 20px;
+	left: -2px;
+	width: 250px;
+	text-align: left;
+	padding: 3px 5px;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	display: none;
+	z-index: 9;
+	background: #FFFFFF;
+}
+.agreeTerms:hover .termsList{
+	display: block;
+}
+.collection{
+	width: 90%;
+	height: 80px;
+	margin: 15px auto;
+	border: 1px solid #DDDDDD;
+}
+.smscoll{
+	height: 40px;
+	border-bottom: 1px solid #DDDDDD;
+}
+.tplLust{
+	
+}
+.collStyle1{
+	width: 33%;
+	height: 40px;
+	border-right: 1px solid #DDDDDD;
+	float: left;
+}
+.collStyle2{
+	width: 66%;
+	height: 40px;
+	float: left;
+}
+.collStyle3{
+	width: 33%;
+	height: 40px;
+	float: left;
+}
+.tplsmsStyle{
+	line-height: 40px;
+	text-indent: 1em;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

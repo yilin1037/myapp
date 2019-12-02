@@ -1,0 +1,47 @@
+body{
+    background-color: #fff;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active,
+.btn-info.active {
+  color: #fff;
+  background-color: #4BB2FF;
+  border-color: #9AD4FF;
+}
+.input-group-btn>.btn {
+    position: relative;
+}
+.btn-info {
+    background-color: #34A8FF;
+    border-color: #9AD4FF;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 0px;
+    border-left: 1px solid #9AD4FF;
+    border-top: 1px solid #34A8FF;
+    border-bottom: 1px solid #34A8FF;
+    border-right: 1px solid #34A8FF;
+}
+
+.layui-laypage-limits select{
+	height:26px!important;
+}

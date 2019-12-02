@@ -1,0 +1,88 @@
+html,body{
+	height:100%;
+	padding:0;
+	margin:0;
+}
+
+.wrap{
+	width:420px;
+	height:100%;
+	margin:0 auto;
+}
+
+.icon{
+	width:18px;
+	height:18px;
+	background-color:red;
+	display:inline-block;
+	text-align:center;
+	line-height:18px;
+	color:white;
+	border-radius:2px;
+}
+
+a{
+	cursor:pointer;
+}
+
+.hideDiv1{
+	width:100%;
+	position:absolute;
+	top:34px;
+	border:1px solid gray;
+	border-top:none;
+	max-height:300px;
+	z-index:1000;
+	left:0;
+	background-color:white;
+	overflow:auto;
+	display:none;
+}
+
+ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+ul li{
+	height:25px;
+}
+
+ul li a{
+	color:grey;
+	display:block;
+	line-height:25px;
+	padding-left:5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+ul li a:hover{
+	text-decoration:none;
+	background-color:#dddddd;
+}
+
+span{
+	display:inline-block;
+}
+
+.choose_way{
+	width:74px;
+	height:64px;
+	border-radius:3px;
+	border:1px solid #dddddd;
+	text-align:center;
+	margin-left:10px;
+	float:left;
+	cursor:pointer;
+}
+
+.img_way{
+	width:25px;
+	height:25px;
+}
+
+ 
+

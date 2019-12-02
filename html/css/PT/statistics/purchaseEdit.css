@@ -1,0 +1,122 @@
+.layui-table-view select[lay-ignore] {height:24px;}
+.layui-form-item .layui-inline {margin-bottom: 0px;margin-right: 0px;}
+.layui-form-label {padding: 9px 0px;}
+.layui-input-block {margin-left: 80px;}
+.layui-table, .layui-table-view {margin: 10px 0 0;}
+#alertTable thead .layui-icon:nth-of-type(1){display:none;}
+#whSetChoose thead .layui-icon:nth-of-type(1){display:none;}
+#table-print select {
+	transition:all 0.3s;
+	/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+	border: solid 1px #000;
+
+	/*很关键：将默认的select选择框样式清除*/
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+
+	/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+	padding-right: 14px;
+}
+
+#topSearch .layui-input, .layui-select, .layui-textarea {height: 32px;}
+#topSearch .layui-form-select dl dd, .layui-form-select dl dt {line-height: 26px;}
+#topSearch .layui-form-item {margin-bottom: 0px;}
+#topSearch .layui-table{margin: 0;}
+#topSearch .layui-table-view {margin: 0;}
+#topSearch .layui-input-block {width: 150px;}
+#topSearch .layui-btn-sm {margin-top: -10px;}
+.layui-table, .layui-table-view {margin: 0;}
+
+#tableView .layui-table tr{height:100px;}
+#tableView .layui-table-view .layui-table td{height:100px;}
+#tableView .layui-table-view .layui-table td .layui-table-cell{height:100px;}
+#tableView .layui-table tr:nth-of-type(1){height:28px;}
+#tableView .layui-table-view .layui-table td:nth-of-type(1){height:28px;}
+#tableView .layui-table-view .layui-table td .layui-table-cell:nth-of-type(1){height:100px;}
+
+html,body
+{
+	width:100%;
+	height:100%;
+	border:0;
+	margin:0;
+	padding:0;
+	overflow:visible;
+}
+
+body .mini-pager-num {
+	height: 22px;
+}
+
+.mini-grid-headerCell-inner {
+	font-size: 11pt;
+	line-height: 26px;
+}
+
+.mini-grid-table {
+	height: 34px;
+}
+
+.mini-textbox {
+	height: 30px;
+}
+
+.mini-buttonedit{
+	height: 30px;
+}
+
+.mini-textbox-input {
+	height: 30px;
+	font-size: 11pt;
+}
+
+.mini-buttonedit-input {
+	height: 30px;
+	font-size: 11pt;
+}
+
+.mini-textbox-focus {
+	height: 30px;
+}
+
+.mini-buttonedit-focus{
+	height: 30px;
+}
+
+.mini-textbox-border{
+	height: 28px;
+}
+
+.mini-buttonedit-border{
+	height: 28px;
+}
+
+.mini-grid-cell-inner {
+	font-size: 11pt;
+	line-height:28px;
+}
+
+.wrap{
+	width:100%;
+	height:100%;
+}
+
+#flow{
+	position:relative;
+}
+
+.btn{
+	height:26px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+.btn:hover{
+	background-color:#1E9FFF!important;
+	color:white!important;
+}

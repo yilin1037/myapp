@@ -1,0 +1,138 @@
+1573208437--13123456789-select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+Table 'userdb1.u13123456789_usertable' doesn't exist
+1573208437--13123456789-select sum(balance) as balance from u13123456789_tid_pay
+Table 'userdb1.u13123456789_tid_pay' doesn't exist
+1573208438--13123456789-select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+Table 'userdb1.u13123456789_tid_pay' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208439--13123456789-select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+Table 'userdb1.u13123456789_print_tpl' doesn't exist
+1573208440--13123456789-select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+Table 'userdb1.u13123456789_usertable' doesn't exist
+1573208462--13123456789-select shopid,appkey,secretkey,sessionkey from u13123456789_shop_config where shoptype = 'JD'
+Table 'userdb1.u13123456789_shop_config' doesn't exist
+1573208468--13123456789-select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+Table 'userdb1.u13123456789_shop_config' doesn't exist
+1573208587---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208587---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208587---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208587---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208589---select `type`,permission from u13123456789_usertable where `userid` = '' 
+Table 'userdb1.u13123456789_usertable' doesn't exist
+1573208598---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208598---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208610---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208610---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208610---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208610---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208649---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208649---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208649---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208649---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208659---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208659---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208659---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208659---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208737---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208737---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208737---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208737---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208749---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208749---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208749---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208749---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208794---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208794---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208794---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208794---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208866---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208866---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208866---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573208866---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209088---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209088---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209088---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209088---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209188---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209188---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209188---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209188---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209306---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209306---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209306---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209306---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209320---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209320---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209320---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209320---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209439---select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209439---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209439---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+Table 'userdb1.u13123456789_base_config' doesn't exist
+1573209439---select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+Table 'userdb1.u13123456789_base_config' doesn't exist

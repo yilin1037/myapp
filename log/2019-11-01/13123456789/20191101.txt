@@ -1,0 +1,1030 @@
+1572569288--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569288--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569288','1','登录IP地址：127.0.0.1')
+1572569289--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569289--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569289','1','登录IP地址：127.0.0.1')
+1572569292--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569292--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569292','1','登录IP地址：127.0.0.1')
+1572569292--SELECT a.bat_no,a.system_id,a.create_time,a.status,c.cbat,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,count(1) as cbat,print_type,close_unique_code,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 and a.status = 0 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,5
+1572569295--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569295--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569295','1','登录IP地址：127.0.0.1')
+1572569302--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569302--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569302','1','登录IP地址：127.0.0.1')
+1572569305--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569305--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569305','1','登录IP地址：127.0.0.1')
+1572569305--select p.prd_id,p.title,p.art_no,p.booth_price,p.cost_price,p.price1,p.price2,p.price3,p.price4,p.price5,c.cus_name,s.sku_name1,s.sku_name2 from u13123456789_product as p 
+                left join  (select cus_name,cus_no from u13123456789_cust) as c on p.cus_no = c.cus_no  
+                left join (select prd_id,GROUP_CONCAT(sku_name1) as sku_name1,GROUP_CONCAT(sku_name2) as sku_name2 from u13123456789_product_sku group by prd_id) as s on p.prd_id = s.prd_id where 1=1 limit 10,10
+1572569305--select count(1) as count from u13123456789_product as p where 1=1
+1572569307--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569307--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569307','1','登录IP地址：127.0.0.1')
+1572569634--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569634--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569634','1','登录IP地址：127.0.0.1')
+1572569634--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569635--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569635--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569635','1','登录IP地址：127.0.0.1')
+1572569635--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569649--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569649--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569649','1','登录IP地址：127.0.0.1')
+1572569649--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569649--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569649--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569649','1','登录IP地址：127.0.0.1')
+1572569649--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569730--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569731--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569730','1','登录IP地址：127.0.0.1')
+1572569731--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569731--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569731--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569731','1','登录IP地址：127.0.0.1')
+1572569731--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569946--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569946--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569946','1','登录IP地址：127.0.0.1')
+1572569946--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569971--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569971--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569971','1','登录IP地址：127.0.0.1')
+1572569971--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569971--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569971--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569971','1','登录IP地址：127.0.0.1')
+1572569971--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572569987--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572569987--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572569987','1','登录IP地址：127.0.0.1')
+1572569987--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570071--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570071--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570071','1','登录IP地址：127.0.0.1')
+1572570071--select c.id,c.cus_no,c.cus_name,c.mobile,c.level,c.payment_type,c.payment_day,c.addtime,b.configValue from u13123456789_cust as c left join (select configKey,configValue from u13123456789_base_config) AS b on b.configKey = c.level where cus_type='1'order by id DESC limit 0,10
+1572570071--select count(1) as count from u13123456789_cust where cus_type='1'
+1572570073--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570073--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570073','1','登录IP地址：127.0.0.1')
+1572570073--select c.id,c.cus_no,c.cus_name,c.mobile,c.level,c.payment_type,c.payment_day,c.addtime,b.configValue from u13123456789_cust as c left join (select configKey,configValue from u13123456789_base_config) AS b on b.configKey = c.level where cus_type='1'order by id DESC limit 10,10
+1572570073--select count(1) as count from u13123456789_cust where cus_type='1'
+1572570075--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570075--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570075','1','登录IP地址：127.0.0.1')
+1572570075--select c.id,c.cus_no,c.cus_name,c.mobile,c.level,c.payment_type,c.payment_day,c.addtime,b.configValue from u13123456789_cust as c left join (select configKey,configValue from u13123456789_base_config) AS b on b.configKey = c.level where cus_type='1'order by id DESC limit 0,10
+1572570075--select count(1) as count from u13123456789_cust where cus_type='1'
+1572570079--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570079--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570079','1','登录IP地址：127.0.0.1')
+1572570079--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570082--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570082--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570082','1','登录IP地址：127.0.0.1')
+1572570082--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570082--select id,name from market order by id
+1572570089--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570089--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570089','1','登录IP地址：127.0.0.1')
+1572570089--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570089--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570089--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570089','1','登录IP地址：127.0.0.1')
+1572570089--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570094--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570094--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570094','1','登录IP地址：127.0.0.1')
+1572570094--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570105--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570105--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570105','1','登录IP地址：127.0.0.1')
+1572570105--select p.prd_id,p.title,p.art_no,p.booth_price,p.cost_price,p.price1,p.price2,p.price3,p.price4,p.price5,c.cus_name,s.sku_name1,s.sku_name2 from u13123456789_product as p 
+                left join  (select cus_name,cus_no from u13123456789_cust) as c on p.cus_no = c.cus_no  
+                left join (select prd_id,GROUP_CONCAT(sku_name1) as sku_name1,GROUP_CONCAT(sku_name2) as sku_name2 from u13123456789_product_sku group by prd_id) as s on p.prd_id = s.prd_id where 1=1 limit 10,10
+1572570105--select count(1) as count from u13123456789_product as p where 1=1
+1572570108--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570108--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570108','1','登录IP地址：127.0.0.1')
+1572570108--select p.prd_id,p.title,p.art_no,p.booth_price,p.cost_price,p.price1,p.price2,p.price3,p.price4,p.price5,c.cus_name,s.sku_name1,s.sku_name2 from u13123456789_product as p 
+                left join  (select cus_name,cus_no from u13123456789_cust) as c on p.cus_no = c.cus_no  
+                left join (select prd_id,GROUP_CONCAT(sku_name1) as sku_name1,GROUP_CONCAT(sku_name2) as sku_name2 from u13123456789_product_sku group by prd_id) as s on p.prd_id = s.prd_id where 1=1 limit 0,10
+1572570108--select count(1) as count from u13123456789_product as p where 1=1
+1572570115--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570116--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570115','1','登录IP地址：127.0.0.1')
+1572570116--select p.prd_id,p.title,p.art_no,p.booth_price,p.cost_price,p.price1,p.price2,p.price3,p.price4,p.price5,c.cus_name,s.sku_name1,s.sku_name2 from u13123456789_product as p 
+                left join  (select cus_name,cus_no from u13123456789_cust) as c on p.cus_no = c.cus_no  
+                left join (select prd_id,GROUP_CONCAT(sku_name1) as sku_name1,GROUP_CONCAT(sku_name2) as sku_name2 from u13123456789_product_sku group by prd_id) as s on p.prd_id = s.prd_id where 1=1 limit 10,10
+1572570116--select count(1) as count from u13123456789_product as p where 1=1
+1572570119--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570119--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570119','1','登录IP地址：127.0.0.1')
+1572570119--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570120--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570120--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570120','1','登录IP地址：127.0.0.1')
+1572570120--select c.id,c.cus_no,c.cus_name,c.mobile,c.level,c.payment_type,c.payment_day,c.addtime,b.configValue from u13123456789_cust as c left join (select configKey,configValue from u13123456789_base_config) AS b on b.configKey = c.level where cus_type='1'order by id DESC limit 0,10
+1572570120--select count(1) as count from u13123456789_cust where cus_type='1'
+1572570122--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570122--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570122','1','登录IP地址：127.0.0.1')
+1572570122--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570142--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570142--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570142','1','登录IP地址：127.0.0.1')
+1572570142--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570142--select id,name from market order by id
+1572570147--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570147--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570147','1','登录IP地址：127.0.0.1')
+1572570148--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570148--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570148','1','登录IP地址：127.0.0.1')
+1572570148--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570150--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570150--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570150','1','登录IP地址：127.0.0.1')
+1572570150--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570198--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570198--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570198','1','登录IP地址：127.0.0.1')
+1572570198--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570199--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570199--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570199','1','登录IP地址：127.0.0.1')
+1572570199--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570203--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570203--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570203','1','登录IP地址：127.0.0.1')
+1572570203--SELECT a.bat_no,a.system_id,a.create_time,a.status,c.cbat,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,count(1) as cbat,print_type,close_unique_code,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 and a.status = 0 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,5
+1572570205--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570205--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570205','1','登录IP地址：127.0.0.1')
+1572570205--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570233--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570233--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570233','1','登录IP地址：127.0.0.1')
+1572570233--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570233--select id,name from market order by id
+1572570350--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570350--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570350','1','登录IP地址：127.0.0.1')
+1572570350--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570350--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570350--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570350','1','登录IP地址：127.0.0.1')
+1572570350--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570354--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570354--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570354','1','登录IP地址：127.0.0.1')
+1572570354--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570354--select id,name from market order by id
+1572570359--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570359--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570359','1','登录IP地址：127.0.0.1')
+1572570359--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570363--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570363--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570363','1','登录IP地址：127.0.0.1')
+1572570363--SELECT a.bat_no,a.system_id,a.create_time,a.status,c.cbat,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,count(1) as cbat,print_type,close_unique_code,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 and a.status = 0 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,5
+1572570367--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570367--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570367','1','登录IP地址：127.0.0.1')
+1572570367--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570376--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570376--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570376','1','登录IP地址：127.0.0.1')
+1572570376--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570376--select id,name from market order by id
+1572570384--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570384--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570384','1','登录IP地址：127.0.0.1')
+1572570384--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570446--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570446--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570446','1','登录IP地址：127.0.0.1')
+1572570446--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570446--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570446--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570446','1','登录IP地址：127.0.0.1')
+1572570446--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570481--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570481--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570481','1','登录IP地址：127.0.0.1')
+1572570481--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570481--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570481--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570481','1','登录IP地址：127.0.0.1')
+1572570481--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570550--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570550--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570550','1','登录IP地址：127.0.0.1')
+1572570550--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570551--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570551--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570551','1','登录IP地址：127.0.0.1')
+1572570551--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570614--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570614--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570614','1','登录IP地址：127.0.0.1')
+1572570614--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570614--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570614--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570614','1','登录IP地址：127.0.0.1')
+1572570614--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570640--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570640--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570640','1','登录IP地址：127.0.0.1')
+1572570640--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570640--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570640--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570640','1','登录IP地址：127.0.0.1')
+1572570640--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570796--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570796--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570796','1','登录IP地址：127.0.0.1')
+1572570796--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570796--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570796--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570796','1','登录IP地址：127.0.0.1')
+1572570796--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570847--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570847--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570847','1','登录IP地址：127.0.0.1')
+1572570847--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572570847--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572570847--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572570847','1','登录IP地址：127.0.0.1')
+1572570847--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571043--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571043--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571043','1','登录IP地址：127.0.0.1')
+1572571043--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571044--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571044--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571044','1','登录IP地址：127.0.0.1')
+1572571044--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571066--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571066--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571066','1','登录IP地址：127.0.0.1')
+1572571066--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571067--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571067--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571067','1','登录IP地址：127.0.0.1')
+1572571067--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571075--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571075--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571075','1','登录IP地址：127.0.0.1')
+1572571075--SELECT a.bat_no,a.system_id,a.create_time,a.status,c.cbat,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,count(1) as cbat,print_type,close_unique_code,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 and a.status = 0 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,5
+1572571098--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571098--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571098','1','登录IP地址：127.0.0.1')
+1572571098--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571099--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571099--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571099','1','登录IP地址：127.0.0.1')
+1572571099--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571105--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571105--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571105','1','登录IP地址：127.0.0.1')
+1572571105--SELECT a.bat_no,a.system_id,a.create_time,a.status,c.cbat,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,count(1) as cbat,print_type,close_unique_code,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 and a.status = 0 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,5
+1572571279--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571279--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571279','1','登录IP地址：127.0.0.1')
+1572571279--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571280--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571280--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571280','1','登录IP地址：127.0.0.1')
+1572571280--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571318--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571318--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571318','1','登录IP地址：127.0.0.1')
+1572571318--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571319--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571319--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571319','1','登录IP地址：127.0.0.1')
+1572571319--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571376--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571376--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571376','1','登录IP地址：127.0.0.1')
+1572571376--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571500--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571500--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571500','1','登录IP地址：127.0.0.1')
+1572571500--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571558--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571558--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571558','1','登录IP地址：127.0.0.1')
+1572571558--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571614--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571614--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571614','1','登录IP地址：127.0.0.1')
+1572571614--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571649--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571649--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571649','1','登录IP地址：127.0.0.1')
+1572571649--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571760--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571760--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571760','1','登录IP地址：127.0.0.1')
+1572571760--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571827--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571827--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571827','1','登录IP地址：127.0.0.1')
+1572571827--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571864--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571864--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571864','1','登录IP地址：127.0.0.1')
+1572571864--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571892--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571892--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571892','1','登录IP地址：127.0.0.1')
+1572571892--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572571927--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572571927--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572571927','1','登录IP地址：127.0.0.1')
+1572571927--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572022--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572022--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572022','1','登录IP地址：127.0.0.1')
+1572572022--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572114--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572114--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572114','1','登录IP地址：127.0.0.1')
+1572572114--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572114--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572114--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572114','1','登录IP地址：127.0.0.1')
+1572572114--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572128--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572128--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572128','1','登录IP地址：127.0.0.1')
+1572572128--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572128--select id,name from market order by id
+1572572131--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572131--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572131','1','登录IP地址：127.0.0.1')
+1572572131--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572215--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572215--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572215','1','登录IP地址：127.0.0.1')
+1572572215--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572215--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572215--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572215','1','登录IP地址：127.0.0.1')
+1572572215--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572224--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572224--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572224','1','登录IP地址：127.0.0.1')
+1572572224--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572252--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572252--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572252','1','登录IP地址：127.0.0.1')
+1572572252--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572253--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572253--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572253','1','登录IP地址：127.0.0.1')
+1572572253--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572381--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572381--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572381','1','登录IP地址：127.0.0.1')
+1572572381--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572382--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572382--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572382','1','登录IP地址：127.0.0.1')
+1572572382--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572448--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572448--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572448','1','登录IP地址：127.0.0.1')
+1572572448--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572448--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572448--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572448','1','登录IP地址：127.0.0.1')
+1572572448--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572610--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572610--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572610','1','登录IP地址：127.0.0.1')
+1572572610--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572611--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572611--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572611','1','登录IP地址：127.0.0.1')
+1572572611--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572632--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572632--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572632','1','登录IP地址：127.0.0.1')
+1572572632--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572632--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572632--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572632','1','登录IP地址：127.0.0.1')
+1572572632--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572649--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572649--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572649','1','登录IP地址：127.0.0.1')
+1572572649--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572766--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572766--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572766','1','登录IP地址：127.0.0.1')
+1572572766--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572767--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572767--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572767','1','登录IP地址：127.0.0.1')
+1572572767--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572789--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572789--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572789','1','登录IP地址：127.0.0.1')
+1572572789--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572572790--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572572790--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572572790','1','登录IP地址：127.0.0.1')
+1572572790--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572573620--select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1572573620--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1572573620--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1572573620--select configValue from u13123456789_base_config where `type` = 'aftersaleSwitch' and configKey = '13123456789' 
+1572573620--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1572573620--select username,expire_time from userlist where system_id='13123456789'
+1572573620--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573620--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572573620--select sum(balance) as balance from u13123456789_tid_pay
+1572573620--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572573620--select sms_count from userlist where system_id='13123456789'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572573620--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572573620--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573620--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573621--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573621--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572573622--SELECT id,title,content,begin_time FROM notice where '1572573622' BETWEEN begin_time AND end_time 
+1572573623--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1572573623--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1572573624--SELECT title,content,create_time FROM question limit 0,7
+1572573624--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573624--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573624--select username,expire_time from userlist where system_id='13123456789'
+1572573624--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572573624--select sum(balance) as balance from u13123456789_tid_pay
+1572573624--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572573625--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573625--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573625--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572573625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572573625--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u13123456789_report_tpl where `type` = 'printer'
+1572573626--select id,planName from u13123456789_search_plan order by id 
+1572573626--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573626--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573626--SELECT COUNT(*) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572573626--select configKey from u13123456789_base_config where `type` = 'fetch_detail' 
+1572573626--select system_id,system_name from u13123456789_drop_shipping_client where addtime>0
+1572573626--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573626--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573626--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1572573626--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573626--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1572573626--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573626--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1572573626--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1572573626--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u13123456789_express
+1572573626--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1572573626--SELECT wh,name FROM u13123456789_my_wh
+1572573626--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1572573626--SELECT id,statusName FROM u13123456789_sign_status
+1572573626--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1572573626--select count(1) as count from (
+						select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1572573626--select count(1) as count from (
+					select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1572573626--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572573626--select count(1) as count from (select new_tid from u13123456789_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1572573626--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572573626--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u13123456789_tid_orders a
+                
+                where a.new_tid in ('15725728417586','15725723112239','15725722012374','15724910831878','15724059979826','15724058098749','15724057456294','15724048819868','15723124353412','15723122935727','15723122094416','SH20191025112550183213','SH20191025112458711928','SH20191025111648228584','SH20191025111621424982','SH20191025111548651322','SH20191025111529857018','SH20191025104245884129','SH20191025104213664604','SH20191025104148422641','SH20191025104104743158','15718191534825','15718092709984','15718092592406','15717110891126','15714525459663','15714499952123','15713765819899','15713765591127','15713765479958','15713689391488','HB_191017157130516124427','15711332519959','15708736465198','15708584434735','15707708887989','SH20191010105542448175','HB_1910151571118315387527','SH20190930182654625484','15697504232353','15697491209157','HB_1909281569665782183','15696497821895','15696489518513','15695738273583','15695683653619','SH20190926171113604654','SH20190926160731892664','15692179129874','15692058306023','15687121744437','15687120609685','15686011989224','15682712157205','15682710187087','15681864152269','15681864071556','15681863738636','15681701421688','15680174572197','15680158164848','15678504532496','15678503754091','15678502886653','15678501878973','15678501145636','15678501002779','15678500138882','15678500138882_1','15678499076370_1','15678499076370','15678480346445_1','15678480346445','15678439464473','15678434226215','15678433706663','15678428584013','15678428017015','15678414972130','15678386301413','15678241168083','15678239693358','15677569858862','15677567757157','15677522378800','15677484165500','15676666169022','15676665582180','15676663086969','15676661403683','15676661209516','15676492519542','15675684768369','15674017614914','15674015625710')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1572573626--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710')
+1572573626--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id
+1572573626--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573626--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572573627--SELECT wh,name FROM u13123456789_my_wh
+1572573627--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572573627--select id,statusName from u13123456789_sign_status
+1572573629--select shoptype,shopid,shopname from u13123456789_shop_config where isAuth = '1' and status = '1' 
+1572573631--select shopid,appkey,secretkey,sessionkey from u13123456789_shop_config where shoptype = 'JD'
+1572573921--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573921--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572573975--select username,expire_time from userlist where system_id='13123456789'
+1572573975--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573975--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572573975--select sum(balance) as balance from u13123456789_tid_pay
+1572573975--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572573975--select sms_count from userlist where system_id='13123456789'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572573976--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572573976--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573976--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573976--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573976--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572573976--SELECT id,title,content,begin_time FROM notice where '1572573976' BETWEEN begin_time AND end_time 
+1572573977--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1572573977--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573977--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573977--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1572573977--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573978--select count(1) AS shopBang from u13123456789_shop_config where status = 1
+1572573978--SELECT COUNT(1) AS placeBang FROM u13123456789_express WHERE STATUS = 0 
+1572573978--SELECT COUNT(1) AS expressBang FROM u13123456789_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1572573978--SELECT COUNT(1) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572573978--select count(1) AS labelBang from u13123456789_user_printer where usr = '13123456789' AND type = 'unique_code' AND printer <> ''
+1572573978--select count(1) AS printBang from u13123456789_user_printer where usr = '13123456789' AND type = 'waybill' AND printer <> ''
+1572573978--select count(1) AS express_no from u13123456789_user_printer where usr = '13123456789' AND type = 'express_no' AND printer <> ''
+1572573978--SELECT COUNT(1) AS orderBang FROM u13123456789_unique_code_config
+1572573978--SELECT configValue FROM u13123456789_base_config WHERE configKey='albbSplit'
+1572573978--SELECT configValue FROM u13123456789_base_config WHERE configKey='mgjSplit'
+1572573978--SELECT configValue FROM u13123456789_base_config WHERE configKey='pddSplit'
+1572573978--SELECT configValue FROM u13123456789_base_config WHERE `type`='storage_type'
+1572573978--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u13123456789_express) AS a
+			  LEFT JOIN u13123456789_base_config AS b ON a.ids=b.configKey
+1572573978--SELECT configValue FROM u13123456789_base_config where configKey = 'library_number'
+1572573978--SELECT configValue FROM u13123456789_base_config where configKey = 'num_library'
+1572573978--SELECT title,content,create_time FROM question limit 0,7
+1572573978--select username,expire_time from userlist where system_id='13123456789'
+1572573978--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572573978--select sum(balance) as balance from u13123456789_tid_pay
+1572573978--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572573986--select shopid,appkey,secretkey,sessionkey from u13123456789_shop_config where shoptype = 'JD'
+1572573995--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573995--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573995--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572573996--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u13123456789_report_tpl where `type` = 'printer'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572573996--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572573996--SELECT COUNT(*) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572573997--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573997--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573997--SELECT wh,name FROM u13123456789_my_wh
+1572573997--select id,planName from u13123456789_search_plan order by id 
+1572573997--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573997--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573997--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572573997--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u13123456789_express
+1572573997--SELECT wh,name FROM u13123456789_my_wh
+1572573997--SELECT id,statusName FROM u13123456789_sign_status
+1572573997--select count(1) as count from (
+						select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1572573997--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572573997--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572573997--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u13123456789_tid_orders a
+                
+                where a.new_tid in ('15725728417586','15725723112239','15725722012374','15724910831878','15724059979826','15724058098749','15724057456294','15724048819868','15723124353412','15723122935727','15723122094416','SH20191025112550183213','SH20191025112458711928','SH20191025111648228584','SH20191025111621424982','SH20191025111548651322','SH20191025111529857018','SH20191025104245884129','SH20191025104213664604','SH20191025104148422641','SH20191025104104743158','15718191534825','15718092709984','15718092592406','15717110891126','15714525459663','15714499952123','15713765819899','15713765591127','15713765479958','15713689391488','HB_191017157130516124427','15711332519959','15708736465198','15708584434735','15707708887989','SH20191010105542448175','HB_1910151571118315387527','SH20190930182654625484','15697504232353','15697491209157','HB_1909281569665782183','15696497821895','15696489518513','15695738273583','15695683653619','SH20190926171113604654','SH20190926160731892664','15692179129874','15692058306023','15687121744437','15687120609685','15686011989224','15682712157205','15682710187087','15681864152269','15681864071556','15681863738636','15681701421688','15680174572197','15680158164848','15678504532496','15678503754091','15678502886653','15678501878973','15678501145636','15678501002779','15678500138882','15678500138882_1','15678499076370_1','15678499076370','15678480346445_1','15678480346445','15678439464473','15678434226215','15678433706663','15678428584013','15678428017015','15678414972130','15678386301413','15678241168083','15678239693358','15677569858862','15677567757157','15677522378800','15677484165500','15676666169022','15676665582180','15676663086969','15676661403683','15676661209516','15676492519542','15675684768369','15674017614914','15674015625710')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1572573997--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710')
+1572573997--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id
+1572573997--select system_id,system_name from u13123456789_drop_shipping_client where addtime>0
+1572573997--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573997--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1572573997--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1572573997--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1572573997--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1572573997--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1572573997--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1572573997--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1572573997--select count(1) as count from (
+					select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1572573997--select count(1) as count from (select new_tid from u13123456789_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1572573997--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572573997--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572573997--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572573998--select id,statusName from u13123456789_sign_status
+1572573998--select configKey from u13123456789_base_config where `type` = 'fetch_detail' 
+1572574000--select shoptype,shopid,shopname from u13123456789_shop_config where isAuth = '1' and status = '1' 
+1572574200--select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1572574200--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1572574200--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1572574200--select configValue from u13123456789_base_config where `type` = 'aftersaleSwitch' and configKey = '13123456789' 
+1572574200--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1572574200--select username,expire_time from userlist where system_id='13123456789'
+1572574200--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574200--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572574200--select sum(balance) as balance from u13123456789_tid_pay
+1572574200--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572574200--select sms_count from userlist where system_id='13123456789'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572574200--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572574200--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574200--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574200--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574200--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572574201--SELECT id,title,content,begin_time FROM notice where '1572574201' BETWEEN begin_time AND end_time 
+1572574202--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1572574202--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1572574203--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574203--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574203--SELECT title,content,create_time FROM question limit 0,7
+1572574203--select username,expire_time from userlist where system_id='13123456789'
+1572574203--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572574203--select sum(balance) as balance from u13123456789_tid_pay
+1572574203--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572574207--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574207--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574207--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572574207--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572574207--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u13123456789_report_tpl where `type` = 'printer'
+1572574208--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574208--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574208--SELECT COUNT(*) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572574208--select id,planName from u13123456789_search_plan order by id 
+1572574208--select id,statusName from u13123456789_sign_status
+1572574208--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574208--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574208--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574208--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u13123456789_express
+1572574208--SELECT wh,name FROM u13123456789_my_wh
+1572574208--SELECT id,statusName FROM u13123456789_sign_status
+1572574208--select count(1) as count from (
+						select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1572574208--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572574208--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572574208--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u13123456789_tid_orders a
+                
+                where a.new_tid in ('15725728417586','15725723112239','15725722012374','15724910831878','15724059979826','15724058098749','15724057456294','15724048819868','15723124353412','15723122935727','15723122094416','SH20191025112550183213','SH20191025112458711928','SH20191025111648228584','SH20191025111621424982','SH20191025111548651322','SH20191025111529857018','SH20191025104245884129','SH20191025104213664604','SH20191025104148422641','SH20191025104104743158','15718191534825','15718092709984','15718092592406','15717110891126','15714525459663','15714499952123','15713765819899','15713765591127','15713765479958','15713689391488','HB_191017157130516124427','15711332519959','15708736465198','15708584434735','15707708887989','SH20191010105542448175','HB_1910151571118315387527','SH20190930182654625484','15697504232353','15697491209157','HB_1909281569665782183','15696497821895','15696489518513','15695738273583','15695683653619','SH20190926171113604654','SH20190926160731892664','15692179129874','15692058306023','15687121744437','15687120609685','15686011989224','15682712157205','15682710187087','15681864152269','15681864071556','15681863738636','15681701421688','15680174572197','15680158164848','15678504532496','15678503754091','15678502886653','15678501878973','15678501145636','15678501002779','15678500138882','15678500138882_1','15678499076370_1','15678499076370','15678480346445_1','15678480346445','15678439464473','15678434226215','15678433706663','15678428584013','15678428017015','15678414972130','15678386301413','15678241168083','15678239693358','15677569858862','15677567757157','15677522378800','15677484165500','15676666169022','15676665582180','15676663086969','15676661403683','15676661209516','15676492519542','15675684768369','15674017614914','15674015625710')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1572574208--SELECT wh,name FROM u13123456789_my_wh
+1572574208--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710')
+1572574208--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id
+1572574208--select system_id,system_name from u13123456789_drop_shipping_client where addtime>0
+1572574208--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574208--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1572574208--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1572574208--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1572574208--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1572574208--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1572574208--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1572574208--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1572574208--select count(1) as count from (
+					select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1572574208--select count(1) as count from (select new_tid from u13123456789_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1572574208--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574208--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572574209--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572574209--select configKey from u13123456789_base_config where `type` = 'fetch_detail' 
+1572574212--select shoptype,shopid,shopname from u13123456789_shop_config where isAuth = '1' and status = '1' 
+1572574213--select shopid,appkey,secretkey,sessionkey from u13123456789_shop_config where shoptype = 'JD'
+1572574386--select username,expire_time from userlist where system_id='13123456789'
+1572574386--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574386--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572574386--select sum(balance) as balance from u13123456789_tid_pay
+1572574386--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572574386--select sms_count from userlist where system_id='13123456789'
+1572574386--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572574386--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572574386--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572574386--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572574386--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572574387--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572574387--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572574387--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572574387--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572574387--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574387--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574387--SELECT id,title,content,begin_time FROM notice where '1572574387' BETWEEN begin_time AND end_time 
+1572574387--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574387--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572574387--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1572574387--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1572574387--SELECT title,content,create_time FROM question limit 0,7
+1572574387--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574387--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574388--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574388--select count(1) AS shopBang from u13123456789_shop_config where status = 1
+1572574388--SELECT COUNT(1) AS placeBang FROM u13123456789_express WHERE STATUS = 0 
+1572574388--SELECT COUNT(1) AS expressBang FROM u13123456789_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1572574388--SELECT COUNT(1) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572574388--select count(1) AS labelBang from u13123456789_user_printer where usr = '13123456789' AND type = 'unique_code' AND printer <> ''
+1572574388--select count(1) AS printBang from u13123456789_user_printer where usr = '13123456789' AND type = 'waybill' AND printer <> ''
+1572574388--select count(1) AS express_no from u13123456789_user_printer where usr = '13123456789' AND type = 'express_no' AND printer <> ''
+1572574388--SELECT COUNT(1) AS orderBang FROM u13123456789_unique_code_config
+1572574388--SELECT configValue FROM u13123456789_base_config WHERE configKey='albbSplit'
+1572574388--SELECT configValue FROM u13123456789_base_config WHERE configKey='mgjSplit'
+1572574388--SELECT configValue FROM u13123456789_base_config WHERE configKey='pddSplit'
+1572574388--SELECT configValue FROM u13123456789_base_config WHERE `type`='storage_type'
+1572574388--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u13123456789_express) AS a
+			  LEFT JOIN u13123456789_base_config AS b ON a.ids=b.configKey
+1572574388--SELECT configValue FROM u13123456789_base_config where configKey = 'library_number'
+1572574388--SELECT configValue FROM u13123456789_base_config where configKey = 'num_library'
+1572574388--select username,expire_time from userlist where system_id='13123456789'
+1572574388--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572574388--select sum(balance) as balance from u13123456789_tid_pay
+1572574388--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572574389--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574389--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574389--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572574390--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u13123456789_report_tpl where `type` = 'printer'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572574390--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572574390--SELECT COUNT(*) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572574390--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574390--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574390--select id,planName from u13123456789_search_plan order by id 
+1572574391--select configKey from u13123456789_base_config where `type` = 'fetch_detail' 
+1572574391--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574391--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574391--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572574391--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u13123456789_express
+1572574391--SELECT wh,name FROM u13123456789_my_wh
+1572574391--SELECT id,statusName FROM u13123456789_sign_status
+1572574391--select count(1) as count from (
+						select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1572574391--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572574391--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572574391--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u13123456789_tid_orders a
+                
+                where a.new_tid in ('15725728417586','15725723112239','15725722012374','15724910831878','15724059979826','15724058098749','15724057456294','15724048819868','15723124353412','15723122935727','15723122094416','SH20191025112550183213','SH20191025112458711928','SH20191025111648228584','SH20191025111621424982','SH20191025111548651322','SH20191025111529857018','SH20191025104245884129','SH20191025104213664604','SH20191025104148422641','SH20191025104104743158','15718191534825','15718092709984','15718092592406','15717110891126','15714525459663','15714499952123','15713765819899','15713765591127','15713765479958','15713689391488','HB_191017157130516124427','15711332519959','15708736465198','15708584434735','15707708887989','SH20191010105542448175','HB_1910151571118315387527','SH20190930182654625484','15697504232353','15697491209157','HB_1909281569665782183','15696497821895','15696489518513','15695738273583','15695683653619','SH20190926171113604654','SH20190926160731892664','15692179129874','15692058306023','15687121744437','15687120609685','15686011989224','15682712157205','15682710187087','15681864152269','15681864071556','15681863738636','15681701421688','15680174572197','15680158164848','15678504532496','15678503754091','15678502886653','15678501878973','15678501145636','15678501002779','15678500138882','15678500138882_1','15678499076370_1','15678499076370','15678480346445_1','15678480346445','15678439464473','15678434226215','15678433706663','15678428584013','15678428017015','15678414972130','15678386301413','15678241168083','15678239693358','15677569858862','15677567757157','15677522378800','15677484165500','15676666169022','15676665582180','15676663086969','15676661403683','15676661209516','15676492519542','15675684768369','15674017614914','15674015625710')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1572574391--select system_id,system_name from u13123456789_drop_shipping_client where addtime>0
+1572574391--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710')
+1572574391--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u13123456789_tid_items where tid in ('SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914','TB-15674015625710') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id
+1572574391--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574391--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572574391--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572574391--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1572574391--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1572574391--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1572574391--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1572574391--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1572574391--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1572574391--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1572574391--select count(1) as count from (
+					select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1572574391--select count(1) as count from (select new_tid from u13123456789_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1572574391--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572574391--SELECT wh,name FROM u13123456789_my_wh
+1572574392--select id,statusName from u13123456789_sign_status
+1572574394--select shoptype,shopid,shopname from u13123456789_shop_config where isAuth = '1' and status = '1' 
+1572574399--select shopid,appkey,secretkey,sessionkey from u13123456789_shop_config where shoptype = 'JD'
+1572574861--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574861--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574861','1','登录IP地址：127.0.0.1')
+1572574861--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572574862--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574862--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574862','1','登录IP地址：127.0.0.1')
+1572574862--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572574866--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574866--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574866','1','登录IP地址：127.0.0.1')
+1572574866--select business_license,id_card_front,id_card_reverse,market,phone,floor,booth,linkman,cus_no from stalls where openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572574866--select id,name from market order by id
+1572574870--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574870--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574870','1','登录IP地址：127.0.0.1')
+1572574871--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574871--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574871','1','登录IP地址：127.0.0.1')
+1572574871--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572574872--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574872--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574872','1','登录IP地址：127.0.0.1')
+1572574873--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574873--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574873','1','登录IP地址：127.0.0.1')
+1572574873--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572574876--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574876--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574876','1','登录IP地址：127.0.0.1')
+1572574876--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574876--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574876','1','登录IP地址：127.0.0.1')
+1572574876--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572574909--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574909--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574909','1','登录IP地址：127.0.0.1')
+1572574949--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574949--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574949','1','登录IP地址：127.0.0.1')
+1572574949--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572574949--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572574949--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572574949','1','登录IP地址：127.0.0.1')
+1572574949--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572575026--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572575026--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572575026','1','登录IP地址：127.0.0.1')
+1572575026--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572575026--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572575026--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572575026','1','登录IP地址：127.0.0.1')
+1572575026--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'
+1572575041--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572575041--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572575041','1','登录IP地址：127.0.0.1')
+1572575048--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572575048--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572575048','1','登录IP地址：127.0.0.1')
+1572575048--select s.phone,s.audit,u.system_id from stalls left join (select system_id from userlist)  as u on s.openid = u.openid where s.openid = 'sns_wa_o3xiq5W4BLw7b6BgVuLkl2It_jdE'

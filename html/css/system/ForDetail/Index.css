@@ -1,0 +1,21 @@
+[v-cloak] {
+	display: none;
+}
+.layui-table-page select {
+    height: 27px;
+}
+#vue{
+	width: 98%;
+	margin: auto;
+}
+.layui-form-label {
+    padding: 6px 0px;
+    width: 80px;
+}
+.layui-input {
+    height: 32px;
+	width: 150px;
+}
+.layui-btn-sm {
+    margin-top: -6px;
+}

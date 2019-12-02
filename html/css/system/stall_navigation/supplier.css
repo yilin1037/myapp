@@ -1,0 +1,31 @@
+.isShow2 table{
+	font-size:12px;
+}
+
+.isShow2 h2{
+	font-size:12px;
+}
+
+a{
+	cursor:pointer;
+}
+
+.isShow2 a{
+	color:#1482f3;
+}
+
+.isShow2 th,.isShow2 td{
+	padding:4px;
+	border:1px solid #dddddd;
+	text-align:center;
+}
+
+.btn{
+	height:29px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}

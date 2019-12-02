@@ -1,0 +1,8 @@
+body{
+    background-color: #fff;
+}
+
+.layui-form-switch em{
+	width:35px!important;
+	right:1px!important;
+}

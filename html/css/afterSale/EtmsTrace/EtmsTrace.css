@@ -1,0 +1,46 @@
+.sel select{
+	appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+.separator{
+	width:100%;
+	height:26px;
+	border-radius:0;
+	font-size:12px;
+	padding:0;
+	padding-left:3px;
+}
+
+.all{
+	width:170px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+}
+
+.fi{
+	float:left;
+	position:relative;
+	
+	/*transition:border-color 0.3s;*/
+}
+
+.btn1{
+	height:26px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+th,td{
+	padding:4px;
+}
+
+#dateTable_length{
+	display:none!important;
+}

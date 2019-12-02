@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page
+        xmlns="http://cloudprint.cainiao.com/print"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cloudprint.cainiao.com/print http://cloudprint-docs-resource.oss-cn-shanghai.aliyuncs.com/lpml_schema.xsd"
+        xmlns:editor="http://cloudprint.cainiao.com/schema/editor"
+        width="100" height="180" splitable="true"  >
+		<header height="0" >
+		</header>
+		<layout 
+            
+            
+            id="element_layout_C2703061CD5215F7" width="100"   style="overflow:visible;zIndex:1;"><line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="40.00" 
+                    endX="99"
+                    endY="40"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="70.61" 
+                    endX="99"
+                    endY="70.61"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="82.61" 
+                    endX="99"
+                    endY="82.61"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="123.00" 
+                    endX="99"
+                    endY="123"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="0" 
+                    startY="140.00" 
+                    endX="100"
+                    endY="140"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="131.50" 
+                    endX="99"
+                    endY="131.5"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="80.00" 
+                    startY="123" 
+                    endX="80"
+                    endY="140"
+                    editor:_deg_="90">
+                </line>
+                <layout 
+            editor:_for_="element_text_D0362864BFED5BCB"
+            
+            id="element_layout_A2D8F71EC01AAA8C" width="88.5" height="14.5" left="10.5" top="55.45"  style="overflow:visible;zIndex:42;">
+            <text editor:_printName_="收件人姓名          座机         手机                 -收件人地址" 
+                style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+                <![CDATA[<%=_data.recipient.name%>   <%=_data.recipient.phone%>   <%=_data.recipient.mobile%>
+<%=_data.recipient.address.province%><%=_data.recipient.address.city %><%=_data.recipient.address.district%><%=_data.recipient.address.town%><%=_data.recipient.address.detail%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_39EAD4AA7158C60E"
+            
+            id="element_layout_2F4B3DAFC5CD6CDA" width="87.5" height="4.15" left="10.5" top="70.96000000000001"  style="overflow:visible;zIndex:27;">
+            <text editor:_printName_="寄件人姓名          手机         座机" 
+                style="fontFamily:黑体;">
+                <![CDATA[<%=_data.sender.name%>   <%=_data.sender.phone%>   <%=_data.sender.mobile%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_0C29FB167353E125"
+            
+            id="element_layout_BDDA5CD4BF325616" width="68" height="4" left="11" top="123.35"  style="overflow:visible;zIndex:38;">
+            <text editor:_printName_="收件人姓名        手机        座机" 
+                style="fontFamily:黑体;fontSize:7;">
+                <![CDATA[<%=_data.recipient.name%>   <%=_data.recipient.phone%>   <%=_data.recipient.mobile%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_A12AE8F34C37818E"
+            
+            id="element_layout_61E86C4D84D36270" width="68" height="4" left="11" top="131.7"  style="overflow:visible;zIndex:23;">
+            <text editor:_printName_="寄件人姓名        手机        座机" 
+                style="fontFamily:黑体;fontSize:7;">
+                <![CDATA[<%=_data.sender.name%>   <%=_data.sender.phone%>   <%=_data.sender.mobile%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_5EEB4684D5099746"
+            
+            id="element_layout_4EDC224B42D49F00" width="98" height="14" left="1" top="40.5"  style="overflow:visible;zIndex:17;"><%
+                var sortation_name = (((_data || {}).routingInfo ||{}||{}).sortation||{}||{}).name||"";
+                var route_code = ((_data || {}).routingInfo ||{}||{}).routeCode||"";
+                var datoubi = sortation_name;
+            %>
+
+            <text editor:_printName_="380D-56-04" 
+                style="fontFamily:黑体;fontWeight:bold;fontSize:auto;align:center;valign:middle;">
+                <![CDATA[<%=datoubi%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_5D213708D1B2017A"
+            
+            id="element_layout_F5CCDA1370B07406" width="87.12" height="7.43" left="10.5" top="75.18"  style="overflow:visible;zIndex:18;">
+            <text editor:_printName_="寄件人地址" 
+                style="fontFamily:黑体;lineHeight:4;">
+                <![CDATA[<%=_data.sender.address.province%><%=_data.sender.address.city %><%=_data.sender.address.district%><%=_data.sender.address.town%><%=_data.sender.address.detail%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_brcode_A48601852409D928"
+            
+            id="element_layout_1BC8D1C47F19C924" width="73.47" height="23.44" left="1.03" top="15.94"  style="overflow:visible;zIndex:22;"><barcode type="code128" style="opacity:1;hideText:false;rotation:0" value="<%=_data.waybillCode%>" ratioMode="keepRatio" />
+		</layout><layout 
+            editor:_for_="element_brcode_CEDB3635C33FF1B2"
+            
+            id="element_layout_A171270D5BC29222" width="66.14" height="11.28" left="32.52" top="110.2"  style="overflow:visible;zIndex:19;"><barcode type="code128" style="opacity:1;hideText:false;rotation:0" value="<%=_data.waybillCode%>" ratioMode="keepRatio" />
+		</layout><layout 
+            editor:_for_="element_text_AF8FF0813794EB22"
+            
+            id="element_layout_00C8EB52F082787F" width="67.5" height="6.5" left="11" top="125.05000000000001"  style="overflow:visible;zIndex:16;">
+            <text editor:_printName_="地址" 
+                style="fontFamily:黑体;fontSize:7;lineHeight:3;valign:middle;">
+                <![CDATA[<%=_data.recipient.address.province%><%=_data.recipient.address.city %><%=_data.recipient.address.district%><%=_data.recipient.address.town%><%=_data.recipient.address.detail%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_32C36E7B5323D706"
+            
+            id="element_layout_80DE060D25294B54" width="67.5" height="6.5" left="11" top="133.5"  style="overflow:visible;zIndex:20;">
+            <text editor:_printName_="地址" 
+                style="fontFamily:黑体;fontSize:7;lineHeight:3;valign:middle;">
+                <![CDATA[<%=_data.sender.address.province%><%=_data.sender.address.city %><%=_data.sender.address.district %><%=_data.sender.address.town %><%=_data.sender.address.detail %>]]>
+            </text>
+        
+		</layout><% if(_config.needTopLogo === true){%>
+<layout 
+            editor:_for_="element_image_BC4BABB733777931"
+            
+            id="element_layout_5E264B596EAE8D50" width="30" height="14" left="1" top="1"  style="overflow:visible;zIndex:21;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1476262130573.jpg"  allowFailure="false" />
+		</layout><layout 
+            editor:_for_="element_image_7A146A8872B76A33"
+            
+            id="element_layout_FC0D7AA9542FBF2D" width="30" height="12" left="68" top="2"  style="overflow:visible;zIndex:24;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1476262711511.jpg"  allowFailure="false" />
+		</layout><%}%>
+<% if(_config.needBottomLogo === true){%>
+<layout 
+            editor:_for_="element_image_2BFC715656200DA9"
+            
+            id="element_layout_B157AD59B03B3DAD" width="30" height="6" left="1" top="110.2"  style="overflow:visible;zIndex:37;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1476262775196.jpg"  allowFailure="false" />
+		</layout><layout 
+            editor:_for_="element_image_F74D5D8AE6E1A4EC"
+            
+            id="element_layout_77FD83FF8D42D752" width="30" height="6" left="1" top="116.2"  style="overflow:visible;zIndex:41;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1476262786019.jpg"  allowFailure="false" />
+		</layout><%}%>
+<layout 
+            editor:_for_="element_image_5DEEBD4D81722C69"
+            
+            id="element_layout_60E64A5F027DD9D3" width="9" height="10" left="1" top="58.18"  style="overflow:visible;zIndex:15;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1474191080248.png"  allowFailure="false" />
+		</layout><layout 
+            editor:_for_="element_image_168D6EAC905903E7"
+            
+            id="element_layout_9B51040B49260B8C" width="7" height="7" left="1" top="72.96000000000001"  style="overflow:visible;zIndex:14;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1474191355903.png"  allowFailure="false" />
+		</layout><layout 
+            editor:_for_="element_image_E1D398D19CE8A2FF"
+            
+            id="element_layout_E6869E33FA3367C2" width="7" height="7.3" left="1" top="123.7"  style="overflow:visible;zIndex:13;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1474191080248.png"  allowFailure="false" />
+		</layout><layout 
+            editor:_for_="element_image_B520FBC513E2D3A4"
+            
+            id="element_layout_C19C8F7A5A859B82" width="6" height="6" left="1" top="132.7"  style="overflow:visible;zIndex:12;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1474191355903.png"  allowFailure="false" />
+		</layout><layout 
+            editor:_for_="element_image_3920F40BF0E86FD0"
+            
+            id="element_layout_4B44D48409D37857" width="5" height="5" left="94.5" top="103.5"  style="overflow:visible;zIndex:11;"><image src="http://cdn-cloudprint.cainiao.com/waybill-print/cloudprint-imgs/1474191637775.png"  allowFailure="false" />
+		</layout><layout 
+            editor:_for_="element_image_6926397889F65589"
+            
+            id="element_layout_9735DB3DC8B66E78" width="4" height="4" left="15.45" top="104"  style="overflow:visible;zIndex:51;"><image src="http://cloudprint.cainiao.com/cloudprint/file/getFile.json?fileId=10903"  allowFailure="false" />
+		</layout><layout 
+            
+            ref="CUSTOM_AREA"
+            id="element_layout_3951810EFDD64790" width="100" height="40" left="1" top="140"  style="overflow:hidden;">
+		</layout><layout 
+            editor:_for_="element_text_9F41AE2F911CB4E3"
+            
+            id="element_layout_F541A2BF47B0C8C8" width="11" height="5" left="88" top="174"  style="overflow:visible;zIndex:49;">
+            <text  
+                style="fontFamily:黑体;fontSize:10;">
+                <![CDATA[已验视]]>
+            </text>
+        
+		</layout><line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="75.00" 
+                    startY="15" 
+                    endX="75"
+                    endY="40"
+                    editor:_deg_="90">
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="55.00" 
+                    endX="99"
+                    endY="55"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="75" 
+                    startY="25.00" 
+                    endX="99"
+                    endY="25"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="15.00" 
+                    endX="99"
+                    endY="15"
+                    >
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="80.00" 
+                    startY="92" 
+                    endX="80"
+                    endY="108"
+                    editor:_deg_="90">
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="1" 
+                    startY="92" 
+                    endX="99"
+                    endY="91.61"
+                    >
+                </line>
+                <layout 
+            editor:_for_="element_text_B3A52D78379DB84B"
+            
+            id="element_layout_F5C3B5D3F2AC078A" width="17.5" height="4.5" left="1.5" top="92.32"  style="overflow:visible;zIndex:26;">
+            <text editor:_printName_="日期" 
+                style="fontFamily:黑体;">
+                <![CDATA[<%=_context.formatStartTime('yyyy/MM/dd')%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_B12AA29A2A78E991"
+            
+            id="element_layout_65CB2D7042F309AF" width="18.3" height="4.5" left="1.5" top="96.47"  style="overflow:visible;zIndex:35;">
+            <text editor:_printName_="时间" 
+                style="fontFamily:黑体;fontSize:11;">
+                <![CDATA[<%=_context.formatStartTime('HH:mm:ss')%>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_48F9C47B8972EA41"
+            
+            id="element_layout_B3E67672D8B2BE76" width="17.26" height="4.68" left="1.5" top="100.97"  style="overflow:visible;zIndex:36;"><%
+									var docSeq = _context.documentNumber();
+							 if (typeof _context.documentCount == "function") {
+								 docSeq = docSeq + "/" + _context.documentCount();
+							 }
+								 %>
+
+            <text editor:_printName_="序号" 
+                style="fontFamily:黑体;fontSize:13;">
+                <![CDATA[<%= docSeq %>]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_FCA7780A6223DE14"
+            
+            id="element_layout_48EC91D61D3EC2F8" width="9.6" height="3.89" left="80.46" top="93.46"  style="overflow:visible;zIndex:28;">
+            <text  
+                style="fontFamily:黑体;fontSize:7;align:right;valign:bottom;">
+                <![CDATA[签名：]]>
+            </text>
+        
+		</layout><line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="20.00" 
+                    startY="92" 
+                    endX="20"
+                    endY="108"
+                    editor:_deg_="90">
+                </line>
+                <line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="20" 
+                    startY="103" 
+                    endX="80"
+                    endY="103"
+                    >
+                </line>
+                <layout 
+            editor:_for_="element_text_7AD6115752EC8AC0"
+            
+            id="element_layout_8AE896D4F18566A9" width="5" height="10" left="20.6" top="93"  style="overflow:visible;zIndex:46;">
+            <text editor:_printName_="托寄物" 
+                style="fontFamily:黑体;orientation:vertical;align:center;">
+                <![CDATA[托寄物]]>
+            </text>
+        
+		</layout><line
+                    style="lineType:solid;lineColor:#000;"
+                    startX="26.00" 
+                    startY="92" 
+                    endX="26"
+                    endY="103"
+                    editor:_deg_="90">
+                </line>
+                <layout 
+            editor:_for_="element_text_FE561C7B13AAB4BE"
+            
+            id="element_layout_E5BB32885F588F9B" width="52.99" height="10.6" left="26.7" top="92.4"  style="overflow:visible;zIndex:47;">
+            <text editor:_printName_="物品" 
+                style="fontFamily:黑体;fontSize:18;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_683538997D8E5AA1"
+            
+            id="element_layout_6B0F418CF6DA6F01" width="58.81" height="5.47" left="20.87" top="103.4"  style="overflow:visible;zIndex:48;">
+            <text  
+                style="fontFamily:黑体;valign:middle;">
+                <![CDATA[收件员：          派件员：]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_D547FA6DA268EFE4"
+            
+            id="element_layout_E3CD38EBF5364D21" width="13.56" height="2.56" left="2.9699999999999998" top="106"  style="overflow:visible;zIndex:50;">
+            <text  
+                style="fontFamily:黑体;fontSize:7;lineHeight:3;">
+                <![CDATA[打印时间]]>
+            </text>
+        
+		</layout><layout 
+            editor:_for_="element_text_F3C0E3DB0F1819C1"
+            
+            id="element_layout_C0E779CD7D5B57AD" width="25" height="14.94" left="75" top="25"  style="overflow:visible;zIndex:10;"><%
+		var codServiceValue;
+		var services = ((_data || {}).shippingOption ||{}||{}).services||"";
+		if(services){
+		if (services["SVC-COD"]) {
+		  codServiceValue = services["SVC-COD"]["value"];
+		}
+		}
+		if(codServiceValue){
+		%>
+
+            <text editor:_printName_="服务详情" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[代收货款:<%=codServiceValue%>元]]>
+            </text>
+        <%}else{%>
+
+            <text editor:_printName_="服务详情" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        <%}%>
+
+		</layout><layout 
+            editor:_for_="element_text_06810950902906CF"
+            
+            id="element_layout_F4A9003C62AA75A9" width="12" height="12" left="40" top="1.5"  style="overflow:visible;zIndex:45;"><%
+          if(_data.shippingOption.services){
+            if(_data.shippingOption.services["SVC-COD"]){
+              if(_data.shippingOption.services["SVC-COD"].value){
+				if(_data.shippingOption.services["SVC-COD"].value != ""){
+
+%>
+
+            <text editor:_printName_="服务名称" 
+                style="fontFamily:黑体;fontSize:14;backgroundColor:#000;fontColor:#fff;align:center;valign:middle;">
+                <![CDATA[代收货款]]>
+            </text>
+        <%}else{%>
+
+            <text editor:_printName_="服务名称" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        <%}}}}%>
+
+		</layout><layout 
+            editor:_for_="element_text_5F0DE389FCDFBC80"
+            
+            id="element_layout_DADE1CD55D43E885" width="8.21" height="12" left="58.79" top="1.5"  style="overflow:visible;zIndex:25;"><%
+          if(_data.shippingOption.services){
+				if(_data.shippingOption.services["TIMED-DELIVERY"].value == 'SEVERAL-DAYS'){
+
+%>
+
+            <text editor:_printName_="E" 
+                style="fontFamily:黑体;fontWeight:bold;fontSize:37;align:center;valign:middle;">
+                <![CDATA[E]]>
+            </text>
+        <%}else{%>
+
+            <text editor:_printName_="E" 
+                style="fontFamily:黑体;fontWeight:bold;fontSize:37;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        <%}}%>
+
+		</layout><layout 
+            editor:_for_="element_text_E6E3C0C6BB118682"
+            
+            id="element_layout_459841959751D8BD" width="25" height="10" left="75" top="15"  style="overflow:visible;zIndex:9;"><%
+          if(_data.shippingOption.services){
+				if(_data.shippingOption.services["TIMED-DELIVERY"].value == 'TODAY'){
+
+%>
+
+            <text editor:_printName_="顺丰时效" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[顺丰即日]]>
+            </text>
+        <%}else if(_data.shippingOption.services["TIMED-DELIVERY"].value == 'NEXT-MORNING'){%>
+
+            <text editor:_printName_="顺丰时效" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[顺丰次晨]]>
+            </text>
+        <%}else if(_data.shippingOption.services["TIMED-DELIVERY"].value == 'NEXT-DAY'){%>
+
+            <text editor:_printName_="顺丰时效" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[顺丰次日]]>
+            </text>
+        <%}else if(_data.shippingOption.services["TIMED-DELIVERY"].value == 'SEVERAL-DAYS'){%>
+
+            <text editor:_printName_="顺丰时效" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[顺丰隔日]]>
+            </text>
+		<%}else if(_data.shippingOption.services["TIMED-DELIVERY"].value == 'DIY'){%>
+
+            <text editor:_printName_="顺丰时效" 
+                style="fontFamily:黑体;fontSize:14;align:center;valign:middle;">
+                <![CDATA[<%=_data.shippingOption.services["TIMED-DELIVERY"].text%>]]>
+            </text>
+        <%}else{%>
+<%}}%>
+
+		</layout><layout 
+            editor:_for_="element_text_18F8F4741A4DB6A1"
+            
+            id="element_layout_4E923C04E427D54E" width="47" height="9" left="3" top="83.3"  style="overflow:visible;zIndex:43;"><%
+          if(_data.shippingOption.services){
+				if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'ON-DELIVERY'){
+
+%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[付款方式：现结]]>
+            </text>
+        <%}else if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'MONTHLY'){%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[付款方式：月结]]>
+            </text>
+        <%}else if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'RECEIVER-PAY'){%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[付款方式：到付]]>
+            </text>
+        <%}else if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'THIRD-PARTY-PAY'){%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[付款方式：第三方付]]>
+            </text>
+        <%}else{%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        <%}}%>
+
+		</layout><layout 
+            editor:_for_="element_text_9E9649550D284B5B"
+            
+            id="element_layout_782D7DAD2441660B" width="47" height="9" left="50" top="83.3"  style="overflow:visible;zIndex:44;"><%
+          if(_data.shippingOption.services){
+            if(_data.shippingOption.services["SVC-INSURE"]){
+              if(_data.shippingOption.services["SVC-INSURE"].value){
+				if(_data.shippingOption.services["SVC-INSURE"].value != ""){
+
+%>
+
+            <text editor:_printName_="声明价值" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[声明价值：<%=_data.shippingOption.services["SVC-INSURE"].value%>元]]>
+            </text>
+        <%}else{%>
+
+            <text editor:_printName_="声明价值" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        <%}}}}%>
+
+		</layout><layout 
+            editor:_for_="element_text_08DEB7B34D88A1F7"
+            
+            id="element_layout_D2FA7DC902A6D662" width="19.12" height="8" left="80.3" top="123.3"  style="overflow:visible;zIndex:52;"><%
+          if(_data.shippingOption.services){
+				if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'ON-DELIVERY'){
+
+%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:10;align:center;valign:middle;">
+                <![CDATA[付款方式：现结]]>
+            </text>
+        <%}else if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'MONTHLY'){%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:10;align:center;valign:middle;">
+                <![CDATA[付款方式：月结]]>
+            </text>
+        <%}else if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'RECEIVER-PAY'){%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:10;align:center;valign:middle;">
+                <![CDATA[付款方式：到付]]>
+            </text>
+        <%}else if(_data.shippingOption.services["PAYMENT-TYPE"].value == 'THIRD-PARTY-PAY'){%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:10;align:center;valign:middle;">
+                <![CDATA[付款方式：第三方付]]>
+            </text>
+        <%}else{%>
+
+            <text editor:_printName_="付款方式" 
+                style="fontFamily:黑体;fontSize:12;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        <%}}%>
+
+		</layout><layout 
+            editor:_for_="element_text_A823A2038C8CE924"
+            
+            id="element_layout_9F0163EA8D0BEA41" width="19.12" height="8.3" left="80.3" top="131.7"  style="overflow:visible;zIndex:53;"><%
+          if(_data.shippingOption.services){
+            if(_data.shippingOption.services["SVC-INSURE"]){
+              if(_data.shippingOption.services["SVC-INSURE"].value){
+				if(_data.shippingOption.services["SVC-INSURE"].value != ""){
+
+%>
+
+            <text editor:_printName_="声明价值" 
+                style="fontFamily:黑体;fontSize:10;align:center;valign:middle;">
+                <![CDATA[声明价值：<%=_data.shippingOption.services["SVC-INSURE"].value%>元]]>
+            </text>
+        <%}else{%>
+
+            <text editor:_printName_="声明价值" 
+                style="fontFamily:黑体;fontSize:10;align:center;valign:middle;">
+                <![CDATA[]]>
+            </text>
+        <%}}}}%>
+
+		</layout>
+		</layout>
+		<footer height="0" >
+		</footer>
+</page>

@@ -1,0 +1,35 @@
+html,body
+{
+	width:100%;
+	height:100%;
+	border:0;
+	margin:0;
+	padding:0;
+	overflow:visible;
+}
+
+.mini-textbox-border {
+	height: 28px;
+}
+.mini-textbox {
+	height: 30px;
+}
+.mini-textbox-input {
+	height: 28px;
+	font-size: 11pt;
+}
+
+.btn{
+	height:26px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+.btn:hover{
+	background-color:#1E9FFF!important;
+	color:white!important;
+}

@@ -1,0 +1,234 @@
+1573617061---Array
+(
+    [0] => Array
+        (
+            [shoptype] => XX
+            [shopid] => XX-阿柳小店
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 线下
+        )
+
+)
+
+1573621295---Array
+(
+    [0] => Array
+        (
+            [shoptype] => XX
+            [shopid] => XX-阿柳小店
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 线下
+        )
+
+)
+
+1573621378---Array
+(
+    [0] => Array
+        (
+            [shoptype] => XX
+            [shopid] => XX-阿柳小店
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 线下
+        )
+
+)
+
+1573628554---Array
+(
+    [0] => Array
+        (
+            [shoptype] => TB
+            [shopid] => XX-阿柳小店
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 淘宝天猫
+        )
+
+)
+
+1573644823---Array
+(
+    [0] => Array
+        (
+            [shoptype] => TB
+            [shopid] => XX-阿柳小店
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 淘宝天猫
+        )
+
+)
+
+1573645533---Array
+(
+    [0] => Array
+        (
+            [shoptype] => TB
+            [shopid] => XX-阿柳小店
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 淘宝天猫
+        )
+
+)
+

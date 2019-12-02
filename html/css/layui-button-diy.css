@@ -1,0 +1,58 @@
+@font-face {font-family: "iconfont";
+  src: url('/js/plug-in/layui-2.0/font_warning/iconfont.eot'); /* IE9*/
+  src: url('/js/plug-in/layui-2.0/font_warning/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/js/plug-in/layui-2.0/font_warning/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('/js/plug-in/layui-2.0/font_warning/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('/js/plug-in/layui-2.0/font_warning/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.layui-icon-warning {
+	font-family:"iconfont" !important;
+	font-size:16px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.4px;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.layui-table-cell {
+	padding: 0 5px;
+}
+
+.layui-btn-pretty {
+	background-color: #FFF;
+	color: #1e9fff;
+}
+
+.layui-btn-pretty:hover {
+	background-color: #d4e5f5;
+	color: #1e9fff;
+}
+
+.layui-btn-spt-sm {
+  display: inline-block;
+  word-break: break-all;
+  white-space: nowrap;
+  font-size: 12px;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 5px;
+}
+
+.layui-btn-spt-sm-bg {
+	background-color: #aaaaaa;
+	height: 16px;
+	width: 1px;
+	display: inline-block;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.layui-btn-circle {
+	border-radius: 50%;
+}
+
+.layui-form-switch{
+	width: 52px;
+}
+

@@ -1,0 +1,20 @@
+.btn{
+	height:30px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+.other{
+	display:none;
+}
+
+th,td{
+	border:1px solid #dddddd;
+	padding:5px;
+	font-size:12px;
+	text-align:center;
+}

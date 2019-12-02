@@ -1,0 +1,6 @@
+.template-form{
+    padding: 20px;
+}
+.layui-form-select dl{
+    max-height: 200px;
+}

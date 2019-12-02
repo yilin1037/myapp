@@ -1,0 +1,33 @@
+.fi{
+	float:left;
+	position:relative;
+	
+	/*transition:border-color 0.3s;*/
+}
+
+.btn{
+	height:26px;
+	border:1px solid #1E9FFF;
+	background-color:white;
+	width:64px;
+	border-radius:3px;
+	color:#1E9FFF;
+	padding:2px 12px;
+}
+
+.all{
+	width:170px;
+	border-radius:0;
+	height:26px;
+	font-size:12px;
+	margin-left:5px;
+}
+
+input{
+	width:100%;
+}
+
+th,td{
+	border:1px solid #e6e6e6;
+	padding:4px;
+}

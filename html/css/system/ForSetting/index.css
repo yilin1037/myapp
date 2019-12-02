@@ -1,0 +1,9 @@
+#flow .layui-input, .layui-select, .layui-textarea {height: 32px;}
+#flow .layui-form-select dl dd, .layui-form-select dl dt {line-height: 26px;}
+#flow .layui-form-item {margin-bottom: 0px;}
+#flow .layui-table{margin: 0;}
+#flow .layui-table-view {margin: 0;}
+#flow .layui-btn-sm {margin-top: -10px;}
+.layui-form-item .layui-inline {margin-bottom: 0px;margin-right: 0px;}
+#checkboxList .layui-unselect{width: 155px !important; text-align: left !important;}
+.layui-unselect span{width: 88%;}

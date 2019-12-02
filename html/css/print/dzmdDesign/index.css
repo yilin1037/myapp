@@ -1,0 +1,190 @@
+.template-list {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+.template-list .item {
+    width: 180px;
+    height: auto!important;
+    border-radius: 4px;
+    background-color: #FFF;
+    float: left;
+    margin-left: 21px;
+    margin-bottom: 30px;
+    border: 2px solid #FFF;
+    box-sizing: border-box;
+    position: relative;
+}
+.template-list .itemSelect {
+    border: 2px solid #9BD6EF !important;
+}
+.template-list .editSelect{
+    background-color: #008CFF !important;
+}
+.template-list .deleteSelect{
+    background-color: #9BD6EF !important;
+}
+.template-list .template-name {
+    height: 212px;
+    line-height: 212px!important;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    background-color: #FFF;
+    color: #3A3D5A;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.template-list .template-title{
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    background-color: #FFF;
+    color: #3A3D5A;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.template-list .template-img {
+    height: 193px;
+    line-height: 193px!important;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: #3A3D5A;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #FFF url(/images/dzmd.png) no-repeat center 7px;
+}
+.template-list .edit {
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    background-color: #9B9B9B;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+.template-list .delete {
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #CCCCCC;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+.template-list .template-name .layui-icon{
+    font-size: 32px;
+}
+.template-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(/images/KD.png) no-repeat left 50px;
+}
+/*韵达*/
+.template-img .LOGO401 {
+    background: url(/images/YD.png) no-repeat left 50px;
+}
+/*宅急送*/
+.template-img .LOGO901 {
+    background: url(/images/ZJS.png) no-repeat left 50px;
+}
+/*国通快递*/
+.template-img .LOGO1101 {
+    background: url(/images/GT.png) no-repeat left 50px;
+}
+/*中国邮政国内标快*/
+.template-img .LOGO82710 {
+    background: url(/images/YZ.png) no-repeat left 50px;
+}
+/*百世快运*/
+.template-img .LOGO84010 {
+    background: url(/images/NSKD.png) no-repeat left 50px;
+}
+/*德邦*/
+.template-img .LOGO1301 {
+    background: url(/images/DB.png) no-repeat left 50px;
+}
+/*EMS*/
+.template-img .LOGO701 {
+    background: url(/images/EMS.png) no-repeat left 50px;
+}
+/*全峰快递*/
+.template-img .LOGO1401 {
+    background: url(/images/QF.png) no-repeat left 50px;
+}
+/*中国邮政快递包裹*/
+.template-img .LOGO801 {
+    background: url(/images/YZ.png) no-repeat left 50px;
+}
+/*优速快递*/
+.template-img .LOGO1001 {
+    background: url(/images/YS.png) no-repeat left 50px;
+}
+/*申通快递*/
+.template-img .LOGO201 {
+    background: url(/images/STO.png) no-repeat left 50px;
+}
+/*EMS经济快递*/
+.template-img .LOGO1601 {
+    background: url(/images/EMS.png) no-repeat left 50px;
+}
+/*速尔快递标准模板*/
+.template-img .LOGO133902 {
+    background: url(/images/KD.png) no-repeat left 50px;
+}
+/*顺丰速运标准模板*/
+.template-img .LOGO1501 {
+    background: url(/images/SF.png) no-repeat left 50px;
+}
+/*中通快递标准模板*/
+.template-img .LOGO301 {
+    background: url(/images/ZT.png) no-repeat left 50px;
+}
+/*圆通快递标准模板*/
+.template-img .LOGO101 {
+    background: url(/images/YTO.png) no-repeat left 50px;
+}
+/*天天快递标准模板*/
+.template-img .LOGO601 {
+    background: url(/images/TT.png) no-repeat left 50px;
+}
+/*百世快递标准模板*/
+.template-img .LOGO501 {
+    background: url(/images/BS.png) no-repeat left 50px;
+}
+/*快捷快递标准模板*/
+.template-img .LOGO1201 {
+    background: url(/images/KJ.png) no-repeat left 50px;
+}
+/*如风达标准模板*/
+.template-img .LOGO34725 {
+    background: url(/images/KD.png) no-repeat left 50px;
+}
+/*京东模板*/
+.template-img .LOGO0 {
+    background: url(/images/JD.png) no-repeat left 50px;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:editor="http://cloudprint.cainiao.com/schema/editor" width="80" height="40">
+<layout left="6pt" top="13.5pt" width="215.25pt" height="47.25pt" style="overflow:hidden;">
+<barcode width="215.25pt" height="47.25pt" type="code128a" style="hideText:true;">
+<![CDATA[<%=_data.prd_loc_barcode%>]]>
+</barcode>
+</layout>
+<layout left="6pt" top="67.5pt" width="215.25pt" height="26.25pt" style="overflow:hidden;">
+<text style="fontFamily:黑体;align:center;fontSize:25pt;fontWeight:bold;">
+<![CDATA[<%=_data.prd_loc%>]]>
+</text>
+</layout>
+</page>

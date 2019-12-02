@@ -1,0 +1,551 @@
+1572759532--select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1572759532--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1572759532--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1572759532--select configValue from u13123456789_base_config where `type` = 'aftersaleSwitch' and configKey = '13123456789' 
+1572759532--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1572759532--select username,password,status,type from u13123456789_usertable where userid='13123456789'
+1572759532--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572759532--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572759532','','用户名或密码错误!！')
+1572759532--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '13123456789'
+					AND status = '0'
+					AND login_time > '1572759228'
+1572759808--select configValue from u13123456789_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1572759808--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1572759808--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1572759808--select configValue from u13123456789_base_config where `type` = 'aftersaleSwitch' and configKey = '13123456789' 
+1572759808--select configValue from u13123456789_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1572759808--select username,password,status,type from u13123456789_usertable where userid='13123456789'
+1572759808--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='13123456789'
+1572759808--update userlist set last_login_time='1572759808' where system_id='13123456789'
+1572759808--SELECT 1 FROM userlist WHERE system_id = '13123456789'
+1572759808--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('13123456789','13123456789','1572759808','1','登录IP地址：127.0.0.1')
+1572759808--SELECT sync_orders FROM drop_shipping_list WHERE system_id='13123456789'
+1572759808--SELECT name FROM unique_code_supply WHERE system_id='13123456789'
+1572759808--SELECT to_system_id FROM system_sync_list WHERE to_system_id='13123456789'
+1572759808--SELECT DISTINCT shopid,express_id,drop_shipping_id from u13123456789_express where is_drop_shipping = 1 and del_logo=0
+1572759808--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '13123456789'
+					AND status = '0'
+					AND login_time > '1572759504'
+1572759808--select username,expire_time from userlist where system_id='13123456789'
+1572759808--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759808--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572759808--select sum(balance) as balance from u13123456789_tid_pay
+1572759808--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572759808--select sms_count from userlist where system_id='13123456789'
+1572759808--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572759808--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572759808--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572759808--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572759808--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572759808--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572759809--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572759809--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572759809--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572759809--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759809--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759810--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759810--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572759811--SELECT id,title,content,begin_time FROM notice where '1572759811' BETWEEN begin_time AND end_time 
+1572759812--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1572759812--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1572759813--SELECT title,content,create_time FROM question limit 0,7
+1572759813--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759813--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759813--select username,expire_time from userlist where system_id='13123456789'
+1572759813--SELECT expire_time FROM servicelist WHERE `system_id`=13123456789
+1572759813--select sum(balance) as balance from u13123456789_tid_pay
+1572759813--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u13123456789_tid_pay
+1572759819--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759819--SELECT configValue FROM u13123456789_base_config WHERE `type`='ForTake' and configKey='system_id'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572759819--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u13123456789_report_tpl where `type` = 'printer'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572759819--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572759819--select shopid,appkey,secretkey,sessionkey from u13123456789_shop_config where shoptype = 'JD'
+1572759820--select configValue from u13123456789_base_config where type='baseConfig' and configKey='stockPrint' 
+1572759820--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759820--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759820--select shopid,shopname from u13123456789_shop_config
+1572759820--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572759820--select configValue from u13123456789_base_config where type='baseConfig' and configKey='stockPrint' 
+1572759820--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759820--select split_str,node1,node2,node3,node4,node5,node6,order_one,print_space from u13123456789_unique_code_config
+1572759820--SELECT wh,name FROM u13123456789_my_wh
+1572759820--select count(1) as all_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0
+1572759820--select a.title,b.shoptype,a.close_unique_code,a.pic_url,a.print_type,c.shopname AS shopid,a.payment_time,(case when a.explosion_code != '' then a.explosion_code else a.unique_code end) as unique_code,a.prd_no,d.sort_name,g.sort_name_sku,a.sku_name,b.show_tid as tid,a.express_sort,(case when a.explosion_code != '' then '爆款' else a.more_code end) as more_code,b.buyer_nick,a.print_count,a.check_stock,a.sold_out_memo,b.new_tid,a.last_print_time,a.market,a.floor,a.booth,b.buyer_message,b.seller_memo,b.wh,a.have_stock,a.prd_loc,e.name as prd_loc_name from u13123456789_tid_items a
+		INNER JOIN (SELECT shoptype,shopid,tid,show_tid,buyer_nick,print_unique_num,send_status,mark_status,new_tid,exception_online,buyer_message,seller_memo,web_status,wh,stock_order,express_type,seller_flag,order_type FROM u13123456789_tid_orders) b ON a.tid = b.tid
+		LEFT JOIN (SELECT shopname,shopid from u13123456789_shop_config) c ON b.shopid=c.shopid
+		left join (select prd_id,cost_price,sort_name,assist_prd from u13123456789_product group by prd_id) as d on d.prd_id=a.prd_id
+		LEFT JOIN (SELECT prd_loc,name from u13123456789_wh_loc) e on a.prd_loc = e.prd_loc
+		left join (select num_iid,shopid,assist_prd from u13123456789_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+		left join (select prd_sku_id,sort_name_sku from  u13123456789_product_sku) as g on g.prd_sku_id=a.prd_sku_id 
+		 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 order by a.prd_no DESC , a.sku_name,a.prd_no,a.sku_name,a.is_more,a.id limit 0,200
+1572759820--select count(1) as not_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time < 1572710400  AND IFNULL(p.assist_prd,0) <> 1 
+1572759820--select count(1) as yes_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time >=1572710400  AND IFNULL(p.assist_prd,0) <> 1 
+1572759820--SELECT COUNT(*) AS num FROM u13123456789_tid_items a
+				INNER JOIN (SELECT tid,show_tid,buyer_nick,shopid,send_status,mark_status,web_status,new_tid,exception_online,seller_memo,buyer_message,stock_order,wh,express_type,seller_flag,order_type FROM u13123456789_tid_orders) b ON a.tid = b.tid
+				LEFT JOIN (SELECT shopname,shopid from u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select prd_id,cost_price,sort_name from u13123456789_product group by prd_id) as d on d.prd_id=a.prd_id
+				left join (select num_iid,shopid,assist_prd from u13123456789_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0
+1572759820--select count(1) as single_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759820--select configValue from u13123456789_base_config where type='baseConfig' and configKey='stockPrint' 
+1572759820--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759820--select count(1) as all_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0
+1572759820--select count(1) as not_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time < 1572710400  AND IFNULL(p.assist_prd,0) <> 1 
+1572759820--select count(1) as yes_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time >=1572710400  AND IFNULL(p.assist_prd,0) <> 1 
+1572759820--select count(1) as single_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as more_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as more_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as close_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as close_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as cancel_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as cancel_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as shop_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as shop_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select configValue from u13123456789_base_config where type='baseConfig' and configKey='stockPrint' 
+1572759821--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759821--select count(1) as storage_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--SELECT wh,name FROM u13123456789_my_wh
+1572759821--select count(1) as storage_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759821--select count(1) as cancel_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status,stock_order from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 AND b.stock_order=0 AND a.close_unique_code=0 AND p.assist_prd=1
+1572759821--select count(1) as cancel_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status,stock_order from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 AND b.stock_order=0 AND a.close_unique_code=0 AND p.assist_prd=1
+1572759821--select a.title,b.shoptype,a.close_unique_code,a.pic_url,a.print_type,c.shopname AS shopid,a.payment_time,(case when a.explosion_code != '' then a.explosion_code else a.unique_code end) as unique_code,a.prd_no,d.sort_name,g.sort_name_sku,a.sku_name,b.show_tid as tid,a.express_sort,(case when a.explosion_code != '' then '爆款' else a.more_code end) as more_code,b.buyer_nick,a.print_count,a.check_stock,a.sold_out_memo,b.new_tid,a.last_print_time,a.market,a.floor,a.booth,b.buyer_message,b.seller_memo,b.wh,a.have_stock,a.prd_loc,e.name as prd_loc_name from u13123456789_tid_items a
+		INNER JOIN (SELECT shoptype,shopid,tid,show_tid,buyer_nick,print_unique_num,send_status,mark_status,new_tid,exception_online,buyer_message,seller_memo,web_status,wh,stock_order,express_type,seller_flag,order_type FROM u13123456789_tid_orders) b ON a.tid = b.tid
+		LEFT JOIN (SELECT shopname,shopid from u13123456789_shop_config) c ON b.shopid=c.shopid
+		left join (select prd_id,cost_price,sort_name,assist_prd from u13123456789_product group by prd_id) as d on d.prd_id=a.prd_id
+		LEFT JOIN (SELECT prd_loc,name from u13123456789_wh_loc) e on a.prd_loc = e.prd_loc
+		left join (select num_iid,shopid,assist_prd from u13123456789_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+		left join (select prd_sku_id,sort_name_sku from  u13123456789_product_sku) as g on g.prd_sku_id=a.prd_sku_id 
+		 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.last_print_time<1572710400 AND a.close_unique_code=0 order by a.prd_no DESC , a.sku_name,a.prd_no,a.sku_name,a.is_more,a.id limit 0,200
+1572759821--SELECT COUNT(*) AS num FROM u13123456789_tid_items a
+				INNER JOIN (SELECT tid,show_tid,buyer_nick,shopid,send_status,mark_status,web_status,new_tid,exception_online,seller_memo,buyer_message,stock_order,wh,express_type,seller_flag,order_type FROM u13123456789_tid_orders) b ON a.tid = b.tid
+				LEFT JOIN (SELECT shopname,shopid from u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select prd_id,cost_price,sort_name from u13123456789_product group by prd_id) as d on d.prd_id=a.prd_id
+				left join (select num_iid,shopid,assist_prd from u13123456789_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.last_print_time<1572710400 AND a.close_unique_code=0
+1572759822--select configValue from u13123456789_base_config where type='baseConfig' and configKey='stockPrint' 
+1572759822--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759822--select count(1) as all_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0
+1572759822--select count(1) as not_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time < 1572710400  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as yes_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time >=1572710400  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as single_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as more_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as close_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as cancel_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as shop_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=0  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as storage_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u13123456789_tid_orders) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=1  AND IFNULL(p.assist_prd,0) <> 1 
+1572759822--select count(1) as cancel_num from u13123456789_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status,stock_order from u13123456789_tid_orders) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u13123456789_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u13123456789_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 AND b.stock_order=0 AND a.close_unique_code=0 AND p.assist_prd=1
+1572759838--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759838--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759838--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759838--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572759848--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759848--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759848--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572759848--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u13123456789_report_tpl where `type` = 'printer'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572759848--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572759849--SELECT COUNT(*) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572759849--select id,planName from u13123456789_search_plan order by id 
+1572759849--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759849--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759849--select configKey from u13123456789_base_config where `type` = 'fetch_detail' 
+1572759849--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759849--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759849--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759849--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u13123456789_express
+1572759849--SELECT wh,name FROM u13123456789_my_wh
+1572759849--SELECT id,statusName FROM u13123456789_sign_status
+1572759849--select count(1) as count from (
+						select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1572759849--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572759849--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572759849--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u13123456789_tid_orders a
+                
+                where a.new_tid in ('15726848597798','15726649946164','15726649273823','15726006975601','15726006271944','15726005228980','15725728417586','15725723112239','15725722012374','15724910831878','15724059979826','15724058098749','15724057456294','15724048819868','15723124353412','15723122935727','15723122094416','SH20191025112550183213','SH20191025112458711928','SH20191025111648228584','SH20191025111621424982','SH20191025111548651322','SH20191025111529857018','SH20191025104245884129','SH20191025104213664604','SH20191025104148422641','SH20191025104104743158','15718191534825','15718092709984','15718092592406','15717110891126','15714525459663','15714499952123','15713765819899','15713765591127','15713765479958','15713689391488','HB_191017157130516124427','15711332519959','15708736465198','15708584434735','15707708887989','SH20191010105542448175','HB_1910151571118315387527','SH20190930182654625484','15697504232353','15697491209157','HB_1909281569665782183','15696497821895','15696489518513','15695738273583','15695683653619','SH20190926171113604654','SH20190926160731892664','15692179129874','15692058306023','15687121744437','15687120609685','15686011989224','15682712157205','15682710187087','15681864152269','15681864071556','15681863738636','15681701421688','15680174572197','15680158164848','15678504532496','15678503754091','15678502886653','15678501878973','15678501145636','15678501002779','15678500138882_1','15678500138882','15678499076370','15678499076370_1','15678480346445_1','15678480346445','15678439464473','15678434226215','15678433706663','15678428584013','15678428017015','15678414972130','15678386301413','15678241168083','15678239693358','15677569858862','15677567757157','15677522378800','15677484165500','15676666169022','15676665582180','15676663086969','15676661403683','15676661209516','15676492519542','15675684768369','15674017614914')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1572759849--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u13123456789_tid_items where tid in ('TB-15726848597798','TB-15726649946164','TB-15726649273823','TB-15726006975601','TB-15726006271944','TB-15726005228980','SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914')
+1572759849--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u13123456789_tid_items where tid in ('TB-15726848597798','TB-15726649946164','TB-15726649273823','TB-15726006975601','TB-15726006271944','TB-15726005228980','SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id
+1572759849--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759849--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1572759849--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1572759849--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1572759849--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1572759849--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1572759849--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1572759849--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1572759849--select count(1) as count from (
+					select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1572759849--select count(1) as count from (select new_tid from u13123456789_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1572759849--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759849--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572759850--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572759850--SELECT wh,name FROM u13123456789_my_wh
+1572759850--select id,statusName from u13123456789_sign_status
+1572759851--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759852--select shoptype,shopid,shopname from u13123456789_shop_config where isAuth = '1' and status = '1' 
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572759855--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572759855--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+
+1572759855--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759890--select id,prd_no from u13123456789_tid_one_bom order by prd_no
+1572759890--SELECT id, name, tid_num, tid_min_num, wave_num, more_type, shop_type, sort_type, update_time, one_bom, item_num, daifa, prd_no_list, bom_no_list, not_prd_no_list, not_prd_loc_list,wh_area FROM u13123456789_wave_config limit 0,50
+1572759890--SELECT count(1) as count FROM u13123456789_wave_config
+1572759898--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759898--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759898--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572759899--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u13123456789_report_tpl where `type` = 'printer'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YD'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572759899--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572759899--SELECT COUNT(*) AS addBang FROM u13123456789_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1572759899--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u13123456789_express WHERE status='0'
+1572759899--select id,planName from u13123456789_search_plan order by id 
+1572759899--select configKey from u13123456789_base_config where `type` = 'fetch_detail' 
+1572759899--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759899--select system_id,system_name from u13123456789_drop_shipping_client where addtime>0
+1572759899--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759900--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759900--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759900--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759900--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759900--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u13123456789_express
+1572759900--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1572759900--SELECT wh,name FROM u13123456789_my_wh
+1572759900--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1572759900--SELECT id,statusName FROM u13123456789_sign_status
+1572759900--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1572759900--select count(1) as count from (
+						select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1572759900--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1572759900--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572759900--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1572759900--select a.new_tid from u13123456789_tid_orders a where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1572759900--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1572759900--select count(1) as count from (
+						select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1572759900--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u13123456789_tid_orders a
+                
+                where a.new_tid in ('15726848597798','15726649946164','15726649273823','15726006975601','15726006271944','15726005228980','15725728417586','15725723112239','15725722012374','15724910831878','15724059979826','15724058098749','15724057456294','15724048819868','15723124353412','15723122935727','15723122094416','SH20191025112550183213','SH20191025112458711928','SH20191025111648228584','SH20191025111621424982','SH20191025111548651322','SH20191025111529857018','SH20191025104245884129','SH20191025104213664604','SH20191025104148422641','SH20191025104104743158','15718191534825','15718092709984','15718092592406','15717110891126','15714525459663','15714499952123','15713765819899','15713765591127','15713765479958','15713689391488','HB_191017157130516124427','15711332519959','15708736465198','15708584434735','15707708887989','SH20191010105542448175','HB_1910151571118315387527','SH20190930182654625484','15697504232353','15697491209157','HB_1909281569665782183','15696497821895','15696489518513','15695738273583','15695683653619','SH20190926171113604654','SH20190926160731892664','15692179129874','15692058306023','15687121744437','15687120609685','15686011989224','15682712157205','15682710187087','15681864152269','15681864071556','15681863738636','15681701421688','15680174572197','15680158164848','15678504532496','15678503754091','15678502886653','15678501878973','15678501145636','15678501002779','15678500138882_1','15678500138882','15678499076370','15678499076370_1','15678480346445_1','15678480346445','15678439464473','15678434226215','15678433706663','15678428584013','15678428017015','15678414972130','15678386301413','15678241168083','15678239693358','15677569858862','15677567757157','15677522378800','15677484165500','15676666169022','15676665582180','15676663086969','15676661403683','15676661209516','15676492519542','15675684768369','15674017614914')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1572759900--select count(1) as count from (
+					select new_tid from u13123456789_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1572759900--select count(1) as count from (select new_tid from u13123456789_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1572759900--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u13123456789_tid_items where tid in ('TB-15726848597798','TB-15726649946164','TB-15726649273823','TB-15726006975601','TB-15726006271944','TB-15726005228980','SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914')
+1572759900--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u13123456789_tid_items where tid in ('TB-15726848597798','TB-15726649946164','TB-15726649273823','TB-15726006975601','TB-15726006271944','TB-15726005228980','SSBB-15725728417586','TB-15725723112239','TB-15725722012374','kaola-15724910831878','kaola-15724059979826','kaola-15724058098749','kaola-15724057456294','kaola-15724048819868','TB-15723124353412','TB-15723122935727','TB-15723122094416','CQSHOP-SH20191025112550183213','CQSHOP-SH20191025112458711928','CQSHOP-SH20191025111648228584','CQSHOP-SH20191025111621424982','CQSHOP-SH20191025111548651322','CQSHOP-SH20191025111529857018','CQSHOP-SH20191025104245884129','CQSHOP-SH20191025104213664604','CQSHOP-SH20191025104148422641','CQSHOP-SH20191025104104743158','TB-15718191534825','TB-15718092709984','TB-15718092592406','TB-15717110891126','TB-15714525459663','TB-15714499952123','TB-15713765819899','TB-15713765591127','TB-15713765479958','XX-15713689391488','CQSHOP-SH20191017173909826068','CQSHOP-SH20191017173831677203','YZ-15711332519959','CQSHOP-SH20191014155525727314','YZ-15708736465198','TB-15708584434735','TB-15707708887989','CQSHOP-SH20191010105542448175','CQSHOP-SH20191009111115658282','CQSHOP-SH20191009110830692474','CQSHOP-SH20191009110526341692','CQSHOP-SH20191009110411364464','CQSHOP-SH20190930182654625484','TB-15697504232353','TB-15697491209157','TB-15696514976790','TB-15696510594306','TB-15696497821895','TB-15696489518513','TB-15695738273583','TB-15695683653619','CQSHOP-SH20190926171113604654','CQSHOP-SH20190926160731892664','YZ-15692179129874','YZ-15692058306023','YZ-15687121744437','YZ-15687120609685','TB-15686011989224','TB-15682712157205','TB-15682710187087','YZ-15681864152269','YZ-15681864071556','YZ-15681863738636','YZ-15681701421688','YZ-15680174572197','YZ-15680158164848','TB-15678504532496','TB-15678503754091','TB-15678502886653','TB-15678501878973','TB-15678501145636','TB-15678501002779','TB-15678500138882','TB-15678500138882_1','TB-15678499076370','TB-15678499076370_1','TB-15678480346445','TB-15678480346445_1','TB-15678439464473','TB-15678434226215','TB-15678433706663','TB-15678428584013','TB-15678428017015','TB-15678414972130','TB-15678386301413','TB-15678241168083','TB-15678239693358','TB-15677569858862','TB-15677567757157','TB-15677522378800','TB-15677484165500','TB-15676666169022','TB-15676665582180','TB-15676663086969','TB-15676661403683','TB-15676661209516','TB-15676492519542','TB-15675684768369','TB-15674017614914') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id
+1572759900--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759900--select configValue from u13123456789_base_config where type='baseConfig' and configKey='isexpress'
+1572759900--SELECT wh,name FROM u13123456789_my_wh
+1572759900--select id,statusName from u13123456789_sign_status
+1572759901--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759902--select shoptype,shopid,shopname from u13123456789_shop_config where isAuth = '1' and status = '1' 
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='YUN'
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PTKDD'
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BQ'
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='SKBQ'
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='KCBQ'
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='BKBQ'
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type in ('DSOS','DSKD','SAKP')
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='storage'
+1572759904--select id,tpl_name,express_no,def,type,param_json,tpl_json from u13123456789_print_tpl where type='PRDT'
+1572759904--select system_id,system_name from u13123456789_drop_shipping_client where addtime>0
+1572759904--select shop_permission from u13123456789_usertable where `userid` = '13123456789' 
+1572759904--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u13123456789_shop_config
+1572759945--SELECT a.bat_no,a.system_id,a.create_time,a.status,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,10
+1572759975--SELECT a.bat_no,a.system_id,a.create_time,a.status,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,10
+1572759979--SELECT a.bat_no,a.system_id,a.create_time,a.status,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,10
+1572759984--SELECT a.bat_no,a.system_id,a.create_time,a.status,SUM(b.payment) as payment,b.payment_time,c.total_fee,c.take_fee,c.take_tid_fee,c.system_name,d.pay_type FROM u13123456789_sync_tid_bat AS a
+			LEFT JOIN (SELECT bat_no,payment,payment_time FROM u13123456789_sync_tid_pay_log) AS b ON a.bat_no=b.bat_no
+			left join (
+				select a.bat_no,sum(b.now_price+c.price) as total_fee,sum(if(a.is_take=1,a.take_price,0)) as take_fee,sum(if(a.is_take=1,a.price,0)) as take_tid_fee,c.system_name from u13123456789_sync_tid_items a
+				left join (SELECT prd_no,now_price FROM u13123456789_producte_take_items a
+INNER JOIN (SELECT MAX(id) AS id FROM u13123456789_producte_take_items GROUP BY prd_no) AS b ON b.id=a.id) as b on b.prd_no=a.prd_no
+				left join (select system_id,system_name,price from u13123456789_assist_client) as c on a.system_id=c.system_id
+				group by a.bat_no
+			) as c on c.bat_no=a.bat_no
+			left join (select system_id,pay_type from u13123456789_assist_client) as d on d.system_id=a.system_id
+			WHERE 1=1 GROUP BY a.bat_no,a.system_id,a.create_time,a.status ORDER BY a.create_time DESC limit 0,10
+1572760110--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572760110--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572760410--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572760410--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572760710--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572760710--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572761010--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572761010--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572761310--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572761310--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572761610--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572761610--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572761910--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572761910--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572762210--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572762210--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572762510--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572762510--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572762810--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572762810--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572763110--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572763110--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572763410--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572763410--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572763710--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572763710--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572764010--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572764010--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572764310--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572764310--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572764610--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572764610--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572764910--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572764910--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572765210--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572765210--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572765510--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572765510--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572765810--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572765810--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572766110--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572766110--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572766410--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572766410--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'
+1572766710--select `type`,permission from u13123456789_usertable where `userid` = '13123456789' 
+1572766710--SELECT MIN(down_time) AS down_time  FROM u13123456789_shop_config WHERE `status`='1'

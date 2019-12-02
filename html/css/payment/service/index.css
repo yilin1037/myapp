@@ -1,0 +1,122 @@
+.product-info {
+    float: left;
+    width: 100%;
+    padding: 50px;
+}
+.product-box-left {
+    margin-right: 2%;
+}
+.product-box-action {
+    border: 1px solid #00A1CC !important;
+}
+.product-box {
+    width: 30%;
+    height: 400px;
+    float: left;
+    padding: 30px 1%;
+    border: 1px solid #F5F5F3;
+    background: #FFF;
+    margin-left: -2px;
+    overflow: hidden;
+}
+.product-box-hd {
+    padding-bottom: 10px;
+    padding-left: 0;
+    height: 50px;
+}
+.title-img {
+    width: 120px;
+    height: 50px;
+    float: left;
+}
+.title-txt {
+    text-align: center;
+}
+.title-txt h3 {
+    font-size: 16px;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+.product-box-hd-info {
+    word-break: break-word;
+    height: 36px;
+    text-align: center;
+}
+.product-box-hd-info p {
+    font-size: 12px;
+    color: #999;
+    height: 36px;
+    text-align: center;
+}
+.product-box-ft {
+    text-align: center;
+    padding-top: 0;
+    height: 145px;
+}
+.product-box-ft .p-sell-price {
+    font-size: 18px;
+    color: #333;
+    height: 54px;
+}
+.product-box-ft .p-sell-price .price-number {
+    font-size: 36px;
+    color: #f60;
+}
+.product-box-ft .p-sell-price label{
+    color: #F60;
+    font-size: 14px;
+}
+.y-pb2 {
+    padding-bottom: 8px;
+}
+a.btn {
+    height: 42px;
+    display: inline-block;
+    line-height: 42px;
+    padding: 0 25px;
+    background: #F60;
+    font-size: 16px;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+}
+a.btn:hover{
+    color: #FFF;
+}
+a.btn:visited{
+    color: #FFF;
+}
+.product-box-bd {
+    padding: 20px 0;
+    text-align: left;
+    border-bottom: 1px solid #EEE;
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+    height: 265px;
+}
+.mail-config-3 .config3-tit {
+    display: inline-block;
+    font-size: 18px;
+    color: #333;
+    width: 100px;
+}
+.mail-config-3 .config3-img {
+    height: 27px;
+}
+.config3-tit {
+    width: 50%!important;
+    text-align: right!important;
+    padding-right: 5%!important;
+    font-size: 12px!important;
+    color: #666!important;
+}
+.mail-config-3 .config3-tit .big3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+}
+.mail-config-3 .config3-desc {
+    display: inline-block;
+    font-size: 12px;
+    color: #666;
+}

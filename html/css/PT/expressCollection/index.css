@@ -1,0 +1,70 @@
+html,body{
+	height: 100%;
+}
+.leftSearch{
+	width: 299px;
+	height: 100%;
+	border-right: 1px solid #DDDDDD;
+}
+.rightTable{
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 300px;
+}
+.leftOne{
+	line-height: 35px;
+	font-size: 16px;
+	text-indent: 1em;
+}
+.leftTwo{
+	height: 50px;
+}
+.leftTwo input{
+	height: 40px;
+	width: 240px;
+	margin-left: 20px;
+	margin-top: 10px;
+	padding: 0px 5px; 
+	font-size: 18px;
+}
+.leftThree{
+	height: 50px;
+}
+.leftThree input{
+	height: 30px;
+	width: 100px;
+	margin-left: 20px;
+	margin-top: 10px;
+	border: 0px solid;
+	background: #34A8FF; 
+	color: #FFFFFF; 
+}
+.leftTwo input::-webkit-input-placeholder{
+	font-size: 18px;
+}
+.leftTwo input::-moz-placeholder{
+	font-size: 18px;     
+}
+.leftTwo input:-ms-input-placeholder{
+	font-size: 18px;       
+}
+
+
+
+
+
+
+.layui-form-item{
+	margin-bottom: 0px;
+}
+.layui-table, .layui-table-view{
+	margin: 0px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,232 @@
+[v-cloak] {
+	display: none;
+}
+html,body{
+	height:100%;
+}
+.outBox{
+	position:relative;
+	height:100%;
+}
+.layui-form-item {
+    margin-bottom: 5px;
+}
+.layui-form-item .layui-input-inline {
+    margin-right: 0px;
+}
+/**layui多选下拉**/
+.layui-tab{
+	margin:0px;
+}
+.layui-tab-title{
+	border:0px solid;
+}
+.layui-elem-quote {
+	padding: 10px;
+	font-size: 14PX;
+}
+label{
+	color:#666 !important;
+}
+.layui-form-item select[multiple]+.layui-form-select dd{ 
+	padding:0;
+}
+.layui-form-item select[multiple]+.layui-form-select .layui-form-checkbox[lay-skin=primary]{ 
+	margin:0 !important; 
+	display:block; 
+	line-height:36px !important;
+	position:relative; 
+	padding-left:26px;
+}
+.layui-form-item select[multiple]+.layui-form-select .layui-form-checkbox[lay-skin=primary] span{
+	line-height:36px !important; 
+	float:none;
+}
+.layui-form-item select[multiple]+.layui-form-select .layui-form-checkbox[lay-skin=primary] i{ 
+	position:absolute; 
+	left:10px;
+	top:0; 
+	margin-top:9px;
+}
+.multiSelect{ 
+	line-height:normal; 
+	height:auto; 
+	padding:4px 10px; 
+	overflow:hidden;
+	min-height:38px; 
+	margin-top:-38px; 
+	left:0; 
+	z-index:99;
+	position:relative;
+	background:none;
+}
+.multiSelect a{ 
+	padding:2px 5px; 
+	background:#908e8e; 
+	border-radius:2px; 
+	color:#fff; 
+	display:block; 
+	line-height:20px; 
+	height:24px; 
+	margin:2px 5px 2px 0; 
+	float:left;
+}
+.multiSelect a span{ 
+	float:left;
+}
+.multiSelect a i{ 
+	float:left; 
+	display:block; 
+	margin:2px 0 0 2px; 
+	border-radius:2px; 
+	width:16px; 
+	height:16px; 
+	background:url(../../../images/table/close.png) no-repeat center; 
+	background-size:65%; padding:4px;
+}
+.multiSelect a i:hover{ 
+	background-color:#545556;
+}
+.multiSelect{
+	background:#fff;
+	min-height: 32px;
+	height: 38px;
+	overflow: hidden;
+}
+.multiSelect a {
+	margin: 3px 5px 2px 0;
+}
+/**高级搜索*/
+.leftSearch{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width: 250px;
+	border-right:2px solid #DDDDDD;
+}
+.exit{
+	position:absolute;
+	top: 13px;
+	left: 210px;
+	width: 15px;
+	height: 15px;
+	cursor:pointer;
+}
+.exit img{
+	width:100%;
+}
+/**右侧数据**/
+.rightMain{
+	min-width:1000px;
+	position: absolute;
+	top:0px;
+	left:250px;
+}
+.operationBtn{
+	position: absolute;
+	top:10px;
+	right:20px;
+	width:200px;
+}
+.btnGroup{
+	float:left;
+	line-height: 30px;
+	cursor: pointer;
+	text-indent:1em;
+}
+.btnGroup:hover{
+	background-color: #EEEEEE;
+}
+.btnGroup:nth-of-type(1){
+	width:0%;
+}
+.btnGroup:nth-of-type(2){
+	width:40%;
+}
+.btnGroup:nth-of-type(3){
+	width:60%;
+}
+.btnGroup:nth-of-type(4){
+	width:0%;
+}
+.btnGroup img{
+	padding-bottom: 2px;
+}
+#costSetupList .layui-table, .layui-table-view {
+    margin: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,197 @@
+html,body{
+	margin:0;
+	padding:0;
+	background-color:#f9fafc;
+	min-width:1260px;
+}
+
+.wrap{
+	padding:0 30px 0 30px;
+}
+
+.header{
+	line-height:40px;
+	font-size:12px;
+	border-bottom:1px solid #1e9fff;
+}
+
+.nav{
+	margin-top:20px;
+}
+
+.navUL{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.navUL li {
+    width: 92px;
+    height: 92px;
+    box-sizing: border-box;
+    float: left;
+    background: #f8f8f8;
+    margin-left: -1px;
+    transition: all .3s;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+	padding-top:10px;
+}
+
+.navUL li i {
+    width: 50px;
+    height: 50px;
+    display: block;
+	margin:0 auto;
+}
+
+.ddp1{
+	color:orange;
+	border:1px solid orange;
+}
+
+.ddp{
+	border: 1px solid #ddd;
+}
+
+.le, .ri{
+	padding: 6px 22px;
+	outline: none;
+	border: none;
+	border-radius:5px;
+	vertical-align: inherit;
+	float:left;
+	
+}
+
+.le{
+	border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.ri{
+	border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.act{
+	background: #f70!important;
+    color: #fff!important;
+    vertical-align: inherit;
+}
+
+.setUp{
+	margin-top:20px;
+}
+
+.set{
+	color:rgb(43, 125, 188);
+	font-weight:700;
+	font-size:16px;
+	line-height:25px;
+	padding-left:10px;
+	border:1px solid #dddddd;
+}
+
+.setDown{
+	padding:10px;
+	border:1px solid #dddddd;
+	border-top:none;
+}
+
+.qizhi{
+	display:inline-block;
+	width:18px;
+	height:18px;
+	position:relative;
+	top:2px;
+	margin-left:3px;
+}
+
+.qizhi img{
+	width:100%;
+	height:100%;
+}
+
+.donot div{
+	float:left;
+	margin-left:8px;
+}
+
+.template{
+	margin-top:20px;
+}
+
+.remind_msgTemp{
+	list-style:none;
+	margin:0;
+	padding:0;
+	padding-left:10px;
+	border:1px solid #dddddd;
+	border-top:none;
+}
+
+.messageText{
+	position:relative;
+	top:-6px;
+}
+
+.lab{
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	border:1px solid #dddddd;
+	border-top:none;
+}
+
+.lab button{
+	outline:none!important;
+}
+
+.textArea1{
+	padding:5px;
+	border:1px solid #dddddd;
+	border-top:none;
+}
+
+.textArea1 textarea{
+	width:100%;
+	height:122px;
+	resize: none;
+}
+
+.phone{
+	width: 360px;
+    height: 420px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.act{
+	background: #f70!important;
+    color: #fff!important;
+    vertical-align: inherit;
+}
+
+.btn{
+	outline:none!important;
+}
+.headerstl{
+	padding-left: 10px;padding-right: 20px;padding-top: 5px;overflow:auto;
+}
+.headerstls{
+	padding-top: 5px;
+}
+.rightstyle{
+	float: left;padding: 10px;
+}
+.rightstyle1{
+	float: left;width: 150px;
+}
+
+.search1{
+	margin-top: 4px;margin-left: 15px;margin-right: 10px;
+}
+
+

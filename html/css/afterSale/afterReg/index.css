@@ -1,0 +1,127 @@
+html,body{
+	padding: 0px;
+	margin: 0px;
+	background: #FFFFFF;
+}
+.border-botom{
+	width: 96%;
+    margin: auto;
+    border-bottom: 1px solid #E2E2E2;
+    height: 40px;
+}
+.title-name{
+	line-height: 50px;
+    height: 40px;
+    width: 85px;
+    border-bottom: 3px solid #66C9F3;
+    text-align: center;
+    font-size: 15px;
+}
+.topAdd{
+	width: 96%;
+    margin: auto;
+	position: relative;
+	height: 57px;
+	padding-bottom: 15xp;
+}
+.searchExpress{
+	position: absolute;
+	top: 15px;
+	left: 0px;
+	width: 270px;
+    height: 42px;
+}
+.express_no{
+	width: 270px;
+    height: 42px;
+	padding-left: 5px;
+	font-size: 20px;
+	color: #FF5555;
+}
+.remarkLine{
+	position: absolute;
+	top: 15px;
+	left: 300px;
+	width: 550px;
+    height: 42px;
+}
+.remarkOnoff{
+	float: left;
+}
+.remarkWhite{
+	float: left;
+	width: 400px;
+	background: #FFFFFF;
+}
+.expressNum{
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	width: auto;
+    height: 42px;
+	font-size: 20px;
+	color: #666666;
+}
+.colorRed{
+	color: red;
+	font-size: 36px;
+}
+.layui-form-switch {
+    height: 23px;
+    width: 54px;
+}
+.disPlayNone{
+	display: none;
+}
+.topSearch{
+	width: 96%;
+    margin: 15px auto;
+}
+.topSearch .layui-form-label{
+	padding: 6px 0px;
+}
+.topSearch .layui-input{
+	height: 33px;
+	line-height: 33px;
+}
+.topSearch .layui-input-inline {
+    width: 166px;
+}
+
+.topSave{
+	width: 96%;
+    margin: 15px auto;
+}
+.topSave .layui-form-label{
+	padding: 6px 0px;
+}
+.topSave .layui-input{
+	height: 33px;
+	line-height: 33px;
+}
+.topSave .layui-input-inline {
+    width: 166px;
+}
+.layui-table, .layui-table-view {
+    margin: 0;
+}
+.layui-table-page select {
+    height: 27px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

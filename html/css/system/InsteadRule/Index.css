@@ -1,0 +1,14 @@
+[v-cloak] {
+	display: none;
+}
+.labelLoc{
+	width: 200px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    color: #FFF;
+    background: #34A8FF;
+    border-radius: 2px;
+    margin-top: 5px;
+    cursor: pointer;
+}

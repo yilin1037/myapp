@@ -1,0 +1,12 @@
+#flow{width:1200px;margin:auto;position:relative;}
+.flowLeft{width:400px;position:absolute;top:50px;left:0px;}
+.flowRight{width:800px;position:absolute;top:20px;left:500px;}
+#prdBarcode{font-size:18px;}
+.proDetails{}
+.proDetails li{line-height:35px;display:inline-block;}
+.proTitle{width:137px;text-align:right;float:left;font-size:14px;}
+.proCont{width:250px;float:left;text-indent:1em;}
+.proImg{width:150px;}
+.proImg img{width:100%;}
+
+#alertTable thead .layui-icon:nth-of-type(1){display:none;}

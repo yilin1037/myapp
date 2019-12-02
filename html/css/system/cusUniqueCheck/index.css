@@ -1,0 +1,52 @@
+.container{
+	min-width:1400px;
+	position:relative;
+}
+.leftInput{
+	width:600px;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.layui-elem-quote{
+	font-size:15px;
+}
+.layui-form-label{
+	width:150px;
+}
+.layui-input-block{
+	margin-left:150px;
+}
+.contLeft{
+	width:135px;
+	text-align:right;
+	float:left;
+	line-height: 20px;
+}
+.inforRight{
+	width: 450px;
+	float: left;
+	padding-left: 15px;
+}
+.productInfor li{
+	line-height:35px;
+	color:#FF0000;
+}
+.productImg{}
+.productImg img{
+	width:100%;
+	max-height: 150px;
+}
+.layui-form-switch {
+	width: 55px;
+	height:23px;
+}
+.rightTable{
+	width:750px;
+	position:absolute;
+	top:0px;
+	left:650px;
+}
+.layui-table-page select {
+	height: 26px;
+}
