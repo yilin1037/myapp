@@ -1799,7 +1799,7 @@ a cite {
     position: relative;
     line-height: 40px;
     min-width: 65px;
-    padding: 0 10px
+    padding: 0 20px
 }
 
 .layui-tab-title li a {
@@ -1878,12 +1878,18 @@ a cite {
 .layui-tab-title li .layui-tab-close {
     position: absolute;;
     top: 1px;
-    right:4px;
-    /* color: #fff; */
+    right:2px;
+    color: #fff;
     transition: all .2s;
-    -webkit-transition: all .2s
+    -webkit-transition: all .2s;
+	/* display:none; */
 }
-
+.layui-tab-title li:hover .layui-tab-close{
+	color:#A0A0A0;
+}
+.layui-tab-title li:hover{
+	background:rgba(0,0,0,0.04);
+}
 .layui-tab-title li .layui-tab-close:hover {
     border-radius: 2px;
     color: #A0A0A0;
@@ -1910,7 +1916,7 @@ a cite {
 }
 
 .layui-tab-card > .layui-tab-title {
-    background-color: #F4F8FD
+    background-color: #FFF
 }
 
 .layui-tab-card > .layui-tab-title li {
@@ -1921,7 +1927,7 @@ a cite {
 .layui-tab-card > .layui-tab-title .layui-this {
     color: #222!important;
     background:#fff;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .layui-tab-card > .layui-tab-title .layui-this:after {

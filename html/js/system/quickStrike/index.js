@@ -1087,7 +1087,7 @@ var flow = new Vue({
         label_printCQ:function(prd_no,type,sku_name,express_type,obj){
             var self = this;
             
-            if(type != "no"){
+            if(type == "no"){
                 // if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
                 //     layer.msg('请选择至少一条数据',{
                 //         icon: 0,
@@ -1197,7 +1197,7 @@ var flow = new Vue({
         label_closed:function(prd_no,sku_name,express_type,num,type='',obj){
             var self = this;
 
-            if(type != "no"){
+            if(type == "no"){
                 // if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
                 //     layer.msg('请选择至少一条数据',{
                 //         icon: 0,
@@ -1581,7 +1581,7 @@ var flow = new Vue({
             self.prd_no = prd_no;
             self.type = type;
             
-            if(type != "no"){
+            if(type == "no"){
                 // if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
                 //     layer.msg('请选择至少一条数据',{
                 //         icon: 0,
@@ -2184,8 +2184,8 @@ var flow = new Vue({
                     if(self.disableNum == 0){
                         $(".searchBtn").prop("disabled",false); 
                     }
-                    console.log("face_now");
-                    console.log(self.disableNum);
+                    // console.log("face_now");
+                    // console.log(self.disableNum);
                     if(data.dataCheck && data.numCheck > 0){
                         self.defaultMsg = data.dataCheck;
                         
@@ -2251,8 +2251,8 @@ var flow = new Vue({
             var self = this;
             $(".searchBtn").prop("disabled",true);
             self.disableNum = 1;
-            console.log("face_pr");
-            console.log(self.disableNum);
+            // console.log("face_pr");
+            // console.log(self.disableNum);
             self.face_now(type,index,show,send,self.sku_name,self.express_type);
         },
         print_all:function(){

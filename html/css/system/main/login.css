@@ -168,7 +168,7 @@ input{
 	width: 26px;
 	height: 26px;
 }
-.btn{
+.btn_space{
 	text-align: center;
 	margin-top: 20px;
 }
@@ -277,7 +277,7 @@ input[type=checkbox]{
 	height: 34px;
 	background-color: red;
 }
-.btn{
+.btn_space{
 	margin-top:50px!important;
 	outline: none!important;
 }

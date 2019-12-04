@@ -30,6 +30,7 @@ var flow = new Vue({
 		shopname:"",			//档口弹窗内店铺名称查询条件
 		phone:"",				//档口弹窗内电话号码查询条件
 		suitArr:[],				//档口弹窗数据
+		this_num_iid:'',		//当前商品
 	},
 	mounted: function() {
 		var self = this;
@@ -413,6 +414,13 @@ var flow = new Vue({
 						type: "POST",
 						success: function (data) {
 							if(data.code == "ok"){
+								$("#add_no").val('');
+								$("#add_name").val('');
+								$("#add_mobile").val('');
+								$("#add_linkman").val('');
+								$("#add_wangwang").val('');
+								$("#add_qq").val('');
+								$("#add_weixin").val('');
 								layer.msg(data.msg,{
 									icon: 1,
 									time: 2000
@@ -1737,7 +1745,8 @@ function Product(id){
 	flow.Product(id);
 }
 function getCustSearch(){
-	flow.getCustTable("","",1);
+	var self = this;
+	flow.getCustTable("","",1,self.this_num_iid);
 }
 function getCustSearchs(){
 	flow.getCustTables("","",1);
@@ -2008,6 +2017,8 @@ function DelBom(on_id){
 
 //选择供应商
 function supplier(on_id,num_iid){
+	var self=this;
+	self.this_num_iid=num_iid;
 	mini.parse();
 	var grid = mini.get('datagrid');
 	var result = grid.getSelected();
@@ -2042,7 +2053,7 @@ function supplier(on_id,num_iid){
 			flow.nowIndex = index;
 		}		
 	});
-	flow.getCustTable("","",1,num_iid);
+	flow.getCustTable("","",1,self.this_num_iid);
 }
 //选择供应商
 function suppliers(on_id,num_iid){

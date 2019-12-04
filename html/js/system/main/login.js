@@ -55,7 +55,7 @@ function Login(){
 		}
 		$('#yanzhi').attr("src","images/login/yanzheng.png")
 	$("#errorbox").show();
-	$("#errorMsg").html('<p class="input_denglu">登陆中... </p>');
+	$("#errorMsg").html('<p class="input_denglu">登录中... </p>');
 	$("#errorName").html('<p></p>');
 	password = md5(password);
 	$.ajax({

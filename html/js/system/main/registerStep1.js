@@ -34,7 +34,8 @@ var seller_nick = $("#seller_nick").val();
 var expire_time = $("#expire_time").val();
 var deadline = $("#deadline").val();
 var shopname = $("#shopname").val();
-if(shopname == ''){
+var jijian = $("#jijian").val();
+if(shopname == '' && jijian == ''){
 	alert('网店店铺名为空，请先添加店铺!');
 	exit;
 }
@@ -145,6 +146,7 @@ function next(){
 					localStorage.setItem("expire_time", $("#expire_time").val());
 					localStorage.setItem("memberId", $("#memberId").val());
 					localStorage.setItem("sourcedate", $("#sourcedate").val());
+					localStorage.setItem("jijian", $("#jijian").val());
 					location.href = "index.php?m=system&c=main&a=registerStep2";
 				}else{
 					layer.open({
