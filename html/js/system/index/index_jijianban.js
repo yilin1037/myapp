@@ -270,7 +270,7 @@ var flow = new Vue({
         },
         //账户充值
         payIdList:function(){
-            addTab('recharge','?m=system&c=finance&a=recharge','账户充值');
+            addTab('recharge','?m=system&c=finance&a=oldRecharge','账户充值');
         },
         //流水明细
         costList:function(){
