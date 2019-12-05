@@ -114,7 +114,8 @@ var flow = new Vue({
 		versionSwitch:true,	//列表模式
 		fetchDetailArr:[],
 		oid:"",
-		accountPrivileges:false 							//false  子账号   true  主账号
+		accountPrivileges:false, 							//false  子账号   true  主账号
+		sreach_div:false
 	},
 	mounted: function() {
 		var self = this;
@@ -5822,8 +5823,11 @@ var flow = new Vue({
 				}
 			});
 		},//当前页 全部页 事件 
-		
-		
+		//=======================================更多搜索项===================
+		sreach:function(event){
+			var data = this.sreach_div
+			this.sreach_div = !data
+		},
 		//点击时通过传过来的值判断是哪个按钮执行此方法
 		//		type          : 判断是当前页还是全部页	
 		//		nowPage       : 判断当前页 i（.inputTe） 标签是否为勾选状态

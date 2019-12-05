@@ -979,17 +979,16 @@ var flow = new Vue({
             });         
         },
         
-        //刷新统计
-        refreshTotal:function(){
-            var self = this;
-            self.getTotal();
-        },
+        // //刷新统计
+        // refreshTotal:function(){
+        //     var self = this;
+        //     self.getTotal();
+        // },
         
         //打标签
         label_print:function(prd_no,type,sku_name,express_type){
         
             var self = this;
-            
             if(type != "no"){
                 if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
                     layer.msg('请选择至少一条数据',{
@@ -1000,17 +999,25 @@ var flow = new Vue({
                 }
                 var data = "";
                 var sku_name = "";
+                // var num ="";
+                var num =0;
                 $("input[name='order']:checkbox").each(function(){                                                                                                      
                     if(true == $(this).is(':checked')){                                                                                                                                             
                         data += ($(this).val()+",");    
                         sku_name += ($(this).attr("sku_name")+",");
+                        num++;
+                        // num += ($(this).attr("num")+",");
                     }                                                                                                                                                           
-                });                                                                                                                                                                 
+                });
                 data = data.substring(0,data.length-1);
                 sku_name = sku_name.substring(0,sku_name.length-1);
+                // num = num.substring(0,num.length-1);
                 prd_no = data;
+            }else{
+                if(prd_no != "a"){
+                    var num = $("."+md5(prd_no+sku_name+express_type)).val();
+                }
             }
-                                                                                                                                        
             doGetPrinters(function(data){
                 self.layprint =  data;                                                                                                                                                              
             });                                                                                                                                                                                     
@@ -1020,13 +1027,9 @@ var flow = new Vue({
             
             
             self.layprintTplBq = printTplBq;
-                
-            if(prd_no != "a"){
-                var num = $("."+md5(prd_no+sku_name+express_type)).val();
-            }else{
-                var num = "";
-            }
-            
+            // else{
+            //     var num = "";
+            // }
             if(num == "" || num == 0){
                 layer.msg("数量为0",{
                     icon: 2,
@@ -1034,8 +1037,6 @@ var flow = new Vue({
                 });
                 return false;
             }
-            
-            
             layer.open({                                                                                                                                                                            
                 type: 1,                                                                                                                                                                            
                 title: '打印标签',                                                                                                                                                                  
@@ -1055,7 +1056,6 @@ var flow = new Vue({
                                                                                                                                                                                                 
                 },
                 success:function(){
-                    
                     $.ajax({                                                                                                                                                                                        
                         url: "/index.php?m=system&c=quickStrike&a=getPrinter",                                                                                                                                      
                         type: 'post',                                                                                                                                                                               
@@ -1084,24 +1084,24 @@ var flow = new Vue({
             });             
         },
         //打质检标签
-        label_printCQ:function(prd_no,type,sku_name,express_type,obj){
+        label_printCQ:function(prd_no,type,sku_name,express_type){
             var self = this;
             
             if(type == "no"){
-                // if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
-                //     layer.msg('请选择至少一条数据',{
-                //         icon: 0,
-                //         time: 2000
-                //     });                                                                                                                                                                             
-                //     return false;                                                                                                                                                                       
-                // }
-                if($(obj.target).parent().parent().children(":first").children(":first").attr('class')=='icheckbox_minimal'){
-                    layer.msg('请至少勾选当前这一条',{
+                if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
+                    layer.msg('请选择至少一条数据',{
                         icon: 0,
                         time: 2000
                     });                                                                                                                                                                             
-                    return false;  
+                    return false;                                                                                                                                                                       
                 }
+                // if($(obj.target).parent().parent().children(":first").children(":first").attr('class')=='icheckbox_minimal'){
+                //     layer.msg('请至少勾选当前这一条',{
+                //         icon: 0,
+                //         time: 2000
+                //     });                                                                                                                                                                             
+                //     return false;  
+                // }
                 var data = "";
                 var sku_name = "";
                 $("input[name='order']:checkbox").each(function(){                                                                                                      
@@ -1148,7 +1148,33 @@ var flow = new Vue({
                 btn: ['确定打印']
                 ,yes: function(index, layero){
                     //按钮【按钮一】的回调
-                     $.ajax({                                                                                                                                                                                        
+                    //  $.ajax({                                                                                                                                                                                        
+                    //     url: "/index.php?m=system&c=quickStrike&a=getPrinterCQ",                                                                                                                                        
+                    //     type: 'post',                                                                                                                                                                               
+                    //     data: {},                                                                                                                                                                                   
+                    //     dataType: 'json',                                                                                                                                                                           
+                    //     success: function (data) {
+                    //         if(data['result'].printer != "" && data['cq'].id != ""){
+                    //             $("#layprintCq").val(data['result'].printer);
+                    //             $("#layprintTplCq").val(data['cq'].id);
+                    //         }else{
+                    //             layer.msg("请先配置打印机或设置打印模板",{
+                    //                 icon: 2,
+                    //                 time: 2000
+                    //             });
+                    //         }s
+                    //     }                                                                                                                                                                                           
+                    // });
+                    self.print_nowCQ(prd_no,type,num,sku_name,express_type);
+                    
+                    layer.close(index);
+                },
+                cancel: function (index, layero) {                                                                                                                                                  
+                                                                                                                                                                                                
+                }
+                ,
+                success:function(){
+                    $.ajax({                                                                                                                                                                                        
                         url: "/index.php?m=system&c=quickStrike&a=getPrinterCQ",                                                                                                                                        
                         type: 'post',                                                                                                                                                                               
                         data: {},                                                                                                                                                                                   
@@ -1157,9 +1183,6 @@ var flow = new Vue({
                             if(data['result'].printer != "" && data['cq'].id != ""){
                                 $("#layprintCq").val(data['result'].printer);
                                 $("#layprintTplCq").val(data['cq'].id);
-                                self.print_nowCQ(prd_no,type,num,sku_name,express_type);
-                                
-                                layer.close(index);
                             }else{
                                 layer.msg("请先配置打印机或设置打印模板",{
                                     icon: 2,
@@ -1168,56 +1191,34 @@ var flow = new Vue({
                             }
                         }                                                                                                                                                                                           
                     });
-                },
-                cancel: function (index, layero) {                                                                                                                                                  
-                                                                                                                                                                                                
                 }
-                // ,
-                // success:function(){
-                //     $.ajax({                                                                                                                                                                                        
-                //         url: "/index.php?m=system&c=quickStrike&a=getPrinterCQ",                                                                                                                                        
-                //         type: 'post',                                                                                                                                                                               
-                //         data: {},                                                                                                                                                                                   
-                //         dataType: 'json',                                                                                                                                                                           
-                //         success: function (data) {
-                //             if(data['result'].printer != "" && data['cq'].id != ""){
-                //                 $("#layprintCq").val(data['result'].printer);
-                //                 $("#layprintTplCq").val(data['cq'].id);
-                //             }else{
-                //                 layer.msg("请先配置打印机或设置打印模板",{
-                //                     icon: 2,
-                //                     time: 2000
-                //                 });
-                //             }
-                //         }                                                                                                                                                                                           
-                //     });
-                // }
             });
         },
-        label_closed:function(prd_no,sku_name,express_type,num,type='',obj){
+        label_closed:function(prd_no,sku_name,express_type,num,type=''){
             var self = this;
-
-            if(type == "no"){
-                // if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
-                //     layer.msg('请选择至少一条数据',{
-                //         icon: 0,
-                //         time: 2000
-                //     });                                                                                                                                                                             
-                //     return false;                                                                                                                                                                       
-                // }
-                if($(obj.target).parent().parent().children(":first").children(":first").attr('class')=='icheckbox_minimal'){                                                                                                                            
-                    layer.msg('请至少勾选当前这一条数据',{
+            if(type != "no"){
+                if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
+                    layer.msg('请选择至少一条数据',{
                         icon: 0,
                         time: 2000
                     });                                                                                                                                                                             
                     return false;                                                                                                                                                                       
                 }
+                // if($(obj.target).parent().parent().children(":first").children(":first").attr('class')=='icheckbox_minimal'){                                                                                                                            
+                //     layer.msg('请至少勾选当前这一条数据',{
+                //         icon: 0,
+                //         time: 2000
+                //     });                                                                                                                                                                             
+                //     return false;                                                                                                                                                                       
+                // }
                 var data = "";
                 var sku_name = "";
+                var num =0;
                 $("input[name='order']:checkbox").each(function(){                                                                                                      
                     if(true == $(this).is(':checked')){                                                                                                                                             
                         data += ($(this).val()+",");    
                         sku_name += ($(this).attr("sku_name")+",");
+                        num++;
                     }                                                                                                                                                           
                 });                                                                                                                                                                 
                 data = data.substring(0,data.length-1);
@@ -1238,13 +1239,14 @@ var flow = new Vue({
                 $.ajax({                                                                                                                                                                    
                     url: "/index.php?m=system&c=quickStrike&a=close_label",                                                                                                                         
                     type: 'post',                                                                                                                                                                       
-                    data: {prd_no:prd_no,type:'no',isAll:'0',num:num,data:self.searchData,sku_name:sku_name,express:express_type},
+                    data: {prd_no:prd_no,type:type,isAll:'0',num:num,data:self.searchData,sku_name:sku_name,express:express_type},
                     dataType: 'json',                                                                                                                                                       
                     success: function (data) {                                                                                                                                                      
                         layer.msg('关闭完成',{
                             icon: 1,
                             time: 2000
                         });     
+                        
                     }                                                                                                                                                                   
                 });
             });
@@ -1582,20 +1584,20 @@ var flow = new Vue({
             self.type = type;
             
             if(type == "no"){
-                // if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
-                //     layer.msg('请选择至少一条数据',{
-                //         icon: 0,
-                //         time: 2000
-                //     });                                                                                                                                                                             
-                //     return false;                                                                                                                                                                       
-                // }
-                if($(obj.target).parent().parent().children(":first").children(":first").attr('class')=='icheckbox_minimal'){                                                                                                                            
-                    layer.msg('请至少勾选当前这一条数据',{
+                if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
+                    layer.msg('请选择至少一条数据',{
                         icon: 0,
                         time: 2000
                     });                                                                                                                                                                             
                     return false;                                                                                                                                                                       
                 }
+                // if($(obj.target).parent().parent().children(":first").children(":first").attr('class')=='icheckbox_minimal'){                                                                                                                            
+                //     layer.msg('请至少勾选当前这一条数据',{
+                //         icon: 0,
+                //         time: 2000
+                //     });                                                                                                                                                                             
+                //     return false;                                                                                                                                                                       
+                // }
                 var data = "";
                 var sku_name = "";
                 var express_type = "";
@@ -1662,76 +1664,76 @@ var flow = new Vue({
               ,btn: ['确定打印', '取消']
               ,yes: function(index, layero){
                 //按钮【按钮一】的回调
-                    $("#progress-delivery").css("display","block");
+                    // $("#progress-delivery").css("display","block");
             
-                    $.ajax({                                                                                                                                                                                        
-                        url: "/index.php?m=system&c=quickStrike&a=preDelivery",                                                                                                                                     
-                        type: 'post',                                                                                                                                                                               
-                        data: {data: self.searchData,prd_no: prd_no, isAll: self.isAll,time: time,sku_name:sku_name,num: num, express: express_type, prd_loc: prd_loc},                                                                                                                                                                                 
-                        dataType: 'json',                                                                                                                                                                           
-                        success: function (data) {
-                                self.preDeliveryMsg = "";
-                            if(data.code == "error"){
-                                self.preDeliveryMsg = data.error_msg;
-                                if(item_num != ''){
-                                    if(data.error_msg.length == item_num){
+                    // $.ajax({                                                                                                                                                                                        
+                    //     url: "/index.php?m=system&c=quickStrike&a=preDelivery",                                                                                                                                     
+                    //     type: 'post',                                                                                                                                                                               
+                    //     data: {data: self.searchData,prd_no: prd_no, isAll: self.isAll,time: time,sku_name:sku_name,num: num, express: express_type, prd_loc: prd_loc},                                                                                                                                                                                 
+                    //     dataType: 'json',                                                                                                                                                                           
+                    //     success: function (data) {
+                    //             self.preDeliveryMsg = "";
+                    //         if(data.code == "error"){
+                    //             self.preDeliveryMsg = data.error_msg;
+                    //             if(item_num != ''){
+                    //                 if(data.error_msg.length == item_num){
                                         
-                                    }else{
-                                        get_print(self,prd_no,type,sku_name,express_type);
-                                    }
-                                }else{
-                                    var print_num = 0;
-                                    $("input[name='order']:checkbox").each(function(){                                                                                                      
-                                        if(true == $(this).is(':checked')){     
-                                            print_num += ($(this).attr("tid_num")*1);
-                                        }                                                                                                                                                           
-                                    }); 
-                                    if(data.error_msg.length == print_num){
+                    //                 }else{
+                    //                     get_print(self,prd_no,type,sku_name,express_type);
+                    //                 }
+                    //             }else{
+                    //                 var print_num = 0;
+                    //                 $("input[name='order']:checkbox").each(function(){                                                                                                      
+                    //                     if(true == $(this).is(':checked')){     
+                    //                         print_num += ($(this).attr("tid_num")*1);
+                    //                     }                                                                                                                                                           
+                    //                 }); 
+                    //                 if(data.error_msg.length == print_num){
                                         
-                                    }else{
-                                        get_print(self,prd_no,type,sku_name,express_type);
-                                    }
+                    //                 }else{
+                    //                     get_print(self,prd_no,type,sku_name,express_type);
+                    //                 }
                                     
-                                }
+                    //             }
                                 
-                            }else if(data.code == "ok"){
-                                layer.closeAll();
-                                layer.msg('预发货成功',{
-                                    icon: 1,
-                                    time: 2000
-                                });
-                                get_print(self,prd_no,type,sku_name,express_type);
+                    //         }else if(data.code == "ok"){
+                    //             layer.closeAll();
+                    //             layer.msg('预发货成功',{
+                    //                 icon: 1,
+                    //                 time: 2000
+                    //             });
+                    //             get_print(self,prd_no,type,sku_name,express_type);
                                 
-                            }
-                        }
-                    })
+                    //         }
+                    //     }
+                    // })
                     
-                    var Interval = setInterval(function(){
-                        $.ajax({                                                                                                                                                                                        
-                            url: "/index.php?m=system&c=quickStrike&a=getDeliveryPer",                                                                                                                                      
-                            type: 'post',                                                                                                                                                                               
-                            data: {time: time},                                                                                                                                                                                 
-                            dataType: 'json',                                                                                                                                                                           
-                            success: function (data) {
-                                if(data == null){
-                                    clearInterval(Interval);
-                                }
-                                layui.use('element', function(){                    //----------                                                                                    
-                                    var element = layui.element();                  //                                                                                          
-                                    element.init();                                 //  进度条                                                                                 
-                                    element.progress('delivery', data.per + '%');   //  
-                                    $("#pages8-title").html(data.msg);                  
-                                });
+                    // var Interval = setInterval(function(){
+                    //     $.ajax({                                                                                                                                                                                        
+                    //         url: "/index.php?m=system&c=quickStrike&a=getDeliveryPer",                                                                                                                                      
+                    //         type: 'post',                                                                                                                                                                               
+                    //         data: {time: time},                                                                                                                                                                                 
+                    //         dataType: 'json',                                                                                                                                                                           
+                    //         success: function (data) {
+                    //             if(data == null){
+                    //                 clearInterval(Interval);
+                    //             }
+                    //             layui.use('element', function(){                    //----------                                                                                    
+                    //                 var element = layui.element();                  //                                                                                          
+                    //                 element.init();                                 //  进度条                                                                                 
+                    //                 element.progress('delivery', data.per + '%');   //  
+                    //                 $("#pages8-title").html(data.msg);                  
+                    //             });
                                     
-                                if(data.code == "end"){
-                                    clearInterval(Interval);
+                    //             if(data.code == "end"){
+                    //                 clearInterval(Interval);
                                     
-                                }
-                            },error: function(){
-                                clearInterval(Interval);
-                            }
-                        });
-                    },1000);
+                    //             }
+                    //         },error: function(){
+                    //             clearInterval(Interval);
+                    //         }
+                    //     });
+                    // },1000);
               }
               ,btn2: function(index, layero){
                 //按钮【按钮二】的回调
@@ -1745,76 +1747,76 @@ var flow = new Vue({
             });
    
             
-            // $("#progress-delivery").css("display","block");
+            //$("#progress-delivery").css("display","block");
             
-            // $.ajax({                                                                                                                                                                                        
-            //     url: "/index.php?m=system&c=quickStrike&a=preDelivery",                                                                                                                                     
-            //     type: 'post',                                                                                                                                                                               
-            //     data: {data: self.searchData,prd_no: prd_no, isAll: self.isAll,time: time,sku_name:sku_name,num: num, express: express_type, prd_loc: prd_loc},                                                                                                                                                                                 
-            //     dataType: 'json',                                                                                                                                                                           
-            //     success: function (data) {
-            //             self.preDeliveryMsg = "";
-            //         if(data.code == "error"){
-            //             self.preDeliveryMsg = data.error_msg;
-            //             if(item_num != ''){
-            //                 if(data.error_msg.length == item_num){
+            $.ajax({                                                                                                                                                                                        
+                url: "/index.php?m=system&c=quickStrike&a=preDelivery",                                                                                                                                     
+                type: 'post',                                                                                                                                                                               
+                data: {data: self.searchData,prd_no: prd_no, isAll: self.isAll,time: time,sku_name:sku_name,num: num, express: express_type, prd_loc: prd_loc},                                                                                                                                                                                 
+                dataType: 'json',                                                                                                                                                                           
+                success: function (data) {
+                    self.preDeliveryMsg = "";
+                    if(data.code == "error"){
+                        self.preDeliveryMsg = data.error_msg;
+                        if(item_num != ''){
+                            if(data.error_msg.length == item_num){
                                 
-            //                 }else{
-            //                     get_print(self,prd_no,type,sku_name,express_type);
-            //                 }
-            //             }else{
-            //                 var print_num = 0;
-            //                 $("input[name='order']:checkbox").each(function(){                                                                                                      
-            //                     if(true == $(this).is(':checked')){     
-            //                         print_num += ($(this).attr("tid_num")*1);
-            //                     }                                                                                                                                                           
-            //                 }); 
-            //                 if(data.error_msg.length == print_num){
+                            }else{
+                                get_print(self,prd_no,type,sku_name,express_type);
+                            }
+                        }else{
+                            var print_num = 0;
+                            $("input[name='order']:checkbox").each(function(){                                                                                                      
+                                if(true == $(this).is(':checked')){     
+                                    print_num += ($(this).attr("tid_num")*1);
+                                }                                                                                                                                                           
+                            }); 
+                            if(data.error_msg.length == print_num){
                                 
-            //                 }else{
-            //                     get_print(self,prd_no,type,sku_name,express_type);
-            //                 }
+                            }else{
+                                get_print(self,prd_no,type,sku_name,express_type);
+                            }
                             
-            //             }
+                        }
                         
-            //         }else if(data.code == "ok"){
-            //             layer.closeAll();
-            //             layer.msg('预发货成功',{
-            //                 icon: 1,
-            //                 time: 2000
-            //             });
-            //             get_print(self,prd_no,type,sku_name,express_type);
+                    }else if(data.code == "ok"){
+                        layer.closeAll();
+                        layer.msg('预发货成功',{
+                            icon: 1,
+                            time: 2000
+                        });
+                        get_print(self,prd_no,type,sku_name,express_type);
+                        var Interval = setInterval(function(){
+                            $.ajax({                                                                                                                                                                                        
+                                url: "/index.php?m=system&c=quickStrike&a=getDeliveryPer",                                                                                                                                      
+                                type: 'post',                                                                                                                                                                               
+                                data: {time: time},                                                                                                                                                                                 
+                                dataType: 'json',                                                                                                                                                                           
+                                success: function (data) {
+                                    if(data == null){
+                                        clearInterval(Interval);
+                                    }
+                                    layui.use('element', function(){                    //----------                                                                                    
+                                        var element = layui.element();                  //                                                                                          
+                                        element.init();                                 //  进度条                                                                                 
+                                        element.progress('delivery', data.per + '%');   //  
+                                        $("#pages8-title").html(data.msg);                  
+                                    });
+                                        
+                                    if(data.code == "end"){
+                                        clearInterval(Interval);
+                                        
+                                    }
+                                },error: function(){
+                                    clearInterval(Interval);
+                                }
+                            });
+                        },1000);
                         
-            //         }
-            //     }
-            // })
+                    }
+                }
+            });
             
-            // var Interval = setInterval(function(){
-            //     $.ajax({                                                                                                                                                                                        
-            //         url: "/index.php?m=system&c=quickStrike&a=getDeliveryPer",                                                                                                                                      
-            //         type: 'post',                                                                                                                                                                               
-            //         data: {time: time},                                                                                                                                                                                 
-            //         dataType: 'json',                                                                                                                                                                           
-            //         success: function (data) {
-            //             if(data == null){
-            //                 clearInterval(Interval);
-            //             }
-            //             layui.use('element', function(){                    //----------                                                                                    
-            //                 var element = layui.element();                  //                                                                                          
-            //                 element.init();                                 //  进度条                                                                                 
-            //                 element.progress('delivery', data.per + '%');   //  
-            //                 $("#pages8-title").html(data.msg);                  
-            //             });
-                            
-            //             if(data.code == "end"){
-            //                 clearInterval(Interval);
-                            
-            //             }
-            //         },error: function(){
-            //             clearInterval(Interval);
-            //         }
-            //     });
-            // },1000);
             
         },
         faceMake:function(){

@@ -88,7 +88,7 @@ function Login(){
 					$(".checkcode").attr('src', path);
 				}else{
 					$("#errorMsg").show();
-					$("#errorMsg").html('<p class="input_name"> <img  src="images/login/false.png"/> 用户名或密码错误</p>');
+					$("#errorMsg").html('<p class="input_name"> <img  src="images/login/false.png"/>'+data.msg+'</p>');
 				}
 			}
 		},

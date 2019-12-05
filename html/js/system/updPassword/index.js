@@ -56,6 +56,7 @@ function sendVerificationCode(username){
 //修改密码并登录
 $(".loginBtn").click(function(){
 	var username = $("#username").val();
+	var verifyCode =  $("#verifyCode").val();
 	if(username == ''){
 		$("#erroruser").html('<p class="input_name"> <img  src="images/login/false.png"/> 请输入用户名或手机号</p>');
 		$("#erroruser").css('display','block');
@@ -106,6 +107,7 @@ $(".loginBtn").click(function(){
 		$("#errorrepeat").css('display','block');
 		return false;
 	}
+
 	$("#errorMsg").css('display','none');
 	$("#errorrepeat").css('display','none');
 	$("#errorpass").css('display','none');
@@ -119,7 +121,8 @@ $(".loginBtn").click(function(){
 		data:{
 			username: username, 
             password: password,
-            code: yanzhengma
+            code: yanzhengma,
+			verifyCode:verifyCode
 		},
 		success:function(data){
 			if(data.code == 'ok'){
@@ -132,7 +135,7 @@ $(".loginBtn").click(function(){
 				window.location.href = "/index.php?m=system&c=index&a=index";
 			}else{
 				$("#errorrepeat").show();
-				$("#errorrepeat").html('<p class="input_name"> <img  src="images/login/false.png"/>验证码错误</p>');
+				$("#errorrepeat").html('<p class="input_name"> <img  src="images/login/false.png"/>'+data.msg+'</p>');
 				$("#errorrepeat").css('display','block');
 				console.log()	
 			}
