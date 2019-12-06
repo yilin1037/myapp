@@ -14,6 +14,7 @@ grid1.on("deselect", function (e) {
 });
 var quickStrike = $("#quickStrike").val();
 var layer;
+
 var flow = new Vue({
 	el: '#flow',
 	data: {
@@ -115,7 +116,8 @@ var flow = new Vue({
 		fetchDetailArr:[],
 		oid:"",
 		accountPrivileges:false, 							//false  子账号   true  主账号
-		sreach_div:false
+		sreach_div:false,
+		Province_box:false
 	},
 	mounted: function() {
 		var self = this;
@@ -1168,25 +1170,25 @@ var flow = new Vue({
 			var sysPlan = self.sysPlan;
 			var DROP_SHIPPING = self.DROP_SHIPPING;
 			var shippingId = self.shippingId;
-
 			var dateBegin = $('#dateBegin').val();
+			
 			dateBegin = Date.parse(new Date(dateBegin));
 			dateBegin = dateBegin / 1000;
-
 			var dateEnd = $('#dateEnd').val();
+			
 			if (dateEnd.length != 0 ) {
 				dateEnd = Date.parse(new Date(dateEnd));
 				dateEnd = dateEnd / 1000;
 			} else {
 				dateEnd = 0;
 			}
-
 			$.ajax({
 				url: "/index.php?m=system&c=delivery&a=refreshTotal",
 				type: 'post',
 				data: {sysPlan: sysPlan, DROP_SHIPPING: DROP_SHIPPING, shippingId: shippingId, dateBegin: dateBegin, dateEnd: dateEnd},
 				dataType: 'json',
 				success: function (data) {
+					console.log(data)
 					$("#refreshTotal").html("刷新统计");
 					$("#refreshTotal").removeClass("layui-btn-disabled");
 					$("#refreshTotal").addClass("btn");
@@ -1437,14 +1439,20 @@ var flow = new Vue({
 		//============================================================================================省份模板编辑按钮结束=======================================================================================
 		
 		//===============================================================================================选择省份模板事件========================================================================================
-		chooseProvince:function(isAll){																																								//===========
+		Province:function(all){
+			var data = this.Province_box
+			this.Province_box = !data 
+			if(data  != false){$(".placeHide").css("display","none");
+			}else{$(".placeHide").css("display","block")}			
+		},
+		chooseProvince:function(isAll){				//===========
 			var self = this;																																										//===========
 			var toggle = event.currentTarget;																																						//===========
 			event.stopPropagation();																																								//===========
 			var newStr = $(toggle).text();																																							//===========
 			if(isAll == "some"){													//-----点击保存的省份模板按钮																					//===========
 				var str = newStr.substring(0,newStr.length-2);																																		//===========
-																																																	//===========
+				console.log(str)																																													//===========
 				if(str.substring(0,2) == "排除"){									//------------------------------																				//===========
 					self.provinceStatus = "F";										//																												//===========
 					self.province = str.substring(3);								//																												//===========
@@ -10590,15 +10598,13 @@ function searchALLNow(self,page,callback){
 	$(".time").remove();
 	$(".sear_right").remove();
 
-
-	
-	if(dateBegin != ""){
-		if(dateEnd != ""){
+	if(dateBegin != "" && typeof(dateBegin)!="undefined" ){
+		if(dateEnd != "" && typeof(dateEnd)!="undefined"){
 			$("#searchArr").append("<span class='add time rem'>"+dateBegin+"至"+dateEnd+"<i class='dele' id='time' onclick='closeNow(\"time\")'></i></span>");
 		}else{
 			$("#searchArr").append("<span class='add time rem'>"+dateBegin+"至<i class='dele' id='time' onclick='closeNow(\"time\")'></i></span>");
 		}
-	}else if(dateEnd != ""){
+	}else if(dateEnd != "" && typeof(dateEnd)!="undefined"){
 		$("#searchArr").append("<span class='add time rem'> 至"+dateEnd+"<i class='dele' id='time' onclick='closeNow(\"time\")'></i></span>");
 	}
 	

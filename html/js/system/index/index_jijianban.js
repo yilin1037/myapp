@@ -145,6 +145,24 @@ var flow = new Vue({
         			border: "1px solid #ccc"
         		})
         	},
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    "background-position": "0 -262px",
+                    color: "#FFFFFF",
+                    border: "1px solid #3077D1"
+                })
+            });
+             $("#money2").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    "background-position": "0 -239px",
+                    color: "#3077D1",
+                    border: "1px solid #ccc"
+                })
+            },
         	function() {
         		$(this).removeClass("current");
         		$(this).find(".content").hide();

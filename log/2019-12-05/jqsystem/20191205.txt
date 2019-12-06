@@ -1,0 +1,6 @@
+1575528386--select 1 from accountSafe where system_id='' 
+1575528386--select id,db_ip,db_name,db_prefix,expire_time,db_clean,wms,dangkou,jinxiaocun,jijianban,db_status,db_expire_time,be_daifa,send_goods_up,order_expense,orderApproval,crossBorder,pdd_white_list from userlist where system_id='13123456789'
+1575538295--select 1 from accountSafe where system_id='' 
+1575538295--select id,db_ip,db_name,db_prefix,expire_time,db_clean,wms,dangkou,jinxiaocun,jijianban,db_status,db_expire_time,be_daifa,send_goods_up,order_expense,orderApproval,crossBorder,pdd_white_list from userlist where system_id='13123456789'
+1575542647--select 1 from accountSafe where system_id='' 
+1575542647--select id,db_ip,db_name,db_prefix,expire_time,db_clean,wms,dangkou,jinxiaocun,jijianban,db_status,db_expire_time,be_daifa,send_goods_up,order_expense,orderApproval,crossBorder,pdd_white_list from userlist where system_id='13123456789'
