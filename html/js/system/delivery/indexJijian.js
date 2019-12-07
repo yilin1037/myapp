@@ -11,12 +11,14 @@ layui.use('element', function(){
         if(tabShow[index]){
             return;
         }
+		
         tabShow[index] = 1;
         mainHeight = window.innerHeight-56;
         var tabContent = $(".layui-tab-content .layui-tab-item:eq("+index+")");
         var tabContentUrl = tabContent.attr('data-url');
         var iframe = '<iframe id="iframe'+index+'" src="' + tabContentUrl + '" style="height:' + mainHeight + 'px;"></iframe>';
 		iframeArr[index] = "iframe"+index;
+		console.log(iframeArr[index])
         tabContent.html(iframe);
     }
 });

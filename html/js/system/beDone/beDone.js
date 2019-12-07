@@ -2,7 +2,8 @@
 var done = new Vue({
 	el: '#done',
 	data: {
-		isHave:true,
+		isHave:false,
+        pinDD:false,
 		arr:{},
 	},
 	mounted: function() {
@@ -25,6 +26,40 @@ var done = new Vue({
 		}
 	}
 });
+var socket1;
+var socket_pdd1;
+var requestID1 = ""+parseInt(1000*Math.random());
+function doConnectPdd(){
+    if(typeof(socket_pdd) == 'undefined'){
+        socket_pdd1 = new WebSocket('ws://127.0.0.1:5000');
+        // 打开Socket
+        socket_pdd1.onopen = function(event){
+            if(typeof(func) == 'function'){
+                func();
+            }
+        };
+        // 监听消息
+        socket_pdd1.onmessage = function(event)
+        {
+            done.pinDD = true;
+            var data = JSON.parse(event.data);
+            //console.log(data);
+            if ("setPrinterConfig" == data.cmd) {
+                if(typeof(pddSetPrinterConfig) == 'function'){
+                    pddSetPrinterConfig(data);
+                }
+            }
+        };
+        socket_pdd1.onerror = function(event) {
+            done.pinDD = false;
+            /*if(typeof(layer) == 'object'){
+                layer.alert('请下载拼多多打印组件');
+            }else{
+                alert('请下载拼多多打印组件');
+            }*/
+        };
+    }
+}
 
 var socket;
 var requestID = ""+parseInt(1000*Math.random());
@@ -56,10 +91,19 @@ function doConnect(func){
             done.isHave = false;
     };
 }
+var sendPrintPdd = {};
+function pddSetPrinterConfig(data){
+    if(sendPrintPdd[data['requestID']]){
+        socket_pdd.send(sendPrintPdd[data['requestID']]);
+        sendPrintPdd[data['requestID']] = {};
+    }
+    layer.closeAll('loading');
+}
 //创建连接
 doConnect(function(){
 	doGetPrinters();
 });
+doConnectPdd();
 //获取打印机列表
 function doGetPrinters(func) {
     var request  = {

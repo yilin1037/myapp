@@ -1122,7 +1122,7 @@ function searchALLNow(self,page,callback){
 		$("#searchArr").append("<span class='add buyer_nick1 rem' style='max-width:400px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; top: 5px;'>买家昵称:"+buyer_nick+"<i class='dele' id='buyer_nick1' onclick='closeNow(\"buyer_nick1\")'></i></span>");
 	}
 	
-	if(unique_code != ""){
+	if(unique_code != "" && typeof(unique_code)!="undefined"){
 		$("#searchArr").append("<span class='add unique_code1 rem' style='max-width:400px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; top: 5px;'>唯一码|爆款码:"+unique_code+"<i class='dele' id='unique_code1' onclick='closeNow(\"unique_code1\")'></i></span>");
 	}
 	

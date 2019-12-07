@@ -474,7 +474,6 @@ var flow = new Vue({
 				//$(".gaiqizhi").hide();				
 			}
 		}
-		
 		/*$.ajax({
 			url: "/index.php?m=system&c=delivery&a=getFuncPrem",
 			type: 'post',
@@ -659,10 +658,10 @@ var flow = new Vue({
 			else if(group == "faceGroup"){																																							
 				$(".faceGroup div").each(function(){																																				
 					$(".faceGroup .ic").remove();																																					
-					$(this).removeClass("border");																																			
+					$(this).removeClass("border");		
 				});																																												
 				$(toggle).append("<i class='ic'></i>");																															
-				$(toggle).addClass("border");																																			
+				$(toggle).addClass("border");	
 				if(who == "faceDonnot"){																																							
 					self.facePrint = "1";																																								
 					$("#searchArr .face").remove();																																					
@@ -1175,7 +1174,9 @@ var flow = new Vue({
 			dateBegin = Date.parse(new Date(dateBegin));
 			dateBegin = dateBegin / 1000;
 			var dateEnd = $('#dateEnd').val();
-			
+
+			dateEnd = Date.parse(new Date(dateEnd));
+			dateEnd = dateEnd / 1000;
 			if (dateEnd.length != 0 ) {
 				dateEnd = Date.parse(new Date(dateEnd));
 				dateEnd = dateEnd / 1000;
@@ -1188,7 +1189,6 @@ var flow = new Vue({
 				data: {sysPlan: sysPlan, DROP_SHIPPING: DROP_SHIPPING, shippingId: shippingId, dateBegin: dateBegin, dateEnd: dateEnd},
 				dataType: 'json',
 				success: function (data) {
-					console.log(data)
 					$("#refreshTotal").html("刷新统计");
 					$("#refreshTotal").removeClass("layui-btn-disabled");
 					$("#refreshTotal").addClass("btn");

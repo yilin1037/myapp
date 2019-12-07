@@ -423,7 +423,7 @@ function doConnect(func){
 			dataType: 'json',																																											
 			success: function (data) {
 				if(data.limit_ddfh == "T" && data.ORDER_APPROVAL != '1'){
-					addTab('0001_001','?m=system&c=delivery&a=indexJijian','打单发货');	
+					addTab('0001_021','?m=system&c=delivery&a=deliveryJijian','待发货');	
 				}
 				
 				if(data.code == "ok"){
