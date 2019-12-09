@@ -70,6 +70,7 @@ function ajax_file(){
 					time: 2000
 				});	
         	}
+			$("input[name='file_excel']").val('');
         	grid.load();
 
         },
