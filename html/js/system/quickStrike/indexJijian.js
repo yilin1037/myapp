@@ -2248,8 +2248,8 @@ var flow = new Vue({
         //=====================================================================面单打印所有=========================================================================================
         face_pr:function(type,index,show,send){
             var self = this;
-            $(".searchBtn").prop("disabled",true);
-            self.disableNum = 1;
+            //$(".searchBtn").prop("disabled",true);
+            //self.disableNum = 1;
             // console.log("face_pr");
             // console.log(self.disableNum);
             self.face_now(type,index,show,send,self.sku_name,self.express_type);
@@ -2257,10 +2257,10 @@ var flow = new Vue({
         print_all:function(){
             var self = this;
             //$("#print_all").prop("disabled",true);
-            $(".searchBtn").prop("disabled",true);
-            self.disableNum = self.expressSort.length;
-            console.log("print_all");
-            console.log(self.disableNum);
+            // $(".searchBtn").prop("disabled",true);
+            // self.disableNum = self.expressSort.length;
+            // console.log("print_all");
+            // console.log(self.disableNum);
             for(var i = 0; i < self.expressSort.length; i++){
                 self.face_pr(self.expressSort[i].type,i,'F','T');
             }
@@ -2270,19 +2270,19 @@ var flow = new Vue({
         },
         face_pr_batch:function(express,index,show,send,batch){
             var self = this;
-            // $(".searchBtn").prop("disabled",true);
-            // self.disableNum = 1;
-            // console.log("face_pr_batch");
-            // console.log(self.disableNum);
+            $(".searchBtn").prop("disabled",true);
+            self.disableNum = 1;
+            console.log("face_pr_batch");
+            console.log(self.disableNum);
             self.face_nowBatch(express,index,show,send,batch);
         },
         print_allBatch:function(){
             var self = this;
             //$("#print_allBatch").prop("disabled",true);
-            // $(".searchBtn").prop("disabled",true);
-            // self.disableNum = self.expressSort.length;
-            // console.log("print_allBatch");
-            // console.log(self.disableNum);
+            $(".searchBtn").prop("disabled",true);
+            self.disableNum = self.expressSort.length;
+            console.log("print_allBatch");
+            console.log(self.disableNum);
             for(var i = 0; i < self.expressSort.length; i++){
                 self.face_nowBatch(self.expressSort[i].type,i,'F','T','batch');
             }

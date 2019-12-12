@@ -43,7 +43,7 @@ var flow = new Vue({
 					,{field:'pic_path', width:80, title: '图片', templet: '#path_pic'}
 					,{field:'prd_no_sku_no', minWidth:150, title: '商品编号'}
 					,{field:'title', minWidth:150, title: '商品名称'}
-					,{field:'loc_name', minWidth:150, title: '货位'}
+					,{field:'prd_loc', minWidth:150, title: '货位'}
 					,{field:'cost_price', width:150, title: '金额', templet: '#inventoryPrice'}
 					,{field:'sku_name', minWidth:150, title: '属性'}
 					,{field:'prd_sku_no', minWidth:150, title: 'SKU编码'}
@@ -55,7 +55,7 @@ var flow = new Vue({
 					,{field:'pic_path', width:80, title: '图片', templet: '#path_pic'}
 					,{field:'prd_no_sku_no', minWidth:150, title: '商品编号'}
 					,{field:'title', minWidth:150, title: '商品名称'}
-					,{field:'loc_name', minWidth:150, title: '货位'}
+					,{field:'prd_loc', minWidth:150, title: '货位'}
 					,{field:'cost_price', width:150, title: '金额', templet: '#inventoryPrice'}
 					,{field:'sku_name', minWidth:150, title: '属性'}
 					,{field:'prd_sku_no', minWidth:150, title: 'SKU编码'}

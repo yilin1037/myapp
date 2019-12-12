@@ -34,10 +34,6 @@ var deadline = localStorage.getItem("deadline");
 var expire_time = localStorage.getItem("expire_time");
 var memberId = localStorage.getItem("memberId");
 var jijian = localStorage.getItem("jijian");
-if(jijian == '1')
-{
-	$('#jijian').show();	
-}
 if(user_id != "" ){
 	$.ajax({
 		type:'POST',
@@ -144,7 +140,6 @@ function next(){
 	var expire_time = localStorage.getItem("expire_time");
 	var memberId = localStorage.getItem("memberId");
 	var jijian = localStorage.getItem("jijian");
-	var version = $('input[name="version"]:checked').val();
 	var newData = {
 		"company":company,
 		"province":province,
@@ -166,7 +161,6 @@ function next(){
 		"secretkey": secretkey,
 		"memberId": memberId,
 		"jijian": jijian,
-		"version": version,
 	};
 	
 	$.ajax({

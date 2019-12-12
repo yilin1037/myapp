@@ -12,6 +12,8 @@ grid1.on("select", function (e) {
 grid1.on("deselect", function (e) {
 	getSelectCount();
 });
+var select_chcked='';
+var select_chcked1=[];//商品编号默认值
 var quickStrike = $("#quickStrike").val();
 var layer;
 
@@ -117,7 +119,8 @@ var flow = new Vue({
 		oid:"",
 		accountPrivileges:false, 							//false  子账号   true  主账号
 		sreach_div:false,
-		Province_box:false
+		Province_box:false,
+		select_chcked:'',
 	},
 	mounted: function() {
 		var self = this;
@@ -1704,6 +1707,26 @@ var flow = new Vue({
 				$(".timePay").addClass("must");																																						//===========
 																																																	//===========
 				self.order = "codingUp";																																								//===========
+				self.baby_Num = false;																																								//===========
+				self.coding = false;																																								//===========
+				self.orderAmount = false;																																							//===========
+																																																	//===========
+				$(".photo").html($(toggle).html());																																					//===========
+			}else if(type == "codingDown1"){								//-----商家编码降序																										//===========
+				$(".timePay").css("zIndex",10);																																						//===========
+				$(".timePay").addClass("must");																																						//===========
+																																																	//===========
+				self.order = "codingDown1";																																								//===========
+				self.baby_Num = false;																																								//===========
+				self.coding = false;																																								//===========
+				self.orderAmount = false;																																							//===========
+																																																	//===========
+				$(".photo").html($(toggle).html());																																					//===========
+			}else if(type == "codingUp1"){								//-----商家编码升序																									//===========
+				$(".timePay").css("zIndex",10);																																						//===========
+				$(".timePay").addClass("must");																																						//===========
+																																																	//===========
+				self.order = "codingUp1";																																								//===========
 				self.baby_Num = false;																																								//===========
 				self.coding = false;																																								//===========
 				self.orderAmount = false;																																							//===========
@@ -6882,7 +6905,6 @@ var flow = new Vue({
 					self.isAll = 0;
 				}
 			}
-			
 			if(self.isAll != 0 && (data.orderStatus == 'WAIT_ASSIGN' || data.orderStatus == 'UNLOCK')){
 				layer.msg('选择全部页打面单无法使用查询条件[订单状态-待发货][订单状态-待发货未锁定] ，请去掉此查询条件后再进行操作',{
 					icon: 0,
@@ -7007,7 +7029,7 @@ var flow = new Vue({
 			}
 			var tmp = '';
 			//self.face = param;
-			$("#layprint1").val(0);											
+			$("#layprint1").val(0);	
 			//$("#layprintTplBq1").val(0);
 			//if(checkPrintFace == "T"){
 				$.ajax({
@@ -7438,7 +7460,6 @@ var flow = new Vue({
 			/*setTimeout(function(){
 				a.prop("disabled",false);
 			},1000);*/
-			
 			if(self.sysPlan == "send"){//已发货页面只打面单不发货
 				send = "F";
 				self.do_print_now(data,type,isrepeat,show,'F',unprintTplBq,unprintname,batch,index,btnObj);//打印
@@ -9579,11 +9600,19 @@ $('#pages20-seller_type_3').on('ifChecked', function(event){
 });
 
 
-function keyDownSearch(){
-	if(event.keyCode==13){
-		searchALLNow(flow,'F');
+
+function keyDownSearch(obj=''){
+	if(obj){
+		var name_anmme2 = $(obj).attr('class');
+		if(name_anmme2=='prd_no_sku_name2 inp'){
+			select_chcked=$('.prd_no_sku_name2').val();
+		}else if(name_anmme2 =='prd_no_sku_name1 inp'){
+			select_chcked1=[];
+		}
 	}
+	searchALLNow(flow,'F');
 }
+
 
 
 
@@ -9949,7 +9978,7 @@ function searchAllPlan(id){
 						var pageNo = data.pageNo;
 						var pageSize = data.pageSize;
 						var result_total = data.result_total;
-						
+
 						flow.gridArr = gridData;
 						flow.pageCount = pageCount;
 						flow.pageNo = pageNo;
@@ -10415,37 +10444,37 @@ function orderSelect(a){
 			}
 		});
 	}else if(a == "dsos_print_status"){
-		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='已打印|未打印' onkeydown='keyDownSearch()' name='reset'> ");
+		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='已打印|未打印' onkeydown='keyDownSearch(this)' name='reset'> ");
 	}else if(a == "express_status"){
-		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='已推送|推送失败' onkeydown='keyDownSearch()' name='reset'> ");
+		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='已推送|推送失败' onkeydown='keyDownSearch(this)' name='reset'> ");
 	}
 }
 
 function itemChange(a){
 	if(a == "prd_no"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='商品编号' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='商品编号' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "not_prd_no"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='(不含)商品编号' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='(不含)商品编号' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "num_iid"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='网店商品ID' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='网店商品ID' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "title"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='宝贝标题' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='宝贝标题' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "sku_name"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='宝贝属性' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='宝贝属性' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "not_sku_name"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='(不含)宝贝属性' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='(不含)宝贝属性' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "outer_id"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='主商家编码' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='主商家编码' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "outer_sku_id"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='SKU商家编码' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='SKU商家编码' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "prd_loc_str"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='货位，多个用英文逗号分隔' onkeydown='keyDownSearch()' name='reset'> ");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='货位，多个用英文逗号分隔' onkeydown='keyDownSearch(this)' name='reset'> ");
 	}else if(a == "prd_no_sku_name"){
-		$(".changeDiv1").html("<input type='text' class='" + a + "1 inp' style='width:113px;border:1px solid #c2c2c2;' placeholder='商品编号' onkeydown='keyDownSearch()' name='reset'> <input type='text' class='" + a + "2 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(精确)' onkeydown='keyDownSearch()' name='reset'>  <input type='text' class='" + a + "3 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(模糊)' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + "1 inp' style='width:113px;border:1px solid #c2c2c2;' placeholder='商品编号' onchange='keyDownSearch(this)' name='reset'> <select type='text' class='" + a + "2 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(精确)' onchange='keyDownSearch(this)' name='reset'><option value='' style='display: none;' disabled selected>宝贝属性选择</option></select>  <input type='text' class='" + a + "3 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(模糊)' onkeydown='keyDownSearch(this)' name='reset'>");
 	}else if(a == "not_prd_no_sku_name"){
-		$(".changeDiv1").html("<input type='text' class='" + a + "1 inp' style='width:116px;border:1px solid #c2c2c2;' placeholder='(不含)商品编号' onkeydown='keyDownSearch()' name='reset'> <input type='text' class='" + a + "2 inp' style='width:115px;border:1px solid #c2c2c2;' placeholder='(不含)宝贝属性' onkeydown='keyDownSearch()' name='reset'> ");
+		$(".changeDiv1").html("<input type='text' class='" + a + "1 inp' style='width:116px;border:1px solid #c2c2c2;' placeholder='(不含)商品编号' onkeydown='keyDownSearch(this)' name='reset'> <input type='text' class='" + a + "2 inp' style='width:115px;border:1px solid #c2c2c2;' placeholder='(不含)宝贝属性' onkeydown='keyDownSearch(this)' name='reset'> ");
 	}else if(a == "lable_status"){
-		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='生成|关闭' onkeydown='keyDownSearch()' name='reset'> ");
+		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='生成|关闭' onkeydown='keyDownSearch(this)' name='reset'> ");
 	}else if(a == "is_fetch"){
 		var dsosHtml = '<div style="float:left;"><select class="' + a + ' form-control separator" style="background: url(\'images/down.png\') no-repeat scroll 90% center transparent;background-size:17px 15px;border:solid 1px #ccc;width:204px;">';
 		dsosHtml += '<option value=""></option><option value="1">是</option><option value="2">否</option>';
@@ -10850,6 +10879,24 @@ function searchALLNow(self,page,callback){
 			if(layer){
 				layer.closeAll('loading');
 			}
+			
+			var option='';
+			option ='<option value>请选择</option>';
+			if(typeof select_chcked1!=="undefined"){
+				if(select_chcked1.length  ===0){//如果值变化了  值会被清空  重新赋值
+					select_chcked1 =data.sku_name_select;
+				}
+				if(data.sku_name_select){			
+					for($i=0;$i<select_chcked1.length;$i++){
+						if(select_chcked==select_chcked1[$i].sku_name){
+							option+='<option selected="selected" value="'+select_chcked1[$i].sku_name+'">'+select_chcked1[$i].sku_name+'</option>';
+						}else{
+							option+='<option value="'+select_chcked1[$i].sku_name+'">'+select_chcked1[$i].sku_name+'</option>';
+						}
+					}
+				}
+			}
+			$('.prd_no_sku_name2').html(option);
 			var miniDatas = data.data;
 			var miniData = formattingCode(miniDatas);
 			grid1.setData(miniData);
@@ -10897,6 +10944,7 @@ function searchALLNow(self,page,callback){
 					}																																																
 				});	
 			},200);
+
 			$("input[name='order']").iCheck('uncheck');
 			$(".inputTe").css("color","white");
 			self.isAll = 0;
@@ -10906,7 +10954,7 @@ function searchALLNow(self,page,callback){
 				$("#shipping").val(data.system_id);
 				shippingChange(data.system_id);
 			}
-			
+
 			//添加回调函数
 			if(callback && typeof(callback) == "function"){
 				callback();

@@ -1,0 +1,3 @@
+1575881468--select id,tpl_type,tpl_str from sms_tpl where (tpl_type = 'login_code')
+1575881541--select id,tpl_type,tpl_str from sms_tpl where (tpl_type = 'login_code')
+1575883056--select id,tpl_type,tpl_str from sms_tpl where (tpl_type = 'login_code')
