@@ -7173,7 +7173,12 @@ var flow = new Vue({
 			
 			var printdateBegin = $("#printdateBegin").val();																																							
 			var printdateEnd = $("#printdateEnd").val();	
-	
+			if(printdateEnd=='' && printdateBegin){
+				//var myDate = new Date();
+				printdateEnd = getTime();
+				$("#printdateEnd").val(printdateEnd)
+
+			}
 			$.ajax({																																									
 				url: "/index.php?m=system&c=delivery&a=waybill_make",																															
 				type: 'post',																																								
@@ -9448,6 +9453,28 @@ $(document).ready(function(){
 		increaseArea: '20%'
     });
 });
+function getTime() {
+    var date = new Date();
+    var fullYear = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var ms = month < 10 ? "-" + "0" + month : "-" + month;
+    var day = date.getDate();
+    var ds = day < 10 ? "-" + "0" + day : "-" + day;
+    var rs = fullYear + ms + ds;
+    var time = date.getHours();
+    if (time < 10) {
+        rs += " 0" + time;
+    } else {
+        rs += " " + time;
+    }
+    var minutes = date.getMinutes();
+    var min = minutes < 10 ? ":0" + minutes : ":" + minutes;
+    var seconds = date.getSeconds();
+    var sed = seconds < 10 ? ":0" + seconds : ":" + seconds;
+    rs += min + sed;
+    return rs;
+}
+
 
 //=================================================================================== 省份iCheck点击选中事件 ====================================================================================================
 //																																																	=============

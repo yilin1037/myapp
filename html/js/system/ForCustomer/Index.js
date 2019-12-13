@@ -410,6 +410,9 @@ var dataList = {
 		if(DROP_SHIPPING_SYNC != 'T'){
 			var tables = $("#dataList").next().find(".layui-table-box"); 
 			tables.find("[data-field='fx_level']").css("display","none");
+			 $(".layui-table-box>.layui-table-fixed").css("display","none")
+			 $(".layui-table-box>.layui-table-header>table").css("width","100%")
+			 $(".layui-table-box>.layui-table-body>table").css("width","100%")
 		}
 	}
 };

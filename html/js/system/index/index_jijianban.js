@@ -262,14 +262,14 @@ var flow = new Vue({
             addTab('updatepassword','?m=system&c=setup&a=updatepassword','修改密码');
         },
 		accountSale:function(){
-			layer.open({
-                title :'数据安全',
-                type: 2,
-                shade: false,
-                area: ['550px', '500px'],
-                maxmin: false,
-                content: '?m=system&c=accountSafe&a=accountSafe'
-            }); 
+			// layer.open({
+   //              title :'数据安全',
+   //              type: 2,
+   //              shade: false,
+   //              area: ['550px', '500px'],
+   //              maxmin: false,
+   //              content: '?m=system&c=accountSafe&a=accountSafe'
+   //          }); 
 		},
         //退出
         re_login:function(){
@@ -310,7 +310,6 @@ var flow = new Vue({
 setInterval(function(){
     lastGetOrderTime();																																																//===========
 },300000);//5分钟
-
 function upLoadLog()
 {
 	setTimeout(function () {
