@@ -289,6 +289,8 @@ function createPage(data){
 		});
 	}else if(paramObj['template_url'].indexOf('JD_ZDY.xml') >= 0){
 		CUSTOM_AREA_HEIGHT = 113;
+	}else if(paramObj['template_url'].indexOf('SF_ZDY.xml') >= 0){
+		CUSTOM_AREA_HEIGHT = 210;
 	}else if(express_no == 'JDKD_YTH'){
         CUSTOM_AREA_HEIGHT = 0;
     }

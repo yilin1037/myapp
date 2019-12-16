@@ -14,6 +14,7 @@ grid1.on("deselect", function (e) {
 });
 var select_chcked='';
 var select_chcked1=[];//商品编号默认值
+var sku_name_arr =[];
 var quickStrike = $("#quickStrike").val();
 var layer;
 
@@ -132,6 +133,8 @@ var flow = new Vue({
 			self.isSingle = false;																																						
 			self.multiple = false;		
 		}
+		jiankong();
+
 		//日期选择器
 		layui.use(['element', 'layer','form', 'layedit', 'laydate'], function () {
 			layer = layui.layer;
@@ -604,7 +607,6 @@ var flow = new Vue({
 		if(sysPlan != 'send'){
 			this.refreshTotal();
 		}
-		
 
 	},
 	methods: {
@@ -885,8 +887,8 @@ var flow = new Vue({
 			//===================================================================================================================================================================================================
 			else if(group == "statusGroup"){																																						
 				$(".statusGroup div").each(function(){																																				
-					$(".statusGroup .ic").remove();																																					
-					$(this).removeClass("border");																																			
+					$(".statusGroup .div.ic").remove();																																					
+					$(this).removeClass("border");	
 				});																																												
 				$(toggle).append("<i class='ic'></i>");																															
 				$(toggle).addClass("border");																																				
@@ -1455,7 +1457,7 @@ var flow = new Vue({
 			var newStr = $(toggle).text();																																							//===========
 			if(isAll == "some"){													//-----点击保存的省份模板按钮																					//===========
 				var str = newStr.substring(0,newStr.length-2);																																		//===========
-				console.log(str)																																													//===========
+				//console.log(str)																																													//===========
 				if(str.substring(0,2) == "排除"){									//------------------------------																				//===========
 					self.provinceStatus = "F";										//																												//===========
 					self.province = str.substring(3);								//																												//===========
@@ -1792,7 +1794,7 @@ var flow = new Vue({
 					for(var i = 0; i < selectRows.length; i++){
 						data += selectRows[i]['new_tid'] + ",";
 					}
-					console.log();
+					//console.log();
 					data = data.substring(0,data.length-1);
 				}
 			}	
@@ -2359,7 +2361,12 @@ var flow = new Vue({
 							self.printTplDzmd = printTplDzmd;
 							doGetPrinters(function(data){																																							
 								self.layprint = data;																																								
-							});																																														
+							});	
+							if(self.layprint.length==0){
+								doGetPrinters2(function(data){
+									self.layprint =  data;
+								});	
+							}																																													
 
 							$("#layprintFree").val(0);											//-----初始化选择框																										
 							$("#layprintTplBqFree").val(0);									//-----初始化选择框																										
@@ -3407,6 +3414,11 @@ var flow = new Vue({
 			doGetPrinters(function(data){
 				self.layprint =  data;
 			});
+			if(self.layprint.length==0){
+				doGetPrinters2(function(data){
+					self.layprint =  data;
+				});	
+			}
 			$("#layprintDSOS").val(0);//-----初始化选择框
 			$("#layprintTplDSOS").val(0);//-----初始化选择框
 			self.layprintTplDSOS = printLodopTplList['DSOS'];
@@ -3492,6 +3504,11 @@ var flow = new Vue({
 			doGetPrinters(function(data){
 				self.layprint =  data;
 			});
+			if(self.layprint.length==0){
+				doGetPrinters2(function(data){
+					self.layprint =  data;
+				});	
+			}
 			//$("#layCollectGoods").val(0);//-----初始化选择框
 			layer.open({
 				type: 1,
@@ -3548,7 +3565,12 @@ var flow = new Vue({
 			doGetPrinters(function(data){
 				self.layprint =  data;
 			});
-			//$("#layCollectGoods").val(0);//-----初始化选择框
+			if(self.layprint.length==0){
+				doGetPrinters2(function(data){
+					self.layprint =  data;
+				});	
+			}
+//$("#layCollectGoods").val(0);//-----初始化选择框
 			layer.open({
 				type: 1,
 				title: '打印拿货汇总',
@@ -3625,7 +3647,7 @@ var flow = new Vue({
 						var i = 0;
 						countSecond(i,data);
 						function countSecond(i,data){
-							console.log(i);
+							//console.log(i);
 							if(i<data.length){
 								layui.use('element', function(){
 									var element = layui.element();
@@ -4372,7 +4394,7 @@ var flow = new Vue({
 					a:'getSmsSafe',
 					data:{},
 					success:function(data){
-						console.log(data);
+						//console.log(data);
 						//判断是否开启了短信验证
 						if(data.code == '0000'){
 							var phone = data.phone;
@@ -4530,7 +4552,12 @@ var flow = new Vue({
 			}				
 			doGetPrinters(function(data){
 				self.layprint =  data;				
-			});					
+			});
+			if(self.layprint.length==0){
+				doGetPrinters2(function(data){
+					self.layprint =  data;
+				});	
+			}				
 			$("#layprintYd").val(0);
 			//-----初始化选择框
 			$("#layprintTplYd").val(0);
@@ -5342,7 +5369,12 @@ var flow = new Vue({
 																																																	
 			doGetPrinters(function(data){																																							
 				self.layprint =  data;																																								
-			});																																														
+			});
+			if(self.layprint.length==0){
+				doGetPrinters2(function(data){
+					self.layprint =  data;
+				});	
+			}																																													
 																																																	
 			$("#layprint").val(0);											//-----初始化选择框																										
 			$("#layprintTplBq").val(0);										//-----初始化选择框																										
@@ -6557,9 +6589,9 @@ var flow = new Vue({
                                 }
                             }
                         },error: function(jqXHR, textStatus, errorThrown){
-                            console.log(jqXHR);
-                            console.log(textStatus);
-                            console.log(errorThrown);
+                            // console.log(jqXHR);
+                            // console.log(textStatus);
+                            // console.log(errorThrown);
                         }
                     })
 
@@ -6927,7 +6959,12 @@ var flow = new Vue({
 							self.printTplDzmd = printTplDzmd;
 							doGetPrinters(function(data){
 								self.layprint =  data;
-							});			
+							});
+							if(self.layprint.length==0){
+								doGetPrinters2(function(data){
+									self.layprint =  data;
+								});	
+							}			
 							$("#layprint1").val(0);
 							//-----初始化选择框																										
 							$("#layprintTplBq1").val(0);
@@ -7043,8 +7080,13 @@ var flow = new Vue({
 							self.expressSort = data;
 							self.printTplDzmd = printTplDzmd;
 							doGetPrinters(function(data){
-								self.layprint =  data;
-							});			
+									self.layprint =  data;
+							});	
+							if(self.layprint.length==0){
+								doGetPrinters2(function(data){
+									self.layprint =  data;
+								});	
+							}
 							$("#layprint1").val(0);
 							//-----初始化选择框																										
 							//$("#layprintTplBq1").val(0);
@@ -7269,7 +7311,11 @@ var flow = new Vue({
 						doGetPrinters(function(data){																																							
 							self.layprint = data;																																								
 						});																																														
-
+						if(self.layprint.length==0){
+							doGetPrinters2(function(data){
+								self.layprint =  data;
+							});	
+						}
 						$("#layprintMake").val(0);											//-----初始化选择框																										
 						$("#layprintTplBqMake").val(0);									//-----初始化选择框																										
 						
@@ -7318,6 +7364,11 @@ var flow = new Vue({
 			doGetPrinters(function(data){
 				self.layprint =  data;
 			});
+			if(self.layprint.length==0){
+				doGetPrinters2(function(data){
+					self.layprint =  data;
+				});	
+			}
 			$("#layprintDSOS").val(0);//-----初始化选择框
 			$("#layprintTplDSOS").val(0);//-----初始化选择框
 			self.layprintTplDSOS = printLodopTplList['DSOS'];
@@ -8188,7 +8239,12 @@ var flow = new Vue({
 										self.printTplDzmd = printTplDzmd;
 										doGetPrinters(function(data){
 											self.layprint =  data;
-										});			
+										});
+										if(self.layprint.length==0){
+											doGetPrinters2(function(data){
+												self.layprint =  data;
+											});	
+										}		
 										$("#layprint1").val(0);
 										//-----初始化选择框																										
 										$("#layprintTplBq1").val(0);
@@ -9445,7 +9501,57 @@ var flow = new Vue({
 		},
     }
 });
+function jiankong(){
+	var input_value = document.querySelector(".prd_no_sku_name1").value;
+	if(typeof sku_name_arr!=="undefined" ){
+		var option ='';
+		for($i=0;$i<sku_name_arr.length;$i++){
+			option+='<option>'+sku_name_arr[$i]+'</option>';
+		}
+		$("#sexlist").html(option);
+	}
+	if(/msie/i.test(navigator.userAgent)){
+		 document.querySelector(".prd_no_sku_name1").addEventListener("propertychange", function(){
+		        if(typeof sku_name_arr!=="undefined"){
+					var option ='';
+					if(input_value!=''){
+						for($i=0;$i<sku_name_arr.length;$i++){
+							var start=sku_name_arr[$i].toLowerCase().indexOf(input_value.toLowerCase());
+							if(start!='-1'){
+								option+='<option>'+sku_name_arr[$i]+'</option>';
+							}
+						}
+					}else{
+						for($i=0;$i<sku_name_arr.length;$i++){
+							option+='<option>'+sku_name_arr[$i]+'</option>';
+						}
+					}
+					$("#sexlist").html(option);
 
+				}
+		    });   
+	}else{  
+		document.querySelector('.prd_no_sku_name1').addEventListener("input", function(){
+			if(typeof sku_name_arr!=="undefined"){
+				var option ='';
+				if(input_value!=''){
+					for($i=0;$i<sku_name_arr.length;$i++){
+						var start=sku_name_arr[$i].toLowerCase().indexOf(input_value.toLowerCase());
+						if(start!='-1'){
+							option+='<option>'+sku_name_arr[$i]+'</option>';
+						}
+					}
+				}else{
+					for($i=0;$i<sku_name_arr.length;$i++){
+						option+='<option>'+sku_name_arr[$i]+'</option>';
+					}
+				}
+				$("#sexlist").html(option);
+
+			}
+	    });  
+	}
+}
 $(document).ready(function(){
     $('.skin-minimal input').iCheck({
 		checkboxClass: 'icheckbox_minimal',
@@ -9637,9 +9743,8 @@ function keyDownSearch(obj=''){
 			select_chcked1=[];
 		}
 	}
-	searchALLNow(flow,'F');
+	searchALLNow(flow,'F'); 
 }
-
 
 
 
@@ -10246,8 +10351,8 @@ function resetF(self,special){																																										//======
 	$("#separator1").val("show_tid");	
 	$("#separator3").val("select_payment_time");
 	$(".changeDiv").html("<input class='show_tid inp' placeholder='多个逗号隔开' onkeydown='keyDownSearch()' name='reset'>");																		//===========
-	$("#separator2").val("prd_no");																																									//===========
-	$(".changeDiv1").html("<input type='text' class='prd_no inp' placeholder='商品编号' name='reset' onkeydown='keyDownSearch()'>");																	//===========
+	$("#separator2").val("prd_no_sku_name");																																									//===========
+	$(".changeDiv1").html("<input type='text' class='prd_no_sku_name1 inp' style='width:113px;border:1px solid #c2c2c2;' placeholder='商品编号' onchange='keyDownSearch(this)' list='sexlist' name='reset' autocomplete='off'><datalist id='sexlist' onclick='keyDownSearch()'></datalist> <select type='text' class='prd_no_sku_name2 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(精确)' onchange='keyDownSearch(this)' name='reset'><option value='' style='display: none;' disabled selected>请选择</option></select>  <input type='text' class=prd_no_sku_name3 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(模糊)' onkeydown='keyDownSearch(this)' name='reset'>");																//===========
 	//===========
 	$(".labelGroup div").each(function(){																																							//===========
 		$(".labelGroup .ic").remove();																																								//===========
@@ -10497,7 +10602,9 @@ function itemChange(a){
 	}else if(a == "prd_loc_str"){
 		$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='货位，多个用英文逗号分隔' onkeydown='keyDownSearch(this)' name='reset'> ");
 	}else if(a == "prd_no_sku_name"){
-		$(".changeDiv1").html("<input type='text' class='" + a + "1 inp' style='width:113px;border:1px solid #c2c2c2;' placeholder='商品编号' onchange='keyDownSearch(this)' name='reset'> <select type='text' class='" + a + "2 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(精确)' onchange='keyDownSearch(this)' name='reset'><option value='' style='display: none;' disabled selected>宝贝属性选择</option></select>  <input type='text' class='" + a + "3 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(模糊)' onkeydown='keyDownSearch(this)' name='reset'>");
+		$(".changeDiv1").html("<input type='text' class='" + a + "1 inp' style='width:113px;border:1px solid #c2c2c2;' placeholder='商品编号' onchange='keyDownSearch(this)' list='sexlist' name='reset' autocomplete='off'><datalist id='sexlist' onclick='keyDownSearch()'></datalist> <select type='text' class='" + a + "2 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(精确)' onchange='keyDownSearch(this)' name='reset'><option value='' style='display: none;' disabled selected>请选择</option></select>  <input type='text' class='" + a + "3 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(模糊)' onkeydown='keyDownSearch(this)' name='reset'>");
+		
+		jiankong();
 	}else if(a == "not_prd_no_sku_name"){
 		$(".changeDiv1").html("<input type='text' class='" + a + "1 inp' style='width:116px;border:1px solid #c2c2c2;' placeholder='(不含)商品编号' onkeydown='keyDownSearch(this)' name='reset'> <input type='text' class='" + a + "2 inp' style='width:115px;border:1px solid #c2c2c2;' placeholder='(不含)宝贝属性' onkeydown='keyDownSearch(this)' name='reset'> ");
 	}else if(a == "lable_status"){
@@ -10906,7 +11013,16 @@ function searchALLNow(self,page,callback){
 			if(layer){
 				layer.closeAll('loading');
 			}
-			
+			//alert(data.outer_sku_id_arr);
+			if(data.outer_sku_id_arr){
+				sku_name_arr =data.outer_sku_id_arr;
+				var input_option='';
+				$(data.outer_sku_id_arr).each(function(index, el) {
+					input_option+="<option >"+el+"</option>";
+				});
+				$('#sexlist').html(input_option);
+			}
+
 			var option='';
 			option ='<option value>请选择</option>';
 			if(typeof select_chcked1!=="undefined"){

@@ -2,11 +2,240 @@ var flow = new Vue({
 	el: '#flow',
 	data: {
 	   shopConfigItems:[],
+
 	   isHave:false,
 	   turnTo:false,
 	},
     mounted: function() {
         var self = this;
+         layui.use(['element','layer'], function(){
+            var $ = layui.jquery,element = layui.element();
+            addTab('zm','?m=desktop&c=desktop&a=index','首页');
+            
+            //--------------------------------------
+            element.on('tab(my-tab)', function(elem){
+                var layId = $(this).attr('lay-id');
+                if(layId && !isOpenTab[layId]){
+                    isOpenTab[layId] = true;
+                    loadPage();
+                }
+            });
+            $("#kefu").hover(function() {
+                $(this).addClass("current");
+                var a = $(this).find(".content");
+                if ($(this).find(".content").children().length == 0) {
+            a.html('<iframe border="0" scroll="no" frameborder="no" style="border:0;overflow:hidden;width:200px;height:1110px;" src="service.html?v=9"></iframe>').show()
+                } else {
+                    a.show()
+                }
+                $(this).css({
+                    color: "#3077D1",
+                });
+                
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    color: "#FFFFFF",
+                })
+                
+            });
+            $("#help").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    "background-position": "0 -286px",
+                    color: "#3077D1",
+                    border: "1px solid #ccc"
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    "background-position": "0 -310px",
+                    color: "#FFFFFF",
+                    border: "1px solid #3077D1"
+                })
+            });
+            $("#dataCenter").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    "background-position": "0 -531px",
+                    color: "#3077D1",
+                    border: "1px solid #ccc"
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    "background-position": "0 -556px",
+                    color: "#FFFFFF",
+                    border: "1px solid #3077D1"
+                })
+            });
+            $("#selectMenu").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    "background-position": "0 -239px",
+                    color: "#3077D1",
+                    border: "1px solid #ccc"
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    "background-position": "0 -262px",
+                    color: "#FFFFFF",
+                    border: "1px solid #3077D1"
+                })
+            });
+            $("#user").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    color: "#3077D1",
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    color: "#FFFFFF",
+                })
+            });
+            $("#fankui").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    "background-position": "0 -239px",
+                    color: "#3077D1",
+                    "background":"linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(0,0,0,0.08) 100%)",
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    "background-position": "0 -262px",
+                    color: "#FFFFFF",
+                })
+            });
+            $("#money").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    color: "#3077D1",
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    
+                    color: "#FFFFFF",
+                })
+            });
+             $("#shop").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    color: "#3077D1",
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    color: "#FFFFFF",
+                })
+            });
+            $("#app").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    color: "#3077D1",
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    color: "#FFFFFF",
+                })
+            });
+
+            $("#openGetOrder").hover(function() {
+                $(this).addClass("current");
+                $(this).find(".content").show();
+                $(this).css({
+                    "background-position": "0 -239px",
+                    color: "#3077D1",
+                })
+            },
+            function() {
+                $(this).removeClass("current");
+                $(this).find(".content").hide();
+                $(this).css({
+                    "background-position": "0 -262px",
+                    color: "#FFFFFF",
+                })
+            });
+            $("#infoLi").hover(function() {
+                $("#infoPanel").show()
+            },
+            function() {
+                $("#infoPanel").hide()
+            });
+            $("#root li").hover(function(){
+
+            },function(){
+
+            })
+            $("#menu_Bar").hover(function(){
+                $("#root li").not('.group > *').removeClass("curItem");
+                $(this).css("background","rgba(0,0,0,0.04)")
+                $('#root').css("overflow","hidden")
+                $("#wms_for_goods").find("ul").hide();                                           // wms
+                $("#order_for_goods").find("ul").hide();                                         // 订单
+                $("#seling_for_goods").find('ul').hide();                                        // 商品                   
+                $("#finan_for_goods").find('ul').hide();                                         // 财务
+                $("#analy_for_goods").find('ul').hide();                                         // 分析
+                $("#note_for_goods").find('ul').hide();                                           // 短信
+                $("#daifa_for_goods").find('ul').hide();                                          // 代发
+                $("#daina_for_goods").find('ul').hide();                                             //代拿   
+                $("#sale_for_goods").find('ul').hide();                                          // 售后
+                $("#invent_for_goods").find('ul').hide();                                        // 进销存
+                $(".nav").css("width","76px")
+                $("#menu_Bar").css({"position":" fixed","top":"58px","left":"18%","width":"0","height":"0","background":"rgba(0,0,0,0.2)"})
+            })
+            $('#root li').click(function(){
+                $(this).not('.group > *').addClass("curItem");
+                $(".nav").css("width","18%")
+                $("#menu_Bar").css({"position":" fixed","top":"58px","left":"18%","width":"100%","height":"100%","background":"rgba(0,0,0,0.2)"})
+            })
+            $(".nav_li_hover").click(function(){
+                $(".nav").css("width","76px")
+                $("#menu_Bar").css({"position":" fixed","top":"58px","left":"18%","width":"0","height":"0","background":"rgba(0,0,0,0.2)"})
+            })
+            
+            //--------------------------------
+            
+            //新增一个Tab项
+            $(".menuNode").click(function(){
+                var a_t = $(this),
+                id      = a_t.attr("data-id"),
+                url     = a_t.attr("data-url"),
+                title   = a_t.html();
+                addTab(id,url,title);
+            });
+            // $('.layui-this').children("a:first").click();
+        });
         $("#seling_for_goods div img").attr( "src","/images/index/shangf.png","width","20px","height","19px;")
         $("#order_for_goods div img").attr("src","/images/index/dingf.png","width","15px","height","20px;")
         $('#order_for_goods').css('margin-top','6px')
@@ -17,6 +246,7 @@ var flow = new Vue({
         $("#daina_for_goods div img").attr("src","/images/index/dainaf.png","width","17px","height","20px;")
         $("#daifa_for_goods div img").attr("src","/images/index/daifaf.png","width","17px","height","20px;")
         $("#retail_for_goods div img").attr("src","/images/index/retail.png","width","20px","height","22px;")
+		$("#invent_for_goods div img").attr('src','/images/index/wmsf.png','width','18px','height','19px;')
         $("#wms_for_goods div img").attr("src","/images/index/wmsf.png","width","20px","height","21px;")
         $("#order_process div ").html('<img src="/images/index/dingdanchu.png" style="width:30px;height:30px;margin-bottom:3px;"><span> 订单处理</span>')
         $("#order_chuku div").html('<img src="/images/index/fahuochu.png" style="width:30px;height:30px;margin-left:5px;margin-bottom:3px;"><span> 发货出库</span>')
@@ -444,7 +674,7 @@ var flow = new Vue({
         $("#invent_for_goods ").click(function(){
             $('#root').css("overflow","auto",'z-index','2')
             $(this).find("ul").show();
-            $("#invent_for_goods div img").attr("src","/images/index/shezhit.png"); 
+            $("#invent_for_goods div img").attr("src","/images/index/wmst.png"); 
             $("#root li").css("background","")
             $('#root li div p').css("color","#666")
             $(this).css("background","#4177F1");
@@ -474,244 +704,59 @@ var flow = new Vue({
             $("#sale_for_goods").find('ul').hide()                                          // 售后
 
         })
+        
         //-------------------------------------
-
-        layui.use(['element','layer'], function(){
-            var $ = layui.jquery,element = layui.element();
-			addTab('zm','?m=desktop&c=desktop&a=index','首页');
-            
-            //--------------------------------------
-        	
-            element.on('tab(my-tab)', function(elem){
-                var layId = $(this).attr('lay-id');
-                if(layId && !isOpenTab[layId]){
-                    isOpenTab[layId] = true;
-                    loadPage();
-                }
-            });
-            $("#kefu").hover(function() {
-        		$(this).addClass("current");
-        		var a = $(this).find(".content");
-        		if ($(this).find(".content").children().length == 0) {
-			a.html('<iframe border="0" scroll="no" frameborder="no" style="border:0;overflow:hidden;width:200px;height:1110px;" src="service.html?v=9"></iframe>').show()
-        		} else {
-        			a.show()
-        		}
-        		$(this).css({
-        			color: "#3077D1",
-        		});
-				
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			color: "#FFFFFF",
-        		})
-				
-        	});
-        	$("#help").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			"background-position": "0 -286px",
-        			color: "#3077D1",
-        			border: "1px solid #ccc"
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			"background-position": "0 -310px",
-        			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
-        		})
-        	});
-        	$("#dataCenter").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			"background-position": "0 -531px",
-        			color: "#3077D1",
-        			border: "1px solid #ccc"
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			"background-position": "0 -556px",
-        			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
-        		})
-        	});
-            $("#selectMenu").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			"background-position": "0 -239px",
-        			color: "#3077D1",
-        			border: "1px solid #ccc"
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			"background-position": "0 -262px",
-        			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
-        		})
-        	});
-        	$("#user").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			color: "#3077D1",
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			color: "#FFFFFF",
-        		})
-        	});
-        	$("#fankui").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			"background-position": "0 -239px",
-                    color: "#3077D1",
-                    "background":"linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(0,0,0,0.08) 100%)",
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			"background-position": "0 -262px",
-        			color: "#FFFFFF",
-        		})
-        	});
-            $("#money").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-                    color: "#3077D1",
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			
-                    color: "#FFFFFF",
-        		})
-        	});
-        	 $("#shop").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			color: "#3077D1",
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			color: "#FFFFFF",
-        		})
-        	});
-            $("#app").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			color: "#3077D1",
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			color: "#FFFFFF",
-        		})
-        	});
-            $("#openGetOrder").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			"background-position": "0 -239px",
-        			color: "#3077D1",
-        		})
-        	},
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			"background-position": "0 -262px",
-        			color: "#FFFFFF",
-        		})
-        	});
-        	$("#infoLi").hover(function() {
-        		$("#infoPanel").show()
-        	},
-        	function() {
-        		$("#infoPanel").hide()
-        	});
-            $("#root li").hover(function(){
-
-            },function(){
-
-            })
-            $("#menu_Bar").hover(function(){
-                $("#root li").not('.group > *').removeClass("curItem");
-                $(this).css("background","rgba(0,0,0,0.04)")
-                $('#root').css("overflow","hidden")
-                $("#wms_for_goods").find("ul").hide();                                           // wms
-                $("#order_for_goods").find("ul").hide();                                         // 订单
-                $("#seling_for_goods").find('ul').hide();                                        // 商品                   
-                $("#finan_for_goods").find('ul').hide();                                         // 财务
-                $("#analy_for_goods").find('ul').hide();                                         // 分析
-                $("#note_for_goods").find('ul').hide();                                           // 短信
-                $("#daifa_for_goods").find('ul').hide();                                          // 代发
-				$("#daina_for_goods").find('ul').hide();											 //代拿	
-                $("#sale_for_goods").find('ul').hide();                                          // 售后
-                $("#invent_for_goods").find('ul').hide();                                        // 进销存
-                $(".nav").css("width","76px")
-                $("#menu_Bar").css({"position":" fixed","top":"58px","left":"18%","width":"0","height":"0","background":"rgba(0,0,0,0.2)"})
-            })
-            $('#root li').click(function(){
-                $(this).not('.group > *').addClass("curItem");
-                $(".nav").css("width","18%")
-                $("#menu_Bar").css({"position":" fixed","top":"58px","left":"18%","width":"100%","height":"100%","background":"rgba(0,0,0,0.2)"})
-            })
-            $(".nav_li_hover").click(function(){
-                $(".nav").css("width","76px")
-                $("#menu_Bar").css({"position":" fixed","top":"58px","left":"18%","width":"0","height":"0","background":"rgba(0,0,0,0.2)"})
-            })
-            
-            //--------------------------------
-            
-            //新增一个Tab项
-            $(".menuNode").click(function(){
-                var a_t = $(this),
-                id 		= a_t.attr("data-id"),
-            	url 	= a_t.attr("data-url"),
-            	title 	= a_t.html();
-                addTab(id,url,title);
-            });
-            // $('.layui-this').children("a:first").click();
-        });
+       
         loadShopConfig();
         lastGetOrderTime();
 		upLoadLog();
+        this.chaoQunGiftCount();
     },
     methods: {
         //修改密码
         modify_password:function(){
             addTab('updatepassword','?m=system&c=setup&a=updatepassword','修改密码');
+        },
+        chaoQunGiftCount:function(){
+            $.ajax({                        
+                url: "/index.php?m=system&c=index&a=getChaoQunGiftCount",                    
+                type: 'post',           
+                data: {},           
+                dataType: 'json',           
+                success: function (data) {
+                    if(data.code=='ok'){
+                        //eg2
+                        layer.open({
+                            title :'账户余额不足',
+                            type: 1,
+                            shade: false,
+                            area: ['350px', '200px'],
+                            maxmin: false,
+                            content: '<div class="mini-toolbar" style="border-bottom:0;padding:0px;position:absolute;top:50%;translateY(-50%);"><table style="width:100%;">'+
+                                    '<tbody>'+
+                                    '<tr>'+
+                                        '<td style="width:100%;">'+
+                                            '<span style="color:red;padding-left:20px;">'+
+                                            '您的账户余额已不足，请及时缴费，谢谢'+
+                                            '</span>'+
+                                       ' </td>'+
+                                        '</tr>'+
+                                        '<tr></tr></tbody></table></div>',
+                            btn: ['前往缴费', '取消']
+                              ,yes: function(index, layero){
+                                //按钮【按钮一】的回调
+                                layer.close(index);
+                                addTab('recharge','?m=system&c=finance&a=recharge','账户充值');
+                              }
+                              ,btn2: function(index, layero){
+                                //按钮【按钮二】的回调
+                                //return false 开启该代码可禁止点击该按钮关闭
+                              }
+                        }); 
+
+                    }
+                }
+            });
         },
 		accountSale:function(){
 			layer.open({
@@ -722,6 +767,7 @@ var flow = new Vue({
                 maxmin: false,
                 content: '?m=system&c=accountSafe&a=accountSafe'
             }); 
+
 		},
         //退出
         re_login:function(){
@@ -762,7 +808,6 @@ var flow = new Vue({
 setInterval(function(){
     lastGetOrderTime();																																																//===========
 },300000);//5分钟
-
 function upLoadLog()
 {
 	setTimeout(function () {
@@ -885,8 +930,9 @@ function doConnect(func){
 				}
 				
 				if(data.accountSafe == 'F'){
-					flow.accountSale();
+					//flow.chaoQunGiftCount();
 				}
+                flow.chaoQunGiftCount();
 			}																																															
 		});
 				
@@ -905,6 +951,7 @@ function doConnect(func){
     socket.onerror = function(event) {
         flow.isHave = false;
 		addTab('dbsx','?m=system&c=beDone&a=beDone','待办事项');
+        flow.chaoQunGiftCount();
     };
 }
 

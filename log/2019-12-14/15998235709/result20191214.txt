@@ -1,0 +1,218 @@
+1576307294---Array
+(
+    [0] => Array
+        (
+            [shoptype] => TM
+            [shopid] => 
+            [shopname] => 
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 西宁库
+            [shouStatus] => 0
+            [shoptype_name] => 淘宝天猫
+        )
+
+    [1] => Array
+        (
+            [shoptype] => IKUCUN
+            [shopid] => IKUCUN-沐诗妤
+            [shopname] => 沐诗妤
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 沐诗妤
+            [id] => 5
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 2c9089946e266c29016e2aa5a17b0acb
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/list?status=1&appid=2c9089946e266c29016e2aa5a17b0acb&nonc
+            [secretkey] => 2c9089946e266c29016e2aa5a17b0acc
+            [shop_print_province] => 广东省
+            [shop_print_city] => 广州市
+            [shop_print_district] => 白云区
+            [shop_print_detail] => 太和镇大源村田心南路41号
+            [shop_print_username] => 沐诗妤
+            [shop_print_tel] => 18616839461
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 太和镇大源村田心南路41号
+            [defaultStorageName] => 西宁库
+            [shouStatus] => 0
+            [shoptype_name] => 爱库存
+        )
+
+    [2] => Array
+        (
+            [shoptype] => XX
+            [shopid] => XX-阿柳KD
+            [shopname] => 阿柳KD
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 
+            [id] => 3
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 线下
+        )
+
+)
+
+1576312146---Array
+(
+    [0] => Array
+        (
+            [shoptype] => TM
+            [shopid] => 
+            [shopname] => 
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 西宁库
+            [shouStatus] => 0
+            [shoptype_name] => 淘宝天猫
+        )
+
+    [1] => Array
+        (
+            [shoptype] => IKUCUN
+            [shopid] => IKUCUN-沐诗妤
+            [shopname] => 沐诗妤
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 沐诗妤
+            [id] => 5
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 2c9089946e266c29016e2aa5a17b0acb
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/list?status=1&appid=2c9089946e266c29016e2aa5a17b0acb&nonc
+            [secretkey] => 2c9089946e266c29016e2aa5a17b0acc
+            [shop_print_province] => 广东省
+            [shop_print_city] => 广州市
+            [shop_print_district] => 白云区
+            [shop_print_detail] => 太和镇大源村田心南路41号
+            [shop_print_username] => 沐诗妤
+            [shop_print_tel] => 18616839461
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 太和镇大源村田心南路41号
+            [defaultStorageName] => 西宁库
+            [shouStatus] => 0
+            [shoptype_name] => 爱库存
+        )
+
+    [2] => Array
+        (
+            [shoptype] => XX
+            [shopid] => XX-阿柳KD
+            [shopname] => 阿柳KD
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 
+            [id] => 3
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 线下
+        )
+
+)
+

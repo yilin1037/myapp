@@ -1,0 +1,1132 @@
+1576458425--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576458425--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576458425--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576458425--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576458425--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576458425--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576458425--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576458425--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576458425--update userlist set last_login_time='1576458425' where system_id='15998235709'
+1576458425--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576458425--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576458425','1','登录IP地址：127.0.0.1')
+1576458425--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576458425--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576458425--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576458425--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576458429--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576458121'
+1576458429--select username,expire_time from userlist where system_id='15998235709'
+1576458429--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458429--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458429--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576458429--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576458429--SELECT wh,name FROM u15998235709_my_wh
+1576458429--SELECT id,statusName FROM u15998235709_sign_status
+1576458429--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372029 AND a.exception_online=0  group by new_tid 
+					) a
+1576458429--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372029 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576458429--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372029 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576458429--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760583895983','15760325909822','15755390211612','15755376143195','15755374958599','15755294669043','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372029 AND a.exception_online = 0 order by payment_time desc 
+1576458429--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522')
+1576458429--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576458429--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458429--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458429--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576458429--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576458429--SELECT wh,name FROM u15998235709_my_wh
+1576458429--SELECT id,statusName FROM u15998235709_sign_status
+1576458429--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575853629 and a.last_trace_time <1576415229 and a.is_trace = '1' AND a.exception_online=0  group by new_tid 
+					) a
+1576458429--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575853629 and a.last_trace_time <1576415229 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576458429--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575853629 and a.last_trace_time <1576415229 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576458429--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15755293383744')  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and a.last_trace_time > 1575853629 and a.last_trace_time <1576415229 and a.is_trace = '1' AND a.exception_online = 0 order by payment_time desc 
+1576458429--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15755293383744')
+1576458429--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15755293383744') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576458429--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458429--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576458429--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576458429--select expire_time from userlist where system_id='15998235709'
+1576458429--SELECT DISTINCT drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576458429--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576458430--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458430--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576458431--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458431--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576458431--SELECT id,title,content,begin_time FROM notice where '1576458431' BETWEEN begin_time AND end_time 
+1576458432--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576458432--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576458432--select username,expire_time from userlist where system_id='15998235709'
+1576458432--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576458432--select sum(balance) as balance from u15998235709_tid_pay
+1576458432--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576458433--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458433--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576458433--SELECT title,content,create_time FROM question limit 0,7
+1576458440--select shopid,appkey,secretkey,sessionkey from u15998235709_shop_config where shoptype = 'JD'
+1576458731--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576458731--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576459031--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459031--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576459102--select username,expire_time from userlist where system_id='15998235709'
+1576459102--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459102--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459102--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459102--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459102--SELECT wh,name FROM u15998235709_my_wh
+1576459102--SELECT id,statusName FROM u15998235709_sign_status
+1576459103--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372702 AND a.exception_online=0  group by new_tid 
+					) a
+1576459103--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372702 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459103--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372702 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459103--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760583895983','15760325909822','15755390211612','15755376143195','15755374958599','15755294669043','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372702 AND a.exception_online = 0 order by payment_time desc 
+1576459103--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522')
+1576459103--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459103--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459103--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459104--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459104--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459104--SELECT wh,name FROM u15998235709_my_wh
+1576459104--SELECT id,statusName FROM u15998235709_sign_status
+1576459104--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854303 and a.last_trace_time <1576415903 and a.is_trace = '1' AND a.exception_online=0  group by new_tid 
+					) a
+1576459104--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854303 and a.last_trace_time <1576415903 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459104--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854303 and a.last_trace_time <1576415903 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459104--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15755293383744')  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and a.last_trace_time > 1575854303 and a.last_trace_time <1576415903 and a.is_trace = '1' AND a.exception_online = 0 order by payment_time desc 
+1576459104--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15755293383744')
+1576459104--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15755293383744') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459104--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459104--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576459104--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459104--select expire_time from userlist where system_id='15998235709'
+1576459104--SELECT DISTINCT drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576459104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576459104--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459104--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459104--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459107--SELECT id,title,content,begin_time FROM notice where '1576459105' BETWEEN begin_time AND end_time 
+1576459107--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576459107--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576459108--select username,expire_time from userlist where system_id='15998235709'
+1576459108--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576459109--SELECT title,content,create_time FROM question limit 0,7
+1576459109--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459109--select sum(balance) as balance from u15998235709_tid_pay
+1576459109--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459109--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459115--select shopid,appkey,secretkey,sessionkey from u15998235709_shop_config where shoptype = 'JD'
+1576459126--select username,expire_time from userlist where system_id='15998235709'
+1576459126--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459126--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459126--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459126--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459126--SELECT wh,name FROM u15998235709_my_wh
+1576459126--SELECT id,statusName FROM u15998235709_sign_status
+1576459126--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372726 AND a.exception_online=0  group by new_tid 
+					) a
+1576459126--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372726 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459126--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372726 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459126--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760583895983','15760325909822','15755390211612','15755376143195','15755374958599','15755294669043','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576372726 AND a.exception_online = 0 order by payment_time desc 
+1576459126--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522')
+1576459126--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459126--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459126--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459126--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459126--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459126--SELECT wh,name FROM u15998235709_my_wh
+1576459126--SELECT id,statusName FROM u15998235709_sign_status
+1576459126--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854326 and a.last_trace_time <1576415926 and a.is_trace = '1' AND a.exception_online=0  group by new_tid 
+					) a
+1576459126--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854326 and a.last_trace_time <1576415926 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459126--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854326 and a.last_trace_time <1576415926 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459126--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15755293383744')  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and a.last_trace_time > 1575854326 and a.last_trace_time <1576415926 and a.is_trace = '1' AND a.exception_online = 0 order by payment_time desc 
+1576459126--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15755293383744')
+1576459126--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15755293383744') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459126--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459126--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576459126--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459126--select expire_time from userlist where system_id='15998235709'
+1576459126--SELECT DISTINCT drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576459126--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576459126--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459126--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459126--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459126--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576459126--SELECT id,title,content,begin_time FROM notice where '1576459126' BETWEEN begin_time AND end_time 
+1576459127--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576459127--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459127--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459127--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576459127--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459128--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459128--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576459128--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576459128--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576459128--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576459128--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576459128--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576459128--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576459128--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576459128--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576459128--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576459128--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576459128--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576459128--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576459128--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576459128--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576459128--SELECT title,content,create_time FROM question limit 0,7
+1576459128--select username,expire_time from userlist where system_id='15998235709'
+1576459128--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576459128--select sum(balance) as balance from u15998235709_tid_pay
+1576459128--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459135--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459135--select expire_time from userlist where system_id='15998235709'
+1576459135--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576459135--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576459135--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576459136--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576459136--select id,planName from u15998235709_search_plan order by id 
+1576459136--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576459136--select id,statusName from u15998235709_sign_status
+1576459136--SELECT wh,name FROM u15998235709_my_wh
+1576459136--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576459136--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459136--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459136--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459136--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459136--SELECT wh,name FROM u15998235709_my_wh
+1576459136--SELECT id,statusName FROM u15998235709_sign_status
+1576459136--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1576459136--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459136--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1576459136--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1576459136--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459136--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1576459136--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459136--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1576459136--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1576459136--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760583895983','15760325909822','15755390211612','15755376143195','15755374958599','15755294669043','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1576459136--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1576459136--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1576459136--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522')
+1576459136--select count(1) as count from (
+					select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1576459136--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459136--select count(1) as count from (select new_tid from u15998235709_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1576459136--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459136--select expire_time from userlist where system_id='15998235709'
+1576459136--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576459137--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459137--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459137--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576459140--select shopid,appkey,secretkey,sessionkey from u15998235709_shop_config where shoptype = 'JD'
+1576459140--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576459588--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576459588--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576459588--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576459588--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576459588--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576459588--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576459588--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576459588--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576459588--update userlist set last_login_time='1576459588' where system_id='15998235709'
+1576459588--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576459588--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576459588','1','登录IP地址：127.0.0.1')
+1576459588--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576459588--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576459588--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576459588--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576459588--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576459284'
+1576459588--select username,expire_time from userlist where system_id='15998235709'
+1576459588--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459588--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459588--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459588--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459588--SELECT wh,name FROM u15998235709_my_wh
+1576459588--SELECT id,statusName FROM u15998235709_sign_status
+1576459588--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373188 AND a.exception_online=0  group by new_tid 
+					) a
+1576459588--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373188 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459588--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373188 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459588--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760583895983','15760325909822','15755390211612','15755376143195','15755374958599','15755294669043','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373188 AND a.exception_online = 0 order by payment_time desc 
+1576459588--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522')
+1576459588--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459588--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459588--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459588--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459588--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459588--SELECT wh,name FROM u15998235709_my_wh
+1576459588--SELECT id,statusName FROM u15998235709_sign_status
+1576459588--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854788 and a.last_trace_time <1576416388 and a.is_trace = '1' AND a.exception_online=0  group by new_tid 
+					) a
+1576459588--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854788 and a.last_trace_time <1576416388 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459588--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575854788 and a.last_trace_time <1576416388 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459588--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15755293383744')  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and a.last_trace_time > 1575854788 and a.last_trace_time <1576416388 and a.is_trace = '1' AND a.exception_online = 0 order by payment_time desc 
+1576459588--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15755293383744')
+1576459588--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15755293383744') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459588--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459588--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576459588--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459588--select expire_time from userlist where system_id='15998235709'
+1576459588--SELECT DISTINCT drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576459588--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576459589--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459589--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459589--SELECT id,title,content,begin_time FROM notice where '1576459589' BETWEEN begin_time AND end_time 
+1576459589--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459589--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576459589--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459589--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459589--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576459589--select username,expire_time from userlist where system_id='15998235709'
+1576459589--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576459589--select sum(balance) as balance from u15998235709_tid_pay
+1576459589--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576459589--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459590--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459590--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576459590--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576459590--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576459590--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576459590--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576459590--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576459590--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576459590--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576459590--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576459590--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576459590--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576459590--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576459590--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576459590--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576459590--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576459590--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576459590--SELECT title,content,create_time FROM question limit 0,7
+1576459594--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459594--select expire_time from userlist where system_id='15998235709'
+1576459594--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576459594--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576459595--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576459595--select id,planName from u15998235709_search_plan order by id 
+1576459595--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576459595--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459595--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459595--select id,statusName from u15998235709_sign_status
+1576459595--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576459595--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459595--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459595--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576459595--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576459595--SELECT wh,name FROM u15998235709_my_wh
+1576459595--SELECT id,statusName FROM u15998235709_sign_status
+1576459595--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1576459595--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459595--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576459595--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760583895983','15760325909822','15755390211612','15755376143195','15755374958599','15755294669043','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1576459595--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522')
+1576459595--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755390211612','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576459595--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459595--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1576459595--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459595--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1576459595--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1576459595--select expire_time from userlist where system_id='15998235709'
+1576459595--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1576459595--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576459595--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1576459595--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1576459595--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1576459595--select count(1) as count from (
+					select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1576459595--select count(1) as count from (select new_tid from u15998235709_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1576459595--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576459596--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576459596--SELECT wh,name FROM u15998235709_my_wh
+1576459598--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576459599--select shopid,appkey,secretkey,sessionkey from u15998235709_shop_config where shoptype = 'JD'
+1576459841--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459841--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576459890--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576459890--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576460071--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460071--select expire_time from userlist where system_id='15998235709'
+1576460071--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460071--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460071--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576460072--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576460072--select id,statusName from u15998235709_sign_status
+1576460072--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576460073--select id,planName from u15998235709_search_plan order by id 
+1576460073--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460073--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460073--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460073--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460073--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460073--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460073--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460073--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460073--SELECT wh,name FROM u15998235709_my_wh
+1576460073--SELECT id,statusName FROM u15998235709_sign_status
+1576460073--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online=0  group by new_tid 
+					) a
+1576460073--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460073--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460073--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online = 0 order by payment_time desc 
+1576460073--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460073--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('')
+1576460073--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  group by new_tid
+					) a
+1576460073--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460073--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND print_unique_num > 0 group by new_tid
+					) a
+1576460073--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460073--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND print_kd_num > 0 group by new_tid
+					) a
+1576460073--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND print_kd_num > 1 group by new_tid
+					) a
+1576460073--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND refund_agree = 1 group by new_tid
+					) a
+1576460073--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND is_split = 1 group by new_tid
+					) a
+1576460073--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND new_tid like 'HB_%' group by new_tid
+					) a
+1576460073--select expire_time from userlist where system_id='15998235709'
+1576460073--select count(1) as count from (
+					select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1576460073--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460073--select count(1) as count from (select new_tid from u15998235709_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1576460073--SELECT wh,name FROM u15998235709_my_wh
+1576460075--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576460122--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460122--select expire_time from userlist where system_id='15998235709'
+1576460122--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460122--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460122--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576460122--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576460122--select id,statusName from u15998235709_sign_status
+1576460122--SELECT wh,name FROM u15998235709_my_wh
+1576460122--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460123--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460123--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460123--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576460123--select id,planName from u15998235709_search_plan order by id 
+1576460123--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460123--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460123--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460123--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460123--SELECT wh,name FROM u15998235709_my_wh
+1576460123--SELECT id,statusName FROM u15998235709_sign_status
+1576460123--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460123--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  and a.payment_time >= '1573833600'  group by new_tid 
+					) a
+1576460123--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  and a.payment_time >= '1573833600'  group by new_tid  order by payment_time desc  limit 0,100
+1576460123--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  and a.payment_time >= '1573833600'  group by new_tid  order by payment_time desc  limit 0,100
+1576460123--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760286928970','15760285472565','15760282592267','15760277706951','15760267244620','15759645501087','15759643139964','15759616269955','15759614213699','15756869618053','15755410308758','15755390211612','15755294991979','15755293383744')  and a.send_status = 'WAIT_SENDED' AND a.exception_online = 0 order by payment_time desc 
+1576460123--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760286928970','XX-15760285472565','XX-15760282592267','XX-15760277706951','XX-15760267244620','XX-15759645501087','XX-15759643139964','XX-15759616269955','XX-15759614213699','XX-15756869618053','XX-15755410308758','XX-15755390211612','XX-15755294991979','XX-15755293383744')
+1576460123--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760286928970','XX-15760285472565','XX-15760282592267','XX-15760277706951','XX-15760267244620','XX-15759645501087','XX-15759643139964','XX-15759616269955','XX-15759614213699','XX-15756869618053','XX-15755410308758','XX-15755390211612','XX-15755294991979','XX-15755293383744') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460123--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460123--select expire_time from userlist where system_id='15998235709'
+1576460123--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460126--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576460138--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460138--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460139--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460139--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460139--SELECT wh,name FROM u15998235709_my_wh
+1576460139--SELECT id,statusName FROM u15998235709_sign_status
+1576460139--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  group by new_tid 
+					) a
+1576460139--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460139--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460139--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760286928970','15760285472565','15760282592267','15760277706951','15760267244620','15759645501087','15759643139964','15759616269955','15759614213699','15756869618053','15755410308758','15755390211612','15755294991979','15755293383744')  and a.send_status = 'WAIT_SENDED' AND a.exception_online = 0 order by payment_time desc 
+1576460139--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760286928970','XX-15760285472565','XX-15760282592267','XX-15760277706951','XX-15760267244620','XX-15759645501087','XX-15759643139964','XX-15759616269955','XX-15759614213699','XX-15756869618053','XX-15755410308758','XX-15755390211612','XX-15755294991979','XX-15755293383744')
+1576460139--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760286928970','XX-15760285472565','XX-15760282592267','XX-15760277706951','XX-15760267244620','XX-15759645501087','XX-15759643139964','XX-15759616269955','XX-15759614213699','XX-15756869618053','XX-15755410308758','XX-15755390211612','XX-15755294991979','XX-15755293383744') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460140--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460140--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460140--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460140--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460140--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460141--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460141--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576460159--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460159--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460159--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460159--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460159--SELECT wh,name FROM u15998235709_my_wh
+1576460159--SELECT configKey,configValue FROM u15998235709_base_config WHERE `type`='setSendShopExpress'
+1576460166--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460166--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460166--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460166--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460168--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460168--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460168--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460168--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460168--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460168--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460168--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460168--SELECT b.title,b.pic_url,b.sku_name,b.prd_no,a.express_type,COUNT(1) AS tid_num,SUM(a.items_num) AS items_num,b.market,b.floor,b.booth,b.prd_id,b.prd_sku_id FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS'  AND refund_status <> 'WAIT_SELLER_AGREE' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC limit 0,50
+1576460168--select a.prd_id,a.prd_sku_id,a.prd_loc,sum(a.qty) as qty from u15998235709_prdt_wms_qty a
+					   inner join (select prd_loc from u15998235709_wh_loc ) b on a.prd_loc=b.prd_loc
+					   where a.prd_id in ('PRD_00000001') group by  a.prd_id,a.prd_sku_id,a.prd_loc 
+1576460168--select a.prd_no,a.sku_name,a.prd_loc,sum(a.qty) as qty from u15998235709_prdt_wms_qty a 
+					   inner join (select prd_loc from u15998235709_wh_loc ) b on a.prd_loc=b.prd_loc
+					   where a.prd_no in ('L1810047BW1S') group by  a.prd_no,a.sku_name,a.prd_loc
+1576460168--select count(1) as pageNum from (SELECT b.title FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS'  AND refund_status <> 'WAIT_SELLER_AGREE' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC) h
+1576460168--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460182--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460182--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460182--SELECT b.title,b.pic_url,b.sku_name,b.prd_no,a.express_type,COUNT(1) AS tid_num,SUM(a.items_num) AS items_num,b.market,b.floor,b.booth,b.prd_id,b.prd_sku_id FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 AND a.payment_time >= '1576460180'  ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC limit 0,50
+1576460182--select count(1) as pageNum from (SELECT b.title FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 AND a.payment_time >= '1576460180'  ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC) h
+1576460185--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460185--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460185--SELECT b.title,b.pic_url,b.sku_name,b.prd_no,a.express_type,COUNT(1) AS tid_num,SUM(a.items_num) AS items_num,b.market,b.floor,b.booth,b.prd_id,b.prd_sku_id FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 AND a.payment_time >= '1576460180'  AND a.payment_time <= '1576460183'  ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC limit 0,50
+1576460185--select count(1) as pageNum from (SELECT b.title FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 AND a.payment_time >= '1576460180'  AND a.payment_time <= '1576460183'  ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC) h
+1576460189--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460189--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576460189--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460189--select expire_time from userlist where system_id='15998235709'
+1576460189--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460189--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460189--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576460190--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460190--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576460190--select id,planName from u15998235709_search_plan order by id 
+1576460190--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460190--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460190--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460190--select id,statusName from u15998235709_sign_status
+1576460190--SELECT wh,name FROM u15998235709_my_wh
+1576460190--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576460190--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460190--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460190--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460190--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460190--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1576460190--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460190--SELECT wh,name FROM u15998235709_my_wh
+1576460190--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1576460190--SELECT id,statusName FROM u15998235709_sign_status
+1576460190--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1576460190--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373790 AND a.exception_online=0  group by new_tid 
+					) a
+1576460190--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1576460190--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373790 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460190--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373790 AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460190--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1576460190--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760583895983','15760325909822','15755376143195','15755374958599','15755294669043','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN') and  a.payment_time < 1576373790 AND a.exception_online = 0 order by payment_time desc 
+1576460190--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1576460190--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522')
+1576460190--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1576460190--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760583895983','XX-15760325909822','XX-15755376143195','XX-15755374958599','XX-15755294669043','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460190--select count(1) as count from (
+					select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1576460190--select count(1) as count from (select new_tid from u15998235709_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1576460190--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460190--select expire_time from userlist where system_id='15998235709'
+1576460190--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460193--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576460198--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460198--select expire_time from userlist where system_id='15998235709'
+1576460198--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460199--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460199--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576460199--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576460199--SELECT wh,name FROM u15998235709_my_wh
+1576460199--select id,planName from u15998235709_search_plan order by id 
+1576460199--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576460199--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460199--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460199--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460199--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460199--select expire_time from userlist where system_id='15998235709'
+1576460199--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460199--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460199--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460199--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460199--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460199--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460199--SELECT wh,name FROM u15998235709_my_wh
+1576460199--SELECT id,statusName FROM u15998235709_sign_status
+1576460199--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855399 and a.last_trace_time <1576416999 and a.is_trace = '1' AND a.exception_online=0  group by new_tid 
+					) a
+1576460199--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855399 and a.last_trace_time <1576416999 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460199--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855399 and a.last_trace_time <1576416999 and a.is_trace = '1' AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460199--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('')  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and a.last_trace_time > 1575855399 and a.last_trace_time <1576416999 and a.is_trace = '1' AND a.exception_online = 0 order by payment_time desc 
+1576460199--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('')
+1576460199--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460199--select id,statusName from u15998235709_sign_status
+1576460199--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460199--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a
+1576460199--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1576460199--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1576460200--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1576460200--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1576460200--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1576460200--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1576460200--select count(1) as count from (
+					select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1576460200--select count(1) as count from (select new_tid from u15998235709_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1576460202--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576460204--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460204--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460204--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460204--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460204--SELECT wh,name FROM u15998235709_my_wh
+1576460204--SELECT id,statusName FROM u15998235709_sign_status
+1576460204--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855404 and a.last_trace_time <1576417004 and a.is_trace = '1' AND a.exception_online=0  and a.print_kd_num = 0  group by new_tid 
+					) a
+1576460204--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855404 and a.last_trace_time <1576417004 and a.is_trace = '1' AND a.exception_online=0  and a.print_kd_num = 0  group by new_tid  order by payment_time desc  limit 0,100
+1576460204--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855404 and a.last_trace_time <1576417004 and a.is_trace = '1' AND a.exception_online=0  and a.print_kd_num = 0  group by new_tid  order by payment_time desc  limit 0,100
+1576460204--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('')  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and a.last_trace_time > 1575855404 and a.last_trace_time <1576417004 and a.is_trace = '1' AND a.exception_online = 0 order by payment_time desc 
+1576460204--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('')
+1576460204--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460212--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460212--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460212--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460212--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460212--SELECT wh,name FROM u15998235709_my_wh
+1576460212--SELECT id,statusName FROM u15998235709_sign_status
+1576460212--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855412 and a.last_trace_time <1576417012 and a.is_trace = '1' AND a.exception_online=0  and a.print_kd_num = 0  group by new_tid 
+					) a
+1576460212--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855412 and a.last_trace_time <1576417012 and a.is_trace = '1' AND a.exception_online=0  and a.print_kd_num = 0  group by new_tid  order by payment_time desc  limit 0,100
+1576460212--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and  a.last_trace_time > 1575855412 and a.last_trace_time <1576417012 and a.is_trace = '1' AND a.exception_online=0  and a.print_kd_num = 0  group by new_tid  order by payment_time desc  limit 0,100
+1576460212--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('')  and a.send_status in  ('WAIT_SENDED_ASSIGN','WAIT_SENDED') and a.last_trace_time > 1575855412 and a.last_trace_time <1576417012 and a.is_trace = '1' AND a.exception_online = 0 order by payment_time desc 
+1576460212--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('')
+1576460212--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460224--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460224--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460224--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460224--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576460225--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576460225--select id,planName from u15998235709_search_plan order by id 
+1576460225--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460225--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460225--SELECT wh,name FROM u15998235709_my_wh
+1576460225--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460225--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460225--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460225--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460225--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460225--SELECT wh,name FROM u15998235709_my_wh
+1576460225--SELECT id,statusName FROM u15998235709_sign_status
+1576460225--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online=0  group by new_tid 
+					) a
+1576460225--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460225--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576460225--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.is_split = '1'  AND a.exception_online = 0 order by payment_time desc 
+1576460225--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('')
+1576460225--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460225--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576460225--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460225--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460225--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  group by new_tid
+					) a
+1576460225--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND print_unique_num > 0 group by new_tid
+					) a
+1576460225--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND print_kd_num > 0 group by new_tid
+					) a
+1576460225--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND print_kd_num > 1 group by new_tid
+					) a
+1576460225--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND refund_agree = 1 group by new_tid
+					) a
+1576460225--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND is_split = 1 group by new_tid
+					) a
+1576460225--select count(1) as count from (
+						select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND new_tid like 'HB_%' group by new_tid
+					) a
+1576460225--select count(1) as count from (
+					select new_tid from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  and is_split = '1'  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1576460225--select count(1) as count from (select new_tid from u15998235709_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1576460225--select id,statusName from u15998235709_sign_status
+1576460225--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460225--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460228--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576460235--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460235--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460235--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460235--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576460235--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576460235--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460235--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460235--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576460235--select id,planName from u15998235709_search_plan order by id 
+1576460235--SELECT wh,name FROM u15998235709_my_wh
+1576460236--select id,statusName from u15998235709_sign_status
+1576460236--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460236--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460236--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460236--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576460236--SELECT wh,name FROM u15998235709_my_wh
+1576460236--SELECT id,statusName FROM u15998235709_sign_status
+1576460236--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  and a.payment_time >= '1573833600'  group by new_tid 
+					) a
+1576460236--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  and a.payment_time >= '1573833600'  group by new_tid  order by payment_time desc  limit 0,100
+1576460236--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status = 'WAIT_SENDED' AND a.exception_online=0  and a.payment_time >= '1573833600'  group by new_tid  order by payment_time desc  limit 0,100
+1576460236--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15760286928970','15760285472565','15760282592267','15760277706951','15760267244620','15759645501087','15759643139964','15759616269955','15759614213699','15756869618053','15755410308758','15755390211612','15755294991979','15755293383744')  and a.send_status = 'WAIT_SENDED' AND a.exception_online = 0 order by payment_time desc 
+1576460236--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15760286928970','XX-15760285472565','XX-15760282592267','XX-15760277706951','XX-15760267244620','XX-15759645501087','XX-15759643139964','XX-15759616269955','XX-15759614213699','XX-15756869618053','XX-15755410308758','XX-15755390211612','XX-15755294991979','XX-15755293383744')
+1576460236--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460236--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576460236--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576460236--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15760286928970','XX-15760285472565','XX-15760282592267','XX-15760277706951','XX-15760267244620','XX-15759645501087','XX-15759643139964','XX-15759616269955','XX-15759614213699','XX-15756869618053','XX-15755410308758','XX-15755390211612','XX-15755294991979','XX-15755293383744') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576460236--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460236--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460236--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576460237--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576460238--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576460238--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576460238--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576460238--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576460239--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 

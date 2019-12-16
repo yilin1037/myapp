@@ -238,6 +238,31 @@ var tableList = new Vue({
 					}																																													
 				});
 				//$("#pdd").css("display","block");
+			}else if (name =='pinduoduo'){
+				$("#pinduoduo").css("display","block")
+				// $("#shopname1").val("");
+				// $("#shopname1").attr("disabled", false);
+				// $("#shopsortname1").val("");
+				// $("#shopsortname1").attr("disabled", false);
+				// $("#appkey1").val("");
+				// $("#appkey1").attr("disabled", false);
+				// $("#sessionkey1").val("");
+				layer.open({																																											
+					type: 1,																																											
+					title: '拼多多',																																								
+					skin: 'layui-layer-rim', //加上边框																																					
+					area: ['968px', '350px'], //宽高																																					
+					shade: 0.3,																																											
+					content: $("#pinduoduo"),	
+					btn: ['确定', '取消']
+					,yes: function(index, layero){
+						self.addTure("PDD");
+					},
+					cancel: function (index, layero) {																																					
+																																																		
+					}																																													
+				});
+				
 			}else if(name == "SUNING"){
 				$("#SN-shopname").val("");
 				$("#SN-shopname").attr("disabled", false);

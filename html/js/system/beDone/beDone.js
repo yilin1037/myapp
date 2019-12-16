@@ -18,7 +18,6 @@ var done = new Vue({
 			}																																															
 		});
 		
-		
 	},
 	methods: {
 		turnTo:function(a,url){
@@ -26,32 +25,102 @@ var done = new Vue({
 		}
 	}
 });
-var socket1;
-var socket_pdd1;
-var requestID1 = ""+parseInt(1000*Math.random());
-function doConnectPdd(){
-    if(typeof(socket_pdd) == 'undefined'){
-        socket_pdd1 = new WebSocket('ws://127.0.0.1:5000');
+var socket;
+var socket_pdd;
+var requestID = ""+parseInt(1000*Math.random());
+function doConnect(func){
+    if(typeof(socket) == 'undefined'){
+        socket = new WebSocket('ws://127.0.0.1:13528');
         // 打开Socket
-        socket_pdd1.onopen = function(event){
+        socket.onopen = function(event){
             if(typeof(func) == 'function'){
                 func();
             }
         };
         // 监听消息
-        socket_pdd1.onmessage = function(event)
+        socket.onmessage = function(event)
         {
-            done.pinDD = true;
+            done.isHave=true;
+            var data = JSON.parse(event.data);
+            //console.log(data);
+            if ("getPrinters" == data.cmd) {
+                if(typeof(cbDoGetPrinters) == 'function'){
+                    cbDoGetPrinters(data.printers);
+                    cbDoGetPrinters = null;
+                }
+            }else if ("setPrinterConfig" == data.cmd) {
+                if(typeof(cbSetPrinterConfig) == 'function'){
+                    cbSetPrinterConfig(data);
+                }
+            }else if("print" == data.cmd){
+                if(typeof(cbPrintView) == 'function' && data['previewImage']){
+                    cbPrintView(data);
+                }/*else if(typeof(cbPrintSend) == 'function' && data['taskID'].substring(0,4) == 'send'){
+                    cbPrintSend(data);
+                }*/
+            }
+        };
+        socket.onerror = function(event) {
+            done.isHave=false;
+        };
+    }
+}
+function doConnectPdd(func){
+    if(typeof(socket_pdd) == 'undefined'){
+        socket_pdd = new WebSocket('ws://127.0.0.1:5000');
+        // 打开Socket
+        socket_pdd.onopen = function(event){
+            if(typeof(func) == 'function'){
+                func();
+            }
+        };
+        // 监听消息
+        socket_pdd.onmessage = function(event)
+        {
+            done.pinDD=true;
+            var data = JSON.parse(event.data);
+            if ("getPrinters" == data.cmd) {
+               
+                if(typeof(cbDoGetPrinters) == 'function'){
+                    cbDoGetPrinters(data.printers);
+                    cbDoGetPrinters = null;
+                }
+            }else if ("setPrinterConfig" == data.cmd) {
+                if(typeof(pddSetPrinterConfig) == 'function'){
+                    pddSetPrinterConfig(data);
+                }
+            }else if("print" == data.cmd){
+                if(typeof(cbPrintView) == 'function' && data['previewImage']){
+                    cbPrintView(data);
+                }
+            }
+        };
+        socket_pdd.onerror = function(event) {
+            done.PpinDDdd=false;
+        };
+    }
+}
+function doConnectPdd2(func){
+    if(typeof(socket_pdd) == 'undefined'){
+        socket_pdd = new WebSocket('ws://127.0.0.1:5000');
+        // 打开Socket
+        socket_pdd.onopen = function(event){
+            if(typeof(func) == 'function'){
+                func();
+            }
+        };
+        // 监听消息
+        socket_pdd.onmessage = function(event)
+        {
             var data = JSON.parse(event.data);
             //console.log(data);
             if ("setPrinterConfig" == data.cmd) {
                 if(typeof(pddSetPrinterConfig) == 'function'){
                     pddSetPrinterConfig(data);
                 }
-            }
+            } 
         };
-        socket_pdd1.onerror = function(event) {
-            done.pinDD = false;
+        socket_pdd.onerror = function(event) {
             /*if(typeof(layer) == 'object'){
                 layer.alert('请下载拼多多打印组件');
             }else{
@@ -60,50 +129,13 @@ function doConnectPdd(){
         };
     }
 }
-
-var socket;
-var requestID = ""+parseInt(1000*Math.random());
-function doConnect(func){
-    socket = new WebSocket('ws://127.0.0.1:13528');
-    // 打开Socket
-    socket.onopen = function(event){
-        if(typeof(func) == 'function'){
-            func();
-        }
-    };
-    // 监听消息
-    socket.onmessage = function(event)
-    {
-		done.isHave = true;
-        var data = JSON.parse(event.data);
-        
-        if ("getPrinters" == data.cmd) {
-            if(typeof(cbDoGetPrinters) == 'function'){
-                cbDoGetPrinters(data.printers);
-            }
-        }else if("print" == data.cmd){
-            if(typeof(cbPrintView) == 'function' && data['previewImage']){
-                cbPrintView(data);
-            }
-        }
-    };
-    socket.onerror = function(event) {
-            done.isHave = false;
-    };
-}
-var sendPrintPdd = {};
-function pddSetPrinterConfig(data){
-    if(sendPrintPdd[data['requestID']]){
-        socket_pdd.send(sendPrintPdd[data['requestID']]);
-        sendPrintPdd[data['requestID']] = {};
-    }
-    layer.closeAll('loading');
-}
 //创建连接
 doConnect(function(){
-	doGetPrinters();
+    doGetPrinters();
 });
-doConnectPdd();
+doConnectPdd(function(){
+    doGetPrinters2();
+});
 //获取打印机列表
 function doGetPrinters(func) {
     var request  = {
@@ -115,6 +147,34 @@ function doGetPrinters(func) {
     if(typeof(func) == 'function'){
         cbDoGetPrinters = func;
     }
+}
+function doGetPrinters2(func) {
+    var request  = {
+        requestID : requestID,
+        version : '1.0',
+        cmd : 'getPrinters'
+    };
+    socket_pdd.send(JSON.stringify(request));
+    if(typeof(func) == 'function'){
+        cbDoGetPrinters = func;
+    }
+}
+var sendPrint = {};
+function cbSetPrinterConfig(data){
+    if(sendPrint[data['requestID']]){
+        socket.send(sendPrint[data['requestID']]);
+        sendPrint[data['requestID']] = {};
+    }
+    layer.closeAll('loading');
+}
+
+var sendPrintPdd = {};
+function pddSetPrinterConfig(data){
+    if(sendPrintPdd[data['requestID']]){
+        socket_pdd.send(sendPrintPdd[data['requestID']]);
+        sendPrintPdd[data['requestID']] = {};
+    }
+    layer.closeAll('loading');
 }
 var printTpl = {};
 var printTplDzmd = {};

@@ -743,23 +743,23 @@ var pages = new Vue({ //vue 模块入口
 						$("#area").val(tempjson[id].print_district);
 					}
 				}
-				if(tempjson[id].no == 'ZJ_ZTO'){
+				if(tempjson[id].express_form == 'ZJ_ZTO'){
 					$(".zto_partner_show").css('display','block');
-				}else if(tempjson[id].no == 'ZJ_SF' || tempjson[id].no == 'ZJ_SF_COD'){
+				}else if(tempjson[id].express_form == 'ZJ_SF' || tempjson[id].express_form == 'ZJ_SF_COD'){
 					$(".SF_appid_show").css('display','block');
 					$(".SF_appkey_show").css('display','block');
 					$(".SF_state_show").css('display','block');
 					$(".SF_paystate_show").css('display','block');
 					$(".SF_custId_show").css('display','block');
-				}else if(tempjson[id].no == 'JDKD_YTH_COD' || tempjson[id].no == 'JDKD_YTH_WD'){
+				}else if(tempjson[id].express_form == 'JDKD_YTH_COD' || tempjson[id].express_form == 'JDKD_YTH_WD'){
 					$(".JD_customerCode_show").css('display','block');
 					$(".JD_wareHouseCode_show").css('display','block');
 					$(".JD_shopid_show").css('display','block');
-				}else if(tempjson[id].no == 'ZJ_YTO_COD'){
+				}else if(tempjson[id].express_form == 'ZJ_YTO_COD'){
 					$(".yto_partner_show").css('display','block');
-				}else if(tempjson[id].no == 'ZJ_YUNDA_COD'){
+				}else if(tempjson[id].express_form == 'ZJ_YUNDA_COD'){
 					$(".yunda_partner_show").css('display','block');
-				}else if(tempjson[id].no == 'ZJ_DBKD' || tempjson[id].no == 'ZJ_DBKD_COD'){
+				}else if(tempjson[id].express_form == 'ZJ_DBKD' || tempjson[id].express_form == 'ZJ_DBKD_COD'){
 					$(".DBKD_customerCode_show").css('display','block');
 					$(".DBKD_payType_show").css('display','block');
 				}

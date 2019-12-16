@@ -261,15 +261,56 @@ var flow = new Vue({
         modify_password:function(){
             addTab('updatepassword','?m=system&c=setup&a=updatepassword','修改密码');
         },
+         chaoQunGiftCount:function(){
+            $.ajax({                        
+                url: "/index.php?m=system&c=index&a=getChaoQunGiftCount",                    
+                type: 'post',           
+                data: {},           
+                dataType: 'json',           
+                success: function (data) {
+                    if(data.code=='ok'){
+                        //eg2
+                        layer.open({
+                            title :'账户余额不足',
+                            type: 1,
+                            shade: false,
+                            area: ['350px', '200px'],
+                            maxmin: false,
+                            content: '<div class="mini-toolbar" style="border-bottom:0;padding:0px;position:absolute;top:50%;translateY(-50%);"><table style="width:100%;">'+
+                                    '<tbody>'+
+                                    '<tr>'+
+                                        '<td style="width:100%;">'+
+                                            '<span style="color:red;padding-left:20px;">'+
+                                            '您的账户余额已不足，请及时缴费，谢谢'+
+                                            '</span>'+
+                                       ' </td>'+
+                                        '</tr>'+
+                                        '<tr></tr></tbody></table></div>',
+                            btn: ['前往缴费', '取消']
+                              ,yes: function(index, layero){
+                                //按钮【按钮一】的回调
+                                layer.close(index);
+                                addTab('recharge','?m=system&c=finance&a=recharge','账户充值');
+                              }
+                              ,btn2: function(index, layero){
+                                //按钮【按钮二】的回调
+                                //return false 开启该代码可禁止点击该按钮关闭
+                              }
+                        }); 
+
+                    }
+                }
+            });
+        },
 		accountSale:function(){
-			// layer.open({
-   //              title :'数据安全',
-   //              type: 2,
-   //              shade: false,
-   //              area: ['550px', '500px'],
-   //              maxmin: false,
-   //              content: '?m=system&c=accountSafe&a=accountSafe'
-   //          }); 
+			layer.open({
+                title :'数据安全',
+                type: 2,
+                shade: false,
+                area: ['550px', '500px'],
+                maxmin: false,
+                content: '?m=system&c=accountSafe&a=accountSafe'
+            }); 
 		},
         //退出
         re_login:function(){
@@ -432,8 +473,9 @@ function doConnect(func){
 				}
 				
 				if(data.accountSafe == 'F'){
-					flow.accountSale();
+					//flow.accountSale();
 				}
+                flow.chaoQunGiftCount();
 			}																																															
 		});
 				
@@ -452,6 +494,7 @@ function doConnect(func){
     socket.onerror = function(event) {
         flow.isHave = false;
 		addTab('dbsx','?m=system&c=beDone&a=beDone','待办事项');
+        flow.chaoQunGiftCount();
     };
 }
 
