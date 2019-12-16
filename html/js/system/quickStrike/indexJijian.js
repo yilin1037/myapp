@@ -2116,7 +2116,6 @@ var flow = new Vue({
             self.defaultMsg = [];
             var prd_no = self.prd_no;
             var isrepeat = "";
-                                                                                                                                                                                            
             if($("#layprintTplBq" + index).val() != 0){                                                                                                                                                     
                 var unprintTplBq = $("#layprintTplBq" + index).val();                                                                                                                                       
             }else{

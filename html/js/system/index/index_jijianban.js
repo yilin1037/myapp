@@ -1,3 +1,5 @@
+
+
 var flow = new Vue({
 	el: '#flow',
 	data: {
@@ -6,10 +8,12 @@ var flow = new Vue({
 	   turnTo:false,
 	},
     mounted: function() {
+		$("#quickStrike").attr('src','/images/index/wmsf.png','width','18px','height','19px;')
 		var self = this;
-		
         layui.use(['element','layer'], function(){
+			
             var $ = layui.jquery,element = layui.element();
+			
 			addTab('zm','?m=desktop&c=desktop&a=index','桌面');
             
             //--------------------------------------
@@ -348,6 +352,7 @@ var flow = new Vue({
         }
     }
 });
+	
 setInterval(function(){
     lastGetOrderTime();																																																//===========
 },300000);//5分钟

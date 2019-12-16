@@ -1175,7 +1175,10 @@ var flow = new Vue({
 			var DROP_SHIPPING = self.DROP_SHIPPING;
 			var shippingId = self.shippingId;
 			var dateBegin = $('#dateBegin').val();
-			
+			var type ='';
+			if(quickStrike==1){	
+				type ='baokuan';
+			}
 			dateBegin = Date.parse(new Date(dateBegin));
 			dateBegin = dateBegin / 1000;
 			var dateEnd = $('#dateEnd').val();
@@ -1191,7 +1194,7 @@ var flow = new Vue({
 			$.ajax({
 				url: "/index.php?m=system&c=delivery&a=refreshTotal",
 				type: 'post',
-				data: {sysPlan: sysPlan, DROP_SHIPPING: DROP_SHIPPING, shippingId: shippingId, dateBegin: dateBegin, dateEnd: dateEnd},
+				data: {type:type,sysPlan: sysPlan, DROP_SHIPPING: DROP_SHIPPING, shippingId: shippingId, dateBegin: dateBegin, dateEnd: dateEnd},
 				dataType: 'json',
 				success: function (data) {
 					$("#refreshTotal").html("刷新统计");
@@ -9502,53 +9505,108 @@ var flow = new Vue({
     }
 });
 function jiankong(){
-	var input_value = document.querySelector(".prd_no_sku_name1").value;
-	if(typeof sku_name_arr!=="undefined" ){
-		var option ='';
-		for($i=0;$i<sku_name_arr.length;$i++){
-			option+='<option>'+sku_name_arr[$i]+'</option>';
+	var input_value = $(".prd_no_sku_name1").val();
+	if(input_value==''){
+		if(typeof sku_name_arr!=="undefined" ){
+			var option ='';
+			for($i=0;$i<sku_name_arr.length;$i++){
+				option+='<option value="'+data.data[$i].prd_no+'">'+data.data[$i].prd_no+'</option>';
+			}
+			$("#sexlist").html(option);
 		}
-		$("#sexlist").html(option);
+		var select_option ='<option value selected="selected">宝贝属性选择</option>';
+		$(".prd_no_sku_name2").html(select_option);
 	}
 	if(/msie/i.test(navigator.userAgent)){
 		 document.querySelector(".prd_no_sku_name1").addEventListener("propertychange", function(){
-		        if(typeof sku_name_arr!=="undefined"){
-					var option ='';
-					if(input_value!=''){
-						for($i=0;$i<sku_name_arr.length;$i++){
-							var start=sku_name_arr[$i].toLowerCase().indexOf(input_value.toLowerCase());
-							if(start!='-1'){
-								option+='<option>'+sku_name_arr[$i]+'</option>';
+		 	var input_value = $(".prd_no_sku_name1").val();
+		 	if(input_value){
+				$.ajax({
+					url: "/index.php?m=system&c=delivery&a=getGoodsName",																				
+					type: 'post',
+					data: {input_value: input_value},
+					dataType: 'json',
+					success: function (data) {
+						if(data.code=='ok'){
+							var option ='';
+							var select_option ='<option value selected="selected">宝贝属性选择</option>';
+							for($i=0;$i<data.data.length;$i++){
+								option+='<option value="'+data.data[$i].prd_no+'">'+data.data[$i].prd_no+'</option>';
 							}
-						}
-					}else{
-						for($i=0;$i<sku_name_arr.length;$i++){
-							option+='<option>'+sku_name_arr[$i]+'</option>';
-						}
-					}
-					$("#sexlist").html(option);
+							for($i=0;$i<data.sku_name.length;$i++){
+								select_option+='<option value="'+data.sku_name[$i].sku_name+'">'+data.sku_name[$i].sku_name+'</option>';
+							}
+							$(".prd_no_sku_name2").html(select_option);
+							$("#sexlist").html(option);
 
+						}
+					}						
+				});	
+			}else{
+				if(typeof sku_name_arr!=="undefined" ){
+					var option ='';
+					for($i=0;$i<sku_name_arr.length;$i++){
+						option+='<option value="'+data.data[$i].prd_no+'">'+data.data[$i].prd_no+'</option>';
+					}
+					var select_option ='<option value selected="selected">宝贝属性选择</option>';
+					$(".prd_no_sku_name2").html(select_option);
+					$("#sexlist").html(option);
 				}
+			}
+		  //       if(typeof sku_name_arr!=="undefined"){
+				// 	var option ='';
+				// 	if(input_value!=''){
+				// 		for($i=0;$i<sku_name_arr.length;$i++){
+				// 			var start=sku_name_arr[$i].toLowerCase().indexOf(input_value.toLowerCase());
+				// 			if(start!='-1'){
+				// 				option+='<option>'+sku_name_arr[$i]+'</option>';
+				// 			}
+				// 		}
+				// 	}else{
+				// 		for($i=0;$i<sku_name_arr.length;$i++){
+				// 			option+='<option>'+sku_name_arr[$i]+'</option>';
+				// 		}
+				// 	}
+				// 	$("#sexlist").html(option);
+
+				// }
 		    });   
 	}else{  
 		document.querySelector('.prd_no_sku_name1').addEventListener("input", function(){
-			if(typeof sku_name_arr!=="undefined"){
-				var option ='';
-				if(input_value!=''){
-					for($i=0;$i<sku_name_arr.length;$i++){
-						var start=sku_name_arr[$i].toLowerCase().indexOf(input_value.toLowerCase());
-						if(start!='-1'){
-							option+='<option>'+sku_name_arr[$i]+'</option>';
+			var input_value = $(".prd_no_sku_name1").val();
+			if(input_value){
+				$.ajax({
+					url: "/index.php?m=system&c=delivery&a=getGoodsName",																				
+					type: 'post',
+					data: {input_value: input_value},
+					dataType: 'json',
+					success: function (data) {
+						if(data.code=='ok'){
+							var option ='';
+							var select_option ='<option value selected="selected">宝贝属性选择</option>';
+							for($i=0;$i<data.data.length;$i++){
+								option+='<option value="'+data.data[$i].prd_no+'">'+data.data[$i].prd_no+'</option>';
+							}
+							for($i=0;$i<data.sku_name.length;$i++){
+								select_option+='<option value="'+data.sku_name[$i].sku_name+'">'+data.sku_name[$i].sku_name+'</option>';
+							}
+							$(".prd_no_sku_name2").html(select_option);
+							$("#sexlist").html(option);
 						}
-					}
-				}else{
+					}						
+				});	
+			}else{
+				if(typeof sku_name_arr!=="undefined" ){
+					var option ='';
 					for($i=0;$i<sku_name_arr.length;$i++){
 						option+='<option>'+sku_name_arr[$i]+'</option>';
 					}
+					var select_option ='<option value selected="selected">宝贝属性选择</option>';
+					$(".prd_no_sku_name2").html(select_option);
+					$("#sexlist").html(option);
 				}
-				$("#sexlist").html(option);
-
 			}
+			
 	    });  
 	}
 }
@@ -9733,7 +9791,6 @@ $('#pages20-seller_type_3').on('ifChecked', function(event){
 });
 
 
-
 function keyDownSearch(obj=''){
 	if(obj){
 		var name_anmme2 = $(obj).attr('class');
@@ -9774,8 +9831,14 @@ function shippingChange(system_id){
 	}else{
 		flow.shippingId = system_id;
 	}
-	
-
+	if(quickStrike==1){
+		flow.babyNum = 3;																																							
+		$("#searchArr .sin").remove();	
+		$("#searchArr").append("<span class='add sin rem' style='border:1px solid #000;'>多款多件<i class='dele' style='display:block' id='babyGroup' onclick='closeNow(\"babyGroup\")'></i></span>");									
+		flow.variety = true;																																						
+		flow.isSingle = false;																																						
+		flow.multiple = false;		
+	}
 	searchALLNow(flow,'page');	
 	flow.refreshTotal();
 	
@@ -10322,7 +10385,7 @@ function closeNow(group){																																											//==========
 	}else if(group == "sear_right"){
 		$("#searchArr .sear_right").remove();
 		$("#separator2").val("prd_no");																																									//===========
-		$(".changeDiv1").html("<input type='text' class='prd_no inp' placeholder='商品编号' name='reset' onkeydown='keyDownSearch()'>");	
+		$(".changeDiv1").html('<input type="text" autocomplete="off" onchange="keyDownSearch(this)"  onkeydown="setPrdNo(1)" oninput="setPrdNo(2)" onkeyup="setPrdNo(0)" class="prd_no_sku_name1 inp" style="width:100px;border:1px solid #c2c2c2;" placeholder="商品编号"  name="reset" list="sexlist"><datalist id="sexlist" onclick="keyDownSearch(this);"></datalist> <select  class="prd_no_sku_name2 inp" style="width:105px;border:1px solid #c2c2c2;" placeholder="宝贝属性(精确)" onchange="keyDownSearch(this)" name="reset"><option value="" style="display: none;" disabled selected>请选择</option></select> <input type="text" class="prd_no_sku_name3 inp" style="width:105px;border:1px solid #c2c2c2;" placeholder="宝贝属性(模糊)" onkeydown="keyDownSearch(this)" name="reset">');	
 	}else if(group == "time"){
 		$("#searchArr .time").remove();
 		$("#dateBegin").val("");
@@ -10343,7 +10406,8 @@ function closeNow(group){																																											//==========
 
 //===========================================================================================重置方法封装========================================================================================================
 function resetF(self,special){																																										//===========
-	$("input[name='reset']").val("");																																								//===========
+	$("input[name='reset']").val("");	
+	//===========
 	$("textarea").val("");																																											//===========
 	$("#shop").val("");																																												//===========
 	$("#express").val(0);																																											//===========
@@ -10352,7 +10416,7 @@ function resetF(self,special){																																										//======
 	$("#separator3").val("select_payment_time");
 	$(".changeDiv").html("<input class='show_tid inp' placeholder='多个逗号隔开' onkeydown='keyDownSearch()' name='reset'>");																		//===========
 	$("#separator2").val("prd_no_sku_name");																																									//===========
-	$(".changeDiv1").html("<input type='text' class='prd_no_sku_name1 inp' style='width:113px;border:1px solid #c2c2c2;' placeholder='商品编号' onchange='keyDownSearch(this)' list='sexlist' name='reset' autocomplete='off'><datalist id='sexlist' onclick='keyDownSearch()'></datalist> <select type='text' class='prd_no_sku_name2 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(精确)' onchange='keyDownSearch(this)' name='reset'><option value='' style='display: none;' disabled selected>请选择</option></select>  <input type='text' class=prd_no_sku_name3 inp' style='width:106px;border:1px solid #c2c2c2;' placeholder='宝贝属性(模糊)' onkeydown='keyDownSearch(this)' name='reset'>");																//===========
+	$(".changeDiv1").html('<input type="text" autocomplete="off" onchange="keyDownSearch(this)"  onkeydown="setPrdNo(1)" oninput="setPrdNo(2)" onkeyup="setPrdNo(0)" class="prd_no_sku_name1 inp" style="width:100px;border:1px solid #c2c2c2;" placeholder="商品编号"  name="reset" list="sexlist"><datalist id="sexlist" onclick="keyDownSearch(this);"></datalist> <select  class="prd_no_sku_name2 inp" style="width:105px;border:1px solid #c2c2c2;" placeholder="宝贝属性(精确)" onchange="keyDownSearch(this)" name="reset"><option value="" style="display: none;" disabled selected>请选择</option></select> <input type="text" class="prd_no_sku_name3 inp" style="width:105px;border:1px solid #c2c2c2;" placeholder="宝贝属性(模糊)" onkeydown="keyDownSearch(this)" name="reset">');	
 	//===========
 	$(".labelGroup div").each(function(){																																							//===========
 		$(".labelGroup .ic").remove();																																								//===========
@@ -11018,28 +11082,28 @@ function searchALLNow(self,page,callback){
 				sku_name_arr =data.outer_sku_id_arr;
 				var input_option='';
 				$(data.outer_sku_id_arr).each(function(index, el) {
-					input_option+="<option >"+el+"</option>";
+					input_option+="<option value='"+el+"'>"+el+"</option>";
 				});
 				$('#sexlist').html(input_option);
 			}
 
-			var option='';
-			option ='<option value>请选择</option>';
-			if(typeof select_chcked1!=="undefined"){
-				if(select_chcked1.length  ===0){//如果值变化了  值会被清空  重新赋值
-					select_chcked1 =data.sku_name_select;
-				}
-				if(data.sku_name_select){			
-					for($i=0;$i<select_chcked1.length;$i++){
-						if(select_chcked==select_chcked1[$i].sku_name){
-							option+='<option selected="selected" value="'+select_chcked1[$i].sku_name+'">'+select_chcked1[$i].sku_name+'</option>';
-						}else{
-							option+='<option value="'+select_chcked1[$i].sku_name+'">'+select_chcked1[$i].sku_name+'</option>';
-						}
-					}
-				}
-			}
-			$('.prd_no_sku_name2').html(option);
+			// var option='';
+			// option ='<option value>请选择</option>';
+			// if(typeof select_chcked1!=="undefined"){
+			// 	if(select_chcked1.length  ===0){//如果值变化了  值会被清空  重新赋值
+			// 		select_chcked1 =data.sku_name_select;
+			// 	}
+			// 	if(data.sku_name_select){			
+			// 		for($i=0;$i<select_chcked1.length;$i++){
+			// 			if(select_chcked==select_chcked1[$i].sku_name){
+			// 				option+='<option selected="selected" value="'+select_chcked1[$i].sku_name+'">'+select_chcked1[$i].sku_name+'</option>';
+			// 			}else{
+			// 				option+='<option value="'+select_chcked1[$i].sku_name+'">'+select_chcked1[$i].sku_name+'</option>';
+			// 			}
+			// 		}
+			// 	}
+			// }
+			// $('.prd_no_sku_name2').html(option);
 			var miniDatas = data.data;
 			var miniData = formattingCode(miniDatas);
 			grid1.setData(miniData);
@@ -11706,6 +11770,19 @@ function fastClear() {
     $("#form3")[0].reset();
     var timestamp = Date.parse(new Date());
     $("#pages98-newtimestramp").val(timestamp);
+}
+
+var keyStatus = 0;
+function setPrdNo(event)
+{
+	if(event == 2 && keyStatus == 0)
+	{
+		keyDownSearch();
+	}
+	else
+	{
+		keyStatus = event;
+	}
 }
 
 //返回 2个日期之间差几天

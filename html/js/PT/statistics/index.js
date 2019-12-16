@@ -58,11 +58,13 @@ function loadGrid(){
     var intoCust = flow.intoCus_no;	
     var intoWh = flow.intoWh_no;
 	var goodsNo = $("#goodsNo").val();	
+    var goodsSKU = $("#goodsSKU").val();  
     grid1.load({
         djtype:djtype,
         cus_no:intoCust,
         wh:intoWh,
-		goodsNo:goodsNo
+		goodsNo:goodsNo,
+        goodsSKU:goodsSKU
     });
 }
 function onActionRenderer(e) {

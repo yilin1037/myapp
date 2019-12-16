@@ -1164,6 +1164,10 @@ var flow = new Vue({
 			$("#refreshTotal").removeClass("btn");
 			$("#refreshTotal").addClass("btnOnlyStyle");
 			var self = this;
+			var type ='';
+			if(quickStrike==1){	
+				type ='baokuan';
+			}
 			var sysPlan = self.sysPlan;
 			var DROP_SHIPPING = self.DROP_SHIPPING;
 			var shippingId = self.shippingId;
@@ -1183,7 +1187,7 @@ var flow = new Vue({
 			$.ajax({
 				url: "/index.php?m=system&c=delivery&a=refreshTotal",
 				type: 'post',
-				data: {sysPlan: sysPlan, DROP_SHIPPING: DROP_SHIPPING, shippingId: shippingId, dateBegin: dateBegin, dateEnd: dateEnd},
+				data: {type:type,sysPlan: sysPlan, DROP_SHIPPING: DROP_SHIPPING, shippingId: shippingId, dateBegin: dateBegin, dateEnd: dateEnd},
 				dataType: 'json',
 				success: function (data) {
 					$("#refreshTotal").html("刷新统计");
@@ -9602,8 +9606,14 @@ function shippingChange(system_id){
 	}else{
 		flow.shippingId = system_id;
 	}
-	
-
+	if(quickStrike==1){
+		flow.babyNum = 3;																																							
+		$("#searchArr .sin").remove();	
+		$("#searchArr").append("<span class='add sin rem' style='border:1px solid #000;'>多款多件<i class='dele' style='display:block' id='babyGroup' onclick='closeNow(\"babyGroup\")'></i></span>");									
+		flow.variety = true;																																						
+		flow.isSingle = false;																																						
+		flow.multiple = false;		
+	}
 	searchALLNow(flow,'page');	
 	flow.refreshTotal();
 	
