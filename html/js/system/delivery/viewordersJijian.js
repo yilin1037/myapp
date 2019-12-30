@@ -288,7 +288,7 @@ var flow = new Vue({
                 title :'复制订单',
                 type: 2,
                 shade: false,
-                area: ['1000px', '600px'],
+                area: ['1100px', '700px'],
                 maxmin: false,
                 content: '?m=system&c=delivery&a=addOrders',
                 success: function(layero, index){

@@ -1,0 +1,918 @@
+1576999250---Array
+(
+    [0] => Array
+        (
+            [shoptype] => IKUCUN
+            [shopid] => IKUCUN-沐诗妤
+            [shopname] => 沐诗妤
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 沐诗妤
+            [id] => 33
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 2c9089946e266c29016e2aa5a17b0acb
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/list?status=1&appid=2c9089946e266c29016e2aa5a17b0acb&nonc
+            [secretkey] => 2c9089946e266c29016e2aa5a17b0acc
+            [shop_print_province] => 广东省
+            [shop_print_city] => 广州市
+            [shop_print_district] => 白云区
+            [shop_print_detail] => 太和镇大源村田心南路41号
+            [shop_print_username] => 沐诗妤
+            [shop_print_tel] => 18616839461
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 太和镇大源村田心南路41号
+            [defaultStorageName] => 西宁仓
+            [shouStatus] => 0
+            [shoptype_name] => 爱库存
+        )
+
+    [1] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-1
+            [shopname] => 1
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 1
+            [id] => 15
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [2] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-2
+            [shopname] => 2
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 2
+            [id] => 17
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [3] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-3
+            [shopname] => 3
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 3
+            [id] => 19
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [4] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-4
+            [shopname] => 4
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 4
+            [id] => 21
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [5] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-5
+            [shopname] => 5
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 5
+            [id] => 23
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [6] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-6
+            [shopname] => 6
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 6
+            [id] => 25
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [7] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-7
+            [shopname] => 7
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 7
+            [id] => 27
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [8] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-8
+            [shopname] => 8
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 8
+            [id] => 29
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [9] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-9
+            [shopname] => 9
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 9
+            [id] => 31
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [10] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-顶顶顶顶
+            [shopname] => 顶顶顶顶
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 啊啊啊啊啊
+            [id] => 11
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [11] => Array
+        (
+            [shoptype] => XX
+            [shopid] => XX-微店
+            [shopname] => 微店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 
+            [id] => 3
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 9ea540037c774f0888f86dc7b5aabd7e9e3b91d7
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 线下
+        )
+
+    [12] => Array
+        (
+            [shoptype] => TB
+            [shopid] => 阿柳KD
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 西宁仓
+            [shouStatus] => 1
+            [shoptype_name] => 淘宝天猫
+        )
+
+)
+
+1577000036---Array
+(
+    [0] => Array
+        (
+            [shoptype] => IKUCUN
+            [shopid] => IKUCUN-沐诗妤
+            [shopname] => 沐诗妤
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 沐诗妤
+            [id] => 33
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 2c9089946e266c29016e2aa5a17b0acb
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/list?status=1&appid=2c9089946e266c29016e2aa5a17b0acb&nonc
+            [secretkey] => 2c9089946e266c29016e2aa5a17b0acc
+            [shop_print_province] => 广东省
+            [shop_print_city] => 广州市
+            [shop_print_district] => 白云区
+            [shop_print_detail] => 太和镇大源村田心南路41号
+            [shop_print_username] => 沐诗妤
+            [shop_print_tel] => 18616839461
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 太和镇大源村田心南路41号
+            [defaultStorageName] => 西宁仓
+            [shouStatus] => 0
+            [shoptype_name] => 爱库存
+        )
+
+    [1] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-1
+            [shopname] => 1
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 1
+            [id] => 15
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [2] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-2
+            [shopname] => 2
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 2
+            [id] => 17
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [3] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-3
+            [shopname] => 3
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 3
+            [id] => 19
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [4] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-4
+            [shopname] => 4
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 4
+            [id] => 21
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [5] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-5
+            [shopname] => 5
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 5
+            [id] => 23
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [6] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-6
+            [shopname] => 6
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 6
+            [id] => 25
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [7] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-7
+            [shopname] => 7
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 7
+            [id] => 27
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [8] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-8
+            [shopname] => 8
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 8
+            [id] => 29
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [9] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-9
+            [shopname] => 9
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 9
+            [id] => 31
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier&nonc
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [10] => Array
+        (
+            [shoptype] => SSBB
+            [shopid] => shuaibao-顶顶顶顶
+            [shopname] => 顶顶顶顶
+            [status] => 1
+            [expire_time] => 1970-01-01 08:00:00
+            [auth_expire_time] => 1970-01-01 08:00:00
+            [shopsortname] => 啊啊啊啊啊
+            [id] => 11
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => chaoQunSupplier
+            [sessionkey] => https://openapi.ikucun.com/api/v2/activity/LIST?STATUS=1&appid=chaoQunSupplier
+            [secretkey] => 9F54508171CC42FE9FCC22E0364F0033
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 0
+            [shoptype_name] => 甩宝
+        )
+
+    [11] => Array
+        (
+            [shoptype] => XX
+            [shopid] => XX-微店
+            [shopname] => 微店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 
+            [id] => 3
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 9ea540037c774f0888f86dc7b5aabd7e9e3b91d7
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => 
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 点击设置
+            [shouStatus] => 1
+            [shoptype_name] => 线下
+        )
+
+    [12] => Array
+        (
+            [shoptype] => TB
+            [shopid] => 阿柳KD
+            [shopname] => 阿柳小店
+            [status] => 1
+            [expire_time] => 2030-12-31 23:59:59
+            [auth_expire_time] => 2030-12-31 23:59:59
+            [shopsortname] => 阿柳小店
+            [id] => 1
+            [customer_code] => 
+            [wareHouseCode] => 
+            [isAutoMerge] => 0
+            [appkey] => 
+            [sessionkey] => 
+            [secretkey] => 
+            [shop_print_province] => 
+            [shop_print_city] => 
+            [shop_print_district] => 
+            [shop_print_detail] => 
+            [shop_print_username] => 
+            [shop_print_tel] => 
+            [defaultStorage] => WH_0001
+            [zj_company] => 
+            [zj_productMan] => 
+            [zj_productAddress] => 
+            [zj_productTel] => 
+            [server_url] => 
+            [is_weigong] => 0
+            [send_address] => 点击设置
+            [defaultStorageName] => 西宁仓
+            [shouStatus] => 1
+            [shoptype_name] => 淘宝天猫
+        )
+
+)
+

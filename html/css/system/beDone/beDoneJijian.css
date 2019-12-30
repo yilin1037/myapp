@@ -1,0 +1,39 @@
+.wrap{
+	padding:15px;
+}
+
+th,td{
+	font-size:12px;
+}
+::-webkit-scrollbar  
+{  width: 0px; height: 0px } 
+tr{
+	height:35px;
+	line-height:53px;
+	border:none!important;
+}
+
+td,th{
+	line-height:35px!important;
+}
+
+a{
+	cursor:pointer;
+}
+
+.banner_i{
+	display:inline-block;
+	width:15px;
+	height:15px;
+	position:relative;
+	top:2px;
+	left:-2px;
+}
+
+.be{
+	background-color:#f9f9f9;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+	border-top:none;
+}

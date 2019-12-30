@@ -1,0 +1,40 @@
+html,body{
+	height:100%;
+}
+
+#flow{
+	height:100%;
+}
+
+span{
+	display:inline-block;
+}
+
+select {
+    transition:all 0.3s;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #000;
+
+  /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+
+a{
+	cursor:pointer;
+	color:#428bca;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+th,td{
+	border:1px solid #dddddd;
+	padding:4px;
+	text-align:center;
+}

@@ -1,0 +1,964 @@
+1576543774--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576543774--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576543774--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576543774--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576543774--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576543774--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576543774--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576543774--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576543774--update userlist set last_login_time='1576543774' where system_id='15998235709'
+1576543774--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576543774--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576543774','1','登录IP地址：127.0.0.1')
+1576543774--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576543774--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576543774--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576543774--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576543774--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576543470'
+1576543774--select username,expire_time from userlist where system_id='15998235709'
+1576543774--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576543774--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576543774--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576543774--select expire_time from userlist where system_id='15998235709'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576543774--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576543775--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576543775--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576543776--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576543776--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576543776--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576543776--SELECT id,title,content,begin_time FROM notice where '1576543776' BETWEEN begin_time AND end_time 
+1576543777--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576543777--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576543777--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576543777--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576543777--SELECT title,content,create_time FROM question limit 0,7
+1576543778--select username,expire_time from userlist where system_id='15998235709'
+1576543778--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576543778--select sum(balance) as balance from u15998235709_tid_pay
+1576543778--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547582--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576547582--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576547582--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576547582--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576547582--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576547582--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576547582--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576547582--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576547582--update userlist set last_login_time='1576547582' where system_id='15998235709'
+1576547582--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576547582--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576547582','1','登录IP地址：127.0.0.1')
+1576547582--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576547582--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576547582--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576547582--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576547582--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576547278'
+1576547582--select username,expire_time from userlist where system_id='15998235709'
+1576547582--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547582--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576547582--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547582--select expire_time from userlist where system_id='15998235709'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576547582--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576547583--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547583--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576547583--SELECT id,title,content,begin_time FROM notice where '1576547583' BETWEEN begin_time AND end_time 
+1576547583--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547583--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576547583--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576547583--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547583--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576547583--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576547583--select username,expire_time from userlist where system_id='15998235709'
+1576547583--SELECT title,content,create_time FROM question limit 0,7
+1576547583--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576547583--select sum(balance) as balance from u15998235709_tid_pay
+1576547583--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547584--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547584--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547584--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547584--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576547584--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576547584--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576547584--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576547584--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576547584--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576547584--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576547584--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576547584--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576547584--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576547584--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576547584--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576547584--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576547584--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576547584--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576547848--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576547848--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576547848--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576547848--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576547848--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576547848--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576547848--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576547848--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576547848--update userlist set last_login_time='1576547848' where system_id='15998235709'
+1576547848--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576547848--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576547848','1','登录IP地址：127.0.0.1')
+1576547848--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576547848--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576547848--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576547848--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576547848--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576547545'
+1576547849--select username,expire_time from userlist where system_id='15998235709'
+1576547849--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547849--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576547849--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547849--select expire_time from userlist where system_id='15998235709'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576547849--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576547849--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547849--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576547849--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547849--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576547849--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547850--SELECT id,title,content,begin_time FROM notice where '1576547850' BETWEEN begin_time AND end_time 
+1576547851--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576547851--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547851--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576547851--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576547852--SELECT title,content,create_time FROM question limit 0,7
+1576547852--select username,expire_time from userlist where system_id='15998235709'
+1576547852--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576547852--select sum(balance) as balance from u15998235709_tid_pay
+1576547852--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547867--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576547867--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576547868--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576547868--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576547868--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576547868--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576547868--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576547868--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576547868--update userlist set last_login_time='1576547868' where system_id='15998235709'
+1576547868--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576547868--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576547868','1','登录IP地址：127.0.0.1')
+1576547868--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576547868--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576547868--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576547868--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576547868--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576547564'
+1576547868--select username,expire_time from userlist where system_id='15998235709'
+1576547868--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547868--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576547868--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547868--select expire_time from userlist where system_id='15998235709'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576547868--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576547868--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547868--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576547868--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547868--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576547868--SELECT id,title,content,begin_time FROM notice where '1576547868' BETWEEN begin_time AND end_time 
+1576547869--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576547869--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576547869--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547869--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576547869--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547869--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576547869--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576547869--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576547869--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576547869--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576547869--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576547869--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576547869--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576547869--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576547869--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576547869--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576547869--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576547869--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576547869--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576547869--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576547869--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576547869--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576547870--SELECT title,content,create_time FROM question limit 0,7
+1576547870--select username,expire_time from userlist where system_id='15998235709'
+1576547870--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576547870--select sum(balance) as balance from u15998235709_tid_pay
+1576547870--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576548037--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576548037--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576548037--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576548037--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576548037--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576548037--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576548037--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576548037--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576548037--update userlist set last_login_time='1576548037' where system_id='15998235709'
+1576548037--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576548037--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576548037','1','登录IP地址：127.0.0.1')
+1576548037--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576548037--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576548037--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576548037--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576548037--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576547733'
+1576548037--select username,expire_time from userlist where system_id='15998235709'
+1576548037--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576548037--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576548037--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576548037--select expire_time from userlist where system_id='15998235709'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576548037--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576548038--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576548038--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576548038--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576548038--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576548038--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576548039--SELECT id,title,content,begin_time FROM notice where '1576548039' BETWEEN begin_time AND end_time 
+1576548039--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576548039--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576548039--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576548039--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576548039--select username,expire_time from userlist where system_id='15998235709'
+1576548039--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576548039--select sum(balance) as balance from u15998235709_tid_pay
+1576548039--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576548040--SELECT title,content,create_time FROM question limit 0,7
+1576551498--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576551498--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576551498--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576551498--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576551498--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576551498--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576551498--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576551498--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576551498--update userlist set last_login_time='1576551498' where system_id='15998235709'
+1576551498--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576551498--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576551498','1','登录IP地址：127.0.0.1')
+1576551498--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576551498--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576551498--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576551498--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576551498--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576551195'
+1576551498--select username,expire_time from userlist where system_id='15998235709'
+1576551498--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551498--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576551498--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576551498--select expire_time from userlist where system_id='15998235709'
+1576551498--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551498--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551498--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551498--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551498--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551498--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551499--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551499--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551499--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551499--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551499--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576551499--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551499--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576551499--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576551500--SELECT id,title,content,begin_time FROM notice where '1576551500' BETWEEN begin_time AND end_time 
+1576551500--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576551500--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576551500--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551500--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576551501--select username,expire_time from userlist where system_id='15998235709'
+1576551501--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576551501--select sum(balance) as balance from u15998235709_tid_pay
+1576551501--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576551501--SELECT title,content,create_time FROM question limit 0,7
+1576551509--select shopid,appkey,secretkey,sessionkey from u15998235709_shop_config where shoptype = 'JD'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551550--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551550--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576551550--select a.order_id,a.new_tid,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,
+		a.receiver_telephone,a.express_type,a.express_no,a.print_kd_num,a.addtime,a.print_time	from u15998235709_tid_free a 		
+		 where 1 = 1  order by a.addtime desc limit 0,20
+1576551550--SELECT COUNT(*) AS num FROM u15998235709_tid_free a  where 1 = 1 
+1576551552--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551552--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551552--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576551552--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576551553--select expire_time from userlist where system_id='15998235709'
+1576551553--select sum(balance) as balance from u15998235709_tid_pay
+1576551553--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551553--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551553--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551553--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551553--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576551554--SELECT COUNT(*) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576551554--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551554--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576551554--select id,planName from u15998235709_search_plan order by id 
+1576551554--select configKey from u15998235709_base_config where `type` = 'fetch_detail' 
+1576551554--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551554--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551554--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576551554--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576551554--SELECT wh,name FROM u15998235709_my_wh
+1576551554--SELECT id,statusName FROM u15998235709_sign_status
+1576551554--select count(1) as count from (
+						select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid 
+					) a
+1576551554--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576551554--select a.new_tid from u15998235709_tid_orders a FORCE INDEX(send_status_exception_online)  where 1=1  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0  group by new_tid  order by payment_time desc  limit 0,100
+1576551554--select a.new_tid,a.tid,a.show_tid,a.shoptype,a.shopid,a.pay_type,a.buyer_nick,a.send_status,a.mark_status,a.error_status,a.web_status,a.assign_type,a.payment,
+				a.post_fee,a.receiver_state,a.receiver_city,a.receiver_district,a.receiver_address,a.receiver_name,a.receiver_mobile,a.receiver_telephone,a.express_type,a.fetch_detail,
+				a.express_no,a.sku_num,a.items_num,a.print_kd_num,a.print_unique_num,a.`addtime`,a.create_time,a.payment_time,a.send_time,a.finish_time,a.buyer_message,
+				a.seller_memo,a.seller_flag,a.remark,a.wh,a.stock_order,a.name_df,a.mobile_df,a.address_df,a.orderSign,a.order_type,a.manual,a.seller_mark,a.three_pl_timing,
+				a.three_pl_cnService,a.three_pl_deliveryTime,a.three_pl_esDate,a.sign_status,a.card_no,a.is_split,a.package_num,a.waybill_time,a.last_ship_time,a.pre_send_time,a.is_trace from u15998235709_tid_orders a
+                
+                where a.new_tid in ('15764617481769','15764614305715','15760583895983','15760325909822','15755376143195','15755374958599','15755294386522')  and a.send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = 0 order by payment_time desc 
+1576551554--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576551554--SELECT tid,show_tid,oid,prd_id,prd_sku_id,title,num_iid,sku_id,prd_no,sku_name,outer_id,outer_sku_id,take_status,pic_url,
+				print_count,print_type,price,take_price,refund_status,assist_supply_no,is_more,more_code,
+				express_sort,payment_time,check_stock,sold_out_memo,bom_id,have_stock
+				FROM u15998235709_tid_items where tid in ('XX-15764617481769','XX-15764614305715','XX-15760583895983','XX-15760325909822','XX-15755376143195','XX-15755374958599','XX-15755294386522')
+1576551554--select tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id,count(1) as num,min(close_unique_code) as close_unique_code from u15998235709_tid_items where tid in ('XX-15764617481769','XX-15764614305715','XX-15760583895983','XX-15760325909822','XX-15755376143195','XX-15755374958599','XX-15755294386522') group by tid,oid,num_iid,sku_id,sku_name,prd_no,prd_id,prd_sku_id order by close_unique_code,id
+1576551554--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551554--select count(1) as count from (
+						select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  group by new_tid
+					) a 
+1576551554--select count(1) as count from (
+						select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_unique_num > 0 group by new_tid
+					) a
+1576551554--select count(1) as count from (
+						select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 0 group by new_tid
+					) a
+1576551554--select count(1) as count from (
+						select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND print_kd_num > 1 group by new_tid
+					) a
+1576551554--select count(1) as count from (
+						select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND refund_agree = 1 group by new_tid
+					) a
+1576551554--select count(1) as count from (
+						select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND is_split = 1 group by new_tid
+					) a
+1576551554--select count(1) as count from (
+						select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND new_tid like 'HB_%' group by new_tid
+					) a
+1576551554--select count(1) as count from (
+					select new_tid,items_num,sku_num from u15998235709_tid_orders where 1=1  and send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=0  AND mark_status = 'SEND_ERROR' group by new_tid
+				) a
+1576551554--select count(1) as count from (select new_tid,items_num,sku_num from u15998235709_tid_orders where send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND exception_online=1 group by new_tid) a
+1576551554--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551554--select configValue from u15998235709_base_config where type='baseConfig' and configKey='isexpress'
+1576551555--SELECT wh,name FROM u15998235709_my_wh
+1576551555--select id,statusName from u15998235709_sign_status
+1576551555--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576551557--select shoptype,shopid,shopname from u15998235709_shop_config where isAuth = '1' and status = '1' 
+1576551573--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551573--SELECT configValue FROM u15998235709_base_config WHERE `type`='ForTake' and configKey='system_id'
+1576551573--select stalls_no from u15998235709_product_online where assist_prd ='1' and stalls_no<>'' group by stalls_no
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551573--SELECT page_size,img_size,doc_name,img_state,doc_content,print_state,separa FROM u15998235709_report_tpl where `type` = 'printer'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551573--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551573--select configValue from u15998235709_base_config where type='baseConfig' and configKey='stockPrint' 
+1576551573--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551573--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551573--select shopid,shopname from u15998235709_shop_config
+1576551573--select count(1) as all_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0
+1576551573--select count(1) as not_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time < 1576512000 
+1576551573--select count(1) as yes_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time >=1576512000 
+1576551573--select count(1) as single_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 0 
+1576551573--select count(1) as more_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 1 
+1576551573--select count(1) as close_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=1 
+1576551573--select count(1) as cancel_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 
+1576551574--select count(1) as shop_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=0 
+1576551574--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576551574--select count(1) as storage_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=1 
+1576551574--select count(1) as cancel_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status,stock_order from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 AND b.stock_order=0 AND a.close_unique_code=0 AND p.assist_prd=1
+1576551574--select configValue from u15998235709_base_config where type='baseConfig' and configKey='stockPrint' 
+1576551574--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551574--select split_str,node1,node2,node3,node4,node5,node6,order_one,print_space from u15998235709_unique_code_config
+1576551574--SELECT wh,name FROM u15998235709_my_wh
+1576551574--select a.title,b.shoptype,a.close_unique_code,a.pic_url,a.print_type,c.shopname AS shopid,a.payment_time,(case when a.explosion_code != '' then a.explosion_code else a.unique_code end) as unique_code,a.prd_no,d.sort_name,g.sort_name_sku,a.sku_name,b.show_tid as tid,a.express_sort,(case when a.explosion_code != '' then '爆款' else a.more_code end) as more_code,b.buyer_nick,a.print_count,a.check_stock,a.sold_out_memo,b.new_tid,a.last_print_time,a.market,a.floor,a.booth,b.buyer_message,b.seller_memo,b.wh,a.have_stock,a.prd_loc,e.name as prd_loc_name from u15998235709_tid_items a
+		INNER JOIN (SELECT shoptype,shopid,tid,show_tid,buyer_nick,print_unique_num,send_status,mark_status,new_tid,exception_online,buyer_message,seller_memo,web_status,wh,stock_order,express_type,seller_flag,order_type FROM u15998235709_tid_orders) b ON a.tid = b.tid
+		LEFT JOIN (SELECT shopname,shopid from u15998235709_shop_config) c ON b.shopid=c.shopid
+		left join (select prd_id,cost_price,sort_name,assist_prd from u15998235709_product group by prd_id) as d on d.prd_id=a.prd_id
+		LEFT JOIN (SELECT prd_loc,name from u15998235709_wh_loc) e on a.prd_loc = e.prd_loc
+		left join (select num_iid,shopid,assist_prd from u15998235709_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+		left join (select prd_sku_id,sort_name_sku from  u15998235709_product_sku) as g on g.prd_sku_id=a.prd_sku_id 
+		 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 and b.stock_order=0 AND a.close_unique_code=0 order by a.prd_no DESC , a.sku_name,a.prd_no,a.sku_name,a.is_more desc,a.id limit 0,200
+1576551574--SELECT COUNT(*) AS num FROM u15998235709_tid_items a
+				INNER JOIN (SELECT tid,show_tid,buyer_nick,shopid,send_status,mark_status,web_status,new_tid,exception_online,seller_memo,buyer_message,stock_order,wh,express_type,seller_flag,order_type FROM u15998235709_tid_orders) b ON a.tid = b.tid
+				LEFT JOIN (SELECT shopname,shopid from u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select prd_id,cost_price,sort_name from u15998235709_product group by prd_id) as d on d.prd_id=a.prd_id
+				left join (select num_iid,shopid,assist_prd from u15998235709_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 and b.stock_order=0 AND a.close_unique_code=0
+1576551574--select configValue from u15998235709_base_config where type='baseConfig' and configKey='stockPrint' 
+1576551574--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551574--select count(1) as all_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0
+1576551574--select count(1) as not_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time < 1576512000 
+1576551574--select count(1) as yes_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time >=1576512000 
+1576551574--select count(1) as single_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 0 
+1576551574--select count(1) as more_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 1 
+1576551574--select count(1) as close_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=1 
+1576551574--select count(1) as cancel_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 
+1576551574--select count(1) as shop_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=0 
+1576551574--select count(1) as storage_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=1 
+1576551574--select count(1) as cancel_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status,stock_order from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 AND b.stock_order=0 AND a.close_unique_code=0 AND p.assist_prd=1
+1576551574--select configValue from u15998235709_base_config where type='baseConfig' and configKey='stockPrint' 
+1576551574--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551574--select split_str,node1,node2,node3,node4,node5,node6,order_one,print_space from u15998235709_unique_code_config
+1576551574--SELECT wh,name FROM u15998235709_my_wh
+1576551574--select a.title,b.shoptype,a.close_unique_code,a.pic_url,a.print_type,c.shopname AS shopid,a.payment_time,(case when a.explosion_code != '' then a.explosion_code else a.unique_code end) as unique_code,a.prd_no,d.sort_name,g.sort_name_sku,a.sku_name,b.show_tid as tid,a.express_sort,(case when a.explosion_code != '' then '爆款' else a.more_code end) as more_code,b.buyer_nick,a.print_count,a.check_stock,a.sold_out_memo,b.new_tid,a.last_print_time,a.market,a.floor,a.booth,b.buyer_message,b.seller_memo,b.wh,a.have_stock,a.prd_loc,e.name as prd_loc_name from u15998235709_tid_items a
+		INNER JOIN (SELECT shoptype,shopid,tid,show_tid,buyer_nick,print_unique_num,send_status,mark_status,new_tid,exception_online,buyer_message,seller_memo,web_status,wh,stock_order,express_type,seller_flag,order_type FROM u15998235709_tid_orders) b ON a.tid = b.tid
+		LEFT JOIN (SELECT shopname,shopid from u15998235709_shop_config) c ON b.shopid=c.shopid
+		left join (select prd_id,cost_price,sort_name,assist_prd from u15998235709_product group by prd_id) as d on d.prd_id=a.prd_id
+		LEFT JOIN (SELECT prd_loc,name from u15998235709_wh_loc) e on a.prd_loc = e.prd_loc
+		left join (select num_iid,shopid,assist_prd from u15998235709_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+		left join (select prd_sku_id,sort_name_sku from  u15998235709_product_sku) as g on g.prd_sku_id=a.prd_sku_id 
+		 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 and b.stock_order=0 AND a.last_print_time<1576512000 AND a.close_unique_code=0 order by a.prd_no DESC , a.sku_name,a.prd_no,a.sku_name,a.is_more desc,a.id limit 0,200
+1576551574--SELECT COUNT(*) AS num FROM u15998235709_tid_items a
+				INNER JOIN (SELECT tid,show_tid,buyer_nick,shopid,send_status,mark_status,web_status,new_tid,exception_online,seller_memo,buyer_message,stock_order,wh,express_type,seller_flag,order_type FROM u15998235709_tid_orders) b ON a.tid = b.tid
+				LEFT JOIN (SELECT shopname,shopid from u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select prd_id,cost_price,sort_name from u15998235709_product group by prd_id) as d on d.prd_id=a.prd_id
+				left join (select num_iid,shopid,assist_prd from u15998235709_product_online) as f on f.num_iid=a.num_iid and f.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 and b.stock_order=0 AND a.last_print_time<1576512000 AND a.close_unique_code=0
+1576551574--select configValue from u15998235709_base_config where type='baseConfig' and configKey='stockPrint' 
+1576551574--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551574--select count(1) as all_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0
+1576551574--select count(1) as not_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time < 1576512000 
+1576551574--select count(1) as yes_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.last_print_time >=1576512000 
+1576551574--select count(1) as single_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 0 
+1576551574--select count(1) as more_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.is_more = 1 
+1576551574--select count(1) as close_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=1 
+1576551574--select count(1) as cancel_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 
+1576551574--select count(1) as shop_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=0 
+1576551574--select count(1) as storage_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid 
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0  AND a.close_unique_code=0 AND a.have_stock=1 
+1576551574--select count(1) as cancel_num from u15998235709_tid_items a 
+				inner join (select shopid,tid,send_status,mark_status,exception_online,web_status,stock_order from u15998235709_tid_orders where stock_order=0) b on a.tid=b.tid
+				left JOIN (SELECT shopname,shopid FROM u15998235709_shop_config) c ON b.shopid=c.shopid
+				left join (select num_iid,assist_prd,shopid from u15998235709_product_online) as p on a.num_iid=p.num_iid and p.shopid=b.shopid
+				 where 1=1  and b.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') and a.refund_status in ('NO_REFUND','CLOSED') and b.mark_status != 'LOCK' and b.web_status != 'LOCKED' and b.exception_online=0 AND b.stock_order=0 AND a.close_unique_code=0 AND p.assist_prd=1
+1576551588--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551588--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576551588--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576551588--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576551588--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576551588--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576551588--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576551588--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576551588--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576551588--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576551588--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576551588--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576551588--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576551588--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576551588--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576551588--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576551589--select expense from userlist where system_id = '15998235709'
+1576551589--select id,title,rem,expense,send_goods_up from charging_tpl where `show`='T' order by expense
+1576551589--select service_id,max(expire_time) as expire_time,max(expense) as expense,pay_continue from servicelist where system_id = '15998235709' and is_eff='T' group by service_id
+1576551589--select id,title,rem,expense,up,month_expense,year_expense,permanent,status,trial,trial_day from service_tpl where status='T' order by expense
+1576551589--select id,title,rem,expense,pay_count,payment from pay_package_tpl  where daifa='T' order by expense
+1576551615--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551616--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551617--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551617--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576551617--SELECT wh,name FROM u15998235709_my_wh
+1576551617--select DISTINCT a.new_tid,a.tid,a.wh,a.show_tid,a.seller_memo,b.shopname,a.buyer_nick,a.create_time,a.payment_time,c.count,a.remark from u15998235709_tid_orders a
+				inner join (select shopname,shopid from u15998235709_shop_config) b on a.shopid = b.shopid
+				inner join (select count(1) as count,tid from u15998235709_tid_items where refund_status <> 'SUCCESS' group by tid) c on c.tid = a.tid
+				INNER JOIN (SELECT unique_code,prd_no,tid FROM u15998235709_tid_items WHERE 1=1 ) d ON a.tid = d.tid where (1576551617 - a.payment_time * 1) / 3600 / 24 > 2 AND a.send_status not in('WAIT_SENDED','WAIT_FAULT') AND mark_status <> 'LOCK' and a.exception_online <> 1 order by new_tid desc limit 0,10
+1576551617--select check_stock,prd_no,more_code,title,sku_name,market,floor,booth,close_unique_code,pic_url,take_status,sku_id,check_stock from u15998235709_tid_items where tid='XX-15760583895983' AND refund_status <> 'SUCCESS'
+1576551617--select check_stock,prd_no,more_code,title,sku_name,market,floor,booth,close_unique_code,pic_url,take_status,sku_id,check_stock from u15998235709_tid_items where tid='XX-15760325909822' AND refund_status <> 'SUCCESS'
+1576551617--select check_stock,prd_no,more_code,title,sku_name,market,floor,booth,close_unique_code,pic_url,take_status,sku_id,check_stock from u15998235709_tid_items where tid='XX-15755376143195' AND refund_status <> 'SUCCESS'
+1576551617--select check_stock,prd_no,more_code,title,sku_name,market,floor,booth,close_unique_code,pic_url,take_status,sku_id,check_stock from u15998235709_tid_items where tid='XX-15755374958599' AND refund_status <> 'SUCCESS'
+1576551617--select check_stock,prd_no,more_code,title,sku_name,market,floor,booth,close_unique_code,pic_url,take_status,sku_id,check_stock from u15998235709_tid_items where tid='XX-15755294386522' AND refund_status <> 'SUCCESS'
+1576551617--select count(1) as pageNum from (select a.tid from u15998235709_tid_orders a
+				inner join (select shopname,shopid from u15998235709_shop_config) b on a.shopid = b.shopid
+				inner join (select prd_no,unique_code,tid from u15998235709_tid_items where 1=1) c on a.tid=c.tid where (1576551617 - a.payment_time * 1) / 3600 / 24 > 2 AND a.send_status not in('WAIT_SENDED','WAIT_FAULT') AND mark_status <> 'LOCK' and a.exception_online <> 1 group by a.tid) d
+1576551618--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551618--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551618--select shopid,shopname from u15998235709_shop_config
+1576551618--SELECT wh,name FROM u15998235709_my_wh
+1576551618--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551618--select DISTINCT a.new_tid,a.tid,a.wh,a.show_tid,a.seller_memo,b.shopname,a.buyer_nick,a.create_time,a.payment_time,a.more_code,c.count, e.name from u15998235709_tid_orders a
+				inner join (
+					select shopname,shopid from u15998235709_shop_config 
+				) b on a.shopid = b.shopid
+				inner join (
+					select count(1) as count,tid from u15998235709_tid_items 
+					where refund_status = 'SUCCESS' and check_stock='1' group by tid
+				) c on c.tid = a.tid
+				INNER JOIN (
+					SELECT unique_code,prd_no,tid FROM u15998235709_tid_items 
+					WHERE refund_status = 'SUCCESS' and check_stock='1' 
+				) d ON a.tid = d.tid
+				left join (
+					SELECT h.new_tid,i.name FROM u15998235709_prdt_wms_qty_zy AS h
+					LEFT JOIN u15998235709_wh_loc i ON h.prd_loc = i.prd_loc
+				) e ON e.new_tid = a.new_tid
+				 where 1=1 order by new_tid desc limit 0,50
+1576551618--select count(1) as pageNum from (select a.tid from u15998235709_tid_orders a
+				inner join (select shopname,shopid from u15998235709_shop_config) b on a.shopid = b.shopid
+				inner join (select prd_no,unique_code,tid from u15998235709_tid_items where refund_status = 'SUCCESS' and check_stock='1') c on a.tid=c.tid where 1=1 group by a.tid) d
+1576551620--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551620--SELECT a.more_code,a.seller_memo as remark,b.tid,b.show_tid,b.prd_no,b.sku_name,COUNT(1) AS nums FROM u15998235709_tid_orders AS a
+				LEFT JOIN (
+					SELECT tid,show_tid,prd_no,sku_name,send_time,prd_loc,check_stock,close_unique_code,refund_status FROM u15998235709_tid_items 
+				) AS b ON a.tid=b.tid 
+				LEFT JOIN (
+					SELECT b.tid,b.new_tid,COUNT(1) AS qty_nums FROM u15998235709_tid_items  a
+					INNER JOIN (SELECT tid,new_tid FROM u15998235709_tid_orders) AS b ON b.tid=a.tid
+					WHERE  prd_loc = '' AND check_stock='1' AND close_unique_code='0' AND refund_status='NO_REFUND' GROUP BY b.new_tid
+				) AS c ON a.tid=c.tid 
+				WHERE b.send_time = 0 AND b.prd_loc = '' AND b.check_stock='1' AND b.close_unique_code='0' AND 
+				a.send_status IN ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = '0' AND 
+				a.stock_order='0' AND b.refund_status='NO_REFUND' AND a.items_num=c.qty_nums 
+				GROUP BY b.tid,b.show_tid,b.prd_no,b.sku_name,a.more_code limit 0,50
+1576551620--SELECT a.more_code,a.seller_memo as remark,b.tid,b.show_tid,b.prd_no,b.sku_name,COUNT(1) AS nums FROM u15998235709_tid_orders AS a
+				LEFT JOIN (
+					SELECT tid,show_tid,prd_no,sku_name,send_time,prd_loc,check_stock,close_unique_code,refund_status FROM u15998235709_tid_items 
+				) AS b ON a.tid=b.tid 
+				LEFT JOIN (
+					SELECT b.tid,b.new_tid,COUNT(1) AS qty_nums FROM u15998235709_tid_items  a
+					INNER JOIN (SELECT tid,new_tid FROM u15998235709_tid_orders) AS b ON b.tid=a.tid
+					WHERE  prd_loc = '' AND check_stock='1' AND close_unique_code='0' AND refund_status='NO_REFUND' GROUP BY b.new_tid
+				) AS c ON a.tid=c.tid 
+				WHERE b.send_time = 0 AND b.prd_loc = '' AND b.check_stock='1' AND b.close_unique_code='0' AND 
+				a.send_status IN ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online = '0' AND 
+				a.stock_order='0' AND b.refund_status='NO_REFUND' AND a.items_num=c.qty_nums 
+				GROUP BY b.tid,b.show_tid,b.prd_no,b.sku_name,a.more_code
+1576551621--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551621--select configValue from u15998235709_base_config WHERE configKey='scanSendSingleCheck' 
+1576551621--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551622--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551622--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576551622--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551622--select shopid,shopname from u15998235709_shop_config
+1576551622--select configValue from u15998235709_base_config where configKey='printCQLable' and type='printCQLable' 
+1576551622--select configValue from u15998235709_base_config where configKey='scanMessageSingle' and type='scanMessageSingle' 
+1576551622--select configValue from u15998235709_base_config where configKey='printDsosLable' and type='printDsosLable' 
+1576551622--select configValue from u15998235709_base_config where configKey='scanMessageSingle' and type='scanMessageSingle' 
+1576551622--select configValue from u15998235709_base_config where configKey='addressCheckt' and type='addressCheckt' 
+1576551622--select configValue from u15998235709_base_config where configKey='keyWord' and type='keyWord' 
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551623--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551624--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551624--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576551625--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551625--select configValue from u15998235709_base_config WHERE configKey='scanSendSingleCheck' 
+1576551625--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551626--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551627--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576551627--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551627--select shopid,shopname from u15998235709_shop_config
+1576551627--select configValue from u15998235709_base_config where configKey='printCQLable' and type='printCQLable' 
+1576551627--select configValue from u15998235709_base_config where configKey='scanMessageSingle' and type='scanMessageSingle' 
+1576551627--select configValue from u15998235709_base_config where configKey='printDsosLable' and type='printDsosLable' 
+1576551627--select configValue from u15998235709_base_config where configKey='scanMessageSingle' and type='scanMessageSingle' 
+1576551627--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551628--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551628--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551629--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551629--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576551629--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576551629--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551629--SELECT b.title,b.pic_url,b.sku_name,b.prd_no,a.express_type,COUNT(1) AS tid_num,SUM(a.items_num) AS items_num,b.market,b.floor,b.booth,b.prd_id,b.prd_sku_id FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS'  AND refund_status <> 'WAIT_SELLER_AGREE' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC limit 0,50
+1576551629--SELECT id,shopid,`no`,`name`,sort_name,`type`,express_id,express_form,type_name,`default`,`status`,`site`,send_province,send_city,send_district,
+			    send_detail,send_username,send_tel,ratio,assist_print,send_address_json,print_province,print_city,print_district,print_detail 
+				FROM u15998235709_express WHERE status='0'
+1576551629--select a.prd_id,a.prd_sku_id,a.prd_loc,sum(a.qty) as qty from u15998235709_prdt_wms_qty a
+					   inner join (select prd_loc from u15998235709_wh_loc ) b on a.prd_loc=b.prd_loc
+					   where a.prd_id in ('PRD_00000001','PRD_00000001') group by  a.prd_id,a.prd_sku_id,a.prd_loc 
+1576551629--select a.prd_no,a.sku_name,a.prd_loc,sum(a.qty) as qty from u15998235709_prdt_wms_qty a 
+					   inner join (select prd_loc from u15998235709_wh_loc ) b on a.prd_loc=b.prd_loc
+					   where a.prd_no in ('L1810047BW1S','8061') group by  a.prd_no,a.sku_name,a.prd_loc
+1576551629--select count(1) as pageNum from (SELECT b.title FROM u15998235709_tid_items b 
+				INNER JOIN (SELECT new_tid,tid,items_num,express_type FROM u15998235709_tid_orders a  where a.send_status in ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN','WAIT_SENDED_ASSIGN') AND a.exception_online=0 AND a.sku_num=1 AND a.stock_order=0   AND a.mark_status <> 'LOCK' AND items_num=1 ) AS a ON a.tid=b.tid
+				
+				WHERE  b.close_unique_code = 0 AND  refund_status <> 'SUCCESS'  AND refund_status <> 'WAIT_SELLER_AGREE' 
+				GROUP BY b.prd_no,b.sku_name,a.express_type order by b.prd_no DESC) h
+1576551632--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551632--select username from u15998235709_usertable where userid='15998235709'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type in ('DSOS','DSKD','SAKP')
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551632--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551633--select id,tpl_name,param_json,tpl_json from u15998235709_print_tpl where type = 'BQ' AND def = 'T'
+1576551633--SELECT id,tpl_name FROM u15998235709_print_tpl WHERE TYPE='PRDT'
+1576551633--select printer from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code'
+1576551633--select id from u15998235709_print_tpl where type = 'BQ' AND def = 'T'
+1576551633--select a.configValue from u15998235709_base_config a 
+				inner join (select id from u15998235709_print_tpl where type = 'BQ') b on a.configValue = b.id
+				where a.`type`= 'labelPrintType' AND a.configKey = 'shopLabel' 
+1576551633--select a.configValue from u15998235709_base_config a 
+				inner join (select id from u15998235709_print_tpl where type = 'BQ') b on a.configValue = b.id
+				where a.`type`= 'labelPrintType' AND a.configKey = 'storageLabel' 
+1576551634--SELECT `name`,`express_id`,sort_name,express_form,`type`,express_fee  FROM u15998235709_express
+1576551634--SELECT a.id,a.system_id,a.system_name,a.sort_name,a.credit_money,a.price,a.take_price,a.`addtime`,a.linkman,a.phone,a.address,a.`status`,a.other_cost_no,a.pay_type,b.balance FROM u15998235709_assist_client a
+		left join (select system_id,balance from u15998235709_drop_shipping_client) as b on b.system_id=a.system_id
+		WHERE `status` IN (0,1)  limit 0,10
+1576551634--select userid,username from u15998235709_usertable where userid!='15998235709'
+1576551634--select system_id,system_name from u15998235709_drop_shipping_client where addtime>0
+1576551634--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551634--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551635--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551635--select id,tpl_name,param_json,tpl_json,def from u15998235709_print_tpl where type = 'BQ'
+1576551635--SELECT printer FROM u15998235709_user_printer WHERE TYPE='defPrinter' AND usr='15998235709'
+1576551635--SELECT printer FROM u15998235709_user_printer WHERE TYPE='defTpl' AND usr='15998235709'
+1576551636--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551637--select configValue FROM u15998235709_base_config WHERE type='short_stay' 
+1576551639--select configValue FROM u15998235709_base_config WHERE type='short_stay' 
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551640--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551641--select id,tpl_name,param_json,tpl_json,def from u15998235709_print_tpl where type = 'BQ'
+1576551641--SELECT printer FROM u15998235709_user_printer WHERE TYPE='defPrinter' AND usr='15998235709'
+1576551641--SELECT printer FROM u15998235709_user_printer WHERE TYPE='defTpl' AND usr='15998235709'
+1576551641--SELECT DISTINCT a.id,a.outer_id,a.outer_sku_id,a.sku_name,a.create_time,a.usr,a.sold_out_memo,a.end_date FROM u15998235709_prdt_sold_out a 
+				 where 1=1 
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576551643--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576551645--SELECT a.pc_no,a.cus_no,a.create_time,b.prd_no,b.prd_sku_no,b.prd_name,b.prd_sku_name,b.prd_name,b.prd_sku_name,b.qty,b.price,b.total_fee,b.prd_loc,b.up_cst FROM u15998235709_purchase_orders AS a 
+		LEFT JOIN (SELECT pc_no,prd_id,prd_sku_id,prd_no,prd_sku_no,prd_name,prd_sku_name,qty,price,total_fee,prd_loc,up_cst FROM u15998235709_purchase_items) AS b ON a.pc_no=b.pc_no
+		WHERE a.djtype='7' AND a.pc_no LIKE 'CK\_%'  and a.create_time > '1576512000'  and a.create_time < '1576598399'  limit 0,50
+1576551645--SELECT 1 FROM u15998235709_purchase_orders AS a 
+		LEFT JOIN (SELECT pc_no,prd_id,prd_sku_id,prd_no,prd_sku_no,prd_name,prd_sku_name,qty,price,total_fee,prd_loc,up_cst FROM u15998235709_purchase_items) AS b ON a.pc_no=b.pc_no
+		WHERE a.djtype='7' AND a.pc_no LIKE 'CK\_%' 
+1576551732--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576551732--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576552031--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576552031--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576552042--select username,expire_time from userlist where system_id='15998235709'
+1576552042--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576552042--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576552042--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576552042--select expire_time from userlist where system_id='15998235709'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576552042--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576552042--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576552042--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576552042--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576552042--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576552042--SELECT id,title,content,begin_time FROM notice where '1576552042' BETWEEN begin_time AND end_time 
+1576552042--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576552042--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576552043--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576552043--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576552043--select username,expire_time from userlist where system_id='15998235709'
+1576552043--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576552043--select sum(balance) as balance from u15998235709_tid_pay
+1576552043--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576552043--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576552043--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576552043--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576552043--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576552043--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576552043--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576552043--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576552043--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576552043--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576552043--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576552043--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576552043--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576552043--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576552043--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576552043--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576552043--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576552043--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576552043--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576552043--SELECT title,content,create_time FROM question limit 0,7

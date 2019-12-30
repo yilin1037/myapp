@@ -1257,54 +1257,56 @@ var flow = new Vue({
             var a = $(event.target);
             var e = event || window.event;
             var av = a.val();
-            if((av * 1) > (tid_num * 1)){
-                layer.msg('输入数量不能大于订单数量',{
-                    icon: 0,
-                    time: 2000
-                });
+            if(WMS_STOCK_BAOKUAN!='T'){
+                if((av * 1) > (tid_num * 1)){
+                    layer.msg('输入数量不能大于订单数量',{
+                        icon: 0,
+                        time: 2000
+                    });
+                    
+                    if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((tid_num * 1) > (storage_num * 1))){
+                        a.val(storage_num);
+                        self.data[index].print_num = storage_num;
+                    }else{
+                        a.val(tid_num);
+                        self.data[index].print_num = tid_num;
+                    }
+                    return false;
+                }
                 
-                if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((tid_num * 1) > (storage_num * 1))){
-                    a.val(storage_num);
-                    self.data[index].print_num = storage_num;
-                }else{
-                    a.val(tid_num);
-                    self.data[index].print_num = tid_num;
+                if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((av * 1) > (storage_num * 1))){
+                    layer.msg('输入数量不能大于库存数量',{
+                        icon: 0,
+                        time: 2000
+                    });
+                    if((tid_num * 1) > (storage_num * 1)){
+                        a.val(storage_num);
+                        self.data[index].print_num = storage_num;
+                    }else{
+                        a.val(tid_num);
+                        self.data[index].print_num = tid_num;
+                    }
+                    return false;
                 }
-                return false;
+                
+                if(a.val() == "0"){
+                    layer.msg('请输入正确的订单数量',{
+                        icon: 0,
+                        time: 2000
+                    });
+                    if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((tid_num * 1) > (storage_num * 1))){
+                        a.val(storage_num);
+                        self.data[index].print_num = storage_num;
+                    }else{
+                        a.val(tid_num);
+                        self.data[index].print_num = tid_num;
+                    }
+                    return false;
+                }
+                self.data[index].print_num = av;
             }
             
-            if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((av * 1) > (storage_num * 1))){
-                layer.msg('输入数量不能大于库存数量',{
-                    icon: 0,
-                    time: 2000
-                });
-                if((tid_num * 1) > (storage_num * 1)){
-                    a.val(storage_num);
-                    self.data[index].print_num = storage_num;
-                }else{
-                    a.val(tid_num);
-                    self.data[index].print_num = tid_num;
-                }
-                return false;
-            }
             
-            if(a.val() == "0"){
-                layer.msg('请输入正确的订单数量',{
-                    icon: 0,
-                    time: 2000
-                });
-                if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((tid_num * 1) > (storage_num * 1))){
-                    a.val(storage_num);
-                    self.data[index].print_num = storage_num;
-                }else{
-                    a.val(tid_num);
-                    self.data[index].print_num = tid_num;
-                }
-                return false;
-            }
-            
-            console.log(self.data[index]);
-            self.data[index].print_num = av;
         },
         
         key_upMake:function(value,index){

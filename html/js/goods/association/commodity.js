@@ -2790,6 +2790,28 @@ var flow = new Vue({
 				self.change_arr[index].qty_safe = this_value.val();
 			}
 			
+		},
+		//============================================================================导出excel=====================================================
+		exportExcel:function () {
+			var  exportExcelUrl = "index.php?m=goods&c=association&a=exportExcel";
+
+			var filter_date = {};
+			filter_date.title = $(".goodName").val();
+			filter_date.sku_name = $(".sku_name").val();
+			filter_date.prd_no = $(".prd_no").val();
+			filter_date.prd_no_sku = $(".prd_no_sku").val();
+			filter_date.shopid = $("#shopid").val();
+			filter_date.category_id = self.id;
+			filter_date.stock_type = $("#stock_type").val();
+			filter_date.upload_stock = $("#upload_stock").val();
+			filter_date.assist_prd = $("#assist_prd").val();
+			filter_date.dateBegin = $("#dateBegin").val();
+			filter_date.dateEnd = $("#dateEnd").val();
+			filter_date.unSetSupplier = $("#unSetSupplier").val();
+
+			let opt = $.param(filter_date);
+			//console.log(opt);
+			window.location.href = exportExcelUrl+"&"+opt;
 		}
 	}
 });

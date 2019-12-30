@@ -239,7 +239,7 @@ var tableList = new Vue({
 				});
 				//$("#pdd").css("display","block");
 			}else if (name =='pinduoduo'){
-				$("#pinduoduo").css("display","block")
+				//$("#pinduoduo").css("display","block")
 				// $("#shopname1").val("");
 				// $("#shopname1").attr("disabled", false);
 				// $("#shopsortname1").val("");
@@ -256,7 +256,8 @@ var tableList = new Vue({
 					content: $("#pinduoduo"),	
 					btn: ['确定', '取消']
 					,yes: function(index, layero){
-						self.addTure("PDD");
+						reloadnow(self);							
+						layer.closeAll();
 					},
 					cancel: function (index, layero) {																																					
 																																																		

@@ -48,6 +48,7 @@ var flow = new Vue({
 					,{field:'sku_name', minWidth:150, title: '属性'}
 					,{field:'prd_sku_no', minWidth:150, title: 'SKU编码'}
 					,{field:'qty', width:200, title: '库存', templet: '#inventoryPT'}
+					,{field:'barcode_sku', width:200, title: 'SKU条码'}
 				]);
 			}else if(type == 'WMS'){
 				template.push([ //标题栏
@@ -93,6 +94,7 @@ var flow = new Vue({
 					var subData = $("#subData").val();
 					var numTop = $("#numTop").val();
 					var numBottom = $("#numBottom").val();
+					var barcodeSku = $("#barcodeSku").val();
 					table.reload('dataList', {
 						page: {
 							curr: 1
@@ -105,7 +107,8 @@ var flow = new Vue({
 							proData:proData,
 							subData:subData,
 							numTop:numTop,
-							numBottom:numBottom
+							numBottom:numBottom,
+							barcodeSku:barcodeSku
 						}
 					});
 				}
@@ -333,6 +336,8 @@ $("#reset").click(function(){
 	$("#subData").val("");
 	$("#numTop").val("");
 	$("#numBottom").val("");
+	$("#barcodeSku").val("");
+
 	flow.id = "";
 	flow.par = "";
 })

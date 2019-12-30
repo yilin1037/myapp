@@ -5,6 +5,9 @@ var vueObj = new Vue({
         shopItems: paramObject.shopObj,
 		dateBegin:'',
 		dateEnd:'',
+		DROP_SHIPPING:"F",
+		shippingId:"",
+		expressArr:[],	
     },
     mounted: function () {
 		var self = this;
@@ -44,11 +47,13 @@ var vueObj = new Vue({
 					,where:  {
 						dateBegin: jQuery("#toDayWeek").val(),
 						dateEnd: jQuery("#toDayTime").val(),
+						changeDiv1: jQuery("#changeDiv1").val(),
 					}
 					,cols: [[
 					   {field:'index', title: '序号',"width":60 ,fixed: true}
 					  ,{field:'send_time', title: '发货时间',"width":180}
 					  ,{field:'new_tid', title: '订单号',"width":150}
+					  ,{field:'statusName', title: '标记状态',"width":150}
 					  ,{field:'buyer_nick', title: '买家昵称',"width":100}
 					  ,{field:'express_name', title: '快递',"width":100}
 					  ,{field:'express_no', title: '运单号',"width":150}
@@ -79,6 +84,7 @@ var vueObj = new Vue({
 							dateEnd:self.dateEnd,
 							express_type:$("#express_type").val(),
 							express_no:$("#express_no").val(),
+							changeDiv1:$("#changeDiv1").val(),
 							shop_id:$("#shop_id").val(),
 							tid:$("#tid").val()
 						}
@@ -184,6 +190,7 @@ var vueObj = new Vue({
 				}
 			});
         });
+        self.getSignStatus();
     },
     methods: {
         resetNow:function(){
@@ -225,6 +232,28 @@ var vueObj = new Vue({
                 }
             });
 		},
+		getSignStatus:function(){
+			var self =this;
+			$.ajax({
+				url: "/index.php?m=system&c=delivery&a=getSignStatus",
+				type: 'post',
+				data: {DROP_SHIPPING: self.DROP_SHIPPING, shippingId: self.shippingId},
+				dataType: 'json',
+				success: function (data) {
+					self.expressArr = data;	
+					var dsosHtml = '<div style="float:left;"><select class="sign_status form-control separator" style="background: url(\'images/down.png\') no-repeat scroll 90% center transparent;background-size:17px 15px;border:solid 1px #ccc;width:204px;">';
+					dsosHtml += '<option value=""></option><option value="0">无标记状态</option>';
+					if(data){
+						for(var i = 0; i < data.length; i++){
+							dsosHtml += '<option value="' + data[i]['id'] + '">' + data[i]['statusName'] + '</option>';
+						}
+						dsosHtml += '</select>';
+					}
+					dsosHtml += '</select></div><div style="margin-left:10px;float:left;"><button id="signStatusManage" class="btn" style="width:120px;" onclick="signStatusManage()">添加标记状态</button></div>';
+					$("#changeDiv1").html(dsosHtml);
+				}
+			});
+		},
     }
 });
 
@@ -241,5 +270,16 @@ function postTemplate(){
 			var iframeWin = window[layero.find('iframe')[0]['name']];
 			iframeWin.vueObj.loadOrders('',{});*/
 		}
+	}); 
+}
+function signStatusManage(){
+	layer.open({
+		title :'添加标记状态',
+		type: 2,
+		shade: 0.3,
+		area: ['350px', '450px'],
+		maxmin: false,
+		content: '?m=system&c=delivery&a=signStatusManage'
+		
 	}); 
 }

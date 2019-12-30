@@ -5,11 +5,13 @@ var flow = new Vue({
 	data: {
 	   shopConfigItems:[],
 	   isHave:false,
+       pinDD:false,
 	   turnTo:false,
+	   navbox:true,
 	},
     mounted: function() {
 		$("#quickStrike").attr('src','/images/index/wmsf.png','width','18px','height','19px;')
-		var self = this;
+		var self = this;	
         layui.use(['element','layer'], function(){
 			
             var $ = layui.jquery,element = layui.element();
@@ -36,9 +38,9 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -190px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		});
-				$(this).find('img').attr("src","images/qqpng2.png");
+				$(this).find('img').attr("src","images/jijian/QQ.png");
         	},
         	function() {
         		$(this).removeClass("current");
@@ -46,9 +48,9 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -214px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
-				$(this).find('img').attr("src","images/qqpng.png");
+				$(this).find('img').attr("src","images/jijian/QQ.png");
         	});
         	$("#help").hover(function() {
         		$(this).addClass("current");
@@ -56,7 +58,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -286px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgba(201, 31, 57)"
         		})
         	},
         	function() {
@@ -65,7 +67,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -310px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgba(201, 31, 57)"
         		})
         	});
         	$("#dataCenter").hover(function() {
@@ -74,7 +76,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -531px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgba(201, 31, 57)"
         		})
         	},
         	function() {
@@ -83,7 +85,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -556px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
             $("#selectMenu").hover(function() {
@@ -92,7 +94,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -239px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	},
         	function() {
@@ -101,7 +103,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -262px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
         	$("#user").hover(function() {
@@ -110,7 +112,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -239px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	},
         	function() {
@@ -119,7 +121,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -262px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
         	$("#fankui").hover(function() {
@@ -128,7 +130,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -239px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	},
         	function() {
@@ -137,7 +139,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -262px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
             $("#money").hover(function() {
@@ -146,7 +148,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -239px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	},
             function() {
@@ -155,7 +157,7 @@ var flow = new Vue({
                 $(this).css({
                     "background-position": "0 -262px",
                     color: "#FFFFFF",
-                    border: "1px solid #3077D1"
+                    border: "1px solid rgb(201, 31, 57)"
                 })
             });
              $("#money2").hover(function() {
@@ -164,7 +166,7 @@ var flow = new Vue({
                 $(this).css({
                     "background-position": "0 -239px",
                     color: "#3077D1",
-                    border: "1px solid #ccc"
+                    border: "1px solid rgb(201, 31, 57)"
                 })
             },
         	function() {
@@ -173,16 +175,16 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -262px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
         	 $("#shop").hover(function() {
         		$(this).addClass("current");
         		$(this).find(".content").show();
         		$(this).css({
-        			"background-position": "0 -239px",
+        			"background-position": "0 -262px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	},
         	function() {
@@ -191,7 +193,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -262px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
             $("#app").hover(function() {
@@ -200,7 +202,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -239px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	},
         	function() {
@@ -209,7 +211,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -262px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
             $("#openGetOrder").hover(function() {
@@ -218,7 +220,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -239px",
         			color: "#3077D1",
-        			border: "1px solid #ccc"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	},
         	function() {
@@ -227,7 +229,7 @@ var flow = new Vue({
         		$(this).css({
         			"background-position": "0 -262px",
         			color: "#FFFFFF",
-        			border: "1px solid #3077D1"
+        			border: "1px solid rgb(201, 31, 57)"
         		})
         	});
         	$("#infoLi").hover(function() {
@@ -254,7 +256,6 @@ var flow = new Vue({
             	title 	= a_t.html();
                 addTab(id,url,title);
             });
-            //$('.layui-this').children("a:first").click();
         });
         loadShopConfig();
         lastGetOrderTime();
@@ -265,7 +266,10 @@ var flow = new Vue({
         modify_password:function(){
             addTab('updatepassword','?m=system&c=setup&a=updatepassword','修改密码');
         },
-         chaoQunGiftCount:function(){
+		setAccountNumber:function(){
+			addTab('setAccountNumber','?m=system&c=main&a=setAccountNumber','账号信息设置');
+		},
+        chaoQunGiftCount:function(){
             $.ajax({                        
                 url: "/index.php?m=system&c=index&a=getChaoQunGiftCount",                    
                 type: 'post',           
@@ -284,7 +288,7 @@ var flow = new Vue({
                                     '<tbody>'+
                                     '<tr>'+
                                         '<td style="width:100%;">'+
-                                            '<span style="color:red;padding-left:20px;">'+
+                                            '<span style="color:red;padding-left:18px;font-size:14px;">'+
                                             '您的账户余额已不足，请及时缴费，谢谢'+
                                             '</span>'+
                                        ' </td>'+
@@ -295,6 +299,47 @@ var flow = new Vue({
                                 //按钮【按钮一】的回调
                                 layer.close(index);
                                 addTab('recharge','?m=system&c=finance&a=recharge','账户充值');
+                              }
+                              ,btn2: function(index, layero){
+                                //按钮【按钮二】的回调
+                                //return false 开启该代码可禁止点击该按钮关闭
+                              }
+                        }); 
+
+                    }
+                }
+            });
+        },
+        getBalance:function(){
+            $.ajax({                        
+                url: "/index.php?m=system&c=index&a=getBalance",                    
+                type: 'post',           
+                data: {},           
+                dataType: 'json',           
+                success: function (data) {
+                    if(data.code=='ok'){
+                        //eg2
+                        layer.open({
+                            title :'账户余额不足',
+                            type: 1,
+                            shade: false,
+                            area: ['350px', '200px'],
+                            maxmin: false,
+                            content: '<div class="mini-toolbar" style="border-bottom:0;padding:0px;position:absolute;top:50%;translateY(-50%);"><table style="width:80%;position: relative;left: 11%;">'+
+                                    '<tbody>'+
+                                    '<tr>'+
+                                        '<td style="width:100%;padding-left:20px;">'+
+                                            '<span style="color:red;padding-left:20px;font-size:14px">'+
+                                            '您的账户余额已不足，请联系商家'+data.system_id+'充值，谢谢'+
+                                            '</span>'+
+                                       ' </td>'+
+                                        '</tr>'+
+                                        '<tr></tr></tbody></table></div>',
+                            btn: ['确定', '关闭']
+                              ,yes: function(index, layero){
+                                //按钮【按钮一】的回调
+                                layer.close(index);
+                                //addTab('recharge','?m=system&c=finance&a=recharge','账户充值');
                               }
                               ,btn2: function(index, layero){
                                 //按钮【按钮二】的回调
@@ -349,8 +394,40 @@ var flow = new Vue({
                 maxmin: false,
                 content: '?m=widget&c=getOrder&a=index'
             }); 
-        }
+        },
+		nav:function(){
+			var self = this
+			self.navbox = !this.navbox
+			if(self.navbox == true){
+				$('dd a').each(function(){
+					$(this).hide();
+				});	
+				$('.nav_true >ul >li>a>span').each(function(){
+					$(this).hide();
+				})
+				$('.nav_true>ul').css("width","50px")
+				$('.nav_true>ul>li>a>img').css({
+				position:"absolute",
+				top:" 50%",
+				left: "50%",
+				"transform":"translate(-50%,-50%)"})
+			}else{
+				$('dd a').each(function(){
+					$(this).show();
+				});	
+				$('.nav_true >ul >li>a>span').each(function(){
+					$(this).show();
+				})
+				$('.nav_true>ul').css("width","200px")
+				$('.nav_true>ul>li>a>img').css({
+				position:"relative",
+				top:"0%",
+				left: "0%",
+				"transform":"translate(0%,0%)"})
+			}
+		},
     }
+	
 });
 	
 setInterval(function(){
@@ -403,7 +480,7 @@ var mainHeight = 0;
 var iframeArr = [];
 window.setInterval("refreshIframe()", 200);
 function addTab(id,url,title){
-	 mainHeight = window.innerHeight-100;
+	 mainHeight = window.innerHeight-60;
     var tab = 'my-tab';
     var length 	= $(".layui-tab-title").children("li[lay-id='" + id + "']").length;
     if (!length) {
@@ -425,7 +502,7 @@ function addTab(id,url,title){
 
 function refreshIframe()
 {
-	var nowHeight = window.innerHeight-100;
+	var nowHeight = window.innerHeight-60;
 	if(mainHeight != nowHeight)
 	{
 		for (i=0; i<iframeArr.length; i++)
@@ -448,6 +525,7 @@ function loadPage(){
 //判断是否安装菜鸟组件
 var socket;
 var requestID = ""+parseInt(1000*Math.random());
+var socket_pdd;
 function doConnect(func){
     socket = new WebSocket('ws://127.0.0.1:13528');
     // 打开Socket
@@ -481,6 +559,7 @@ function doConnect(func){
 					//flow.accountSale();
 				}
                 flow.chaoQunGiftCount();
+                flow.getBalance();
 			}																																															
 		});
 				
@@ -497,12 +576,56 @@ function doConnect(func){
         }
     };
     socket.onerror = function(event) {
+        var db = $("#db").text();
+            db++;
+            db++;
+            $("#db").text(db);
         flow.isHave = false;
 		addTab('dbsx','?m=system&c=beDone&a=beDone','待办事项');
         flow.chaoQunGiftCount();
+        flow.getBalance();
     };
 }
-
+function doConnectPdd(func){
+    if(typeof(socket_pdd) == 'undefined'){
+        socket_pdd = new WebSocket('ws://127.0.0.1:5000');
+        // 打开Socket
+        socket_pdd.onopen = function(event){
+            if(typeof(func) == 'function'){
+                func();
+            }
+        };
+        // 监听消息
+        socket_pdd.onmessage = function(event)
+        {
+            done.pinDD=true;
+            var data = JSON.parse(event.data);
+            if ("getPrinters" == data.cmd) {
+               
+                if(typeof(cbDoGetPrinters) == 'function'){
+                    cbDoGetPrinters(data.printers);
+                    cbDoGetPrinters = null;
+                }
+            }else if ("setPrinterConfig" == data.cmd) {
+                if(typeof(pddSetPrinterConfig) == 'function'){
+                    pddSetPrinterConfig(data);
+                }
+            }else if("print" == data.cmd){
+                if(typeof(cbPrintView) == 'function' && data['previewImage']){
+                    cbPrintView(data);
+                }
+            }
+        };
+        socket_pdd.onerror = function(event) {
+            var db = $("#db").text();
+            db++;
+            $("#db").text(db);
+            flow.pinDD = false;
+            addTab('dbsx','?m=system&c=beDone&a=beDone','待办事项');
+            flow.chaoQunGiftCount();
+        };
+    }
+}
 //获取打印机列表
 function doGetPrinters(func) {
     var request  = {
@@ -515,12 +638,25 @@ function doGetPrinters(func) {
         cbDoGetPrinters = func;
     }
 }
+function doGetPrinters2(func) {
+    var request  = {
+        requestID : requestID,
+        version : '1.0',
+        cmd : 'getPrinters'
+    };
+    socket_pdd.send(JSON.stringify(request));
+    if(typeof(func) == 'function'){
+        cbDoGetPrinter2 = func;
+    }
+}
 
 //创建连接
 doConnect(function(){
 	doGetPrinters();
 });
-
+doConnectPdd(function(){
+    doGetPrinters2();
+});
 var printTpl = {};
 var printTplDzmd = {};
 var printTplBq = [];

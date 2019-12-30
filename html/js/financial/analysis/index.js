@@ -6,6 +6,9 @@ var flow = new Vue({
 		shopList:[],	//店铺列表
 		toTalData:[],	//汇总数据
 		expressList:[],
+		DROP_SHIPPING:"F",
+		shippingId:"",
+		expressArr:[],	
 	},
 	mounted: function() {
 		//初始化页面大小
@@ -13,7 +16,8 @@ var flow = new Vue({
 			var rWidth = $(window).width()-250;
 			$(".rightMain").css({'width':rWidth+'px','position':'absolute','top':'0px','left':'250px'});
 		});
-		
+		var self=this;
+		self.getSignStatus();
 		//获取本月，本周，本日的开始结束时间
 		$.ajax({
 			url:'/?m=financial&c=analysis&a=dateTime',
@@ -34,6 +38,7 @@ var flow = new Vue({
 			type: "post",
 			data:{},
 			success:function(data){
+				console.log(data);
 				flow.shopList = data;
 			}
 		})
@@ -104,6 +109,7 @@ var flow = new Vue({
 					,{field:'shoptype', minWidth:150, title: '平台'}
 					,{field:'shopname', minWidth:150, title: '店铺'}
 					,{field:'new_tid', minWidth:150, title: '订单号'}
+					,{field:'statusName', minWidth:150, title: '标记状态'}
 					,{field:'buyer_nick', minWidth:150, title: '买家昵称'}
 					,{field:'payment_time', minWidth:150, title: '付款日期'}
 					,{field:'send_status', width:90, title: '订单状态'}
@@ -205,6 +211,31 @@ var flow = new Vue({
 			//重新加载多选下拉
 			form.render('select');
 		})
+	},
+	methods:{
+		getSignStatus:function(){
+			var self =this;
+			$.ajax({
+				url: "/index.php?m=system&c=delivery&a=getSignStatus",
+				type: 'post',
+				data: {DROP_SHIPPING: self.DROP_SHIPPING, shippingId: self.shippingId},
+				dataType: 'json',
+				success: function (data) {
+					console.log(data);
+					self.expressArr = data;	
+					// var dsosHtml = '<div style="float:left;"><select class="sign_status form-control separator" style="background: url(\'images/down.png\') no-repeat scroll 90% center transparent;background-size:17px 15px;border:solid 1px #ccc;width:204px;">';
+					// dsosHtml += '<option value=""></option><option value="0">无标记状态</option>';
+					// if(data){
+					// 	for(var i = 0; i < data.length; i++){
+					// 		dsosHtml += '<option value="' + data[i]['id'] + '">' + data[i]['statusName'] + '</option>';
+					// 	}
+					// 	dsosHtml += '</select>';
+					// }
+					// dsosHtml += '</select></div><div style="margin-left:10px;float:left;"><button id="signStatusManage" class="btn" style="width:120px;" onclick="signStatusManage()">添加标记状态</button></div>';
+					// $("#changeDiv1").html(dsosHtml);
+				}
+			});
+		}
 	}
 })
 
@@ -220,6 +251,7 @@ function returnData(){
 			shopName: $("#shopName").val(),
 			distribution: $("#distribution").val(),
 			expressName: $("#expressName").val(),
+			changeDiv1:$("#changeDiv1").val(),
 			tid: $("#tid").val(),
 		},
 		success:function(data){

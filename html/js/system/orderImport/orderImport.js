@@ -35,27 +35,35 @@ var flow = new Vue({
 
 	},
 	methods: {
-		jage:function(){
+		jage: function () {
 			var self = this;
 			event.stopPropagation();
 			var shopid = $("#shop").val();
 			var express_type = $("#express").val();
 			var autoMerge = $("#autoMerge").val();
-			if(shopid == ""){
-				layer.msg("请选择店铺",{
-					icon: 0,
-					time: 2000
-				});
-				return 
-			}
-			
-			if(express_type == ""){
-				layer.msg("请选择快递",{
-					icon: 0,
-					time: 2000
-				});
-				return
-			}
+
+			layui.use(['element', 'layer', 'laydate', 'upload'], function () {
+				var $ = layui.jquery, element = layui.element, layer = layui.layer, laydate = layui.laydate,
+					upload = layui.upload;
+
+				if (shopid == "") {
+					layer.msg("请选择店铺", {
+						icon: 0,
+						time: 2000
+					});
+					return
+				}
+
+				if (express_type == "") {
+					layer.msg("请选择快递", {
+						icon: 0,
+						time: 2000
+					});
+					return
+				}
+
+			});
+
 		}
 	}
 });

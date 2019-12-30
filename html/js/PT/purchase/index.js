@@ -570,6 +570,7 @@ var custLoad = {
 };
 
 var custTableLoad = {
+
 	tableObj:false,
 	tableLoadTable:function(){
 		var table = layui.table;

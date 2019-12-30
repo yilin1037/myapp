@@ -6,6 +6,8 @@ var flow = new Vue({
 		cus_no:"",		//供应商编码
 		prd_loc:"",		//货位编号
 		wh_loc:"",		//仓库编号
+		intoWh:"",    //仓库序号id
+		intoWh_no:"", //仓库编号
 		stateHidden:'',	//页面功能标记
 		prd_id:'',		//选择的商品id
 		prd_sku_id:'',	//选择的商品sku_id
@@ -136,7 +138,27 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'upload', 'element', 'table'],
 			});
 		}
 	});
-	
+	//监听仓库选择
+	table.on('tool(treeWhList)', function(obj){
+		var data = obj.data;
+		flow.intoWh = data.name;
+		flow.intoWh_no = data.wh;
+		res="";
+		$.ajax({
+			url:'/?m=goods&c=otherOut&a=memory',
+			dataType: 'json',
+			type: "post",
+			data:{
+				whName:data.wh
+			},
+			success:function(data){
+				
+			}
+		})
+		layer.closeAll();
+		$("#intoWh").val(data.name);
+		$("#hotLoc").val("");
+	});
 	var stateHidden = $("#stateHidden").val();
 	flow.stateHidden = stateHidden;
 })
@@ -253,12 +275,23 @@ var locTableLoad = {
 function scanProInventory(){
 	var stateHidden = $("#stateHidden").val();
 	var barcode = $("#prdBarcode").val();
+	var jinxiaocun = $("#jinxiaocun").val();
 	if(barcode == ''){
 		layer.msg('请输入商品条码');
 		return false;
 	}
 	var cus_no = flow.cus_no;
 	var prd_loc = flow.prd_loc;
+	var wh = flow.intoWh_no;
+	if(jinxiaocun == 'T'){
+		if(!wh || wh == ""){
+			layer.msg('请选择仓库');
+			return false;
+		}else{
+			prd_loc = '@'+wh;
+		}
+	}
+
 	if(stateHidden == "F"){
 		if(!prd_loc || prd_loc == ""){
 			layer.msg('请选择要入库的货位');
@@ -458,6 +491,63 @@ var dataLoadOne = {
 		})
 	}
 };
+var whTableLoad = {
+	tableObj:false,
+	tableLoadTable:function(){
+		var table = layui.table;
+		whLoad['page'] = {
+			curr: 1 
+		};
+		var whName = $("#whName").val();
+		
+		$.ajax({
+			url:'/?m=PT&c=purchase&a=getWhTable',
+			dataType: 'json',
+			type: "post",
+			data:{
+				whName:whName
+			},
+			success:function(data){
+				if(!whTableLoad.tableObj){
+					for(var i=0;i<data.length;i++){
+						whLoad.data.push(data[i]);
+					}
+					whTableLoad.tableObj = table.render(whLoad);
+				}else{
+					whLoad.data = [];
+					for(var i=0;i<data.length;i++){
+						whLoad.data.push(data[i]);
+					}
+					whTableLoad.tableObj.reload(whLoad);
+				}
+			}
+		})
+	}
+};
+
+function whSetBtn(){
+	whTableLoad.tableLoadTable();
+}
+
+var whLoad = {
+	elem: '#treeWhList'
+	,skin: 'row'
+	,page: true 
+	,limits: [50, 100, 200]
+	,limit: 50 
+	,where: {
+		id:''
+	}
+	,height: '400'
+	,cols: [[ 
+		{type:'numbers', width:80, title: '序号', event: 'setSign', style:'cursor: pointer;'}
+		,{field:'wh', width:250, title: '仓库编号', event: 'setSign', style:'cursor: pointer;'}
+		,{field:'name', width:443, title: '仓库名称', event: 'setSign', style:'cursor: pointer;'}
+	]]
+	,id: 'treeWhList'
+	,data:[]
+	,even: true
+};
 
 //供应商
 function intoCustSell( state ){
@@ -482,6 +572,26 @@ function intoCustSell( state ){
 		}
 	});
 }
+
+//选择仓库
+$("#intoWh").click(function(){
+	$("#whName").val("");
+	whTableLoad.tableLoadTable();
+	layer.open({
+		type: 1,
+		title: '选择仓库',
+		skin: 'layui-layer-rim', //加上边框
+		area: ['800px', '550px'], //宽高
+		shade: 0.3,
+		content: $("#whSetChoose"),
+		cancel: function(index, layero){ 
+			flow.intoWh = "";
+			flow.intoWh_no= "";
+			$("#intoWh").val("");
+		}
+	});
+})
+
 
 function custSearchBtn(){
 	if($("#stateHidden").val() == 'T'){
@@ -561,12 +671,22 @@ $("#savePutin").click(function(){
 	var table = layui.table;
 	var data = dataListOne.data;
 	var stateHidden = $("#stateHidden").val();
+	var jinxiaocun = $("#jinxiaocun").val();
 	var cus_no = flow.cus_no;
-	if(stateHidden == "F"){
-		var prd_loc = flow.prd_loc;
+	var wh = flow.intoWh_no;
+	var prd_loc = flow.prd_loc;
+	if(stateHidden == "F" && jinxiaocun == 'F'){
 		if(!prd_loc || prd_loc == ""){
 			layer.msg('请选择要入库的货位');
 			return false;
+		}
+	}
+	if(jinxiaocun == 'T'){
+		if(!wh || wh == ""){
+			layer.msg('请选择仓库');
+			return false;
+		}else{
+			prd_loc = '@'+wh
 		}
 	}
 	if(!cus_no || cus_no == ""){
@@ -624,12 +744,22 @@ $("#putinPrint").click(function(){
 		return false;
 	}
 	var stateHidden = $("#stateHidden").val();
+	var jinxiaocun = $("#jinxiaocun").val();
 	var cus_no = flow.cus_no;
-	if(stateHidden == "F"){
-		var prd_loc = flow.prd_loc;
+	var wh = flow.intoWh_no;
+	var prd_loc = flow.prd_loc;
+	if(stateHidden == "F" && jinxiaocun == 'F'){
 		if(!prd_loc || prd_loc == ""){
 			layer.msg('请选择要入库的货位');
 			return false;
+		}
+	}
+	if(jinxiaocun == 'T'){
+		if(!wh || wh == ""){
+			layer.msg('请选择仓库');
+			return false;
+		}else{
+			prd_loc = '@'+wh
 		}
 	}
 	if(!cus_no || cus_no == ""){

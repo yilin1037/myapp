@@ -6,6 +6,8 @@ var flow = new Vue({
 		stock: '',//in为盘入，out为盘出，其他为盘点
 		pc_no:'',
 		hotLoc_no:'',
+		intoWh:"",    //仓库序号id
+		intoWh_no:"", //仓库编号
 	},
 	methods: {
 		blackInPut:function( state ){
@@ -26,6 +28,16 @@ var flow = new Vue({
 					}
 					tmp = false;
 					var hotLoc = $("#hotLoc").val();
+					var jinxiaocun = $("#jinxiaocun").val();
+					var wh = flow.intoWh_no;
+					if(jinxiaocun == 'T'){
+						if(!wh || wh == ""){
+							layer.msg('请选择仓库', {icon: 2});
+							return false;
+						}else{
+							hotLoc = '@'+wh;
+						}
+					}
 					if(!hotLoc){
 						layer.msg('请选择货位', {icon: 2});
 						return false;
@@ -146,7 +158,17 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'upload', 'element', 'table'],
         var data = (obj.data); //所在行的所有相关数据
         var prdBarcode = data['barcode'];
     	var prd_loc = flow.hotLoc_no;
-        var pc_no = flow.pc_no;
+		var pc_no = flow.pc_no;
+		var jinxiaocun = $("#jinxiaocun").val();
+		var wh = flow.intoWh_no;
+		if(jinxiaocun == 'T'){
+			if(!wh || wh == ""){
+				layer.msg('请选择仓库', {icon: 2});
+				return false;
+			}else{
+				prd_loc = '@'+wh;
+			}
+		}
     	if(!prd_loc || prd_loc == ""){
     		layer.msg('请选择要盘点的货位');
     		return false;
@@ -173,6 +195,27 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'upload', 'element', 'table'],
     			}
     		}
     	});
+	});
+	//监听仓库选择
+	table.on('tool(treeWhList)', function(obj){
+		var data = obj.data;
+		flow.intoWh = data.name;
+		flow.intoWh_no = data.wh;
+		res="";
+		$.ajax({
+			url:'/?m=goods&c=otherOut&a=memory',
+			dataType: 'json',
+			type: "post",
+			data:{
+				whName:data.wh
+			},
+			success:function(data){
+				
+			}
+		})
+		layer.closeAll();
+		$("#intoWh").val(data.name);
+		$("#hotLoc").val("");
 	});
 	//初始化右侧表格
 	table.render(dataListOne);
@@ -201,7 +244,24 @@ $("#hotLoc").click(function(){
 		}
 	});
 })
-
+//选择仓库
+$("#intoWh").click(function(){
+	$("#whName").val("");
+	whTableLoad.tableLoadTable();
+	layer.open({
+		type: 1,
+		title: '选择仓库',
+		skin: 'layui-layer-rim', //加上边框
+		area: ['800px', '550px'], //宽高
+		shade: 0.3,
+		content: $("#whSetChoose"),
+		cancel: function(index, layero){ 
+			flow.intoWh = "";
+			flow.intoWh_no= "";
+			$("#intoWh").val("");
+		}
+	});
+})
 //货位中仓库树形图
 var setting = {
 	data: {
@@ -288,7 +348,63 @@ var locTableLoad = {
 		})
 	}
 };
+var whTableLoad = {
+	tableObj:false,
+	tableLoadTable:function(){
+		var table = layui.table;
+		whLoad['page'] = {
+			curr: 1 
+		};
+		var whName = $("#whName").val();
+		
+		$.ajax({
+			url:'/?m=PT&c=purchase&a=getWhTable',
+			dataType: 'json',
+			type: "post",
+			data:{
+				whName:whName
+			},
+			success:function(data){
+				if(!whTableLoad.tableObj){
+					for(var i=0;i<data.length;i++){
+						whLoad.data.push(data[i]);
+					}
+					whTableLoad.tableObj = table.render(whLoad);
+				}else{
+					whLoad.data = [];
+					for(var i=0;i<data.length;i++){
+						whLoad.data.push(data[i]);
+					}
+					whTableLoad.tableObj.reload(whLoad);
+				}
+			}
+		})
+	}
+};
 
+function whSetBtn(){
+	whTableLoad.tableLoadTable();
+}
+
+var whLoad = {
+	elem: '#treeWhList'
+	,skin: 'row'
+	,page: true 
+	,limits: [50, 100, 200]
+	,limit: 50 
+	,where: {
+		id:''
+	}
+	,height: '400'
+	,cols: [[ 
+		{type:'numbers', width:80, title: '序号', event: 'setSign', style:'cursor: pointer;'}
+		,{field:'wh', width:250, title: '仓库编号', event: 'setSign', style:'cursor: pointer;'}
+		,{field:'name', width:443, title: '仓库名称', event: 'setSign', style:'cursor: pointer;'}
+	]]
+	,id: 'treeWhList'
+	,data:[]
+	,even: true
+};
 //扫描商品条码
 function scanProInventory(){
 	var prdBarcode = $("#prdBarcode").val();
@@ -298,7 +414,17 @@ function scanProInventory(){
 	}
 	$("#prdBarcode").val("");
 	var prd_loc = flow.hotLoc_no;
-    var pc_no = flow.pc_no;
+	var pc_no = flow.pc_no;
+	var jinxiaocun = $("#jinxiaocun").val();
+	var wh = flow.intoWh_no;
+	if(jinxiaocun == 'T'){
+		if(!wh || wh == ""){
+			layer.msg('请选择仓库', {icon: 2});
+			return false;
+		}else{
+			prd_loc = '@'+wh;
+		}
+	}
 	if(!prd_loc || prd_loc == ""){
 		layer.msg('请选择要盘点的货位');
 		return false;

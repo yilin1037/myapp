@@ -1393,6 +1393,7 @@ var flow = new Vue({
                     "express": self.express,
                     "banner": self.banner,
                     "date_type": date_type,
+					"sendStatus": self.sendStatus,
                 };
 
                 var selectRows = grid1.getSelecteds();

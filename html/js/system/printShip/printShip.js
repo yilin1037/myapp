@@ -37,7 +37,8 @@ var tableList = new Vue({
 		getTemplateDsos: [],
 		system_id:"",
 		audioObj:[],		//语音播报对象
-		verifyObj:[]		//已扫描的唯一码
+		verifyObj:[],
+		DSOS:''		//发货清单模板
 	},
 	mounted: function() {
 		var self = this;
@@ -127,6 +128,32 @@ var tableList = new Vue({
 				// 	self.scanMessageSingle = "yes";
 				// 	$("#addressCheckt").iCheck('check');
 				// }
+			}
+		});
+		$.ajax({
+			url: "/index.php?m=system&c=printShip&a=getUserSavedDsosTemplate",
+			type: 'get',
+			data: {},
+			dataType: 'json',
+			success: function (data) {
+				if(data){
+					self.DSOS = data.id;//默认模板
+					 //printDataDSOS(self, printInputDSOS,data.id,tableList.unprintname);
+					 //layprintTplBqDsosChoose();
+				}
+			}
+		});
+		$.ajax({
+			url: "/index.php?m=system&c=printShip&a=getCheckTplBqLayprint",
+			type: 'get',
+			data: {type:'DSOS'},
+			dataType: 'json',
+			async:false,
+			success: function (data) {
+				if(data['id'] && data['printer']){
+					self.unprintname=data['printer'];//默认打印机
+					
+				}
 			}
 		});
 		//日期选择器
@@ -250,8 +277,8 @@ var tableList = new Vue({
 		},
 		//当前操作员打印机设置
 		userPrinterSetup:function(){
-			$("#layprintTplBq").val("");
-			$("#layprint").val("");
+			// $("#layprintTplBq").val("");
+			// $("#layprint").val("");
 			var self = this;
 			//打印模板
 			$.ajax({
@@ -265,9 +292,17 @@ var tableList = new Vue({
 			})
 			//打印机
 			doGetPrinters(function(data){
+				var start =self.unprintname.indexOf(';');//获得字符串的开始位置
+				var result = self.unprintname.substring(0,start);//截取字符串
+				$(data).each(function(index,el){
+					if(el.name==result){
+						data[index]['selcked']=true;
+					}else{
+						data[index]['selcked']=false;
+					}
+				});
 				self.layprint = data;
 			});
-			
 			layer.open({
 				type: 1,
 				title: '当前操作员打印机设置',
@@ -314,6 +349,15 @@ var tableList = new Vue({
 			})
 			//打印机
 			doGetPrinters(function(data){
+				var start =self.unprintname.indexOf(';');//获得字符串的开始位置
+				var result = self.unprintname.substring(0,start);//截取字符串
+				$(data).each(function(index,el){
+					if(el.name==result){
+						data[index]['selcked']=true;
+					}else{
+						data[index]['selcked']=false;
+					}
+				});
 				self.layprint = data;
 			});
 			
@@ -361,9 +405,18 @@ var tableList = new Vue({
 				success:function(data){
 					self.getTemplateDsos = data;
 				}
-			})
+			});
 			//打印机
 			doGetPrinters(function(data){
+				var start =self.unprintname.indexOf(';');//获得字符串的开始位置
+				var result = self.unprintname.substring(0,start);//截取字符串
+				$(data).each(function(index,el){
+					if(el.name==result){
+						data[index]['selcked']=true;
+					}else{
+						data[index]['selcked']=false;
+					}
+				});
 				self.layprint = data;
 			});
 
@@ -427,6 +480,15 @@ var tableList = new Vue({
 			var self = this;
 			//打印机
 			doGetPrinters(function(data){
+				var start =self.unprintname.indexOf(';');//获得字符串的开始位置
+				var result = self.unprintname.substring(0,start);//截取字符串
+				$(data).each(function(index,el){
+					if(el.name==result){
+						data[index]['selcked']=true;
+					}else{
+						data[index]['selcked']=false;
+					}
+				});
 				self.layprint = data;
 			});
 			if(event.keyCode == 13){
@@ -507,7 +569,6 @@ var tableList = new Vue({
 								return false;
 							}
 							
-							console.log(onlyShopList);
 							if(onlySendShop == 'yes' && onlyShopList.indexOf(',' + data.order[0].shopid + ',') == -1){
 								if(data.order[0] && data.order[0].new_tid){
 									uniqueLog(data.order[0].new_tid,unique_code,'onlySendShop');
@@ -1430,7 +1491,27 @@ $(document).ready(function(){
 })
 
 function autoPrintDataDSOS(self, printInputDSOS) {
-	// 获取打印需要的模板ID,以及模板名字
+	if(tableList.unprintname==''){
+		$.ajax({
+			url: "/index.php?m=system&c=printShip&a=getCheckTplBqLayprint",
+			type: 'get',
+			data: {type:'DSOS'},
+			dataType: 'json',
+			success: function (data) {
+				if(data['id'] && data['printer']){
+					tableList.unprintname=data['printer'];
+					
+				}else{
+					layer.msg('未设置打印机!',{
+						icon: 2,
+						time: 2000
+					});
+					return false;
+				}
+			}
+		});
+
+	}
 	$.ajax({
 		url: "/index.php?m=system&c=printShip&a=getUserSavedDsosTemplate",
 		type: 'get',
@@ -1438,9 +1519,13 @@ function autoPrintDataDSOS(self, printInputDSOS) {
 		dataType: 'json',
 		success: function (data) {
 			if(data){
-				console.log(data);
-				printDataDSOS(self, printInputDSOS,data.id,data.tpl_name);
-
+				 printDataDSOS(self, printInputDSOS,data.id,tableList.unprintname);
+			}else{
+				layer.msg('未设置发货清单模板!',{
+					icon: 2,
+					time: 2000
+				});
+				return false;
 			}
 		}
 	});
@@ -1474,11 +1559,6 @@ function printDataDSOS(self, printInputDSOS,unprintTplDSOS,unprintname) {
 						});
 						var printData = [];
 						printData.push(data[i]);
-
-						console.log("777777777777777777");
-						console.log(unprintTplDSOS);
-						console.log(unprintname);
-						console.log(printData);
 						printLodopTpl[unprintTplDSOS](unprintname,printData);
 						i = i+1;
 						setTimeout(function(){

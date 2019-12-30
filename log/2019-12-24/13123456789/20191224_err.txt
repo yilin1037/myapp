@@ -1,0 +1,8 @@
+1577152149--13123456789-SELECT `id`, `prd_no`,`num_iid`, `title`,`sku_id`,`price`,`pic_path`,`price1`,`price2`,`price3`,`price4`,`price5` FROM  u13123456789_product where 1=1 order by  num_iid  desc  limit 0,10
+Unknown column 'num_iid' in 'field list'
+1577152164--13123456789-SELECT `id`, `prd_no`,`num_iid`, `title`,`sku_id`,`price`,`pic_path`,`price1`,`price2`,`price3`,`price4`,`price5` FROM  u13123456789_product where 1=1 order by  num_iid  asc  limit 0,10
+Unknown column 'num_iid' in 'field list'
+1577152165--13123456789-SELECT `id`, `prd_no`,`num_iid`, `title`,`sku_id`,`price`,`pic_path`,`price1`,`price2`,`price3`,`price4`,`price5` FROM  u13123456789_product where 1=1 order by  num_iid  desc  limit 0,10
+Unknown column 'num_iid' in 'field list'
+1577152194--13123456789-SELECT `id`, `prd_no`,`num_iid`, `title`,`sku_id`,`price`,`pic_path`,`price1`,`price2`,`price3`,`price4`,`price5` FROM  u13123456789_product where 1=1 order by  num_iid  desc  limit 0,10
+Unknown column 'num_iid' in 'field list'

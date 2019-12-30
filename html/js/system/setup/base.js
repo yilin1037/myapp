@@ -11,6 +11,7 @@ layui.use(['form', 'layer', 'table'], function(){
 			$("#orderFullLink").prop("checked", data.orderFullLink);
 			$("#autoMarketLabel").prop("checked", data.autoMarketLabel);
 			$("#useUniqueSync").prop("checked", data.useUniqueSync);
+			$("#WMS_STOCK_BAOKUAN").prop("checked", data.WMS_STOCK_BAOKUAN);
 			$("#stockPrint").prop("checked", data.stockPrint);
 			$("#moreCheck").prop("checked", data.moreCheck);
 			$("#sellerMemoAfter").prop("checked", data.sellerMemoAfter);
@@ -63,7 +64,6 @@ layui.use(['form', 'layer', 'table'], function(){
 		
 	form.on('submit(formSubmit)', function(data){
 		var obj = data.field;
-		
 		var down_delay = obj.down_delay;
 		if(/^\d+$/.test(down_delay)){
 			if(down_delay > 30){

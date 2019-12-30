@@ -232,6 +232,7 @@ var dataListOne = {
 		,{field:'title', width:200, title: '商品名称'}
         ,{field:'prd_loc_name', width:200, title: '货位'}
 		,{field:'num', width:200, title: '入库数量', edit: 'text'}
+		,{field:'barcode_sku', width:200, title: 'SKU条码'}
 	]]
 	,id: 'dataListOnes'
 	,data:[]
@@ -247,6 +248,7 @@ var dataLoadOne = {
 		var goodsNum = $("#goodsNum").val();
         var goodsSkuNum = $("#goodsSkuNum").val();
 		var goodsName = $("#goodsName").val();
+		var barcodeSku = $("#barcodeSku").val();
 		$.ajax({
 			url:'?m=PT&c=Storage&a=getPrdList',
 			dataType: 'json',
@@ -255,6 +257,7 @@ var dataLoadOne = {
 				prd_no:goodsNum,
                 prd_sku_no:goodsSkuNum,
 				prd_name:goodsName,
+				barcode_sku:barcodeSku
 			},
 			success:function(data){
 				if(data.data){
@@ -494,6 +497,7 @@ $("#searchReload").click(function(){
 	$("#goodsNum").val("");
     $("#goodsSkuNum").val("");
 	$("#goodsName").val("");
+	$("#barcodeSku").val("");
 })
 
 //选择仓库

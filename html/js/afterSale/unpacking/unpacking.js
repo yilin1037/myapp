@@ -21,6 +21,15 @@ var tableList = new Vue({
 		nameListBar:"" ,
 		layprintTplBqBar: "",
 		defaultMsg:[],
+		locArr:"",			//货位数据数组
+		pageLocCount:"",   		//货位弹窗内总页数
+		pageLocNo:"",				//货位弹窗内页数
+		locName:"",             //货位名称查询
+		prd_id:"",				//记录当前点击的是哪个商品
+		choose_prd_sku_id:"",   //单个商品套装编码 选择档口 传入的 prd_sku_id
+		type:"",				//判断套装编码弹窗内选择档口点击还是最外层界面点击
+		buttonObj:'',	//当前操作的对象
+		tdIndex:0,
 	},
 	mounted: function() {
 		var self = this;
@@ -142,6 +151,102 @@ var tableList = new Vue({
 																																																	
 				}																																													
 			});	
+		},
+		getLoc:function(locName,curr){
+			var self = this;
+			$.ajax({																				
+				url: "/index.php?m=goods&c=association&a=getLoc",										
+				type: 'post',																		
+				data: {locName:locName,curr:curr},																	
+				dataType: 'json',																	
+				success: function (data) {															
+					if(data.result != 0){
+						self.locArr = data.result;
+						self.pageLocCount = Math.ceil(data.pageNum / 10);
+						self.pageLocNo = curr;
+					}else{
+						layer.msg("没有查询到数据",{
+							icon: 2,
+							time: 2000
+						});
+						self.locArr = "";
+						self.pageLocCount = 0;
+						self.pageLocNo = 0;
+					}																			
+				}																					
+			});	
+		},
+		chooseThisLoc2:function(id,prd_loc){
+			var self = this;
+			var type=$("refundSelect").val();
+			if(type=='换货件'){
+				self.itemhuandata[self.tdIndex]['x_prd_loc']=prd_loc;
+				self.itemdata[self.tdIndex]['x_prd_loc']=prd_loc;
+			}else{
+				self.itemdata[self.tdIndex]['x_prd_loc']=prd_loc;
+			}
+			$("[name='"+self.buttonObj+"']").val(prd_loc);
+			$("[name='"+self.buttonObj+"']").text(id);
+			layer.close(self.nowIndex);
+			
+		},
+		locSearch:function(){
+			var self = this;
+			var locName = $("#locName").val();
+			self.locName = locName;
+			self.getLoc(locName,1);
+		},
+		resetLoc:function(){
+			$("#locName").val("");
+		},
+		downLocSearch:function(){
+			var self = this;
+			var e = event || window.event;
+			if(e.keyCode == 13){
+				self.locSearch();
+			}
+		},
+		locSearch:function(){
+			var self = this;
+			var locName = $("#locName").val();
+			self.locName = locName;
+			self.getLoc(locName,1);
+		},
+		chooseThisLoc:function(id,prd_loc){
+			var self = this;
+			$.ajax({																				
+				url: "/index.php?m=goods&c=association&a=chooseThisLoc",										
+				type: 'post',																		
+				data: {id:id,prd_id:self.prd_id,prd_loc:prd_loc,prd_sku_id:self.choose_prd_sku_id,type:self.type},																	
+				dataType: 'json',
+				async:false, 				
+				success: function (data) {															
+					if(data.code == "ok"){
+						layer.msg(data.msg,{
+							icon: 1,
+							time: 2000
+						});
+						
+					}else{
+						layer.msg(data.msg,{
+							icon: 1,
+							time: 2000
+						});
+					}																			
+				}																					
+			});
+			// jqtb.ajax.reload("", false);
+			// if(self.type == "suit"){
+			// 	if(self.isGood != "good"){
+			// 		suit(self.prd_id,'no',self.isGood,'yes');
+			// 	}else{
+			// 		suit(self.choose_prd_sku_id,'no',self.isGood,'yes');
+			// 	}
+				
+			// }
+			
+			layer.close(self.nowIndex);
+			
 		},
 		getTid:function(search_type){
 			var self = this;
@@ -370,7 +475,7 @@ var tableList = new Vue({
 				});
 				return false;
 			}
-
+			
 			$.ajax({																																									
 				url: "/index.php?m=afterSale&c=unpacking&a=getPrintData",																															
 				type: 'post',																																										
@@ -398,7 +503,7 @@ var tableList = new Vue({
 			var itemdata = self.itemdata;
 			var itemhuandata = self.itemhuandata;
 			var refund_type = $('#refund_type').val();
-			
+
 			if(refund_type != '无信息件' && new_tid == ""){
 				layer.msg("请先录入拆包信息",{
 					icon: 0,
@@ -461,8 +566,26 @@ var tableList = new Vue({
 						});
 						return false;
 					}
+					if(itemhuandata[i].x_prd_loc==''){
+						layer.msg("必须选择货位",{
+								icon: 0,
+								time: 2000
+							});
+						return false;
+					}
+				}
+			}else{
+				for(var i=0;i<itemdata.length;i++){
+					if(itemdata[i].x_prd_loc==''){
+						layer.msg("必须选择货位",{
+								icon: 0,
+								time: 2000
+							});
+						return false;
+					}
 				}
 			}
+			
 			
 			var express = $('#express').val();
 			var express_no = $('#express_no').val();
@@ -473,13 +596,13 @@ var tableList = new Vue({
 			extra_amtn = $.trim(extra_amtn);
 			
 			if(WMS_TYPE == 'PT'){//入库并打印条码
-				if(prd_loc == ''){
-					layer.msg("请先选择货位",{
-						icon: 0,
-						time: 2000
-					});
-					return false;
-				}
+				// if(str_prd_loc == ''){
+				// 	layer.msg("请先选择货位",{
+				// 		icon: 0,
+				// 		time: 2000
+				// 	});
+				// 	return false;
+				// }
 				
 				var unprintname = "";
 				if(tableList.delPrinter){
@@ -710,7 +833,49 @@ var tableList = new Vue({
 		}
 	},
 });	
-
+//选择货位
+function chooseLoc(prd_id,type,index,prd_sku_id,e,index){
+	var value = "";
+	if($(event.target)[0].nodeName == "BUTTON"){
+		value = $(event.target).val();
+	}else{
+		value = $(event.target).parent().val();
+	}
+	tableList.buttonObj = e.target.name;
+	tableList.tdIndex = index;
+	tableList.doWhat = "";
+	
+	tableList.locIndex = index;
+	
+	tableList.type = type;
+	
+	tableList.prd_id = prd_id;
+	
+	tableList.choose_prd_sku_id = prd_sku_id;
+	
+	layer.open({																																											
+		type: 1,																																											
+		title: '选择货位',																																									
+		skin: 'layui-layer-rim', //加上边框																																					
+		area: ['1400px', '650px'], //宽高																																					
+		shade: 0.3,																																											
+		content: $("#locs"),																																							
+		btn: ['关闭']
+		,yes: function(index, layero){
+			//按钮【按钮一】的回调
+			
+			layer.close(index);
+		},
+		cancel: function (index, layero) {																																					
+																																															
+		},
+		success: function(layero, index){
+			tableList.nowIndex = index;
+		}		
+	});
+    
+	tableList.getLoc('',1);
+}
 
 $(document).ready(function(){
     $('.skin-minimal input').iCheck({

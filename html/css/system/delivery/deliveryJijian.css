@@ -13,7 +13,7 @@ body .mini-pager-num {
 }
 
 .mini-grid-headerCell-inner {
-	font-size: 11pt;
+	font-size: 12px;
 	line-height: 26px;
 }
 
@@ -32,6 +32,14 @@ body .mini-pager-num {
 .mini-textbox-input {
 	height: 30px;
 	font-size: 11pt;
+}
+
+.mini-grid-headerCell {
+    background: #F6F6F6 repeat-x 0 0;
+    border-right: #A5ACB5 1px solid;
+    border-bottom: #A5ACB5 1px solid;
+    overflow: visible;
+    padding: 0;
 }
 
 .mini-buttonedit-input {
@@ -56,7 +64,7 @@ body .mini-pager-num {
 }
 
 .mini-grid-cell-inner {
-	font-size: 11pt;
+	font-size: 12px;
 	line-height:28px;
 }
 
@@ -397,7 +405,7 @@ textarea:hover{
 }
 
 .layui-icon{
-	color:#1E9FFF;
+	color:#FFF;
 }
 
 .positionSpan{
@@ -683,9 +691,10 @@ td{
 
 .inputTe{
 	font-size:14px!important;
-	color:white;
-	background-color:white;
+	color:#FFF;
+	background-color:#FFF;
 	margin-right:4px;
+	border:1px solid #222;
 }
 
 .scrollReturnTop{

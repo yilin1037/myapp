@@ -318,7 +318,6 @@ var dataList = {
 var tableLoad = {
 	tableObj:false,
 	tableLoadFunction:function( type ){
-		alert('ddddd');
 		var table = layui.table;
 		dataList['page'] = {
 			curr: 1 

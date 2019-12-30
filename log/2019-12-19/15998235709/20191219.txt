@@ -1,0 +1,362 @@
+1576717544--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576717544--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576717544--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576717544--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576717544--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576717544--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576717544--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576717544--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576717544--update userlist set last_login_time='1576717544' where system_id='15998235709'
+1576717544--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576717544--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576717544','1','登录IP地址：127.0.0.1')
+1576717544--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576717544--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576717544--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576717544--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576717544--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576717240'
+1576717544--select username,expire_time from userlist where system_id='15998235709'
+1576717544--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717544--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576717544--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576717544--select expire_time from userlist where system_id='15998235709'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576717544--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576717544--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717544--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576717545--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576717545--SELECT id,title,content,begin_time FROM notice where '1576717545' BETWEEN begin_time AND end_time 
+1576717545--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717545--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576717545--SELECT title,content,create_time FROM question limit 0,7
+1576717545--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576717545--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576717545--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717545--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576717546--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576717546--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717546--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576717546--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576717546--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576717546--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576717546--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576717546--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576717546--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576717546--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576717546--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576717546--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576717546--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576717546--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576717546--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576717546--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576717546--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576717546--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576717546--select username,expire_time from userlist where system_id='15998235709'
+1576717546--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576717546--select sum(balance) as balance from u15998235709_tid_pay
+1576717546--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576717958--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576717958--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576717958--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576717958--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576717958--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576717958--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576717958--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576717958--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576717958--update userlist set last_login_time='1576717958' where system_id='15998235709'
+1576717958--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576717958--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576717958','1','登录IP地址：127.0.0.1')
+1576717958--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576717958--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576717958--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576717958--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576717961--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576717654'
+1576717961--select username,expire_time from userlist where system_id='15998235709'
+1576717961--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717961--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576717961--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576717961--select expire_time from userlist where system_id='15998235709'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576717962--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576717962--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717962--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717962--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576717962--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576717962--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576717962--SELECT id,title,content,begin_time FROM notice where '1576717962' BETWEEN begin_time AND end_time 
+1576717963--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717963--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576717963--SELECT title,content,create_time FROM question limit 0,7
+1576717963--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576717963--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576717963--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576717963--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576717963--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576717963--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576717963--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576717963--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576717963--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576717963--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576717963--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576717963--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576717963--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576717963--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576717963--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576717963--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576717963--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576717963--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576717963--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576717963--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576717964--select username,expire_time from userlist where system_id='15998235709'
+1576717964--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576717964--select sum(balance) as balance from u15998235709_tid_pay
+1576717964--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576725175--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576725175--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576725175--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576725175--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576725175--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576725175--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576725175--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576725175--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576725175--update userlist set last_login_time='1576725175' where system_id='15998235709'
+1576725175--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576725175--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576725175','1','登录IP地址：127.0.0.1')
+1576725175--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576725175--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576725175--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576725175--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576725175--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576724871'
+1576725175--select username,expire_time from userlist where system_id='15998235709'
+1576725175--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576725175--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576725175--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576725175--select expire_time from userlist where system_id='15998235709'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576725175--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576725175--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576725175--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576725175--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576725175--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576725175--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576725175--SELECT id,title,content,begin_time FROM notice where '1576725175' BETWEEN begin_time AND end_time 
+1576725176--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576725176--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576725176--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576725176--SELECT title,content,create_time FROM question limit 0,7
+1576725177--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576725177--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576725177--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576725177--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576725177--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576725177--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576725177--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576725177--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576725177--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576725177--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576725177--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576725177--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576725177--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576725177--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576725177--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576725177--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576725177--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576725177--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576725177--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576725177--select username,expire_time from userlist where system_id='15998235709'
+1576725177--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576725177--select sum(balance) as balance from u15998235709_tid_pay
+1576725177--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576737496--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576737496--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576737496--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576737496--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576737496--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576737496--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576737496--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576737496--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576737496--update userlist set last_login_time='1576737496' where system_id='15998235709'
+1576737496--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576737496--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576737496','1','登录IP地址：127.0.0.1')
+1576737496--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576737496--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576737496--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576737496--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576737496--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576737192'
+1576737496--select username,expire_time from userlist where system_id='15998235709'
+1576737496--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576737496--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576737496--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576737496--select expire_time from userlist where system_id='15998235709'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576737496--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576737497--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576737497--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576737498--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576737498--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576737498--SELECT id,title,content,begin_time FROM notice where '1576737498' BETWEEN begin_time AND end_time 
+1576737498--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576740104--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576740104--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576740104--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576740104--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576740104--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576740104--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576740104--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576740104--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576740104--update userlist set last_login_time='1576740104' where system_id='15998235709'
+1576740104--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576740104--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576740104','1','登录IP地址：127.0.0.1')
+1576740104--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576740104--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576740104--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576740104--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576740104--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576739800'
+1576740104--select username,expire_time from userlist where system_id='15998235709'
+1576740104--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576740104--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576740104--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576740104--select expire_time from userlist where system_id='15998235709'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576740104--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576740105--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576740105--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576740105--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576740105--SELECT id,title,content,begin_time FROM notice where '1576740105' BETWEEN begin_time AND end_time 
+1576740105--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576740105--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576740105--SELECT id,title,content,begin_time,end_time FROM notice where type != 'notice' order by begin_time desc limit 3 
+1576740105--SELECT id,title,content,begin_time,end_time FROM notice where type = 'notice' ORDER BY begin_time DESC limit 1
+1576740105--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576740105--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576740106--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576740106--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576740106--select count(1) AS shopBang from u15998235709_shop_config where status = 1
+1576740106--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1
+1576740106--SELECT COUNT(1) AS placeBang FROM u15998235709_express WHERE STATUS = 0 
+1576740106--SELECT COUNT(1) AS expressBang FROM u15998235709_express WHERE STATUS = 0 AND TYPE <> '' AND type_name <> ''
+1576740106--SELECT COUNT(1) AS addBang FROM u15998235709_express WHERE STATUS = 0 AND send_username <> '' AND send_tel <> ''
+1576740106--select count(1) AS labelBang from u15998235709_user_printer where usr = '15998235709' AND type = 'unique_code' AND printer <> ''
+1576740106--select count(1) AS printBang from u15998235709_user_printer where usr = '15998235709' AND type = 'waybill' AND printer <> ''
+1576740106--select count(1) AS express_no from u15998235709_user_printer where usr = '15998235709' AND type = 'express_no' AND printer <> ''
+1576740106--SELECT COUNT(1) AS orderBang FROM u15998235709_unique_code_config
+1576740106--SELECT configValue FROM u15998235709_base_config WHERE configKey='albbSplit'
+1576740106--SELECT configValue FROM u15998235709_base_config WHERE configKey='mgjSplit'
+1576740106--SELECT configValue FROM u15998235709_base_config WHERE configKey='pddSplit'
+1576740106--SELECT configValue FROM u15998235709_base_config WHERE `type`='storage_type'
+1576740106--SELECT a.ids,a.type_name,b.id,b.configKey,b.configValue,b.type FROM 
+			  (SELECT DISTINCT CONCAT('group-code-',TYPE) AS ids,CONCAT(type_name,'：') AS type_name FROM u15998235709_express) AS a
+			  LEFT JOIN u15998235709_base_config AS b ON a.ids=b.configKey
+1576740106--SELECT configValue FROM u15998235709_base_config where configKey = 'library_number'
+1576740106--SELECT configValue FROM u15998235709_base_config where configKey = 'num_library'
+1576740106--select username,expire_time from userlist where system_id='15998235709'
+1576740106--SELECT title,content,create_time FROM question limit 0,7
+1576740106--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576740106--select sum(balance) as balance from u15998235709_tid_pay
+1576740106--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576750226--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'orderFullLink' 
+1576750226--select configValue from u15998235709_base_config where `type` = 'uploadConfig' and configKey = 'auto' 
+1576750226--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'autoMarketLabel' 
+1576750226--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'useUniqueSync' 
+1576750226--select configValue from u15998235709_base_config where `type` = 'aftersaleSwitch' and configKey = '15998235709' 
+1576750226--select configValue from u15998235709_base_config where `type` = 'baseConfig' and configKey = 'isFetch' 
+1576750226--select username,password,status,type from u15998235709_usertable where userid='15998235709'
+1576750226--SELECT service_id,is_eff,expire_time FROM servicelist WHERE system_id='15998235709'
+1576750226--update userlist set last_login_time='1576750226' where system_id='15998235709'
+1576750226--SELECT 1 FROM userlist WHERE system_id = '15998235709'
+1576750226--INSERT INTO user_login_log (system_id,user_id,login_time,STATUS,remark) 
+					VALUES ('15998235709','15998235709','1576750226','1','登录IP地址：127.0.0.1')
+1576750226--SELECT sync_orders FROM drop_shipping_list WHERE system_id='15998235709'
+1576750226--SELECT name FROM unique_code_supply WHERE system_id='15998235709'
+1576750226--SELECT to_system_id FROM system_sync_list WHERE to_system_id='15998235709'
+1576750226--SELECT DISTINCT shopid,express_id,drop_shipping_id from u15998235709_express where is_drop_shipping = 1 and del_logo=0
+1576750226--SELECT count(id) AS num 
+					FROM user_login_log 
+					WHERE user_id = '15998235709'
+					AND status = '0'
+					AND login_time > '1576749922'
+1576750226--select username,expire_time from userlist where system_id='15998235709'
+1576750226--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576750226--SELECT expire_time FROM servicelist WHERE `system_id`=15998235709
+1576750226--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576750226--select expire_time from userlist where system_id='15998235709'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YUN'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PTKDD'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BQ'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='SKBQ'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='KCBQ'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='BKBQ'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='YD'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='storage'
+1576750226--select id,tpl_name,express_no,def,type,param_json,tpl_json from u15998235709_print_tpl where type='PRDT'
+1576750227--select shop_permission from u15998235709_usertable where `userid` = '15998235709' 
+1576750227--select shoptype,shopid,shopname,expire_time,down_time,shop_print_province,shop_print_city,shop_print_district,shop_print_detail,shop_print_username,shop_print_tel from u15998235709_shop_config
+1576750228--select `type`,permission from u15998235709_usertable where `userid` = '15998235709' 
+1576750228--SELECT MIN(down_time) AS down_time  FROM u15998235709_shop_config WHERE `status`='1'
+1576750228--select sum(gift_count) as gift_count,sum(wms_gift_count) as wms_gift_count from u15998235709_tid_pay
+1576750228--SELECT id,title,content,begin_time FROM notice where '1576750228' BETWEEN begin_time AND end_time 
