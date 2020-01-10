@@ -226,6 +226,21 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'element', 'table'], function(
 					});
 				}
 			})
+		}else if(obj.event === 'returnCashOne'){
+			var systems_id = data['systems_id'];
+			var systems_name = data['systems_name'];
+			vue.systems_id = systems_id;
+			auditTableLoad.tableLoadFunction( systems_id );
+			mini.open({
+				url:"/?m=system&c=ForCustomer&a=popup&systemUser="+systems_id,
+				title: '阶梯返现金额: '+systems_name, 
+				width: 1200, 
+				height: 600,
+				onload: function () {
+					var iframe = this.getIFrameEl();
+					iframe.contentWindow.SetData(data);
+				},
+			});
 		}
 	});
 	form.on('submit(submit)', function(data){
@@ -302,6 +317,30 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'element', 'table'], function(
 				system_id:system_id,
 				express_type:express_type,
 				newPrice:newPrice
+			},
+			success:function(data){
+				layer.msg(data.msg);
+			}
+		})
+	});
+
+	//监听客户修改
+	table.on('edit(dataList)', function(obj){
+		var value = obj.value //得到修改后的值
+		,data = obj.data //得到所在行所有键值
+		,field = obj.field; //得到字段
+		var system_id = data['systems_id'];
+		if(value == ''){
+			layer.msg('客户名称不能为空');
+			return;
+		}
+		$.ajax({
+			url:'?m=system&c=ForCustomer&a=editSystemName',
+			dataType: 'json',
+			type: "post",
+			data:{
+				system_id:system_id,
+				systems_name:value,
 			},
 			success:function(data){
 				layer.msg(data.msg);
@@ -396,12 +435,12 @@ var dataList = {
 	,cols: [[ 
 		{type:'numbers', width:60, title: '序号'}
 		,{field:'systems_id', width:150, title: '客户电话'}
-		,{field:'systems_name', minWidth:200, title: '客户名称'}
+		,{field:'systems_name', minWidth:200, title: '客户名称', edit: 'text'}
 		,{field:'balance', width:120, title: '余额'}
 		,{field:'express_name', minWidth:150, title: '绑定快递类型'}
 		,{field:'fx_level', width:150, title: '分销商等级', align: 'center'}
 		,{field:'check_status', width:150, title: '审核状态', align: 'center', templet: '#barType'}
-		,{fixed: 'right', width:500, title: '操作', align:'center', toolbar: '#barDemo'}
+		,{fixed: 'right', width:600, title: '操作', align:'center', toolbar: '#barDemo'}
 	]]
 	,id: 'dataList'
 	,data:[]
@@ -583,6 +622,7 @@ var editPriceLoad = {
 	}
 };
 
+
 //修改价格
 var delStatusTable = {
 	elem: '#delStatusTable'
@@ -740,6 +780,27 @@ function addAreaPrice(){
 	})
 }
 
+function setReturnCash(){
+	// layer.open({
+	// 	type: 1,
+	// 	title: '默认阶梯返现金额',
+	// 	skin: 'layui-layer-rim',
+	// 	area: ['1200px', '600px'],
+	// 	shade: 0.3,
+	// 	content: $("#editReturnCash"),
+	// });
+	mini.open({
+		// url: "../system/view/ForCustomer/popup.php",
+		url:"/?m=system&c=ForCustomer&a=popup",
+		title: "阶梯返现", width: 1200, height: 600,
+		onload: function () {
+
+			var iframe = this.getIFrameEl();
+			iframe.contentWindow.SetData(data);
+		},
+	});
+}
+
 function delAreaPrice(){
 	
 	var data = layui.table.checkStatus('addressTable').data;
@@ -754,3 +815,113 @@ function delAreaPrice(){
 		}
 	})
 }
+
+
+
+mini.parse();
+var grid = mini.get("datagrid1");
+grid.load();
+var menu = new ColumnsMenu(grid);
+function onKeyEnter(e) {
+	search();
+}
+function addRow() {          
+	var newRow = { name: "New Row" };
+	grid.addRow(newRow, 0);
+
+	grid.beginEditCell(newRow, "LoginName");
+}
+function removeRow() {
+	var rows = grid.getSelecteds();
+	if (rows.length > 0) {
+		grid.removeRows(rows, true);                
+	}
+}
+function saveData() {
+	grid.commitEdit();
+	var SynChange = grid.getChanges();
+	var data = mini.decode(SynChange);
+	$.ajax({
+		url:'/?m=system&c=ForCustomer&a=editRetrunCatchM',
+		dataType: 'json',
+		type: "post",
+		data:{
+			data: data
+		},
+		success:function(res){
+			layer.msg(res.msg);
+		}
+	})
+}
+
+grid.on("celleditenter", function (e) {
+	var index = grid.indexOf(e.record);
+	if (index == grid.getData().length - 1) {
+		var row = {};
+		grid.addRow(row);
+	}
+});
+
+grid.on("beforeload", function (e) {
+	if (grid.getChanges().length > 0) {
+		if (confirm("有增删改的数据未保存，是否取消本次操作？")) {
+			e.cancel = true;
+		}
+	}
+});
+
+
+// var grid2 = mini.get("datagrid2");
+// var menu = new ColumnsMenu(grid2);
+// function onKeyEnter(e) {
+// 	search();
+// }
+// function addRowOne() {     
+// 	var grid2 = mini.get("datagrid2");
+// 	var newRow = { name: "New Row" };
+// 	grid2.addRow(newRow, 0);
+// 	grid2.beginEditCell(newRow, "LoginName");
+// }
+// function removeRowOne() {
+// 	var grid2 = mini.get("datagrid2");
+// 	var rows = grid2.getSelecteds();
+// 	if (rows.length > 0) {
+// 		grid2.removeRows(rows, true);                
+// 	}
+// }
+// function saveDataOne() {
+// 	var grid2 = mini.get("datagrid2");
+// 	var systems_id = vue.systems_id;
+// 	grid2.commitEdit();
+// 	var SynChange = grid2.getChanges();
+// 	var data = mini.decode(SynChange);
+// 	$.ajax({
+// 		url:'/?m=system&c=ForCustomer&a=editRetrunCatchUser',
+// 		dataType: 'json',
+// 		type: "post",
+// 		data:{
+// 			data: data,
+// 			system_id: systems_id
+// 		},
+// 		success:function(res){
+// 			layer.msg(res.msg);
+// 		}
+// 	})
+// }
+
+// grid2.on("celleditenter", function (e) {
+// 	var index = grid2.indexOf(e.record);
+// 	if (index == grid2.getData().length - 1) {
+// 		var row = {};
+// 		grid2.addRow(row);
+// 	}
+// });
+
+// grid2.on("beforeload", function (e) {
+// 	if (grid2.getChanges().length > 0) {
+// 		if (confirm("有增删改的数据未保存，是否取消本次操作？")) {
+// 			e.cancel = true;
+// 		}
+// 	}
+// });
+

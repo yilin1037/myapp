@@ -2,16 +2,40 @@ mini.parse();
 var grid1 = mini.get('grid1');
 //grid1.load();
 
+//绘制单元格时发生
 grid1.on("drawcell", function (e) {
 	
 });
-
+//行选中时发生
 grid1.on("select", function (e) {
 	getSelectCount();
 })
+//行取消选中时发生
 grid1.on("deselect", function (e) {
+	if(flow.allPage == true){
+		flow.selectAll('check_box');
+	}
 	getSelectCount();
 });
+//列改变时激发。如列显示/隐藏、列宽调整、列增加/删除等情况。
+grid1.on("columnschanged",function () {
+	var Columns_arr = grid1.getColumns();
+	if(Columns_arr.length > 0){
+		var Columns_str = JSON.stringify( Columns_arr );
+		$.ajax({
+			url: "/index.php?m=system&c=delivery&a=setcolumnschanged",
+			type: 'post',
+			data: {Columns:Columns_str},
+			dataType: 'json',
+			success: function (data) {
+			}
+		});
+	}
+
+
+})
+
+
 var select_chcked='';
 var select_chcked1=[];//商品编号默认值
 var sku_name_arr =[];
@@ -79,7 +103,7 @@ var flow = new Vue({
 		dsosMakeMsg:[],
 		pageCount:0,											 //总页数
 		pageNo:1,												 //页数				
-		pageSize:100, 											 //页码
+		pageSize:pageSize,										 //页码
 		result_total:0,											 //全部订单数量
 		printType:"",
 		sellerType:0,
@@ -116,7 +140,7 @@ var flow = new Vue({
 		signStatusArr:[],
 		shopAuthArr:[],
 		showshop:false,
-		versionSwitch:false,	//列表模式
+		versionSwitch:versionSwitch,	//列表模式
 		fetchDetailArr:[],
 		oid:"",
 		accountPrivileges:false, 							//false  子账号   true  主账号
@@ -129,6 +153,7 @@ var flow = new Vue({
 		datory_advance:false,
 		show:false,
 		onlySendWlList:'',
+		gridArr_list:'',
 	},
 	mounted: function() {
 		var self = this;
@@ -200,6 +225,22 @@ var flow = new Vue({
 				}
 			});
 		}
+
+		$.ajax({
+			url: "/index.php?m=system&c=delivery&a=getcolumnschanged",
+			type: 'post',
+			data: {},
+			dataType: 'text',
+			success: function (data) {
+				var fields_text = data;
+				if(fields_text!=null && fields_text!='' && fields_text!='[]'){
+					fields_text = JSON.parse( fields_text );
+					grid1.set({columns: fields_text});
+				}
+
+			}
+		});
+
 		$.ajax({
 			url: "/index.php?m=system&c=delivery&a=consignor",
 			type: 'post',
@@ -250,6 +291,7 @@ var flow = new Vue({
 		}else{
 			$("#isexpress").hide();
 		}*/
+		
 		$("#isexpress").show();
 		$("#faceWaybill").hide();
 		$("#printWaybill").hide();
@@ -280,6 +322,7 @@ var flow = new Vue({
 			$("#batchRemarkUpload").hide();
 			$("#batchSetRemark").hide();
 			$("#mulitPackage").hide();
+			$('#Synchronization').hide();
 			$('#packageImg').hide();
 			$("#warningTime").hide();
 			$("#warningText").hide();
@@ -293,15 +336,22 @@ var flow = new Vue({
 
 		}else if(sysPlan == "send" || sysPlan == "overTime" || sysPlan == "falseSend"){//整单发货
 			self.sysPlan = sysPlan;
+			$('#province_name').show();
 			$("#orderMergeSplit").hide();
 			//$("#exportTakeGoods").hide();
+			$()
 			$("#modifyExpressNo").hide();
+			if(sysPlan == "overTime"){
+				$("#dismantle_or_single").hide();
+				$('#packageImg').hide();
+			}
 			$("#printUnique").hide();
 			$("#bannerBtn").hide();
 			$("#createUnique").hide();
 			$("#setWholeStock").hide();
 			$("#close_label").hide();
 			$("#mulitPackage").hide();
+			$('#Synchronization').hide();
 			$("#isexpress").show();
 			/*if(isexpress=='on'){
 			$("#isexpress").show();
@@ -330,6 +380,7 @@ var flow = new Vue({
 			//$("#expressCancel").hide();
 			$(".chaifendan").hide();
 			//$(".gaiqizhi").hide();
+			$('#packageImg').hide();
 			$("#reOrderThink").hide();
 			$("#printCollectGoods").hide();
 			$("#vendorTep").hide();
@@ -378,6 +429,8 @@ var flow = new Vue({
 			$("#orderApproval").show();
 			$("#orderReApproval").hide();
 			$("#mulitPackage").hide();
+			$('#mulitPackage').hide();
+			$('#Synchronization').hide();
 			$("#warningTime").hide();
 			$("#warningText").hide();
 			$("#falseSendText").hide();
@@ -582,7 +635,7 @@ var flow = new Vue({
 		if(localStorage.getItem("placeArr")){
 			self.provinceArr = JSON.parse(localStorage.getItem("placeArr"));
 		}
-		
+
 		searchALLNow(self,'page');
 
 		if(sysPlan != 'send'){
@@ -751,7 +804,7 @@ var flow = new Vue({
 						$(toggle).removeClass("border");																																		
 					}																																												
 				}else if(who == "repeatOrder"){	
-					self.remark = "";
+					self.remark = "3";
 					if(self.repeatOrder == false){																																																																												
 						$("#searchArr .remar").remove();																																			
 						$("#searchArr").append("<span class='add remar rem'>重复下单<i class='dele' id='conditionGroup' onclick='closeNow(\"conditionGroup\")'></i></span>");
@@ -760,6 +813,7 @@ var flow = new Vue({
 						self.noRemark = false;
 						self.sameBuyer = false;
 					}else if(self.repeatOrder == true){
+						self.remark = "";
 						$("#searchArr .remar").remove();																																			
 						self.repeatOrder = false;
 						self.haveRemark = false;
@@ -769,7 +823,7 @@ var flow = new Vue({
 						$(toggle).removeClass("border");																																		
 					}
 				}else if(who == "sameBuyer"){
-					self.remark = "";
+					self.remark = "4";
 					if(self.sameBuyer == false){																																																																												
 						$("#searchArr .remar").remove();																																			
 						$("#searchArr").append("<span class='add remar rem'>相同买家<i class='dele' id='conditionGroup' onclick='closeNow(\"conditionGroup\")'></i></span>");
@@ -778,6 +832,7 @@ var flow = new Vue({
 						self.noRemark = false;
 						self.repeatOrder = false;
 					}else if(self.sameBuyer == true){
+						self.remark = "";
 						$("#searchArr .remar").remove();																																			
 						self.sameBuyer = false;
 						self.haveRemark = false;
@@ -1139,12 +1194,12 @@ var flow = new Vue({
 					}																																												//===========
 				}																																													//===========
 																																																	//===========
-			}																																														//===========
+			}//===========
 			self.send_error = "no";																																										
 			$("#searchArr .sendError").remove();																																														
 			searchALLNow(self,'F');																																										
 		},
-		checkStatus:function(str=''){
+		checkStatus:function(str){
 			if(str===true){
 				str='1';
 			}else if(str===false){
@@ -1167,6 +1222,7 @@ var flow = new Vue({
 						$("#bottomDiv").css("display","none");
 						$("#grid1").css("display","block");
 						$("#biaotou").css("display","none");
+						$('.mini-fit').height($(window).height()-190);
 					}else{
 						$("[name='typeTable']").prop('checked',true);
 						$("#bottomDiv").css("display","block");
@@ -1175,7 +1231,7 @@ var flow = new Vue({
 					}
 				}
 			});	
-		},																																														//===========
+		},																																															//===========
 		//特殊订单组选择标签结束
 		//
 		directexport_print:function(){
@@ -1188,7 +1244,7 @@ var flow = new Vue({
 			var self = this;
 			resetF(self,'F');
 			$("#shipping").val('0');
-			self.expressArr2='';
+			self.expressArr2=[];
 			self.onlySendWlList='';
 			shippingChange('');
 		},
@@ -1256,6 +1312,16 @@ var flow = new Vue({
 				$("#searchALL").removeClass("btnOnlyStyle");
 			});
 		},
+		openGetOrder:function(){
+            layer.open({
+                title :'同步订单',
+                type: 2,
+                shade: false,
+                area: ['650px', '550px'],
+                maxmin: false,
+                content: '?m=widget&c=getOrder&a=index'
+            }); 
+        },
 		//========================查询方法结束=====================
 		
 		//========================选择省份弹窗=====================
@@ -1338,33 +1404,22 @@ var flow = new Vue({
 		saveCon:function(){
 			var self = this;
 			var data = "";
-			if(self.versionSwitch==true){
-				if($("input[name='places']").filter(':checked').length == 0 && $(".placeInput").val() == ""){
+				if($("input[name='places']").filter(':checked').length == 0){
 					layer.msg('请选择至少一条数据',{
 						icon: 0,
 						time: 2000
 					});
 					return false;
-				}
+				}		
+				var data = self.searchData;
+				var data = "";																						
 				$("input[name='places']:checkbox").each(function(){
-					if(true == $(this).is(':checked')){
+					if(true == $(this).is(':checked')){									
 						data += ($(this).val()+",");
 					}
+					//拼接当前页的货品唯一码
 				});
-			}else{
-				var selectRows = grid1.getSelecteds();
-				if(selectRows.length == 0){
-					layer.msg('请选择至少一条数据',{
-						icon: 0,
-						time: 2000
-					});
-					return false;
-				}
-				for(var i = 0; i < selectRows.length; i++){
-					data += selectRows[i]['new_tid'] + ",";
-				}
-			}
-			data = data.substr(0,data.length-1);
+				data = data.substring(0,data.length-1);
 			if($(".placeInput").val() != "" && data != ""){
 				data += ("," + $(".placeInput").val());
 			}else if($(".placeInput").val() != "" && data == ""){
@@ -1574,33 +1629,51 @@ var flow = new Vue({
 		searchPlaceNow:function(){
 			var self = this;
 			var data = "";
-			if(self.versionSwitch==true){
-				if($("input[name='places']").filter(':checked').length == 0 && $(".placeInput").val() == ""){
+			var data = "";
+			// if(self.versionSwitch==true){
+				if($("input[name='places']").filter(':checked').length == 0){
 					layer.msg('请选择至少一条数据',{
 						icon: 0,
 						time: 2000
 					});
 					return false;
-				}
+				}		
+				var data = self.searchData;
+				var data = "";																						
 				$("input[name='places']:checkbox").each(function(){
-					if(true == $(this).is(':checked')){
+					if(true == $(this).is(':checked')){									
 						data += ($(this).val()+",");
 					}
+					//拼接当前页的货品唯一码
 				});
-			}else{
-				var selectRows = grid1.getSelecteds();
-				if(selectRows.length == 0){
-					layer.msg('请选择至少一条数据',{
-						icon: 0,
-						time: 2000
-					});
-					return false;
-				}
-				for(var i = 0; i < selectRows.length; i++){
-					data += selectRows[i]['new_tid'] + ",";
-				}
-			}
-			data = data.substr(0,data.length-1);
+				data = data.substring(0,data.length-1);
+			// if(self.versionSwitch==true){
+			// 	if($("input[name='places']").filter(':checked').length == 0 && $(".placeInput").val() == ""){
+			// 		layer.msg('请选择至少一条数据',{
+			// 			icon: 0,
+			// 			time: 2000
+			// 		});
+			// 		return false;
+			// 	}
+			// 	$("input[name='places']:checkbox").each(function(){
+			// 		if(true == $(this).is(':checked')){
+			// 			data += ($(this).val()+",");
+			// 		}
+			// 	});
+			// }else{
+			// 	var selectRows = grid1.getSelecteds();
+			// 	if(selectRows.length == 0){
+			// 		layer.msg('请选择至少一条数据',{
+			// 			icon: 0,
+			// 			time: 2000
+			// 		});
+			// 		return false;
+			// 	}
+			// 	for(var i = 0; i < selectRows.length; i++){
+			// 		data += selectRows[i]['new_tid'] + ",";
+			// 	}
+			// }
+			// data = data.substr(0,data.length-1);
 			if($(".placeInput").val() != "" && data != ""){							
 				data += ("," + $(".placeInput").val());								
 			}else if($(".placeInput").val() != "" && data == ""){
@@ -2022,7 +2095,6 @@ var flow = new Vue({
 		//====================================================================================修改按钮 弹窗======================================================================================================
 		modify:function(order_index){
 			var self = this;		
-			console.log(self.gridArr)
 			var data = self.gridArr[order_index];
 			var tid = data.new_tid;
 			layer.open({																																											
@@ -2063,8 +2135,9 @@ var flow = new Vue({
 						$("#pages1-receiver_district").append('<option value="' + data.receiver_district + '" name="' + data.receiver_district + '" data-code="999999">' + data.receiver_district + '</option>');
 						$("#pages1-receiver_district").val(data.receiver_district);
 					}
-					
 					$("#pages1-receiver_address").val(data.receiver_address);
+					//$("#pages1-receiver_district").append('<option value="其他区" name="其他区" data-code="999999">其他区</option>');
+
 					$("#pages1-receiver_name").val(data.receiver_name);
 					$("#pages1-mobile").val(data.receiver_mobile);
 					$("#pages1-telephone").val(data.receiver_telephone);
@@ -2988,6 +3061,107 @@ var flow = new Vue({
             });
 			searchALLNow(self,'page');
 		},
+		edit_address:function(order_index){
+			var self = this;	
+			var data = self.gridArr[order_index];
+			var tid = data.new_tid;
+			// var express_type = data.express_type;
+			// var express_form = data.express_form;
+			// var express_no = data.express_no;
+			$.ajax({
+				url: "/index.php?m=system&c=delivery&a=getOrderInfo",
+				type: 'post',
+				data: {tid: tid, DROP_SHIPPING: self.DROP_SHIPPING, shippingId: self.shippingId},
+				dataType: 'json',
+				success: function (data) {
+					
+					// $("#address-tid").val(tid);
+					// $("#address-express").val(data.express_type);
+					$("#address-receiver_state").val(data.receiver_state);
+					$("#address-receiver_state").trigger("change");
+					$("#address-receiver_city").val(data.receiver_city);
+					$("#address-receiver_city").trigger("change");
+					$("#address-receiver_district").val(data.receiver_district);
+					if($("#address-receiver_district").val() == null){
+						$("#address-receiver_district").append('<option value="' + data.receiver_district + '" name="' + data.receiver_district + '" data-code="999999">' + data.receiver_district + '</option>');
+						$("#address-receiver_district").val(data.receiver_district);
+					}
+					$("#address-receiver_address").val(data.receiver_address);
+					// $("#address-receiver_name").val(data.receiver_name);
+					// $("#address-mobile").val(data.receiver_mobile);
+					// $("#address-telephone").val(data.receiver_telephone);
+					// $("#address-express_no").val("");
+				}
+			});
+			layer.open({																																											
+				type: 1,																																											
+				title: '修改收货地址',																																								
+				skin: 'layui-layer-rim', //加上边框																																					
+				area: ['700px', '300px'], //宽高																																					
+				shade: 0.3,																																											
+				content: $("#edit-address"),																																							
+				btn: ['确定', '取消'],
+				yes: function(index, layero){
+					//self.saveExpressNo();
+					var receiver_state = $("#address-receiver_state").val();//省
+					var receiver_city = $("#address-receiver_city").val();//市
+					var receiver_district =$("#address-receiver_district").val();
+					var receiver_address =$("#address-receiver_address").val();//详细地址
+					if(!receiver_state){
+						layer.msg('请选择省',{
+							icon: 2,
+							time: 2000
+						});	
+		                return;
+					}
+					if(!receiver_city){
+						layer.msg('请选择市',{
+							icon: 2,
+							time: 2000
+						});	
+		                return;
+					}
+					if(!receiver_district){
+						layer.msg('请选择区',{
+							icon: 2,
+							time: 2000
+						});	
+		                return;
+					}
+					if(!receiver_address){
+						layer.msg('请填写详细地址',{
+							icon: 2,
+							time: 2000
+						});	
+		                return;
+					}
+					$.ajax({																																														
+						url: "/index.php?m=system&c=delivery&a=edit_address",																																		
+						type: 'post',																																												
+						data: {tid: tid,receiver_state:receiver_state,receiver_city:receiver_city,receiver_district:receiver_district,receiver_address:receiver_address},																																													
+						dataType: 'json',																																											
+						success: function (data) {
+							if(data.code=='ok'){
+								layer.close(index);
+								reloadRow(self,order_index);
+								layer.msg('修改成功',{
+									icon: 1,
+									time: 2000
+								});	
+							}else{
+								layer.msg('修改失败',{
+									icon: 2,
+									time: 2000
+								});	
+							}
+						}																																															
+					});
+				},
+				cancel: function (index, layero) {																																					//===========
+																																																	//===========
+				}																												
+			});
+		},
         //==================================================================================修改物流单号 弹窗====================================================================================================
         modifyExpressNo:function(order_index){
             var self = this;		
@@ -3749,46 +3923,28 @@ var flow = new Vue({
 		shopHide:function(){
 			var self = this;
 			self.show = !self.show;
-			// var arr = [];
-			// var name = [];
-			// $('input[name="WlList"]').each(function(){
-			// 	$(this).on('ifChecked ifUnchecked', function(event){
-			// 		var newArr = [];
-			// 		var nameArr = [];
-			// 		if (event.type == 'ifChecked') {
-			// 			//console.log($("label").attr("for"))
-						
-			// 			$('input[name="WlList"]').each(function(){
-			// 				if(true == $(this).is(':checked')){
-			// 					newArr.push($(this).prop("class"));
-			// 					nameArr.push($(this).val());
-			// 				}
-							
-			// 			});
-			// 			arr = newArr;
-			// 			name = nameArr;		
-			// 		} else {
-			// 			$('input[name="WlList"]').each(function(){
-			// 				if(true == $(this).is(':checked')){
-			// 					newArr.push($(this).prop("class"));
-			// 					nameArr.push($(this).val());
-			// 				}
-			// 			});
-			// 			arr = newArr;
-			// 			name = nameArr;
-			// 		}
-			// 		var a = "";
-			// 		var b = "";
-			// 		for(var i = 0; i < arr.length; i++){
-			// 			a += (arr[i] + ",");
-			// 			b += (name[i] + ",");
-			// 		}
-			// 		a = a.substring(0,a.length-1);
-			// 		b = b.substring(0,b.length-1);
-			// 		$("#onlySendWlList").val(a);
-			// 		$("#onlySendWlList").attr("name",b);
-			// 	});
-			// });
+			
+		},
+		allNow_select:function(e){
+			var self =this;
+			self.redis_pageSize(e.target.value);//记忆			
+		},
+		redis_pageSize:function(pageSize=''){
+			var self = this;
+			$.ajax({
+				url: "/index.php?m=system&c=delivery&a=redis_pageSize",
+				type: 'post',
+				data: {
+					data:pageSize
+				},
+				dataType: 'json',
+				success: function (text){
+					self.pageSize=text;
+					if(pageSize){
+						searchALLNow(self,'page');
+					}
+				}
+			});
 		},
 		insert_sku_name:function(e){
 			var self =this;
@@ -4757,37 +4913,44 @@ var flow = new Vue({
 		changeOrderSign:function(type=''){
 			var self = this;
 			$('#batchSignStatus').val(0);
+			var data=''
 			if(self.versionSwitch==true){
-				if($("#bottomDiv input[name='order']").filter(':checked').length == 0){
+				if($("input[name='order']").filter(':checked').length == 0){
 					layer.msg('请选择至少一条数据',{
 						icon: 0,
 						time: 2000
-					});								
+					});
 					return false;
+				}		
+				var data = self.searchData;
+				if(self.isAll == 0){//-----如果是当前页	
+					var data = "";																						
+					$("input[name='order']:checkbox").each(function(){
+						if(true == $(this).is(':checked')){									
+							data += ($(this).val()+",");
+						}
+						//拼接当前页的货品唯一码
+					});
+					data = data.substring(0,data.length-1);
 				}
 			}else{
-				if(type == "page"){
-					var selectRows = grid1.getSelecteds();
-					if(selectRows.length == 0){
-						layer.msg('请选择至少一条数据',{
-							icon: 0,
-							time: 2000
-						});
-						return false;
+				var data = '';
+				var selectRows = grid1.getSelecteds();
+				if(selectRows.length == 0){
+					layer.msg('请选择至少一条数据',{
+						icon: 0,
+						time: 2000
+					});
+					return false;
+				}
+				if(self.isAll == 0){//-----如果是当前页	
+					for(var i = 0; i < selectRows.length; i++){
+						data += selectRows[i]['new_tid'] + ",";
 					}
-					if(self.isAll == 0){	
-						for(var i = 0; i < selectRows.length; i++){
-							data += selectRows[i]['new_tid'] + ",";
-						}
-						data = data.substring(0,data.length-1);									
-					}else if(self.isAll != 0){
-						data = self.searchData;
-					}
-				}else{
-					data = type;
-					self.isAll = 0;
+					data = data.substring(0,data.length-1);
 				}
 			}
+
 			layer.open({
 				type: 1,
 				title: '标记订单',
@@ -5270,14 +5433,42 @@ var flow = new Vue({
 			var remark = $("#pages20-remark").val();
 
 			var data = self.searchData;
-			if(self.isAll == 0){														//-----如果是当前页	
-				var data = "";																						
-				$("input[name='order']:checkbox").each(function(){						//--------------------------																				
-					if(true == $(this).is(':checked')){									//																											
-						data += ($(this).val()+",");									//																											
-					}																	//	拼接当前页的货品唯一码																					
-				});																		//																							
-				data = data.substring(0,data.length-1);									//--------------------------																														
+			//var data=''
+			if(self.versionSwitch==true){
+				if($("input[name='order']").filter(':checked').length == 0){
+					layer.msg('请选择至少一条数据',{
+						icon: 0,
+						time: 2000
+					});
+					return false;
+				}		
+				var data = self.searchData;
+				if(self.isAll == 0){//-----如果是当前页	
+					var data = "";																						
+					$("input[name='order']:checkbox").each(function(){
+						if(true == $(this).is(':checked')){									
+							data += ($(this).val()+",");
+						}
+						//拼接当前页的货品唯一码
+					});
+					data = data.substring(0,data.length-1);
+				}
+			}else{
+				var data = '';
+				var selectRows = grid1.getSelecteds();
+				if(selectRows.length == 0){
+					layer.msg('请选择至少一条数据',{
+						icon: 0,
+						time: 2000
+					});
+					return false;
+				}
+				if(self.isAll == 0){//-----如果是当前页	
+					for(var i = 0; i < selectRows.length; i++){
+						data += selectRows[i]['new_tid'] + ",";
+					}
+					data = data.substring(0,data.length-1);
+				}
 			}
 			if(self.sellerType == 0){
 				layer.msg('请选择一种添加方式',{
@@ -5398,20 +5589,20 @@ var flow = new Vue({
 							time: 2000
 						});
 
-						if(self.isAll == 0 ){//当前页
+						searchALLNow(self,'page');
+						// if(self.isAll == 0 ){//当前页
 
-							var checked_order_arr = data.split(",");
-							$("span[name='express_name']").each(function(){
+						// 	var checked_order_arr = data.split(",");
+						// 	$("span[name='express_name']").each(function(){
 
-								if(checked_order_arr.indexOf($(this).attr('value')) != -1){
-									$(this).html(data_ajax.express_name);
-								}
+						// 		if(checked_order_arr.indexOf($(this).attr('value')) != -1){
+						// 			$(this).html(data_ajax.express_name);
+						// 		}
 
-							});
+						// 	});
 
-						}else{
-							searchALLNow(self,'page');
-						}
+						// }else{
+						// }
 
 
 					}else if(data_ajax.code == "error"){
@@ -5440,14 +5631,42 @@ var flow = new Vue({
 			
 			
 			var data = self.searchData;
-			if(self.isAll == 0){														//-----如果是当前页	
-				var data = "";																						
-				$("input[name='order']:checkbox").each(function(){						//--------------------------																				
-					if(true == $(this).is(':checked')){									//																											
-						data += ($(this).val()+",");									//																											
-					}																	//	拼接当前页的货品唯一码																					
-				});																		//																							
-				data = data.substring(0,data.length-1);									//--------------------------																														
+			//var data=''
+			if(self.versionSwitch==true){
+				if($("input[name='order']").filter(':checked').length == 0){
+					layer.msg('请选择至少一条数据',{
+						icon: 0,
+						time: 2000
+					});
+					return false;
+				}		
+				var data = self.searchData;
+				if(self.isAll == 0){//-----如果是当前页	
+					var data = "";																						
+					$("input[name='order']:checkbox").each(function(){
+						if(true == $(this).is(':checked')){									
+							data += ($(this).val()+",");
+						}
+						//拼接当前页的货品唯一码
+					});
+					data = data.substring(0,data.length-1);
+				}
+			}else{
+				var data = '';
+				var selectRows = grid1.getSelecteds();
+				if(selectRows.length == 0){
+					layer.msg('请选择至少一条数据',{
+						icon: 0,
+						time: 2000
+					});
+					return false;
+				}
+				if(self.isAll == 0){//-----如果是当前页	
+					for(var i = 0; i < selectRows.length; i++){
+						data += selectRows[i]['new_tid'] + ",";
+					}
+					data = data.substring(0,data.length-1);
+				}
 			}
 			
 			$.ajax({																																														
@@ -5744,19 +5963,52 @@ var flow = new Vue({
 				});
 				return
 			}
-			if(self.isAll == 0){
-				//-----如果是当前页
-				$("input[name='order']:checkbox").each(function(){	
-					if(true == $(this).is(':checked')){			
-						data += ($(this).val()+",");					
-					}
-					//	拼接当前页的货品唯一码					
-				});
-				data = data.substring(0,data.length-1);
-			}else{
-				data = self.searchData;
-			}
 			
+			if(self.versionSwitch==true){
+					// if($("#bottomDiv input[name='order']").filter(':checked').length == 0){
+					// 	layer.msg('请选择至少一条数据',{
+					// 		icon: 0,
+					// 		time: 2000
+					// 	});
+					// 	return false;
+					// }
+					data = self.searchData;
+					if(self.isAll == 0){//-----如果是当前页	
+						data = "";		
+						$("#bottomDiv input[name='order']:checkbox").each(function(){				
+
+		
+							if(true == $(this).is(':checked')){						
+
+			
+								data += ($(this).val()+",");							
+
+		
+							}
+						});				
+						data = data.substring(0,data.length-1);	
+					}else{
+						data = self.searchData;
+					}
+				
+			}else{
+				var selectRows = grid1.getSelecteds();
+				// if(selectRows.length == 0){
+				// 	layer.msg('请选择至少一条数据',{
+				// 		icon: 0,
+				// 		time: 2000
+				// 	});
+				// 	return false;
+				// }
+				if(self.isAll == 0){//-----如果是当前页	
+					for(var i = 0; i < selectRows.length; i++){
+						data += selectRows[i]['new_tid'] + ",";
+					}
+					data = data.substring(0,data.length-1);	
+				}else{
+					data = self.searchData;
+				}
+			}
 			$.ajax({
 				url: "/index.php?m=system&c=delivery&a=printDataYd",
 				type: 'post',
@@ -5850,15 +6102,56 @@ var flow = new Vue({
 				});
 				return
 			}
-			if(self.isAll == 0){//-----如果是当前页
-				$("input[name='order']:checkbox").each(function(){
-					if(true == $(this).is(':checked')){
-						data += ($(this).val()+",");
-					}//拼接当前页的货品唯一码
-				});
-				data = data.substring(0,data.length-1);
+			// if(self.isAll == 0){//-----如果是当前页
+			// 	$("input[name='order']:checkbox").each(function(){
+			// 		if(true == $(this).is(':checked')){
+			// 			data += ($(this).val()+",");
+			// 		}//拼接当前页的货品唯一码
+			// 	});
+			// 	data = data.substring(0,data.length-1);
+			// }else{
+			// 	data = self.searchData;
+			// }
+			if(self.versionSwitch==true){
+					// if($("#bottomDiv input[name='order']").filter(':checked').length == 0){
+					// 	layer.msg('请选择至少一条数据',{
+					// 		icon: 0,
+					// 		time: 2000
+					// 	});
+					// 	return false;
+					// }
+					data = self.searchData;
+					if(self.isAll == 0){//-----如果是当前页	
+						data = "";																						
+						$("#bottomDiv input[name='order']:checkbox").each(function(){						
+							if(true == $(this).is(':checked')){									
+								data += ($(this).val()+",");									
+							}
+						});																		
+						data = data.substring(0,data.length-1);	
+					}else{
+						data = type;
+						self.isAll = 0;
+					}
+				
 			}else{
-				data = self.searchData;
+				var selectRows = grid1.getSelecteds();
+				// if(selectRows.length == 0){
+				// 	layer.msg('请选择至少一条数据',{
+				// 		icon: 0,
+				// 		time: 2000
+				// 	});
+				// 	return false;
+				// }
+				if(self.isAll == 0){//-----如果是当前页	
+					for(var i = 0; i < selectRows.length; i++){
+						data += selectRows[i]['new_tid'] + ",";
+					}
+					data = data.substring(0,data.length-1);	
+				}else{
+					data = type;
+					self.isAll = 0;
+				}
 			}
 			$.ajax({
 				url: "/index.php?m=system&c=delivery&a=printDataDSOS",		
@@ -6060,8 +6353,10 @@ var flow = new Vue({
 				$(".current").find(".inputTe").each(function(){
 					$(this).css("color","#FFF");
 				});
+				
 				self.nowPage = false;
 				if(self.allPage == false){
+					console.log(self.allPage)
 					if($(event.target).attr('value') != "icon"){
 						$(event.target).find(".inputTe").css("color","black");
 					}else{
@@ -6082,6 +6377,8 @@ var flow = new Vue({
 					self.isAll = 0;
 					grid1.deselectAll();
 				}
+			}else if(type == "check_box"){
+				$(".skin input[name='order']").iCheck('uncheck');	
 			}
 			
 			if(self.isAll == 0){
@@ -6094,7 +6391,6 @@ var flow = new Vue({
 		//=============================================分页开始============================//
 		page: function(pager){
 			var self = this;
-			layer.load(2);			
 			if(pager == "first"){
 				self.pageNo = 1;
 			}else if(pager == "prev"){
@@ -6110,6 +6406,7 @@ var flow = new Vue({
 			}else if(pager == "last"){
 				self.pageNo = "last";
 			}
+			layer.load(2);			
 			
 			searchALLNow(self,'page',function(){
 				layer.closeAll('loading');
@@ -7218,29 +7515,53 @@ var flow = new Vue({
 			self.defaultMsg = [];
 			var data = "";
 			var nowIsAll = self.isAll;
+			
 			if(self.versionSwitch==true){
-				if($("#bottomDiv input[name='order']").filter(':checked').length == 0){	
+					if($("#bottomDiv input[name='order']").filter(':checked').length == 0){
+						layer.msg('请选择至少一条数据',{
+							icon: 0,
+							time: 2000
+						});
+						return false;
+					}
+					data = self.searchData;
+					if(self.isAll == 0){//-----如果是当前页	
+						data = "";		
+						$("#bottomDiv input[name='order']:checkbox").each(function(){				
+
+		
+							if(true == $(this).is(':checked')){						
+
+			
+								data += ($(this).val()+",");							
+
+		
+							}
+						});				
+						data = data.substring(0,data.length-1);	
+					}else{
+						data = type;
+						self.isAll = 0;
+					}
+				
+			}else{
+				var selectRows = grid1.getSelecteds();
+				if(selectRows.length == 0){
 					layer.msg('请选择至少一条数据',{
 						icon: 0,
 						time: 2000
 					});
 					return false;
 				}
-				if(self.isAll == 0){														
-					$("#bottomDiv input[name='order']:checkbox").each(function(){						
-						if(true == $(this).is(':checked')){									
-							data += ($(this).val()+",");									
-						}																					
-					});
-					data = data.substring(0,data.length-1);									
-				}else if(self.isAll != 0){
-					data = self.searchData;
-				}
-				 // self.sysPlan = "send";
-				
-			}else{
+				if(self.isAll == 0){//-----如果是当前页	
+					for(var i = 0; i < selectRows.length; i++){
+						data += selectRows[i]['new_tid'] + ",";
+					}
+					data = data.substring(0,data.length-1);	
+				}else{
 					data = type;
 					self.isAll = 0;
+				}
 			}
 			
 			if(self.isAll != 0 && (data.orderStatus == 'WAIT_ASSIGN' || data.orderStatus == 'UNLOCK')){
@@ -7783,6 +8104,7 @@ var flow = new Vue({
 								
 							if(data.code == "end"){
 								clearInterval(Interval);
+								searchALLNow(self,'page');
 							}
 						}else{
 							clearInterval(Interval);
@@ -7894,6 +8216,7 @@ var flow = new Vue({
 			}
 
 			send = "F";
+
 			self.do_print_now(data,type,isrepeat,show,'F',unprintTplBq,unprintname,batch,index,btnObj,attribute);//打印
 			return false;
 		},
@@ -7914,7 +8237,6 @@ var flow = new Vue({
 					btnObj.prop("disabled",false);
 					if(data.dataCheck && data.numCheck > 0){
 						self.defaultMsg = data.dataCheck;
-						
 						layer.open({
 							type: 1,																																											
 							title: '打印详情',																																								
@@ -7923,6 +8245,10 @@ var flow = new Vue({
 							shade: 0.3,																																											
 							content: $("#default")																																													
 						});	
+					}else{
+						if(self.expressSort.length<2){
+							layer.closeAll();	
+						}
 					}
 					if(data.dates && data.dates.length > 0){
 						var newData = [];						
@@ -7931,7 +8257,6 @@ var flow = new Vue({
 						if(show == "F"){
 							doGetPrinters(function(){
 								newData = doGetPrintersFunc(data.unprintall,data.down,data.dates,'F');//订单数据,商品数据，订单详情数据, 预览
-								
 								if(unprintname){
 									if(send == "T"){
 										printTpl[unprintTplBq](unprintname,newData,false,true,self.progress_print_now);//第四个参数暂时没有用
@@ -7940,7 +8265,7 @@ var flow = new Vue({
 											var expressSort = self.expressSort;
 											expressSort.splice(index,1);
 											self.expressSort = expressSort;
-										}										
+										}
 									}else{
 										printTpl[unprintTplBq](unprintname,newData,false,true,self.progress_print_now);
 									}
@@ -7956,7 +8281,7 @@ var flow = new Vue({
 								}
 							});
 						}
-					}																																		
+					}																																
 				},
 				error: function (jqXHR, textStatus, errorThrown) {
 					btnObj.prop("disabled",false);
@@ -8392,6 +8717,7 @@ var flow = new Vue({
 					data = data.substring(0,data.length-1);
 				}
 			}else{
+				var data = '';
 				var selectRows = grid1.getSelecteds();
 				if(selectRows.length == 0){
 					layer.msg('请选择至少一条数据',{
@@ -8407,7 +8733,6 @@ var flow = new Vue({
 					data = data.substring(0,data.length-1);
 				}
 			}
-			
 			$.ajax({
 				url: "/index.php?m=system&c=delivery&a=orderSplitFast",
 				type: 'post',
@@ -9962,8 +10287,8 @@ function jiankong(){
 							$("#sexlist").html(option);
 							
 							if(data.sku_name){
-								flow.expressArr2=data.sku_name;
 								flow.onlySendWlList='';
+								flow.expressArr2=data.sku_name;
 							}
 						}
 					}						
@@ -10020,8 +10345,8 @@ function jiankong(){
 							$("#sexlist").html(option);
 							
 							if(data.sku_name){
-								flow.expressArr2=data.sku_name;
 								flow.onlySendWlList='';
+								flow.expressArr2=data.sku_name;
 							}
 						}
 					}						
@@ -10236,7 +10561,6 @@ function () {
 function () {
 	$('#dismantle_or_single #single_box').css("display","none");
 })
-$('#packageImg_div').css('display','none')
 	$('#packageImg').hover(
 		function(){
 			$('#packageImg_div').css('display','block')
@@ -10245,16 +10569,18 @@ $('#packageImg_div').css('display','none')
 			$('#packageImg_div').css('display','none')
 		}
 	)
+	$('#packageImg_div').css('display','none')
 
 function keyDownSearch(obj=''){
 	if(obj){
 		var name_anmme2 = $(obj).attr('class');
 		if(name_anmme2=='prd_no_sku_name2 inp'){
-			select_chcked=$('.prd_no_sku_name2').val();
+			select_chcked=$(obj).val();
 		}else if(name_anmme2 =='prd_no_sku_name1 inp'){
 			select_chcked1=[];
 			//商品编码 执行搜索时 才搜索详细属性
-			var input_value = $(".prd_no_sku_name1").val();
+			var input_value = $(obj).val();
+			$(".prd_no_sku_name1").val(input_value);//点击下拉框触发这里的时候 prd_no_sku_name1的值是空  所以写入一下
 			$.ajax({
 				url: "/index.php?m=system&c=delivery&a=getGoodsName",																				
 				type: 'post',
@@ -10268,7 +10594,12 @@ function keyDownSearch(obj=''){
 						}
 						$(".prd_no_sku_name2").html(select_option);
 						if(data.sku_name){
+							flow.onlySendWlList='';
+						}
+						if(input_value!=''){
 							flow.expressArr2=data.sku_name;
+						}else{
+							flow.expressArr2=[];
 							flow.onlySendWlList='';
 						}
 					}
@@ -10298,16 +10629,13 @@ function focusAjax(obj){
 				// $(".prd_no_sku_name2").html(select_option);
 				$("#sexlist").html(option);
 				if(data.sku_name){
-					flow.expressArr2=data.sku_name;
 					flow.onlySendWlList='';
+					flow.expressArr2=data.sku_name;
 				}
 			}
 		}						
 	});	
 }
-
-
-
 //========================================================================================================选择店铺===============================================================================================
 /*function shopChange(a){																																												//===========
 	var toggle = event.currentTarget;																																								//===========
@@ -10535,19 +10863,18 @@ function shopHide2(){
 function orderprint(a){
 			                                                                                                                                                                        //===========
 	var toggle = event.currentTarget;                                                                                                                                                               //===========
-	if(toggle.value != "0"){  
-		if(toggle.value == "select_quanbu"){
-			console.log(self)
-			flow.searchAdd('faceGroup','all')
-		}else if ( toggle.value == "select_weidayin") {
-			flow.searchAdd('faceGroup','faceDonnot')
-		}else if (toggle.value =='select_dayin'){
-			flow.searchAdd('faceGroup','faceDo')
-		}else if ( toggle.value == "select_duocidayin"){
-			flow.searchAdd('faceGroup','faceMore')
-		}
+	if(toggle.value == "select_quanbu"){
+		flow.searchAdd('faceGroup','all')
+	}else if ( toggle.value == "select_weidayin") {
+		flow.searchAdd('faceGroup','faceDonnot')
+	}else if (toggle.value =='select_dayin'){
+		flow.searchAdd('faceGroup','faceDo')
+	}else if ( toggle.value == "select_duocidayin"){
+		flow.searchAdd('faceGroup','faceMore')
+	}else{
+		flow.searchAdd('faceGroup');
+	}
 	//===========
-	}																																											//===========
 }																																																	//===========
 //====================================================================================================选择订单状态结束===========================================================================================
 //======================================================================================================选择数量打印状态=============================================================================================
@@ -10574,7 +10901,7 @@ function orderconditions(a){																																											//=======
 
 
 	if(toggle.value == "select_send"){
-		flow.searchAdd('conditionGroup','noRemark')
+		flow.searchAdd('conditionGroup','haveRemark')
 	}else if ( toggle.value == "select_send_time") {
 		flow.searchAdd('conditionGroup','noRemark')
 	}else if (toggle.value =='select_waybill_time'){
@@ -10739,7 +11066,6 @@ function searchAllPlan(id){
 						var result_total = data.result_total;
 
 						flow.gridArr = gridData;
-						console.log(gridData)
 						flow.pageCount = pageCount;
 						flow.pageNo = pageNo;
 						flow.pageSize = pageSize;
@@ -10790,7 +11116,7 @@ function searchAllPlan(id){
 }
 
 //=============================================================================================================选择标签删除方法==================================================================================
-function closeNow(group){																																											//===========
+function closeNow(group){
 	if(group == "labelGroup"){																																										//===========
 		$("#searchArr .lab").remove();																																								//===========
 																																																	//===========
@@ -10853,7 +11179,6 @@ function closeNow(group){																																											//==========
 			$(".conditionGroup .ic").remove();																																						//===========
 			$(this).removeClass("border");																																					//===========
 		});																																															//===========
-																																																	//===========
 		flow.remark = "";																																											//===========											
 		flow.noRemark = false;																																										//===========
 		flow.haveRemark = false;																																									//===========
@@ -10948,9 +11273,14 @@ function closeNow(group){																																											//==========
 		$("#separator1").val("show_tid");																																								
 		$(".changeDiv").html("<input class='show_tid inp' placeholder='多个逗号隔开' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(group == "sear_right"){
+		flow.onlySendWlList=[];
+		flow.expressArr2=[];
+		$("#sexlist1").val('');
 		$("#searchArr .sear_right").remove();
-		$("#separator2").val("prd_no_sku_name");																																									//===========
-		$(".changeDiv1").html('<input type="text" autocomplete="off" onchange="keyDownSearch(this)"  onkeydown="setPrdNo(1)" oninput="setPrdNo(2)" onkeyup="setPrdNo(0)" class="prd_no_sku_name1 inp" style="width:100px;border:1px solid #c2c2c2;" placeholder="商品编号"  name="reset" list="sexlist"><datalist id="sexlist" onclick="keyDownSearch(this);"></datalist>  <input type="text" class="prd_no_sku_name3 inp" style="width:105px;border:1px solid #c2c2c2;" placeholder="宝贝属性(模糊)" onkeydown="keyDownSearch(this)" name="reset">');	
+		$("#separator2").val("prd_no_sku_name");	
+		//$(".changeDiv1").html('<input type="text" autocomplete="off" onchange="keyDownSearch(this)"  onkeydown="setPrdNo(1)" oninput="setPrdNo(2)" onkeyup="setPrdNo(0)" class="prd_no_sku_name1 inp" style="width:100px;border:1px solid #c2c2c2;" placeholder="商品编号"  name="reset" list="sexlist"><datalist id="sexlist" onclick="keyDownSearch(this);"></datalist>  <input type="text" class="prd_no_sku_name3 inp" style="width:105px;border:1px solid #c2c2c2;" placeholder="宝贝属性(模糊)" onkeydown="keyDownSearch(this)" name="reset">');	
+		//$(".changeDiv2").html('<input type="text" autocomplete="off" onchange="keyDownSearch(this)"  onkeydown="setPrdNo(1)" oninput="setPrdNo(2)" onkeyup="setPrdNo(0)" class="prd_no_sku_name1 inp" style="width:100px;border:1px solid #c2c2c2;" placeholder="商品编号"  name="reset" list="sexlist"><datalist id="sexlist" onclick="keyDownSearch(this);"></datalist>  <input type="text" class="prd_no_sku_name3 inp" style="width:105px;border:1px solid #c2c2c2;" placeholder="宝贝属性(模糊)" onkeydown="keyDownSearch(this)" name="reset">');	
+
 		jiankong();
 	}else if(group == "time"){
 		$("#searchArr .time").remove();
@@ -11133,6 +11463,7 @@ function resetF(self,special){																																										//======
 //=========================================================================================重置方法封装结束======================================================================================================
 
 function orderSelect(a){
+	//$(".changeDiv").width("147");
 	if(a == "show_tid"){
 		$(".changeDiv").html("<input class='" + a + " inp'  placeholder='多个逗号隔开' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(a == "unique_code"){
@@ -11150,11 +11481,12 @@ function orderSelect(a){
 	}else if(a == "buyer_message"){
 		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='买家备注' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(a == "payment"){
-		$(".changeDiv").html("<input type='text' class='" + a + "1 inp' style='width:153.5px;background-image:url(images/mon.png);background-size:8px 10px;background-repeat:no-repeat;background-position:3px center;border:1px solid #c2c2c2;padding-left:14px;' onkeydown='keyDownSearch()' name='reset'> - <input type='text' class='" + a + "2 inp' style='width:153.5px;background-image:url(images/mon.png);background-size:8px 10px;background-repeat:no-repeat;background-position:3px center;border:1px solid #c2c2c2;padding-left:14px;' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv").html("<input type='text' class='" + a + "1 inp' style='width:65.5px;background-image:url(images/mon.png);background-size:8px 10px;background-repeat:no-repeat;background-position:3px center;border:1px solid #c2c2c2;padding-left:14px;' onkeydown='keyDownSearch()' name='reset'> - <input type='text' class='" + a + "2 inp' style='width:65.5px;background-image:url(images/mon.png);background-size:8px 10px;background-repeat:no-repeat;background-position:3px center;border:1px solid #c2c2c2;padding-left:14px;' onkeydown='keyDownSearch()' name='reset'>");
+		//$(".changeDiv").width("177");
 	}else if(a == "items_num"){
-		$(".changeDiv").html("<input type='text' class='" + a + "1 inp' style='width:153.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'> - <input type='text' class='" + a + "2 inp' style='width:153.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv").html("<input type='text' class='" + a + "1 inp' style='width:65.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'> - <input type='text' class='" + a + "2 inp' style='width:65.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(a == "sku_num"){
-		$(".changeDiv").html("<input type='text' class='" + a + "1 inp' style='width:153.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'> - <input type='text' class='" + a + "2 inp' style='width:153.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'>");
+		$(".changeDiv").html("<input type='text' class='" + a + "1 inp' style='width:65.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'> - <input type='text' class='" + a + "2 inp' style='width:65.5px;border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(a == "express_no"){
 		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='运单号' style='border:1px solid #c2c2c2;' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(a == "waybill_dates"){
@@ -11250,27 +11582,29 @@ function itemChange(a){
 		dsosHtml += '</select>';
 		$(".changeDiv1").html(dsosHtml);
 		/*$(".changeDiv1").html("<input type='text' class='" + a + " inp' placeholder='是|否' onkeydown='keyDownSearch()' name='reset'> ");*/
-	}else if(a == "sign_status"){
-		$.ajax({
-			url: "/index.php?m=system&c=delivery&a=getSignStatus",
-			type: 'post',
-			data: {DROP_SHIPPING: flow.DROP_SHIPPING, shippingId: flow.shippingId},
-			dataType: 'json',
-			success: function (data) {
-				flow.expressArr = data;	
-				var dsosHtml = '<div style="float:left;"><select class="' + a + ' form-control separator" style="background: url(\'images/down.png\') no-repeat scroll 90% center transparent;background-size:17px 15px;border:solid 1px #ccc;width:204px;">';
-				dsosHtml += '<option value=""></option><option value="0">无标记状态</option>';
-				if(data){
-					for(var i = 0; i < data.length; i++){
-						dsosHtml += '<option value="' + data[i]['id'] + '">' + data[i]['statusName'] + '</option>';
-					}
-					dsosHtml += '</select>';
-				}
-				dsosHtml += '</select></div><div style="margin-left:10px;float:left;"><button id="signStatusManage" class="btn" style="width:120px;" onclick="signStatusManage()">添加标记状态</button></div>';
-				$(".changeDiv1").html(dsosHtml);
-			}
-		});
-	}else if(a == "check_stock_status"){
+	}
+	// else if(a == "sign_status"){
+	// 	$.ajax({
+	// 		url: "/index.php?m=system&c=delivery&a=getSignStatus",
+	// 		type: 'post',
+	// 		data: {DROP_SHIPPING: flow.DROP_SHIPPING, shippingId: flow.shippingId},
+	// 		dataType: 'json',
+	// 		success: function (data) {
+	// 			flow.expressArr = data;	
+	// 			var dsosHtml = '<div style="float:left;"><select class="' + a + ' form-control separator" style="background: url(\'images/down.png\') no-repeat scroll 90% center transparent;background-size:17px 15px;border:solid 1px #ccc;width:204px;">';
+	// 			dsosHtml += '<option value=""></option><option value="0">无标记状态</option>';
+	// 			if(data){
+	// 				for(var i = 0; i < data.length; i++){
+	// 					dsosHtml += '<option value="' + data[i]['id'] + '">' + data[i]['statusName'] + '</option>';
+	// 				}
+	// 				dsosHtml += '</select>';
+	// 			}
+	// 			dsosHtml += '</select></div><div style="margin-left:10px;float:left;"><button id="signStatusManage" class="btn" style="width:120px;" onclick="signStatusManage()">添加标记状态</button></div>';
+	// 			$(".changeDiv1").html(dsosHtml);
+	// 		}
+	// 	});
+	// }
+	else if(a == "check_stock_status"){
 		var dsosHtml = '<div style="float:left;"><select class="' + a + ' form-control separator" style="background: url(\'images/down.png\') no-repeat scroll 90% center transparent;background-size:17px 15px;border:solid 1px #ccc;width:204px;">';
 		dsosHtml += '<option value=""></option><option value="1">挂单</option><option value="2">缺货</option><option value="3">下架</option>';
 		dsosHtml += '</select>';
@@ -11754,6 +12088,7 @@ $(".banner_li").hover(
   }
 );
 
+
 var sta = 1;
 
 //=========================================================================================有订单发货失败 闪烁 图片==============================================================================================
@@ -11779,6 +12114,7 @@ function reloadRow(self,order_index){
 				
 				if(rowData){
 					self.gridArr[order_index] = rowData;
+					flow.gridArr[order_index]=rowData
 					var dataClone = self.gridArr;
 					self.gridArr = [];
 					self.gridArr = dataClone;
@@ -11793,7 +12129,7 @@ function reloadRow(self,order_index){
 					}
 				}
 				var new_gridArr = {};
-				new_gridArr[0] = self.gridArr[order_index];
+				new_gridArr[order_index] = self.gridArr[order_index];
 				var miniData = formattingCode(new_gridArr);
 				var row = grid1.getRow(oIndex);
 				grid1.updateRow(row,miniData[0]);
@@ -12002,6 +12338,9 @@ function modifyMess(tid,oid,sku_id,order_index,refund_status,bom_id,prd_no,sku_n
 function modifyExpressNo(order_index){
 	flow.modifyExpressNo(order_index);
 }
+function edit_address(order_index){
+	flow.edit_address(order_index);
+}
 mini.get('grid1').on("cellendedit", function (e) {
 	flow.modifyExpressNo(e['row']['new_tid']);
 });
@@ -12015,12 +12354,17 @@ function formattingCode(miniDatas){
 	for(var t in miniDatas){
 		
 		var oPrdNoListArray = "";
+		var oPrdNoListArray_img = "";
 		if(miniDatas[t]['itemInfo']){
+			
 			for(var u=0;u<miniDatas[t]['itemInfo'].length;u++){
-				oPrdNoListArray = oPrdNoListArray + "<div style='padding:2px;display:inline-block;width:30px;height:30px;position:relative;' title='"+miniDatas[t]['itemInfo'][u]['title_naked']+"\n"+miniDatas[t]['itemInfo'][u]['prd_no']+"\n"+miniDatas[t]['itemInfo'][u]['sku_name']+"' onclick='modifyMess(\""+miniDatas[t]['itemInfo'][u].tid+"\", \""+miniDatas[t]['itemInfo'][u].oid+"\", \""+miniDatas[t]['itemInfo'][u].sku_id+"\", \""+t+"\", \""+miniDatas[t]['itemInfo'][u].refund_status+"\",\""+miniDatas[t]['itemInfo'][u].bom_id+"\",\""+miniDatas[t]['itemInfo'][u].prd_no+"\",\""+miniDatas[t]['itemInfo'][u].sku_name+"\")'><img id='img_pic_url_big' src='"+miniDatas[t]['itemInfo'][u]['pic_url']+"' style='width:30px;height:30px;'><div style='position: absolute; top: -5px;right: -5px;height: 10px;background: #FFFFFF; border: 1px solid #b0b0b0;line-height: 10px;font-size: 12px;border-radius: 2px;float:left;min-width:10px;dispaly:flex;'>"+miniDatas[t]['itemInfo'][u]['num']+"</div></div>";
+				oPrdNoListArray = oPrdNoListArray + "<div style='padding:2px;display:inline-block;width:30px;height:30px;'title='"+miniDatas[t]['itemInfo'][u]['title_naked']+"\n"+miniDatas[t]['itemInfo'][u]['prd_no']+"\n"+miniDatas[t]['itemInfo'][u]['sku_name']+"' onclick='modifyMess(\""+miniDatas[t]['itemInfo'][u].tid+"\", \""+miniDatas[t]['itemInfo'][u].oid+"\", \""+miniDatas[t]['itemInfo'][u].sku_id+"\", \""+t+"\", \""+miniDatas[t]['itemInfo'][u].refund_status+"\",\""+miniDatas[t]['itemInfo'][u].bom_id+"\",\""+miniDatas[t]['itemInfo'][u].prd_no+"\",\""+miniDatas[t]['itemInfo'][u].sku_name+"\")'> <a style='white-space:normal;display: block;' class='showCellTooltip'  data-tooltip='Tooltip left' data-placement='left' > <img id='img_pic_url_big' src='"+miniDatas[t]['itemInfo'][u]['pic_url']+"' > </a> <div style='position: absolute; top: -5px;right: -5px;height: 10px;background: #FFFFFF; border: 1px solid #b0b0b0;line-height: 10px;font-size: 12px;border-radius: 2px;min-width:10px;dispaly:flex;z-index:222'>"+miniDatas[t]['itemInfo'][u]['num']+"</div></div>";
+				this.gridArr_list(oPrdNoListArray_img,t)
 			}
+			
 		}
-		miniDatas[t]['oPrdNoListArray'] = '<div style="white-space:normal;">'+oPrdNoListArray+'</div>';
+		miniDatas[t]['oPrdNoListArray'] = ' <div style="white-space:normal;">'+oPrdNoListArray+'</div> ';
+		
 		var oPrdNoListState = "";
 		if(miniDatas[t].close_unique_code == 1 && miniDatas[t].stock_order == 0){
 			var oPrdNoListStateNum = "";
@@ -12103,7 +12447,7 @@ function formattingCode(miniDatas){
 		if(miniDatas[t].pay_type == 'COD'){
 			oPrdNoListState = oPrdNoListState + '<span class="smallLogo" style="background-color:#E703EC;margin: 1px;" title="货到付款订单">到付</span>';
 		}
-		//miniDatas[t]['oPrdNoListState'] = oPrdNoListState;
+		miniDatas[t]['oPrdNoListState'] = oPrdNoListState;
 		if(flow.versionSwitch==true){ 
 			var oPrdNoMoreState = '<div class="btn_info" style="font-size:13px;cursor:pointer;line-height: 20px;color:#4F9FFF;cursor:pointer;display: inline;padding:0px 5px;" onClick="log(\''+miniDatas[t].new_tid+'\')">操作日志</div>';
 			if(flow.sysPlan != 'send' && flow.actiontd == true){
@@ -12126,7 +12470,7 @@ function formattingCode(miniDatas){
 			}
 
 		}else{
-			var oPrdNoMoreState = '<div class="btn_info" style="font-size:13px;cursor:pointer;line-height: 20px;color:#4F9FFF;cursor:pointer;display:inline;display: inline;padding:0px 5px;" onClick="log(\''+miniDatas[t].new_tid+'\')">操作日志</div>';
+			var oPrdNoMoreState = '<div class="btn_info" style="font-size:13px;cursor:pointer;line-height: 20px;color:#4F9FFF;cursor:pointer;display:inline;display: inline;padding:0px 5px;" onClick="log(\''+miniDatas[t].new_tid+'\')">日志</div>';
 			if(flow.sysPlan != 'send' && flow.actiontd == true){
 				oPrdNoMoreState = oPrdNoMoreState + '<div class="btn_info" style="font-size:13px;cursor:pointer;line-height: 20px;color:#4F9FFF;cursor:pointer;display:inline;display: inline;padding:0px 5px;" onClick="modify(\''+t+'\')">修改</div>';
 			}
@@ -12136,14 +12480,11 @@ function formattingCode(miniDatas){
 			if(miniDatas[t].order_type != 'DAIFA' && miniDatas[t].DROP_SHIPPING != 'T'){
 				oPrdNoMoreState = oPrdNoMoreState + '<div class="btn_info" style="font-size:13px;cursor:pointer;line-height: 20px;color:#4F9FFF;cursor:pointer;display: inline;padding:0px 5px;" onClick="copyOrdersJudge(\''+miniDatas[t].new_tid+'\')">复制</div>';
 			}
-			if(flow.sysPlan == 'send'){
-				oPrdNoMoreState = oPrdNoMoreState + '<div style="display:inline;padding:0px 5px;"><a style="font-size:13px;cursor:pointer;line-height: 20px;color:#4F9FFF;cursor:pointer;" @click="detailsTids(\''+miniDatas[t].new_tid+'\',\''+t+'\')">详情</a></div>';
-			}
 		}
 		miniDatas[t]['oPrdNoMoreState'] = oPrdNoMoreState;
 		
 		//地址
-			var receiver_address_all = miniDatas[t].receiver_state + miniDatas[t].receiver_city + miniDatas[t].receiver_district + miniDatas[t].receiver_address;
+			var receiver_address_all ='<a style="font-size:12px;cursor:pointer;" onclick="edit_address(\''+t+'\');"><i class="layui-icon" style="color:rgb(52, 168, 255)"></i><span>修改 </span></a>'+ miniDatas[t].receiver_state + miniDatas[t].receiver_city + miniDatas[t].receiver_district + miniDatas[t].receiver_address;
 			miniDatas[t]['receiver_address_all'] = receiver_address_all;
 
 			
@@ -12182,7 +12523,8 @@ function formattingCode(miniDatas){
 			var toTime_all = miniDatas[t].express_name;
 			miniDatas[t]['toTime_all'] = toTime_all;
 			//卖家
-			var shopname_all = miniDatas[t].shopname +'</br>'+ miniDatas[t].seller_memo;
+			var shopname_all = miniDatas[t].shopname +'</br>';
+			// miniDatas[t].seller_memo 卖家备注
 			miniDatas[t]['shopname_all'] = shopname_all;
 			var web_status_name_all = '<img src="'+miniDatas[t].seller_flag_pic +'" style="width:14px;height:14px;">'+miniDatas[t].web_status_name;
 			miniDatas[t]['web_status_name_all'] = web_status_name_all;
@@ -12204,8 +12546,8 @@ function formattingCode(miniDatas){
 			miniDatas[t]['last_ship_time'] = payment_all;
 			
 			//物流
-			var btnNameSpan = miniDatas[t].express_no?"修改":"录入"
-			var express_no_all = miniDatas[t].express_no+"<a style='font-size:12px;cursor:pointer;' onclick='modifyExpressNo(\""+t+"\")'><i class='layui-icon'>&#xe642;</i><span>"+btnNameSpan+"</span></a>";
+			var btnNameSpan = miniDatas[t].express_no?"修改 ":"录入 "
+			var express_no_all ="<a style='font-size:12px;cursor:pointer;' onclick='modifyExpressNo(\""+t+"\")'><i class='layui-icon'style='color:rgb(52, 168, 255)'>&#xe642;</i><span>"+btnNameSpan+"</span></a>"+ miniDatas[t].express_no;
 			miniDatas[t]['express_no_all'] = express_no_all;
 			miniData[miniIndex] = miniDatas[t];
 		miniIndex++;
@@ -12228,7 +12570,32 @@ function formattingCode(miniDatas){
 		})
 	}
 }*/
-
+	function gridArr_list(data,order_index){
+		var tip = new mini.ToolTip();
+			tip.set({
+			target: document,
+			selector: '.showCellTooltip',
+			onbeforeopen: function (e) {            
+				e.cancel = false;
+			},
+			onopen: function (data) {
+				var html= data.element.innerHTML
+				var img = html.match(/src="[^\"]*?"/ig)
+				var title = html.match(/title="[^\"]*?"/ig)
+				var list_img = []
+				for(var i= 0; i<img.length;i++){
+					var aaa = '<img  style="width:180px;height:180px;z-index:99999999;" '+img[i]+' />'
+					list_img.push(aaa)
+				}
+				if (el) {
+					this.showLoading();
+					setTimeout(function () {
+					 tip.setContent("<div style='z-index:999999;table-layout:fixed;'>"+list_img +" </div>");
+					}, 300);
+				}
+			}
+		});	
+	}
 function changeMon2(){
 	layer.open({
 		title :'选择商品',
@@ -12251,7 +12618,7 @@ function changeMon3(){
 	}); 
 }
 
-function getSelectCount(){
+function getSelectCount(){	
 	if(flow.isAll == 0){
 		var tidCount = 0;
 		var rows = grid1.getSelecteds();	
@@ -12259,7 +12626,7 @@ function getSelectCount(){
 		{
 			tidCount++;	
 		}
-	
+
 		$('#selectOrderNum').html(tidCount);
 	}else{
 		$('#selectOrderNum').html(flow.result_total);
@@ -12369,26 +12736,27 @@ function setPrdNo(event)
 	var input_value = $(".prd_no_sku_name1").val();
 	if(event == 2 && keyStatus == 0)
 	{
-		$.ajax({
-			url: "/index.php?m=system&c=delivery&a=getGoodsName",																				
-			type: 'post',
-			data: {input_value: input_value,type:'sku_name'},
-			dataType: 'json',
-			success: function (data) {
-				if(data.code=='ok'){
-					var select_option ='<option value selected="selected">宝贝属性选择</option>';
-					for($i=0;$i<data.sku_name.length;$i++){
-						select_option+='<option value="'+data.sku_name[$i].sku_name+'">'+data.sku_name[$i].sku_name+'</option>';
-					}
-					$(".prd_no_sku_name2").html(select_option);
-					if(data.sku_name){
-						flow.expressArr2=data.sku_name;
-						flow.onlySendWlList='';
-					}
-				}
-			}						
-		});			
-		keyDownSearch();
+		// $.ajax({
+		// 	url: "/index.php?m=system&c=delivery&a=getGoodsName",																				
+		// 	type: 'post',
+		// 	data: {input_value: input_value,type:'sku_name'},
+		// 	dataType: 'json',
+		// 	success: function (data) {
+		// 		if(data.code=='ok'){
+		// 			var select_option ='<option value selected="selected">宝贝属性选择</option>';
+		// 			for($i=0;$i<data.sku_name.length;$i++){
+		// 				select_option+='<option value="'+data.sku_name[$i].sku_name+'">'+data.sku_name[$i].sku_name+'</option>';
+		// 			}
+		// 			// $(".prd_no_sku_name2").html(select_option);
+		// 			// flow.onlySendWlList='';
+		// 			// if(data.sku_name){
+		// 			// 	flow.expressArr2=data.sku_name;
+		// 			// }
+		// 		}
+		// 	}						
+		// });		
+		$(".prd_no_sku_name1").click();
+		// keyDownSearch();
 	}
 	else
 	{
@@ -12408,4 +12776,17 @@ function DateDiff(sDate1, sDate2) {  //sDate1和sDate2是yyyy-MM-dd H:i:s格式
 	iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24); //把相差的毫秒数转换为天数
 
 	return iDays;  //返回相差天数
+}
+function addoption(name){
+    var type=0;
+    $("#"+name+" option").each(function(index,el){
+        if($(el).val()=='其他区'){
+            type=1;
+            return false;
+        }
+    });
+    if(type!=1){
+        $("#"+name).append('<option value="其他区" name="其他区" data-code="999999">其他区</option>');
+    }
+
 }

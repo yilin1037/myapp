@@ -11,6 +11,7 @@ var flow = new Vue({
 	},
     mounted: function() {
 		$("#quickStrike").attr('src','/images/index/wmsf.png','width','18px','height','19px;')
+		$('.layui-this a').attr('color','#000');
 		var self = this;	
         layui.use(['element','layer'], function(){
 			
@@ -114,7 +115,26 @@ var flow = new Vue({
         			color: "#3077D1",
         			border: "1px solid rgb(201, 31, 57)"
         		})
-        	},
+            },
+
+        	function() {
+        		$(this).removeClass("current");
+        		$(this).find(".content").hide();
+        		$(this).css({
+        			"background-position": "0 -262px",
+        			color: "#FFFFFF",
+        			border: "1px solid rgb(201, 31, 57)"
+        		})
+            });
+            $("#cash_back").hover(function() {
+        		$(this).addClass("current");
+        		$(this).find(".content").show();
+        		$(this).css({
+        			"background-position": "0 -239px",
+        			color: "#3077D1",
+        			border: "1px solid rgb(201, 31, 57)"
+        		})
+            },
         	function() {
         		$(this).removeClass("current");
         		$(this).find(".content").hide();
@@ -380,6 +400,54 @@ var flow = new Vue({
         payIdList:function(){
             addTab('recharge','?m=system&c=finance&a=oldRecharge','账户充值');
         },
+        //打单反现
+        cash_back:function(){
+            layer.open({																																											
+				type: 1,																																											
+				title: '设置',																																								
+				skin: 'layui-layer-rim', //加上边框																																					
+				area: ['700px', '300px'], //宽高																																					
+				shade: 0.3,																																											
+				content: $("#edit-address"),																																							
+				btn: ['确定', '取消'],
+				yes: function(index, layero){
+					//self.saveExpressNo();
+                    var receiver_address =$("#address-receiver_address").val();//账号
+                    console.log(receiver_address)
+					if(!receiver_address){
+						layer.msg('请填写账号',{
+							icon: 2,
+							time: 2000
+						});	
+		                return;
+					}
+					$.ajax({																																														
+						url: "",																																		
+						type: 'post',																																												
+						data: {receiver_address:receiver_address},																																													
+						dataType: 'json',																																											
+						success: function (data) {
+							if(data.code=='ok'){
+								layer.close(index);
+								reloadRow(self,order_index);
+								layer.msg('修改成功',{
+									icon: 1,
+									time: 2000
+								});	
+							}else{
+								layer.msg('修改失败',{
+									icon: 2,
+									time: 2000
+								});	
+							}
+						}																																															
+					});
+				},
+				cancel: function (index, layero) {																																					//===========
+																																																	//===========
+				}																												
+			});
+        },
         //流水明细
         costList:function(){
             addTab('detail','?m=system&c=finance&a=waterDetail','流水明细');
@@ -399,9 +467,39 @@ var flow = new Vue({
 			var self = this
 			self.navbox = !this.navbox
 			if(self.navbox == true){
-				$('dd a').each(function(){
-					$(this).hide();
-				});	
+				$('dd a').each(function(){$(this).hide()});	
+				$('.nav_true #delivery').hover(function(){
+					$('.nav_true #delivery dl dd a').each(function(){$(this).show()})	
+					$('.nav_true #delivery dl').css({position:'absolute',top:'20px',left:'50px','z-index':'60','min-width':'150px',display:'block'})	
+				},function(){$('.nav_true #delivery dl dd a').each(function(){$(this).hide()})
+					$('.nav_true #delivery dl').css({position:'relative',top:'0px',left:'0px','z-index':'60','min-width':'100%','padding':'0px'})
+				})
+				$('.nav_true #the_query').hover(function(){
+					$('.nav_true #the_query dl dd a').each(function(){$(this).show()})	
+					$('.nav_true #the_query dl').css({position:'absolute',top:'20px',left:'50px','z-index':'60','min-width':'150px',display:'block'})	
+				},function(){
+					$('.nav_true #the_query dl dd a').each(function(){$(this).hide()})
+					 $('.nav_true #the_query dl').css({position:'relative',top:'0px',left:'0px','z-index':'60','min-width':'100%','padding':'0px'})
+				})
+				$('.nav_true #daifa').hover(function(){
+					$('.nav_true #daifa dl dd a').each(function(){$(this).show()})	
+					$('.nav_true #daifa dl').css({position:'absolute',top:'20px',left:'50px','z-index':'60','min-width':'150px',display:'block'})	
+				},function(){$('.nav_true #daifa dl dd a').each(function(){$(this).hide()})
+					$('.nav_true #daifa dl').css({position:'relative',top:'0px',left:'0px','z-index':'60','min-width':'100%','padding':'0px'})
+				})
+				$('.nav_true #inter_for_goods').hover(function(){
+					$('.nav_true #inter_for_goods dl dd a').each(function(){$(this).show()})	
+					$('.nav_true #inter_for_goods dl').css({position:'absolute',top:'20px',left:'50px','z-index':'60','min-width':'150px',display:'block'})	
+				},function(){$('.nav_true #inter_for_goods dl dd a').each(function(){$(this).hide()})
+					$('.nav_true #inter_for_goods dl').css({position:'relative',top:'0px',left:'0px','z-index':'60','min-width':'100%','padding':'0px'})
+				})
+				$('.nav_true #note_for_goods').hover(function(){
+					$('.nav_true #note_for_goods dl dd a').each(function(){$(this).show()})	
+					$('.nav_true #note_for_goods dl').css({position:'absolute',top:'20px',left:'50px','z-index':'60','min-width':'150px',display:'block'})	
+				},function(){$('.nav_true #note_for_goods dl dd a').each(function(){$(this).hide()})
+					$('.nav_true #note_for_goods dl').css({position:'relative',top:'0px',left:'0px','z-index':'60','min-width':'100%','padding':'0px'})
+				})
+				$('.nav_true').css('overflow','inherit');
 				$('.nav_true >ul >li>a>span').each(function(){
 					$(this).hide();
 				})
@@ -411,19 +509,20 @@ var flow = new Vue({
 				top:" 50%",
 				left: "50%",
 				"transform":"translate(-50%,-50%)"})
-			}else{
-				$('dd a').each(function(){
+				return
+			}else if (self.navbox == false){
+				$('.nav_true #delivery').unbind('mouseenter').unbind('mouseleave');
+				$('.nav_true #the_query').unbind('mouseenter').unbind('mouseleave');
+				$('.nav_true #daifa').unbind('mouseenter').unbind('mouseleave');
+				$('.nav_true #inter_for_goods').unbind('mouseenter').unbind('mouseleave');
+				$('.nav_true #note_for_goods').unbind('mouseenter').unbind('mouseleave');
+					$('dd a').each(function(){
 					$(this).show();
 				});	
-				$('.nav_true >ul >li>a>span').each(function(){
-					$(this).show();
-				})
+				$('.nav_true').css('overflow','auto');
+				$('.nav_true >ul >li>a>span').each(function(){$(this).show()})
 				$('.nav_true>ul').css("width","200px")
-				$('.nav_true>ul>li>a>img').css({
-				position:"relative",
-				top:"0%",
-				left: "0%",
-				"transform":"translate(0%,0%)"})
+				$('.nav_true>ul>li>a>img').css({position:"relative",top:"0%",left: "0%","transform":"translate(0%,0%)"})
 			}
 		},
     }

@@ -39,6 +39,7 @@ var flow = new Vue({
 					,{type:'numbers', width:100, title: '序号', event: 'setSign'}
 					,{field:'state', width:200, title: '拣货状态', event: 'setSign'}
 					,{field:'wave_no', width:300, title: '波次号', event: 'setSign'}
+					,{field:'pick_usr', width:200, title: '拣货人', event: 'setSign'}
 					,{field:'wh_name', width:200, title: '仓库', event: 'setSign'}
 					,{field:'express_name', width:100, title: '物流', event: 'setSign'}
 					,{field:'order_num', width:100, title: '订单数量', event: 'setSign'}

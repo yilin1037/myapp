@@ -69,6 +69,7 @@ var flow = new Vue({
 
 			//选择完支付方式的提交按钮
 			form.on('submit(childAccount_addedit)', function (data) {
+
 				$.ajax({
 					url: "/index.php?m=system&c=message&a=savedxadd",
 					type: "POST",
@@ -119,6 +120,8 @@ var flow = new Vue({
 					flow.zftype = 'wx';
 				}
 				form.render('checkbox');
+
+				console.log(flow.zftype);
 			});
 			form.on('switch(switchwx)', function(data){
 				console.log(data);
@@ -130,6 +133,7 @@ var flow = new Vue({
 					flow.zftype = 'zfb';
 				}
 				form.render('checkbox');
+				console.log(flow.zftype);
 			});
 			form.on('submit(pricesearch)', function (data) {
 				layer.closeAll();

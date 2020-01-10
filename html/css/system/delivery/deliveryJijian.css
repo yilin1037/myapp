@@ -88,6 +88,7 @@ body .mini-pager-num {
 .banner{
 	width:28px;
 	background-size:100% 100%;
+	margin:0px 7px;
 }
 
 #dateBegin{
@@ -114,16 +115,22 @@ body .mini-pager-num {
 	border-color:grey!important;
 }
 
-#img_pic_url:hover{
+#img_pic_url:hover{	
 	position:absolute;
 	transform: scale(2.5);
 	z-index:100000;
 }
-#img_pic_url_big:hover{
-	position:absolute;
-	transform: scale(2);
-	z-index:100000;
+#img_pic_url_big{
+	width:30px;
+	height:30px;
 }
+/* div>div>#img_pic_url_big:hover{
+	position:absolute;
+	right:0;
+	transform:scale(3) translate(15px,0px);
+	z-index:100000000000000;
+	background:#1E9FFF;
+} */
 
 select {
     transition:all 0.3s;
@@ -329,7 +336,7 @@ textarea:hover{
 .add{
 	display:inline-block;
 	padding:0 4px;
-	background-color:#dddddd;
+	background-color:#ffffff;
 	color:black;
 	line-height:18px;
 	border-radius:2px;
@@ -415,7 +422,7 @@ textarea:hover{
 	top:0px;
 	height:20px;
 	padding-right:3px;
-	background-color:white;
+	background-color:#1E9FFF;
 }
 
 .placeAdd:hover .positionSpan{

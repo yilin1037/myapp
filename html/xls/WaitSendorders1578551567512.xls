@@ -1,0 +1,222 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" 
+xmlns:x="urn:schemas-microsoft-com:office:excel" 
+xmlns="http://www.w3.org/TR/REC-html40"> 
+<head> 
+<meta http-equiv="expires" content="Mon, 06 Jan 1999 00:00:01 GMT"> 
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8"> 
+<!--[if gte mso 9]><xml> 
+<x:ExcelWorkbook> 
+<x:ExcelWorksheets> 
+<x:ExcelWorksheet> 
+<x:Name></x:Name> 
+<x:WorksheetOptions> 
+<x:DisplayGridlines/> 
+</x:WorksheetOptions> 
+</x:ExcelWorksheet>
+</x:ExcelWorksheets> 
+</x:ExcelWorkbook> 
+</xml><![endif]--> 
+</head>	<style>
+		.TableBlock{
+			max-width: 1024px;
+		}
+		.trHeader{padding:0px;
+			mso-ignore:padding;
+			color:windowtext;
+			font-family:宋体;
+			mso-generic-font-family:auto;
+			mso-font-charset:134;
+			mso-number-format:"\@";
+			text-align:general;
+			vertical-align:middle;
+			mso-background-source:auto;
+			mso-pattern:auto;
+			white-space:nowrap;
+			font-weight: bold;
+		}
+		.tdHeader{
+			font-size:16px;
+			background:#ffc;
+			border:.5pt solid #000000;
+			mso-number-format:"\@";
+		}
+								.tdBody{
+							font-size:14px;
+							border:.5pt solid #000000;
+							mso-number-format:"\@";
+							height:25.0pt;
+						}
+								
+		br {mso-data-placement:same-cell;} 
+	</style>
+	<table class="TableBlock" border='1'>
+		<!--表格头部-->
+				<td class="tdHeader" width="7%" nowrap>商品编号</td>
+				<td class="tdHeader" width="7%" nowrap>销售属性一</td>
+				<td class="tdHeader" width="7%" nowrap>销售属性二</td>
+				<td class="tdHeader" width="7%" nowrap>件数</td>
+				<td class="tdHeader" width="7%" nowrap>总数量</td>
+				<td class="tdHeader" width="7%" nowrap>采购单价</td>
+				<td class="tdHeader" width="7%" nowrap>总额</td>
+				
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">&nbsp;</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">&nbsp;</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">&nbsp;</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">9</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2161</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">墨绿色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">M（158-163可以穿）</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+											<td class="tdBody" rowspan="2" style="vnd.ms-excel.numberformat:@">D2214</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">花色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">S</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+															<td class="tdBody" rowspan="2" style="vnd.ms-excel.numberformat:@">2</td>
+																<td class="tdBody" rowspan="2" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" rowspan="2" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+											<td class="tdBody" style="vnd.ms-excel.numberformat:@">花色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">L</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+									</tr>
+				
+				<tr>
+											<td class="tdBody" rowspan="5" style="vnd.ms-excel.numberformat:@">D2233</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">蓝红色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">M</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">2</td>
+															<td class="tdBody" rowspan="5" style="vnd.ms-excel.numberformat:@">19</td>
+																<td class="tdBody" rowspan="5" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" rowspan="5" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+											<td class="tdBody" style="vnd.ms-excel.numberformat:@">蓝红色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">L</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">7</td>
+									</tr>
+				
+				<tr>
+											<td class="tdBody" style="vnd.ms-excel.numberformat:@">蓝红色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">S</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+									</tr>
+				
+				<tr>
+											<td class="tdBody" style="vnd.ms-excel.numberformat:@">蓝红色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">2XL</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">5</td>
+									</tr>
+				
+				<tr>
+											<td class="tdBody" style="vnd.ms-excel.numberformat:@">蓝红色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">XL</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">4</td>
+									</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2236-蓝黑色-M</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">蓝黑色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">M</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">11</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">11</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">100</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">1,100.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2236-蓝黑色-S</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">蓝黑色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">S</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">4</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">4</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">100</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">400.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2239-深驼色-L</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">深驼色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">L</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">2</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">2</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">99</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">198.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2240-灰色-2XL</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">灰色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">2XL</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2240-灰色-L</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">灰色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">L</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2240-灰色-M</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">灰色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">M</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2240-灰色-S</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">灰色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">S</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">D2240-灰色-XL</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">灰色</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">XL</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">1</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">0.00</td>
+										</tr>
+				
+				<tr>
+												<td class="tdBody" style="vnd.ms-excel.numberformat:@">总计</td>
+																	<td class="tdBody" style="vnd.ms-excel.numberformat:@">&nbsp;</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">&nbsp;</td>
+														<td class="tdBody" style="vnd.ms-excel.numberformat:@">53</td>
+															<td class="tdBody" style="vnd.ms-excel.numberformat:@">53</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">&nbsp;</td>
+																<td class="tdBody" style="vnd.ms-excel.numberformat:@">1,698.00</td>
+										</tr>
+			</table>
+	

@@ -99,9 +99,9 @@ var pages = new Vue({ //vue 模块入口
 					{'title':"默认快递",'data':"default",'width': '75px',"defaultContent": ""},//隐藏
 					{'title':"快递公司",'data':"name",'width': '75px',"defaultContent": "","render": function (data,type,row,meta) {
 						if(data == ""){
-							return "";
+							return "<input onBlur='nameChage("+0+","+row.id+",this)'>"
 						}else{
-							return data;
+							return "<input value='"+data+"' onBlur='nameChage("+0+","+row.id+",this)'>"
 						}
 					}},
 					{'title':"网点",'data':"site",'width': '75px',"defaultContent": "","render": function (data,type,row,meta) {
@@ -139,18 +139,18 @@ var pages = new Vue({ //vue 模块入口
 							return data;
 						}
 					}}, 
-					{'title':"发货人",'data':" ",'width': '60px',"defaultContent": "","render": function (data,type,row,meta) {
+					{'title':"发货人",'data':"send_username",'width': '60px',"defaultContent": "","render": function (data,type,row,meta) {
 						if(data == ""){
-							return "";
+							return "<input onBlur='nameChage("+1+","+row.id+",this)'>"
 						}else{
-							return data;
+							return "<input value='"+data+"' onBlur='nameChage("+1+","+row.id+",this)'>"
 						}
 					}}, 
 					{'title':"发货电话",'data':"send_tel",'width': '75px',"defaultContent": "","render": function (data,type,row,meta) {
 						if(data == ""){
-							return "";
+							return "<input onBlur='nameChage("+2+","+row.id+",this)'>"
 						}else{
-							return data;
+							return "<input value='"+data+"' onBlur='nameChage("+2+","+row.id+",this)'>"
 						}
 					}}, 
 					{'title':"代发价",'data':"assist_print",'width': '60px',"defaultContent": "","render": function (data,type,row,meta) {
@@ -218,10 +218,10 @@ var pages = new Vue({ //vue 模块入口
 					'className': 'dt-body-center',
 					'render': function (data, type, full, meta) {
 						if(full.default=='0'){
-							return '<div class="no">否</div>';
+							return "<button class='no'   onclick='statusChage("+full.id+",this)'>否</button>"
 						}
 						if(full.default=='1'){
-							return '<div class="yes">是</div>';
+							return "<button class='yes'   onclick='statusChage("+full.id+",this)'>是</button>"
 						}
 					}
 				} , 
@@ -624,7 +624,6 @@ var pages = new Vue({ //vue 模块入口
 							arr[i] = $(this).val();
 						});
 						var vals = arr.join(",");
-						console.log(vals);
 						var addattrid = pages.addattrid;
 						$.ajax({
 							url: '/index.php?m=system&c=setup&a=updatecityon',
@@ -854,7 +853,6 @@ var pages = new Vue({ //vue 模块入口
             });
 			
 			form.on('submit(city_addedit)', function (data) {
-				console.log(data);
 				var cityid=''
 				var reg = new RegExp(/^\d{6}$/);
 				for(var i in data.field){
@@ -875,7 +873,6 @@ var pages = new Vue({ //vue 模块入口
 			
 			//可选地址保存修改
 			form.on('submit(city_addedit_attr)', function (data) {
-				console.log(data['field']);
 				var addattrid = pages.addattrid;
 				$.ajax({
 					url: '/index.php?m=system&c=setup&a=updatecityon',
@@ -1117,7 +1114,6 @@ var pages = new Vue({ //vue 模块入口
 						$('input[name="wuliu"]:checked').each(function(){ 
 							wuliu_value.push($(this).val()); 
 						}); 
-						console.log(wuliu_value);
 						$.ajax({
 							url: '/index.php?m=system&c=setup&a=setAllWuliu',
 							data: {
@@ -1299,4 +1295,55 @@ function GetRequest() {
 		}
 	}
 	return theRequest;
+}
+
+function nameChage(state,obj,values){
+
+	var data={'cityid':obj,'value':$(values).val(),"status":state};
+	$.ajax({
+		url: "/index.php?m=system&c=setup&a=updatecityNew",
+		data: data,
+		dataType: "json",
+		type: "POST",
+		success: function (data) {
+		},
+		error: function () {
+			alert(data.msg)
+		}
+	})  
+}
+
+function statusChage(id,values){
+	var state =values.className;
+	if(state == 'no'){
+		var state = 1
+	}else{
+		var state = 0
+	}
+	var obj = values
+	var data={'cityid':id,'value':state,"status":3};
+	$.ajax({
+		url: "/index.php?m=system&c=setup&a=updatecityNew",
+		data: data,
+		dataType: "json",
+		type: "POST",
+		success: function (data) {
+			if(data.code == 'ok'){
+				if(state == 0){
+					$(obj).addClass('no');
+					$(obj).text('否');
+					$(obj).removeClass('yes');
+				}else{
+					$(obj).addClass('yes');
+					$(obj).text('是');
+					$(obj).removeClass('no');
+				}
+			}else{
+				alert(data.msg)
+			}
+		},
+		error: function () {
+			alert(data.msg)
+		}
+	})  	
 }

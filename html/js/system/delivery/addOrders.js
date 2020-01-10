@@ -1,3 +1,4 @@
+
 var layer;
 var tableParam = {
     elem: '#tid_items'
@@ -21,7 +22,6 @@ var tableParam = {
     , limit: 99999
     , height: 330
 };
-
 var vueObj = new Vue({
     el: '#app',
     data: {
@@ -32,6 +32,7 @@ var vueObj = new Vue({
         dataSpecial: {},//外部传特殊标志，如复制订单、换货订单、补发订单等参数
     },
     mounted: function () {
+        
         layui.use(['table', 'layer'], function () {
             var table = layui.table;
             layer = layui.layer;
@@ -100,6 +101,7 @@ var vueObj = new Vue({
                 }
                 vueObj.itmesTable();
             });
+
         });
 
 
@@ -310,10 +312,6 @@ var vueObj = new Vue({
                                                     icon: 1,
                                                     time: 2000 //2秒关闭（如果不配置，默认是3秒）
                                                 });
-
-
-
-
                                             }
                                         });
                                     }
@@ -403,19 +401,23 @@ var vueObj = new Vue({
             $("#saveOrderBtn").addClass("layui-btn-disabled");
             var shopid = $("#shopid").val();
             var express = $("#express").val();
-            var pages1_name_df = $("#pages1_name_df").val();
-            var pages1_mobile_df = $("#pages1_mobile_df").val();
-            var pages1_address_df = $("#pages1_address_df").val();
             var receiver_state = $("#receiver_state").val();
             var receiver_city = $("#receiver_city").val();
             var receiver_district = $("#receiver_district").val();
             var receiver_address = $("#receiver_address").val();
             var receiver_name = $("#receiver_name").val();
             var mobile = $("#mobile").val();
-            var seller_memo = $("#seller_memo").val();
             var remark = $("#remark").val();
             var buyer_nick = $("#buyer_name").val();
             var storage = $("#storage").val();
+            var t1 = mini.get("pages1_name_df");
+            var pages1_name_df = t1.getValue();
+            var t2 = mini.get("pages1_mobile_df");
+            var pages1_mobile_df = t2.getValue();
+            var t3 = mini.get("pages1_address_df");
+            var pages1_address_df =t3.getValue();
+            var t4 = mini.get("seller_memo");
+            var seller_memo =t4.getValue();
             if (shopid == '' || shopid == '0') {
                 layer.msg('店铺不能为空', {
                     icon: 2,
@@ -557,7 +559,19 @@ function cbProductRows(data) {
     }
     vueObj.itmesTable();
 }
+function addoption(){
+    var type=0;
+    $("#receiver_district option").each(function(index,el){
+        if($(el).val()=='其他区'){
+            type=1;
+            return false;
+        }
+    });
+    if(type==0){
+        $("#receiver_district").append('<option value="其他区" name="其他区" data-code="999999">其他区</option>');
+    }
 
+}
 function cbProductRowsModify(return_data, temp_id) {
     console.log(return_data)
     for (var i in tableParam.data) {
@@ -589,6 +603,82 @@ layui.use('upload', function () {
         }*/
     });
 });
+
+//代发人记忆
+function receiverChanged(e) {
+    var item = e.selected;
+    var t1 = mini.get("pages1_name_df");
+    if(item){
+        t1.setValue(item.receiver_name);
+        t1.setText(item.receiver_name);
+        var t2 = mini.get("pages1_mobile_df");
+        t2.setValue(item.receiver_mobile);
+        t2.setText(item.receiver_mobile);
+        var t3 = mini.get("pages1_address_df");
+        t3.setValue(item.receiver_address);
+        t3.setText(item.receiver_address);
+        var t4 = mini.get("seller_memo");
+        t4.setValue(item.seller_memo);
+        t4.setText(item.seller_memo);  
+    }else{
+        t1.setValue(e.value);
+        t1.setText(e.value);
+        var t2 = mini.get("pages1_mobile_df");
+        t2.setValue('');
+        t2.setText('');
+        var t3 = mini.get("pages1_address_df");
+        t3.setValue('');
+        t3.setText('');
+        var t4 = mini.get("seller_memo");
+        t4.setValue('');
+        t4.setText('');
+    }
+}
+//代发人记忆
+function receiverChanged(e) {
+    var item = e.selected;
+    var sender_id = e.sender.id
+    var t1 = mini.get("pages1_name_df");
+    var t2 = mini.get("pages1_mobile_df");
+    var t3 = mini.get("pages1_address_df");
+    var t4 = mini.get("seller_memo");
+    if(item){
+        t1.setValue(item.receiver_name);
+        t1.setText(item.receiver_name);
+        t2.setValue(item.receiver_mobile);
+        t2.setText(item.receiver_mobile);
+        t3.setValue(item.receiver_address);
+        t3.setText(item.receiver_address);
+        t4.setValue(item.seller_memo);
+        t4.setText(item.seller_memo);  
+    }else{
+        switch (sender_id) {
+            case 'pages1_name_df':
+                t1.setValue(e.value);
+                t1.setText(e.value);
+                t2.setValue('');
+                t2.setText('');
+                t3.setValue('');
+                t3.setText(''); 
+                t4.setValue('');
+                t4.setText('');
+                break;
+            case 'pages1_mobile_df':
+                t2.setValue(e.value);
+                t2.setText(e.value);
+                break;
+            case 'pages1_address_df':
+                t3.setValue(e.value);
+                t3.setText(e.value); 
+                break;    
+            case 'seller_memo':
+                t4.setValue(e.value);
+                t4.setText(e.value); 
+                break;         
+        }
+
+    }
+}
 
 function getCountryMap(address) {
     var ascllCode = "8203";

@@ -1087,7 +1087,7 @@ var flow = new Vue({
         label_printCQ:function(prd_no,type,sku_name,express_type){
             var self = this;
             
-            if(type == "no"){
+            if(type != "no"){
                 if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
                     layer.msg('请选择至少一条数据',{
                         icon: 0,
@@ -1225,7 +1225,6 @@ var flow = new Vue({
                 sku_name = sku_name.substring(0,sku_name.length-1);
                 prd_no = data;
             }
-            
             if(num == "" || num == 0){
                 layer.msg("数量为0",{
                     icon: 2,
@@ -1257,7 +1256,54 @@ var flow = new Vue({
             var a = $(event.target);
             var e = event || window.event;
             var av = a.val();
-            if(WMS_STOCK_BAOKUAN!='T'){
+            if(WMS_STOCK_BAOKUAN=='T'){
+                // if((av * 1) > (tid_num * 1)){
+                //     layer.msg('输入数量不能大于订单数量',{
+                //         icon: 0,
+                //         time: 2000
+                //     });
+                    
+                //     if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((tid_num * 1) > (storage_num * 1))){
+                //         a.val(storage_num);
+                //         self.data[index].print_num = storage_num;
+                //     }else{
+                //         a.val(tid_num);
+                //         self.data[index].print_num = tid_num;
+                //     }
+                //     return false;
+                // }
+                
+                if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((av * 1) > (storage_num * 1))){
+                    layer.msg('输入数量不能大于应发商品数量',{
+                        icon: 0,
+                        time: 2000
+                    });
+                    if((tid_num * 1) > (storage_num * 1)){
+                        a.val(storage_num);
+                        self.data[index].print_num = storage_num;
+                    }else{
+                        a.val(tid_num);
+                        self.data[index].print_num = tid_num;
+                    }
+                    return false;
+                }
+                
+                if(a.val() == "0"){
+                    layer.msg('请输入正确的订单数量',{
+                        icon: 0,
+                        time: 2000
+                    });
+                    if((WMS_MODEL == "T" || WMS_MODEL == "PT") && ((tid_num * 1) > (storage_num * 1))){
+                        a.val(storage_num);
+                        self.data[index].print_num = storage_num;
+                    }else{
+                        a.val(tid_num);
+                        self.data[index].print_num = tid_num;
+                    }
+                    return false;
+                }
+                self.data[index].print_num = av;
+            }else{
                 if((av * 1) > (tid_num * 1)){
                     layer.msg('输入数量不能大于订单数量',{
                         icon: 0,
@@ -1461,7 +1507,8 @@ var flow = new Vue({
         },
         singlePlaneBatch:function(){//批量爆款无标快打
             var self = this;
-            
+             
+
             if($("input[name='order']").filter(':checked').length == 0){                                                                                                                            
                 layer.msg('请选择至少一条数据',{
                     icon: 0,
@@ -1998,13 +2045,13 @@ var flow = new Vue({
                 return                                                                                                                                                                              
             }
             var actionObj = [];
-            $("input[name='order']:checkbox").each(function(){                                                                                                      
+            $("input[name='order']:checkbox").each(function(){   
+                console.log($(this));                                                                                                   
                 if(true == $(this).is(':checked')){                                                                                                                                             
                     var prd_no = $(this).val();
                     var sku_name = $(this).attr("sku_name");
                     var express_type = $(this).attr("express_type");
                     var num = $("."+md5(prd_no + sku_name + express_type)).val();
-                    
                     if(num > 0 && express_type == express){
                         actionObj.push({
                             prd_no: prd_no,
@@ -2047,8 +2094,6 @@ var flow = new Vue({
                     if(self.disableNum == 0){
                         $(".searchBtn").prop("disabled",false); 
                     }
-                    console.log("face_nowBatch");
-                    console.log(self.disableNum);
                     if(data.dataCheck && data.numCheck > 0){
                         self.defaultMsg = data.dataCheck;
                         layer.open({
@@ -2140,14 +2185,13 @@ var flow = new Vue({
             }       
             if(self.type != "no"){
                 var data = "";
-                $("input[name='order']:checkbox").each(function(){                                                                                                      
+                $("input[name='order']:checkbox").each(function(){    
                     if(true == $(this).is(':checked')){                                                                                                                                             
                         data += ($(this).val()+",");
                     
                     }                                                                                                                                                           
                 });                                                                                                                                                                 
                 data = data.substring(0,data.length-1);
-                console.log($("input[name='order']:checkbox"));
                 if(data == ''){
                     layer.msg('请选择打印的订单！',{
                         icon: 2,
@@ -2158,7 +2202,6 @@ var flow = new Vue({
                     prd_no = data;
                 }
             }
-            
             if($("#printInput" + index).is(':checked')){
                 isrepeat = "no";
             }else{
@@ -2261,8 +2304,6 @@ var flow = new Vue({
             //$("#print_all").prop("disabled",true);
             $(".searchBtn").prop("disabled",true);
             self.disableNum = self.expressSort.length;
-            console.log("print_all");
-            console.log(self.disableNum);
             for(var i = 0; i < self.expressSort.length; i++){
                 self.face_pr(self.expressSort[i].type,i,'F','T');
             }

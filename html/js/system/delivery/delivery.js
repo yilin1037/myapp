@@ -1998,7 +1998,7 @@ var flow = new Vue({
 						$("#pages1-receiver_district").append('<option value="' + data.receiver_district + '" name="' + data.receiver_district + '" data-code="999999">' + data.receiver_district + '</option>');
 						$("#pages1-receiver_district").val(data.receiver_district);
 					}
-					$("#pages1-receiver_district").append('<option value="其他区" name="其他区" data-code="999999">其他区</option>');
+					//$("#pages1-receiver_district").append('<option value="其他区" name="其他区" data-code="999999">其他区</option>');
 					$("#pages1-receiver_address").val(data.receiver_address);
 					$("#pages1-receiver_name").val(data.receiver_name);
 					$("#pages1-mobile").val(data.receiver_mobile);
@@ -6894,41 +6894,41 @@ var flow = new Vue({
 					data: {data: data, isAll: self.isAll, DROP_SHIPPING: self.DROP_SHIPPING, shippingId: self.shippingId},
 					dataType: 'json',
 					success: function (data) {
-						// if(data){
-						// 	self.expressSort = data;
-						// 	self.printTplDzmd = printTplDzmd;
-						// 	doGetPrinters(function(data){
-						// 		self.layprint =  data;
-						// 	});			
-						// 	$("#layprint1").val(0);
-						// 	//-----初始化选择框																										
-						// 	$("#layprintTplBq1").val(0);
-						// 	//-----初始化选择框
-						// 	self.layprintTplBq = printTplBq;	
+						if(data){
+							self.expressSort = data;
+							self.printTplDzmd = printTplDzmd;
+							doGetPrinters(function(data){ 
+								self.layprint =  data;
+							});			
+							$("#layprint1").val(0);
+							//-----初始化选择框																										
+							$("#layprintTplBq1").val(0);
+							//-----初始化选择框
+							self.layprintTplBq = printTplBq;	
 							
-						// 	$(document).ready(function(){
-						// 		$('#prin input').iCheck({
-						// 			checkboxClass: 'icheckbox_minimal',
-						// 			radioClass: 'iradio_minimal',
-						// 			increaseArea: '20%'
-						// 		});
-						// 	});
+							$(document).ready(function(){
+								$('#prin input').iCheck({
+									checkboxClass: 'icheckbox_minimal',
+									radioClass: 'iradio_minimal',
+									increaseArea: '20%'
+								});
+							});
 							
-						// 	$.ajax({
-						// 		url: "/index.php?m=system&c=delivery&a=getMianDan",
-						// 		type: 'post',
-						// 		data: {},
-						// 		dataType: 'json',							
-						// 		success: function (data) {
-						// 			if(data.printer != ""){
-						// 				$("#printer select").val(data.printer);
-						// 			}else{
-						// 				$("#printer select").val(0);
-						// 				printerPrompt("未设置默认打印机","默认打印机设置","index.php?m=system&c=printer&a=printer");
-						// 			}
-						// 		}																
-						// 	});
-						// }
+							$.ajax({
+								url: "/index.php?m=system&c=delivery&a=getMianDan",
+								type: 'post',
+								data: {},
+								dataType: 'json',							
+								success: function (data) {
+									if(data.printer != ""){
+										$("#printer select").val(data.printer);
+									}else{
+										$("#printer select").val(0);
+										printerPrompt("未设置默认打印机","默认打印机设置","index.php?m=system&c=printer&a=printer");
+									}
+								}																
+							});
+						}
 					}												
 				});
 				if(self.sysPlan == "send"){//已发货页面不发货
@@ -11532,4 +11532,17 @@ function DateDiff(sDate1, sDate2) {  //sDate1和sDate2是yyyy-MM-dd H:i:s格式
 	iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24); //把相差的毫秒数转换为天数
 
 	return iDays;  //返回相差天数
+}
+function addoption(){
+    var type=0;
+    $("#pages1-receiver_district option").each(function(index,el){
+        if($(el).val()=='其他区'){
+            type=1;
+            return false;
+        }
+    });
+    if(type==0){
+        $("#pages1-receiver_district").append('<option value="其他区" name="其他区" data-code="999999">其他区</option>');
+    }
+
 }

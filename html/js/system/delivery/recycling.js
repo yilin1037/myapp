@@ -85,7 +85,6 @@ var flow = new Vue({
                 });
                 return false;
             }
-            console.log(self.new_tid);
             //return false;
             $.ajax({
                 url: "/index.php?m=system&c=delivery&a=expressCancel",

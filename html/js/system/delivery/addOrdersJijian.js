@@ -1,3 +1,4 @@
+
 var layer;
 var tableParam = {
     elem: '#tid_items'
@@ -37,7 +38,9 @@ var vueObj = new Vue({
         name : '',    //修改框 收件人
         phone :  '',  //修改框  手机号
         type : '',     //修改框  备注
-        pageSize:10,
+        kuaidi:'',  //修改框快递
+        kuaidi_name:'',//快递名
+        pageSize:20,
         dy_arr:[],//checkbos选中的条数
 		m:0,
 		pageNum:1,
@@ -50,6 +53,7 @@ var vueObj = new Vue({
         shippingId:"",
 		defaultMsg:[],
         isAll:0,
+        download_type:false,
     },
     mounted: function () {
         layui.use(['element', 'table', 'layer','laydate'], function () {
@@ -139,7 +143,8 @@ var vueObj = new Vue({
                     $("#express").val(data['express']);
                 }
             }
-        })
+        });
+
     },
     methods: {
         loadOrders: function (new_tid, dataSpecial) {
@@ -151,7 +156,6 @@ var vueObj = new Vue({
                     data: {new_tid: new_tid},																																												//===========
                     dataType: 'json',																																										//===========
                     success: function (data) {
-						console.log(data)
                         $("#express").val(data['ordersObj']['express']);
                         $("#mobile").val(data['ordersObj']['mobile']);
                         $("#receiver_address").val(data['ordersObj']['receiver_address']);
@@ -258,6 +262,8 @@ var vueObj = new Vue({
             self.name = '';
             self.phone =  '';
             self.type = '';
+            self.kuaidi ='';
+            self.kuaidi_name='';
             item.seller_memo=item.seller_memo=='0'?'':item.seller_memo;
 			self.list=item;
 			layer.open({
@@ -268,21 +274,120 @@ var vueObj = new Vue({
 			  area: ['700px', '300px'],
 			  btn: ['确定', '取消']
 			 ,yes: function(index, layero){
+
+                    if($("#receivername").val() == '' || $("#receivername").val() == undefined || $("#receivername").val() == null){
+                        layer.msg("收件人为空", {
+                            icon: 2,
+                            time: 2000
+                        });
+                        return false;
+                    }
+                    if($("#receivermobile").val() == '' || $("#receivermobile").val() == undefined || $("#receivermobile").val() == null){
+                        layer.msg("手机号为空", {
+                            icon: 2,
+                            time: 2000
+                        });
+                        return false;
+                    }
+                    if($("#express_update").val() == '0' || $("#express_update").val() == undefined || $("#express_update").val() == null){
+                        layer.msg("快递为空", {
+                            icon: 2,
+                            time: 2000
+                        });
+                        return false;
+                    }
 					self.name = $("#receivername").val();
 					self.phone =  $("#receivermobile").val();
 					self.type = $("#dfexpresstype").val();
+                    self.kuaidi = $("#express_update").val();
+                    self.kuaidi_name = $("#express_update").find("option:selected").text();
                     //修改
                     self.update_ajax(index_num);
-					layer.close(index)
+                     layer.close(index);
 				}
 			});
 		},
+        alter_kuaidi:function(){
+            var self =this;
+            if(self.dy_arr.length<=0){
+                layer.msg("请选择一条记录", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+            self.kuaidi ='';
+            self.kuaidi_name='';
+            layer.open({
+              type: 1,
+              title:"手工订单快递修改",
+              content: $('#alter_kuaidi'),
+              offset: 'auto',//这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+              area: ['700px', '300px'],
+              btn: ['确定', '取消']
+             ,yes: function(index, layero){
+                    if($("#express_update_all").val() == '0' || $("#express_update_all").val() == undefined || $("#express_update_all").val() == null){
+                        layer.msg("快递为空", {
+                            icon: 2,
+                            time: 2000
+                        });
+                        return false;
+                    }
+                    self.kuaidi = $("#express_update_all").val();
+                    self.kuaidi_name = $("#express_update_all").find("option:selected").text();
+                    //修改
+                    self.update_kuaidi_all();
+                    layer.close(index);
+                }
+            });
+        },
+        update_kuaidi_all:function(){
+            var self =this
+            var dy_arr = self.dy_arr
+            var result = '';
+            var kuaidi_id=[];
+            var data = vueObj.data
+            for(var i=0;i<dy_arr.length;i++){
+                result = data.find(ele=>ele.order_id === dy_arr[i]);
+                if(result['print_time'] == "未打印"){
+                    kuaidi_id.push(dy_arr[i]);
+                }
+            }
+            if(kuaidi_id.length > 0){
+                $.ajax({                                                                                                                                                                                  //===========
+                    url: "/index.php?m=system&c=delivery&a=update_kuaidi_ajax",                                                                                                                                      //===========
+                    type: 'post',                                                                                                                                                                           //===========
+                    data: {order_id:kuaidi_id.join(','),kuaidi:self.kuaidi},                                                                                                                                                                               //===========
+                    dataType: 'json',                                                                                                                                                                       //===========
+                    success: function (data) {
+                        if(data.code=='ok'){
+                             layer.msg(data.msg, {
+                                icon: 1,
+                                time: 2000
+                            });
+                            $("input[name='order']").iCheck('uncheck'); 
+                            searchALLNow(self,'page');
+                            self.dy_arr=[];
+                        }else{
+                            layer.msg(data.msg, {
+                                icon: 2,
+                                time: 2000
+                            });
+                        }
+                       
+                    }                                                                                                                                                                                       //===========
+                });
+            }else{
+                $("input[name='order']").iCheck('uncheck'); 
+                alert('已打印不允许修改快递');
+            }
+        },
         update_ajax:function(index_num){
             var self =this
              $.ajax({                                                                                                                                                                                  //===========
                 url: "/index.php?m=system&c=delivery&a=update_ajax",                                                                                                                                      //===========
                 type: 'post',                                                                                                                                                                           //===========
-                data: {name: self.name,phone:self.phone,type:self.type,order_id:self.list.order_id},                                                                                                                                                                               //===========
+                data: {name: self.name,phone:self.phone,type:self.type,order_id:self.list.order_id,kuaidi:self.kuaidi},                                                                                                                                                                               //===========
                 dataType: 'json',                                                                                                                                                                       //===========
                 success: function (data) {
                     if(data.code=='ok'){
@@ -293,13 +398,14 @@ var vueObj = new Vue({
                         self.data[index_num].receiver_name=self.name;
                         self.data[index_num].receiver_mobile=self.phone;
                         self.data[index_num].seller_memo=self.type;
+                        self.data[index_num].express_name=self.kuaidi_name;
                     }else{
                         layer.msg(data.msg, {
                             icon: 2,
                             time: 2000
                         });
                     }
-                    layer.close(index);
+                   
                 }                                                                                                                                                                                       //===========
             });
         },
@@ -330,6 +436,7 @@ var vueObj = new Vue({
         },
         addOrder:function(){
             var self =this;
+            $("#create").attr("disabled",true);
             //http://127.0.0.1/index.php?m=system&c=delivery&a=freeWaybill
             var receiver_name = $("#receiver_name").val();//收件人
             var mobile =  $("#mobile").val();//手机号码
@@ -338,14 +445,21 @@ var vueObj = new Vue({
             var receiver_district = $("#receiver_district").val();//区
             var receiver_address = $("#receiver_address").val();//详细地址
             var title = $("[name='order_id']").val();//订单号
-            var seller_memo = $("#seller_memo").val();//自定义备注
             var express = $("#express").val();//快递
+            var seller_memo = $('#seller_memo').val();//自定义备注
             var express_no = $("#express_no").val();//快递单号
+            var t1 = mini.get("pages1_name_df");//代发人
+            var pages1_name_df = t1.getValue();
+            var t2 = mini.get("pages1_mobile_df");//代发人电话
+            var pages1_mobile_df = t2.getValue();
+            var t3 = mini.get("pages1_address_df");//代发人地址
+            var pages1_address_df =t3.getValue();
             if(!receiver_name){
                 layer.msg('收件人不能为空', {
                     icon: 2,
                     time: 2000
                 });
+                $("#create").attr("disabled",false);
                 return false;
             }
             if(!mobile){
@@ -353,6 +467,7 @@ var vueObj = new Vue({
                     icon: 2,
                     time: 2000
                 });
+                $("#create").attr("disabled",false);
                 return false;
             }
             if(!receiver_state){
@@ -360,6 +475,7 @@ var vueObj = new Vue({
                     icon: 2,
                     time: 2000
                 });
+                $("#create").attr("disabled",false);
                 return false;
             }
             if(!receiver_city){
@@ -367,6 +483,7 @@ var vueObj = new Vue({
                     icon: 2,
                     time: 2000
                 });
+                $("#create").attr("disabled",false);
                 return false;
             }
             if(!receiver_district){
@@ -374,6 +491,7 @@ var vueObj = new Vue({
                     icon: 2,
                     time: 2000
                 });
+                $("#create").attr("disabled",false);
                 return false;
             }
             if(!receiver_address){
@@ -381,6 +499,7 @@ var vueObj = new Vue({
                     icon: 2,
                     time: 2000
                 });
+                $("#create").attr("disabled",false);
                 return false;
             }
             if(!express){
@@ -388,12 +507,13 @@ var vueObj = new Vue({
                     icon: 2,
                     time: 2000
                 });
+                $("#create").attr("disabled",false);
                 return false;
             }
-           
+            
             $.ajax({
                 url: "/index.php?m=system&c=delivery&a=freeWaybillInsert",
-                data: {express:express,express_no:express_no,receiver_address:receiver_address,receiver_district:receiver_district,receiver_city:receiver_city,receiver_state:receiver_state,mobile:mobile,receiver_name:receiver_name,seller_memo:seller_memo,title:title},
+                data: {express:express,express_no:express_no,receiver_address:receiver_address,receiver_district:receiver_district,receiver_city:receiver_city,receiver_state:receiver_state,mobile:mobile,receiver_name:receiver_name,seller_memo:seller_memo,title:title,pages1_name_df: pages1_name_df,pages1_mobile_df: pages1_mobile_df,pages1_address_df: pages1_address_df},
                 type: "POST",
                 async: true,
                 dataType: 'json',
@@ -411,16 +531,23 @@ var vueObj = new Vue({
                         $("#receiver_address").val('');//详细地址
                         $("[name='order_id']").val('');//订单号
                         $("#seller_memo").val('');//自定义备注
-                        $("#express").val('');//快递
+                        //$("#express").val('');//快递
                         $("#express_no").val('');//快递单号
+                        $("#address").val('');//一键粘贴
                         searchALLNow(self,'page');
+                        t1.setValue('');
+                        t1.setText('');
+                        t2.setValue('');
+                        t2.setText('');
+                        t3.setValue('');
+                        t3.setText('');
                     }else{
                         layer.msg(data.msg, {
                             icon: 2,
                             time: 2000
                         });
                     }
-
+                    $("#create").attr("disabled",false);
                 }
             });
 
@@ -577,6 +704,12 @@ var vueObj = new Vue({
         },
         resetNow: function () {
             $("#address").val('');
+			$("#order_id_select").val('');
+			$("#kuaidi_type").val('');
+			$("#express_no_select").val('');
+			$('#mobile_select').val('');
+			$('#print_kd_num').val('');
+			$('#express_type').val('');
         },
         searchALLNow_sel:function(e=''){
             var self=this;
@@ -693,6 +826,7 @@ var vueObj = new Vue({
                 self.isAll = nowIsAll;  
             //}
         },
+        //打面单->打印
         print_face:function(type,index,show,send,batch){
             var self = this;    
             self.defaultMsg = [];
@@ -779,8 +913,8 @@ var vueObj = new Vue({
                         }); 
                     }
                     if(data.dates && data.dates.length > 0){
-                        var newData = [];                       
-                        var percent = 0;                                            
+                        var newData = [];
+                        var percent = 0;
                         var num = 0;
                         if(show == "F"){
                             doGetPrinters(function(){
@@ -789,25 +923,27 @@ var vueObj = new Vue({
                                     printTpl[unprintTplBq](unprintname,newData,false,true,self.progress_print_now);//第四个参数暂时没有用
 									var expressSort = self.expressSort;
 									expressSort.splice(index,1);
-									self.expressSort = expressSort; 
+									self.expressSort = expressSort;
 									setTimeout(function(){
-										layer.closeAll();
+										//layer.closeAll();
 										searchALLNow(self,'page');
-									},1000) 
-									
+									},1000)
+
                                 }
+                                layer.closeAll();
                             });
                         }else if(show == "show"){
                             doGetPrinters(function(){
                                 newData = doGetPrintersFunc(data.unprintall,data.down,data.dates,'T');//订单数据,商品数据，订单详情数据,预览
                                 if(unprintname){
                                     printTpl[unprintTplBq](unprintname,newData,true);
+                                    layer.closeAll();
                                 }else{
                                     layer.msg('打印机不存在,无法预览', {time: 2000, icon:2});
                                 }
                             });
                         }
-                    }                                                                                                                                       
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     btnObj.prop("disabled",false);
@@ -930,6 +1066,31 @@ var vueObj = new Vue({
             var self=this;
             self.pageSize=e.target.value;
             searchALLNow(self,'page');            
+        },
+        //物流单号回收
+        recycle_rder:function(index,item){
+            //成功后把物流单号清了
+            var self =this;
+            $.ajax({
+                url: "/index.php?m=system&c=freePrinting&a=returnPrintsManual",
+                type: 'post',
+                data: {order_id:self.data[index].order_id},
+                dataType: 'json',                           
+                success: function (data) {
+                    if(data.code=='ok'){
+                        layer.msg(data.msg, {
+                            icon: 1,
+                            time: 2000
+                        });
+                        self.data[index].express_no='';
+                    }else{
+                        layer.msg(data.msg, {
+                            icon: 2,
+                            time: 2000
+                        });
+                    }
+                }                                                               
+            }); 
         },
         saveOrders: function (state) {
             var btnClass = $("#saveOrderBtn").attr('class');
@@ -1118,7 +1279,42 @@ var vueObj = new Vue({
         }
     }
 });
+//代发人记忆
+function receiverChanged(e) {
+    var item = e.selected;
+    var sender_id = e.sender.id
+    var t1 = mini.get("pages1_name_df");
+    var t2 = mini.get("pages1_mobile_df");
+    var t3 = mini.get("pages1_address_df");
+    if(item){
+        t1.setValue(item.receiver_name);
+        t1.setText(item.receiver_name);
+        t2.setValue(item.receiver_mobile);
+        t2.setText(item.receiver_mobile);
+        t3.setValue(item.receiver_address);
+        t3.setText(item.receiver_address);
+    }else{
+        switch (sender_id) {
+            case 'pages1_name_df':
+                t1.setValue(e.value);
+                t1.setText(e.value);
+                t2.setValue('');
+                t2.setText('');
+                t3.setValue('');
+                t3.setText(''); 
+                break;
+            case 'pages1_mobile_df':
+                t2.setValue(e.value);
+                t2.setText(e.value);
+                break;
+            case 'pages1_address_df':
+                t3.setValue(e.value);
+                t3.setText(e.value); 
+                break;    
+        }
 
+    }
+}
 function cbProductRows(data) {
 	
     for (var i = 0; i < data.length; i++) {
@@ -1162,7 +1358,34 @@ layui.use('upload', function () {
         }*/
     });
 });
+$("#outputExcel").click(function(){
+    var dateBegin = $("#printdsosdateBegin").val();              //-----开始日期                     
+    var dateEnd = $("#printdsosdateEnd").val();
+    var order_id = $("#order_id_select").val();//订单号
+    var express_type = $("#express_type").val();//快递类型
+   // alert(express_type);
+    var print_kd_num = $("#print_kd_num").val();//打印状态
+    var mobile_select =$("#mobile_select").val();//手机号
+    var express_no_select =$("#express_no_select").val();//快递单号
+    var kuaidi_type = $("#kuaidi_type").val();//快递来源
+    var Modify_page = $('#Modify_page').val();//页面
+    var data = {
+        "dateBegin": dateBegin,
+        "dateEnd": dateEnd,
+        "order_id": order_id,
+        "express_type":express_type,
+        "print_kd_num":print_kd_num,
+        "mobile_select":mobile_select,
+        "express_no_select":express_no_select,
+        "kuaidi_type":kuaidi_type,
+        "pageSize":vueObj.pageSize,
+        'pageNum':vueObj.pageCount,
+    };
+    var str =JSON.stringify(data);
 
+    var url = "?m=system&c=freePrinting&a=download_csv&data="+str;
+    $("#selected").attr('src',url);
+});
 function getCountryMap(address) {
 	
     var ascllCode = "8203";
@@ -1237,6 +1460,7 @@ function searchALLNow(self,page){
     var dateEnd = $("#printdsosdateEnd").val();
     var order_id = $("#order_id_select").val();//订单号
     var express_type = $("#express_type").val();//快递类型
+    var download_type =self.download_type;//true 下载  flase 查询
    // alert(express_type);
     var print_kd_num = $("#print_kd_num").val();//打印状态
     var mobile_select =$("#mobile_select").val();//手机号
@@ -1255,30 +1479,44 @@ function searchALLNow(self,page){
 		"pageSize":vueObj.pageSize,
         'pageNum':vueObj.pageCount,
     };
+    var url_str = "/index.php?m=system&c=freePrinting&a=getDataJijian";
     
     $.ajax({
-        url: "/index.php?m=system&c=freePrinting&a=getDataJijian",
+        url: url_str,
         type: 'post',
         data: {data: data, num: self.m},
         dataType: 'json',
         success: function (data) {
-            self.pageNum = Math.ceil(data.pageNum / 20);
-            self.pageNum = data.pageNum
-            self.data = data.data;
-            vueObj.data = data.data;
-			vueObj.list_length = true;
-			vueObj.num = data.count
-			vueObj.pageCount =  data.currentPage
-            self.isFirst = false;
-            if(self.pageNum == 0){
-                self.page_m = 0;
-            }else{
-                self.page_m = self.m+1;
-            }
-            self.nowPage = false;
-            self.allPage = false;
+                self.pageNum = Math.ceil(data.pageNum / 20);
+                self.pageNum = data.pageNum
+                self.data = data.data;
+                vueObj.data = data.data;
+            	vueObj.list_length = true;
+            	vueObj.num = data.count
+            	vueObj.pageCount =  data.currentPage
+                self.isFirst = false;
+                if(self.pageNum == 0){
+                    self.page_m = 0;
+                }else{
+                    self.page_m = self.m+1;
+                }
+                self.nowPage = false;
+                self.allPage = false;
         }
     });
+}
+function addoption(){
+    var type=0;
+    $("#receiver_district option").each(function(index,el){
+        if($(el).val()=='其他区'){
+            type=1;
+            return false;
+        }
+    });
+    if(type!=1){
+        $("#receiver_district").append('<option value="其他区" name="其他区" data-code="999999">其他区</option>');
+    }
+
 }
 function jiexidz(t){
     $.ajax({

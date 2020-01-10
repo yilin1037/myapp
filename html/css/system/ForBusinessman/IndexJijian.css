@@ -1,0 +1,93 @@
+[v-cloak] {
+	display: none;
+}
+.layui-table-page select {
+    height: 27px;
+}
+.tureTop{
+	height: 33px;
+	position: relative;
+}
+.tureShop{
+	height: 40px;
+	line-height:40px;
+	position: absolute;
+	top: 3px;
+	left: 38px;
+}
+.tureAnnoImg{
+	height: 40px;
+	line-height:45px;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
+.topAnno{
+	width: 98%;
+	height: 110px;
+	margin: 10px 1%;
+	background: #1E9FFF;
+	border-left: 5px solid #0097BC;
+	border-radius: 5px;
+	color: #FFFFFF;
+}
+.annoTitle{
+	height: 40px;
+	line-height: 60px;
+	font-size: 18px;
+	margin-left:10px;
+}
+.annoCont{
+	margin-left:10px;
+	height: 22px;
+	line-height: 30px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.dataList{
+	width: 98%;
+	margin: auto;
+}
+.layui-form-item {
+    margin-bottom: 10px;
+}
+.layui-form-radio>i {
+    margin-right: 20px;
+}
+.chooseTitle{
+	height: 40px;
+	line-height: 40px;
+}
+.chooseTitle .courier{
+	float: left;
+	width: 100px;
+	margin-left: 43px;
+}
+.chooseTitle .price{
+	float: left;
+	width: 150px;
+}
+.chooseTitle .logistics{
+	float: left;
+	width: 250px;
+}
+.layui-form-switch {
+    height: 23px;
+    width: 54px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

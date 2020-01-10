@@ -47,6 +47,7 @@ var vueObj = new Vue({
 					  ,{field:'tid', title: '订单号',"minWidth":170}
 					  ,{field:'express_no', title: '运单号',"minWidth":170}
 					  ,{field:'express_fee', title: '对账金额',"minWidth":100}
+					  ,{field:'express_weight', title: '对账重量',"minWidth":100}
 					]]
 					,id: 'testReload'
 					,page: true

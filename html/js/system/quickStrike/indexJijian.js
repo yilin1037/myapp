@@ -47,6 +47,12 @@ var flow = new Vue({
         getTemplate:[],  //电子面单模板
         getTemplateCheck:[],  //质检标签模板
         disableNum:0,
+        provinceArr:[],
+        index:'',
+        contain:'y',
+        province:"", //省份
+        provinceStatus:'T',
+        Province_box:false,
     },
     mounted: function() {
         var self = this;
@@ -416,7 +422,413 @@ var flow = new Vue({
                 $(".quick_1 .ic").remove();             
                 $(this).css("borderColor","#c2c2c2");                                                                                                                                       
             });
-        },                                                                                                                                                                                          
+        },
+        Province:function(all){
+            var data = this.Province_box
+            this.Province_box = !data 
+            if(data  != false){$(".placeHide").css("display","none");
+            }else{$(".placeHide").css("display","block")}           
+        },
+        edit:function(index,item){                                                                                                                                                                  //===========
+            event.stopPropagation();                                                                                                                                                                //===========
+            var self = this;                                                                                                                                                                        //===========
+                                                                                                                                                                                                    //===========
+            self.index = index;                                                                                                                                                                     //===========
+                                                                                                                                                                                                    //===========
+            $(".searchBtn").css("display","none");                                  //-----隐藏直接搜索按钮                                                                                         //===========
+                                                                                                                                                                                                    //===========
+            //$("input:checkbox").iCheck('uncheck');                                    //-----先初始化所有复选框                                                                                        //===========
+            $(".placesCheckBox").iCheck('uncheck');
+            layer.open({                                                                                                                                                                            //===========
+                type: 1,                                                                                                                                                                            //===========
+                title: '设置地区筛选条件',                                                                                                                                                          //===========
+                skin: 'layui-layer-rim', //加上边框                                                                                                                                                 //===========
+                area: ['734px', '522px'], //宽高                                                                                                                                                  //===========
+                shade: 0.3,                                                                                                                                                                         //===========
+                content: $("#edit-pages"),                                                                                                                                                          //===========
+                cancel: function (index, layero) {                                                                                                                                                  //===========
+                                                                                                                                                                                                    //===========
+                }                                                                                                                                                                                   //===========
+            });                                                                                                                                                                                     //===========
+                                                                                                                                                                                                    //===========
+            if(item.substring(0,49) != "<span style='color:red' class='others'>排除：</span>"){            //-----不为排除省份时                                                                      //===========
+                self.contain = "y";                                                                                                                                                                 //===========
+                                                                                                                                                                                                //===========
+                $(".contain").css({                                                                                                                                                                 //===========
+                    zIndex:10,                                                                                                                                                                      //===========
+                    borderColor:"#1E9FFF",                                                                                                                                                          //===========
+                    color:"#1E9FFF"                                                                                                                                                                 //===========
+                });                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                $(".exclude").css({                                                                                                                                                                 //===========
+                    zIndex:0,                                                                                                                                                                       //===========
+                    borderColor:"#dddddd",                                                                                                                                                          //===========
+                    color:"black"                                                                                                                                                                   //===========
+                });                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                var arr = item.split(",");                                                                                                                                                          //===========
+                                                                                                                                                                                                    //===========
+                for(var i = 0; i < arr.length; i++){                                                                                                                                                //===========
+                    $("input[value='" + arr[i] + "']").iCheck('check');                                                                                                                             //===========
+                }                                                                                                                                                                                   //===========
+            }else if(item.substring(0,49) == "<span style='color:red' class='others'>排除：</span>"){                                                                                              //===========
+                self.contain = "n";                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                $(".contain").css({                                                                                                                                                                 //===========
+                    zIndex:0,                                                                                                                                                                       //===========
+                    borderColor:"#dddddd",                                                                                                                                                          //===========
+                    color:"black"                                                                                                                                                                   //===========
+                });                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                $(".exclude").css({                                                                                                                                                                 //===========
+                    zIndex:10,                                                                                                                                                                      //===========
+                    borderColor:"#1E9FFF",                                                                                                                                                          //===========
+                    color:"#1E9FFF"                                                                                                                                                                 //===========
+                });                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                var newStr = item.substring(49);                                                                                                                                                    //===========
+                var arr = newStr.split(",");                                                                                                                                                        //===========
+                                                                                                                                                                                                    //===========
+                for(var i = 0; i < arr.length; i++){                                                                                                                                                //===========
+                    $("input[value='" + arr[i] + "']").iCheck('check');                                                                                                                             //===========
+                }                                                                                                                                                                                   //===========
+                                                                                                                                                                                                    //===========
+            }                                                                                                                                                                                       //===========
+        }, 
+        isContain:function(a){                                                                                                                                                                      //===========
+            var self = this;                                                                                                                                                                        //===========
+            if(a == "y"){                                                                                                                                                                           //===========
+                self.contain = "y";                                                                                                                                                                 //===========
+            //--------------切换选中效果---------------------                                                                                                                                     //===========
+                $(".contain").css({                 //-------                                                                                                                                       //===========
+                    zIndex:10,                      //-------                                                                                                                                       //===========
+                    borderColor:"#1E9FFF",          //-------                                                                                                                                       //===========
+                    color:"#1E9FFF"                 //-------                                                                                                                                       //===========
+                });                                 //-------                                                                                                                                       //===========
+                                                    //-------                                                                                                                                       //===========
+                $(".exclude").css({                 //-------                                                                                                                                       //===========
+                    zIndex:0,                       //-------                                                                                                                                       //===========
+                    borderColor:"#dddddd",          //-------                                                                                                                                       //===========
+                    color:"black"                   //-------                                                                                                                                       //===========
+                });                                 //-------                                                                                                                                       //===========
+            //-----------------------------------------------                                                                                                                                       //===========
+                $(".searchText").html("<span>地区关键字：</span> <span><input type='text' class='placeInput' placeholder='输入地区关键词，如辽宁，吉林，多个关键词请用逗号隔开'></span>");          //===========
+            }else if(a == "n"){                                                                                                                                                                     //===========
+                self.contain = "n";                                                                                                                                                                 //===========
+            //--------------切换选中效果---------------------                                                                                                                                     //===========
+                $(".contain").css({                 //-------                                                                                                                                       //===========
+                    zIndex:0,                       //-------                                                                                                                                       //===========
+                    borderColor:"#dddddd",          //-------                                                                                                                                       //===========
+                    color:"black"                   //-------                                                                                                                                       //===========
+                });                                 //-------                                                                                                                                       //===========
+                                                    //-------                                                                                                                                       //===========
+                $(".exclude").css({                 //-------                                                                                                                                       //===========
+                    zIndex:10,                      //-------                                                                                                                                       //===========
+                    borderColor:"#1E9FFF",          //-------                                                                                                                                       //===========
+                    color:"#1E9FFF"                 //-------                                                                                                                                       //===========
+                });                                 //-------                                                                                                                                       //===========
+            //-----------------------------------------------                                                                                                                                       //===========
+                $(".searchText").html("<span>地区关键字：</span> <span><input type='text' class='placeInput' placeholder='将排除所有地址中包含该关键词的订单，多个关键词逗号隔开'></span>");     //===========
+            }                                                                                                                                                                                       //===========
+        }, 
+        searchPlaceNow:function(){
+            var self = this;
+            var data = "";
+            // if(self.versionSwitch==true){
+                if($("input[name='places']").filter(':checked').length == 0){
+                    layer.msg('请选择至少一条数据',{
+                        icon: 0,
+                        time: 2000
+                    });
+                    return false;
+                }       
+                var data = self.searchData;
+                var data = "";                                                                                      
+                $("input[name='places']:checkbox").each(function(){
+                    if(true == $(this).is(':checked')){                                 
+                        data += ($(this).val()+",");
+                    }
+                    //拼接当前页的货品唯一码
+                });
+                data = data.substring(0,data.length-1);
+           
+            if($(".placeInput").val() != "" && data != ""){                         
+                data += ("," + $(".placeInput").val());                             
+            }else if($(".placeInput").val() != "" && data == ""){
+                //与input框内输入的值进行拼接
+                data = $(".placeInput").val();                                      
+            }
+            self.province = data;
+            if(self.contain == "y"){
+                self.provinceStatus = "T";
+                $("#searchArr .pro").remove();
+                $("#searchArr").append("<span class='add pro rem'><span class='maxw'>" + data + "</span><i class='dele' id='specialGroup' onclick='closeNow(\"province\")'></i></span>");
+            }else if(self.contain == "n"){
+                self.provinceStatus = "F";
+                $("#searchArr .pro").remove();
+                $("#searchArr").append("<span class='add pro rem'><span class='maxw'><span style='color:red;'>排除：</span>" + data + "</span><i class='dele' id='specialGroup' onclick='closeNow(\"province\")'></i></span>");
+            }
+            searchALLNow(self,'F');
+            // self.contain == "y";
+            // self.provinceStatus = "T";
+            layer.closeAll();
+        }, 
+                //保存成功后将数组以 JSON 形式存入localStrorage
+        saveCon:function(){
+            var self = this;
+            var data = "";
+                if($("input[name='places']").filter(':checked').length == 0){
+                    layer.msg('请选择至少一条数据',{
+                        icon: 0,
+                        time: 2000
+                    });
+                    return false;
+                }       
+                var data = self.searchData;
+                var data = "";                                                                                      
+                $("input[name='places']:checkbox").each(function(){
+                    if(true == $(this).is(':checked')){                                 
+                        data += ($(this).val()+",");
+                    }
+                    //拼接当前页的货品唯一码
+                });
+                data = data.substring(0,data.length-1);
+
+            if($(".placeInput").val() != "" && data != ""){
+                data += ("," + $(".placeInput").val());
+            }else if($(".placeInput").val() != "" && data == ""){
+                //  与input框内输入的值进行拼接
+                data = $(".placeInput").val();
+            }
+            if(self.index == "F"){
+                if(self.contain == "y"){
+                    self.provinceArr.push(data);
+                }else if(self.contain == "n"){
+                    self.provinceArr.push("<span style='color:red' class='others'>排除：</span>" + data);
+                }
+            }else{
+                if(self.contain == "y"){
+                    self.provinceArr[self.index * 1] = data;
+                }else if(self.contain == "n"){
+                    self.provinceArr[self.index * 1] = ("<span style='color:red' class='others'>排除：</span>" + data);
+                }
+            }
+            localStorage.setItem("placeArr",JSON.stringify(self.provinceArr));
+            self.index = "F";
+            self.provinceArr = JSON.parse(localStorage.getItem("placeArr"));    
+            layer.closeAll();
+        }, 
+        choosePlace:function(){
+            var self = this;
+            $(".placesCheckBox").iCheck('uncheck');
+            self.contain = "y";
+            self.index = "F";
+            $(".contain").css({     
+                zIndex:10,                  
+                borderColor:"#1E9FFF",  //  每次打开默认选中包含条件按钮
+                color:"#1E9FFF" 
+            });
+            $(".exclude").css({ 
+                zIndex:0,
+                borderColor:"#dddddd",  //  每次打开默认不选中排除按钮
+                color:"black"
+            });
+            $(".placeInput").val("");   //-----每次打开将弹窗内input初始化 
+            $(".searchBtn").css("display","inline");    //-----显示直接搜索按钮 
+            layer.open({
+                type: 1,
+                title: '设置地区筛选条件',                                                                                                                                                          //===========
+                skin: 'layui-layer-rim', //加上边框                                                                                                                                                 //===========
+                area: ['734px', '522px'], //宽高                                                                                                                                                  //===========
+                shade: 0.3,                                                                                                                                                                         //===========
+                content: $("#edit-pages"),                                                                                                                                                          //===========
+                cancel: function (index, layero) {                                                                                                                                                  //===========
+                                                                                                                                                                                                    //===========
+                }                                                                                                                                                                                   //===========
+            });                                                                                                                                                                                     //===========
+            $(".placeHide").css("display","none");                                                                                                                                                  //===========
+        },      
+        chooseProvince:function(isAll){   
+            alert('ddd');          //===========
+            var self = this;                                                                                                                                                                        //===========
+            var toggle = event.currentTarget;                                                                                                                                                       //===========
+            event.stopPropagation();                                                                                                                                                                //===========
+            var newStr = $(toggle).text();                                                                                                                                                          //===========
+            if(isAll == "some"){                                                    //-----点击保存的省份模板按钮                                                                                  //===========
+                var str = newStr.substring(0,newStr.length-2);                                                                                                                                      //===========
+                //console.log(str)                                                                                                                                                                                  //===========
+                if(str.substring(0,2) == "排除"){                                 //------------------------------                                                                                //===========
+                    self.provinceStatus = "F";                                      //                                                                                                              //===========
+                    self.province = str.substring(3);                               //                                                                                                              //===========
+                }else{                                                              //  判断是排除省份还是包含省份                                                                                   //===========
+                    self.provinceStatus = "T";                                      //                                                                                                              //===========
+                    self.province = str;                                            //                                                                                                              //===========
+                }                                                                   //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".placeBtn").css({                                                //------------------------------                                                                                //===========
+                    color:"black",                                                  //                                                                                                              //===========
+                    borderColor:"#dddddd",                                          //  改变所有省份按钮样式                                                                                      //===========
+                    backgroundColor:"white"                                         //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".placeAdd").each(function(){                                     //------------------------------                                                                                //===========
+                    $(this).css({                                                   //                                                                                                              //===========
+                        color:"black",                                              //                                                                                                              //===========
+                        borderColor:"#dddddd",                                      //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //  初始化按钮样式                                                                                             //===========
+                    $(this).find(".positionSpan").css({                             //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //                                                                                                              //===========
+                    $(this).find(".layui-icon").css("color","#1E9FFF");             //                                                                                                              //===========
+                    $(this).find(".others").css("color","red");                     //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).css({                                                     //------------------------------                                                                                //===========
+                    color:"white",                                                  //                                                                                                              //===========
+                    borderColor:"#1E9FFF",                                          //  将当前选择的省份按钮变为高亮                                                                              //===========
+                    backgroundColor:"#1E9FFF"                                       //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).find(".positionSpan").css({                                                                                                                                               //===========
+                    backgroundColor:"#1E9FFF",                                                                                                                                                      //===========
+                });                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).find(".layui-icon").css("color","white");                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).find(".others").css("color","white");                                                                                                                                     //===========
+                                                                                                                                                                                                    //===========
+                $(".changeProvince").html(str);                                                                                                                                                     //===========
+                                                                                                                                                                                                    //===========
+                $("#searchArr .pro").remove();                                                                                                                                                      //===========
+                                                                                                                                                                                                    //===========
+                $("#searchArr").append("<span class='add pro rem'><span class='maxw'>" + str + "</span><i class='dele' id='specialGroup' onclick='closeNow(\"province\")'></i></span>");            //===========
+                                                                                                                                                                                                    //===========
+            }else if(isAll == "all"){                                                                                                                                                               //===========
+                self.province = "";                                                 //-----点击所有省份按钮                                                                                         //===========
+                                                                                                                                                                                                    //===========
+                $(".placeAdd").each(function(){                                     //------------------------------                                                                                //===========
+                    $(this).css({                                                   //                                                                                                              //===========
+                        color:"black",                                              //                                                                                                              //===========
+                        borderColor:"#dddddd",                                      //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //  初始化按钮样式                                                                                             //===========
+                    $(this).find(".positionSpan").css({                             //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //                                                                                                              //===========
+                    $(this).find(".layui-icon").css("color","#FFF");                //                                                                                                              //===========
+                    $(this).find(".others").css("color","red");                     //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".placeBtn").css({                                                //------------------------------                                                                                //===========
+                    color:"white",                                                  //                                                                                                              //===========
+                    borderColor:"#1E9FFF",                                          //  将所有省份按钮变为高亮                                                                                     //===========
+                    backgroundColor:"#1E9FFF"                                       //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".changeProvince").html("所有省份");                                                                                                                                              //===========
+                $("#searchArr .pro").remove();                                                                                                                                                      //===========
+            }                                                                                                                                                                                       //===========
+            $(".placeHide").css("display","none");                                                                                                                                                  //===========
+            searchALLNow(self,'F');                                                                                                                                                                 //===========
+        },
+        chooseProvince:function(isAll){             //===========
+            var self = this;                                                                                                                                                                        //===========
+            var toggle = event.currentTarget;                                                                                                                                                       //===========
+            event.stopPropagation();                                                                                                                                                                //===========
+            var newStr = $(toggle).text();                                                                                                                                                          //===========
+            if(isAll == "some"){                                                    //-----点击保存的省份模板按钮                                                                                  //===========
+                var str = newStr.substring(0,newStr.length-2);                                                                                                                                      //===========
+                //console.log(str)                                                                                                                                                                                  //===========
+                if(str.substring(0,2) == "排除"){                                 //------------------------------                                                                                //===========
+                    self.provinceStatus = "F";                                      //                                                                                                              //===========
+                    self.province = str.substring(3);                               //                                                                                                              //===========
+                }else{                                                              //  判断是排除省份还是包含省份                                                                                   //===========
+                    self.provinceStatus = "T";                                      //                                                                                                              //===========
+                    self.province = str;                                            //                                                                                                              //===========
+                }                                                                   //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".placeBtn").css({                                                //------------------------------                                                                                //===========
+                    color:"black",                                                  //                                                                                                              //===========
+                    borderColor:"#dddddd",                                          //  改变所有省份按钮样式                                                                                      //===========
+                    backgroundColor:"white"                                         //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".placeAdd").each(function(){                                     //------------------------------                                                                                //===========
+                    $(this).css({                                                   //                                                                                                              //===========
+                        color:"black",                                              //                                                                                                              //===========
+                        borderColor:"#dddddd",                                      //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //  初始化按钮样式                                                                                             //===========
+                    $(this).find(".positionSpan").css({                             //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //                                                                                                              //===========
+                    $(this).find(".layui-icon").css("color","#1E9FFF");             //                                                                                                              //===========
+                    $(this).find(".others").css("color","red");                     //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).css({                                                     //------------------------------                                                                                //===========
+                    color:"white",                                                  //                                                                                                              //===========
+                    borderColor:"#1E9FFF",                                          //  将当前选择的省份按钮变为高亮                                                                              //===========
+                    backgroundColor:"#1E9FFF"                                       //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).find(".positionSpan").css({                                                                                                                                               //===========
+                    backgroundColor:"#1E9FFF",                                                                                                                                                      //===========
+                });                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).find(".layui-icon").css("color","white");                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+                $(toggle).find(".others").css("color","white");                                                                                                                                     //===========
+                                                                                                                                                                                                    //===========
+                $(".changeProvince").html(str);                                                                                                                                                     //===========
+                                                                                                                                                                                                    //===========
+                $("#searchArr .pro").remove();                                                                                                                                                      //===========
+                                                                                                                                                                                                    //===========
+                $("#searchArr").append("<span class='add pro rem'><span class='maxw'>" + str + "</span><i class='dele' id='specialGroup' onclick='closeNow(\"province\")'></i></span>");            //===========
+                                                                                                                                                                                                    //===========
+            }else if(isAll == "all"){                                                                                                                                                               //===========
+                self.province = "";                                                 //-----点击所有省份按钮                                                                                         //===========
+                                                                                                                                                                                                    //===========
+                $(".placeAdd").each(function(){                                     //------------------------------                                                                                //===========
+                    $(this).css({                                                   //                                                                                                              //===========
+                        color:"black",                                              //                                                                                                              //===========
+                        borderColor:"#dddddd",                                      //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //  初始化按钮样式                                                                                             //===========
+                    $(this).find(".positionSpan").css({                             //                                                                                                              //===========
+                        backgroundColor:"white"                                     //                                                                                                              //===========
+                    });                                                             //                                                                                                              //===========
+                    $(this).find(".layui-icon").css("color","#FFF");                //                                                                                                              //===========
+                    $(this).find(".others").css("color","red");                     //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".placeBtn").css({                                                //------------------------------                                                                                //===========
+                    color:"white",                                                  //                                                                                                              //===========
+                    borderColor:"#1E9FFF",                                          //  将所有省份按钮变为高亮                                                                                     //===========
+                    backgroundColor:"#1E9FFF"                                       //                                                                                                              //===========
+                });                                                                 //------------------------------                                                                                //===========
+                                                                                                                                                                                                    //===========
+                $(".changeProvince").html("所有省份");                                                                                                                                              //===========
+                $("#searchArr .pro").remove();                                                                                                                                                      //===========
+            }                                                                                                                                                                                       //===========
+            $(".placeHide").css("display","none");                                                                                                                                                  //===========
+            searchALLNow(self,'F');                                                                                                                                                                 //===========
+        },  
+        deletePlace:function(index){                                                                                                                                                                //===========
+            event.stopPropagation();                                                                                                                                                                //===========
+            var self = this;                                                                                                                                                                        //===========
+            layer.open({                                                                                                                                                                            //===========
+                title: '提示',                                                                                                                                                                        //===========
+                content: '确定删除此数据么？',                                                                                                                                                       //===========
+                btn: ['确定', '取消'],                                                                                                                                                              //===========
+                yes:function(){                                                                                                                                                                     //===========
+                    self.provinceArr.splice(index,1);                                                                                                                                               //===========
+                    localStorage.setItem("placeArr",JSON.stringify(self.provinceArr));                                                                                                              //===========
+                    layer.closeAll();                                                                                                                                                               //===========
+                }                                                                                                                                                                                   //===========
+            });                                                                                                                                                                                     //===========
+        },                                                                                                                                                                                              
         //==================================================================================================查询方法结束=========================================================================================
         
         //============================================================================================排序选择按钮===============================================================================================
@@ -1303,7 +1715,6 @@ var flow = new Vue({
                 return false;
             }
             
-            console.log(self.data[index]);
             self.data[index].print_num = av;
         },
         
@@ -2328,7 +2739,8 @@ var flow = new Vue({
 
 
 
-function closeNow(group){                                                                                                                                                                           
+function closeNow(group){   
+console.log(group);                                                                                                                                                                        
     if(group == "labelGroup"){                                                                                                                                                                      
         $("#searchArr .lab").remove();                                                                                                                                                              
                                                                                                                                                                                                     
@@ -2420,6 +2832,30 @@ function closeNow(group){
         flow.orderStatus = "";                                                                                                                                                                      
         $("#searchArr .orderStatus").remove();                                                                                                                                                      
         $("#orderStatus").val("");                                                                                                                                                                  
+    }else if(group == "province"){                                                                                                                                                                  //===========
+        flow.province = "";                                                                                                                                                                         //===========
+                                                                                                                                                                                                    //===========
+        $(".placeAdd").each(function(){                                                                                                                                                             //===========
+            $(this).css({                                                                                                                                                                           //===========
+                color:"black",                                                                                                                                                                      //===========
+                borderColor:"#dddddd",                                                                                                                                                              //===========
+                backgroundColor:"white"                                                                                                                                                             //===========
+            });                                                                                                                                                                                     //===========
+            $(this).find(".positionSpan").css({                                                                                                                                                     //===========
+                backgroundColor:"white"                                                                                                                                                             //===========
+            });                                                                                                                                                                                     //===========
+            $(this).find(".layui-icon").css("color","#FFF");                                                                                                                                        //===========
+            $(this).find(".others").css("color","red");                                                                                                                                             //===========
+        });                                                                                                                                                                                         //===========
+                                                                                                                                                                                                    //===========
+        $(".placeBtn").css({                                                                                                                                                                        //===========
+            color:"white",                                                                                                                                                                          //===========
+            borderColor:"#1E9FFF",                                                                                                                                                                  //===========
+            backgroundColor:"#1E9FFF"                                                                                                                                                               //===========
+        });                                                                                                                                                                                         //===========
+                                                                                                                                                                                                    //===========
+        $(".changeProvince").html("所有省份");                                                                                                                                                      //===========
+        $("#searchArr .pro").remove();                                                                                                                                                              //===========
     }                                                                                                                                                                                       
                                                                                                                                                                                                     
     searchALLNow(flow,'F'); 
@@ -2600,7 +3036,9 @@ function orderSelect(a){
 //============================================================================================查询方法封装=======================================================================================================
 function searchALLNow(self,page){
     var dateBegin = $("#dateBegin").val();                                                                                                                                                          
-    var dateEnd = $("#dateEnd").val();  
+    var dateEnd = $("#dateEnd").val();
+    var placeInput = self.province;  //
+    var placeInput_type =self.provinceStatus;// F  排除   T 包含
     /***********/
     var orderSelect = $("#separator1").val();
     var prd_no = $('.prd_no').val();
@@ -2661,7 +3099,9 @@ function searchALLNow(self,page){
         "prd_no":prd_no,
         "sku_prd_no":sku_prd_no,
         "num_iid":num_iid,
-        "sku_name":sku_name
+        "sku_name":sku_name,
+        "placeInput":placeInput,
+        "placeInput_type":placeInput_type,
     };  
 
     self.searchData = data;
@@ -2696,7 +3136,6 @@ function searchALLNow(self,page){
             
             setTimeout(function(){
                 $('.changeColor').on('ifChecked ifUnchecked', function(event){                                                                                                                                          
-                                                                                                                                                                                    
                     if (event.type == 'ifChecked') {            
                         $(event.target).parent().parent().parent().css("backgroundColor","#f8f8c7");
                     } else {                                                                                                                                                                                        
@@ -3014,4 +3453,83 @@ function printCQlabel(unique_code,printTplModule,print){
             printTpl[printTplModule](print,data);   
         }
     });
-}                                                                                                                                                                                           
+}  
+$('#minimal-checkbox-1').on('ifChecked ifUnchecked', function(event){                                                                                                                               //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".northwest input[name='places']").iCheck('check');                                                                                                                                       //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".northwest input[name='places']").iCheck('uncheck');                                                                                                                                     //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#more_1').on('ifChecked ifUnchecked', function(event){                                                                                                                                           //===========
+                                                                                                                                                                                                    //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".more input[name='order']").iCheck('check');                                                                                                                                         //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".more input[name='order']").iCheck('uncheck');                                                                                                                                           //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#minimal1').on('ifChecked ifUnchecked', function(event){                                                                                                                                         //===========
+                                                                                                                                                                                                    //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".southwest input[name='places']").iCheck('check');                                                                                                                                       //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".southwest input[name='places']").iCheck('uncheck');                                                                                                                                     //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#mini1').on('ifChecked ifUnchecked', function(event){                                                                                                                                            //===========
+                                                                                                                                                                                                    //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".eastChina input[name='places']").iCheck('check');                                                                                                                                       //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".eastChina input[name='places']").iCheck('uncheck');                                                                                                                                     //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#mini7').on('ifChecked ifUnchecked', function(event){                                                                                                                                            //===========
+                                                                                                                                                                                                    //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".northChina input[name='places']").iCheck('check');                                                                                                                                      //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".northChina input[name='places']").iCheck('uncheck');                                                                                                                                    //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#mini14').on('ifChecked ifUnchecked', function(event){                                                                                                                                           //===========
+                                                                                                                                                                                                    //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".southChina input[name='places']").iCheck('check');                                                                                                                                      //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".southChina input[name='places']").iCheck('uncheck');                                                                                                                                    //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#mini19').on('ifChecked ifUnchecked', function(event){                                                                                                                                           //===========
+                                                                                                                                                                                                    //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".centralChina input[name='places']").iCheck('check');                                                                                                                                    //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".centralChina input[name='places']").iCheck('uncheck');                                                                                                                                  //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#mini23').on('ifChecked ifUnchecked', function(event){                                                                                                                                           //===========
+                                                                                                                                                                                                    //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".northeast input[name='places']").iCheck('check');                                                                                                                                       //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".northeast input[name='places']").iCheck('uncheck');                                                                                                                                     //===========
+    }                                                                                                                                                                                               //===========
+});                                                                                                                                                                                                 //===========
+                                                                                                                                                                                                    //===========
+$('#mini27').on('ifChecked ifUnchecked', function(event){                                                                                                                                           //===========
+    if (event.type == 'ifChecked') {                                                                                                                                                                //===========
+        $(".hongkang input[name='places']").iCheck('check');                                                                                                                                        //===========
+    } else {                                                                                                                                                                                        //===========
+        $(".hongkang input[name='places']").iCheck('uncheck');                                                                                                                                      //===========
+    }                                                                                                                                                                                               //===========
+});
+

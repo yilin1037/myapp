@@ -118,7 +118,7 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'upload', 'element', 'table'],
 			flow.stock = urlObj.stock;		
 		}
 	}
-
+	
 	//监听货位选择
 	table.on('tool(locTableList)', function(obj){
 		var datas = obj.data;
@@ -152,6 +152,46 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'upload', 'element', 'table'],
 			})
 		}, function(){});
 	});
+	//监听仓库选择
+	table.on('tool(treeWhList)', function(obj){
+		var datas = obj.data;
+		var prd_loc = '@' +datas.wh
+
+		if(flow.stock == "in" || flow.stock == "out"){
+			flow.hotLoc_no = prd_loc;
+			flow.intoWh = datas.name;
+			flow.intoWh_no = prd_loc;
+			$("#intoWh").val(datas.name);
+			layer.closeAll();
+			dataLoadOne.tableLoadTable();
+			return false;
+		}
+		
+		layer.confirm('盘点货位将删除当前货位全部货品，确定？', {
+			btn: ['确定','取消'] //按钮
+		}, function(){
+	
+			$.ajax({
+				url:'/?m=PT&c=Storage&a=clearStorageQty',
+				dataType: 'json',
+				type: "post",
+				data:{
+					prd_loc : prd_loc,
+				},
+				success:function(data){
+					if(data.code == 'ok'){
+						flow.hotLoc_no = prd_loc;
+						flow.pc_no = data.pc_no;
+						flow.intoWh = datas.name;
+						flow.intoWh_no = datas.wh;
+						layer.closeAll();
+						$("#intoWh").val(datas.name);
+					}
+				}
+			})
+		}, function(){});
+	});
+
 	//监听数量变更
 	table.on('edit(dataListOnes)', function(obj){
 	    var value = (obj.value); //得到修改后的值
@@ -196,27 +236,7 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'upload', 'element', 'table'],
     		}
     	});
 	});
-	//监听仓库选择
-	table.on('tool(treeWhList)', function(obj){
-		var data = obj.data;
-		flow.intoWh = data.name;
-		flow.intoWh_no = data.wh;
-		res="";
-		$.ajax({
-			url:'/?m=goods&c=otherOut&a=memory',
-			dataType: 'json',
-			type: "post",
-			data:{
-				whName:data.wh
-			},
-			success:function(data){
-				
-			}
-		})
-		layer.closeAll();
-		$("#intoWh").val(data.name);
-		$("#hotLoc").val("");
-	});
+
 	//初始化右侧表格
 	table.render(dataListOne);
 })

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page height="312" width="800">
+<layout height="312" width="800" >
+<layout left="0" top="0" width="600" height="240" style="overflow:hidden;">
+<text fontFamily = "黑体" fontSize = "32" value="<%=data.seller_memo%>"  />
+</layout>
+</layout>
+</page>
