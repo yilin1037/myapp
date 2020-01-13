@@ -39,7 +39,6 @@ if(shopname == '' && jijian == ''){
 	alert('网店店铺名为空，请先添加店铺!');
 	exit;
 }
-
 if(user_id != ""){
 
 	$.ajax({

@@ -1630,7 +1630,7 @@ var flow = new Vue({
                     if(true == $(this).is(':checked')){                                                                                                                                             
                         data += ($(this).val()+",");    
                         sku_name += ($(this).attr("sku_name")+",");
-                        num++;
+                        num+= $(this).attr("num_g")*1;
                     }                                                                                                                                                           
                 });                                                                                                                                                                 
                 data = data.substring(0,data.length-1);
@@ -1645,7 +1645,6 @@ var flow = new Vue({
                 });
                 return false;
             }
-                
             layer.confirm('确认关闭此爆款全部标签？', function(index){
                 layer.close(index);
                 $.ajax({                                                                                                                                                                    

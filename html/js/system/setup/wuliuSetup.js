@@ -99,9 +99,9 @@ var pages = new Vue({ //vue 模块入口
 					{'title':"默认快递",'data':"default",'width': '75px',"defaultContent": ""},//隐藏
 					{'title':"快递公司",'data':"name",'width': '75px',"defaultContent": "","render": function (data,type,row,meta) {
 						if(data == ""){
-							return "<input onBlur='nameChage("+0+","+row.id+",this)'>"
+							return "<input data-name='' onBlur='nameChage("+0+","+row.id+",this)'>"
 						}else{
-							return "<input value='"+data+"' onBlur='nameChage("+0+","+row.id+",this)'>"
+							return "<input value='"+data+"' data-name="+data+" onBlur='nameChage("+0+","+row.id+",this)'>"
 						}
 					}},
 					{'title':"网点",'data':"site",'width': '75px',"defaultContent": "","render": function (data,type,row,meta) {
@@ -119,9 +119,11 @@ var pages = new Vue({ //vue 模块入口
 						}
 					}}, 
 					{'title':"发货地址",'data':"print_address","defaultContent": "","render": function (data,type,row,meta) {
-						if(data == ""){
-							return "";
+						if(data == "   " ){
+							data = '<a id=' + row.id+ ' class="edit-address"  style="color: rgb(18, 150, 219); font-size: 14px; margin-left: 4px; cursor: pointer;"> 修改地址</a>';
+							return data;
 						}else{
+							data = '<a id=' + row.id+ ' class="edit-address"  style="color: rgb(18, 150, 219); font-size: 14px; margin-left: 4px; cursor: pointer;"> '+data+'</a>';
 							return data;
 						}
 					}}, 
@@ -141,16 +143,16 @@ var pages = new Vue({ //vue 模块入口
 					}}, 
 					{'title':"发货人",'data':"send_username",'width': '60px',"defaultContent": "","render": function (data,type,row,meta) {
 						if(data == ""){
-							return "<input onBlur='nameChage("+1+","+row.id+",this)'>"
+							return "<input data-name='' onBlur='nameChage("+1+","+row.id+",this)'>"
 						}else{
-							return "<input value='"+data+"' onBlur='nameChage("+1+","+row.id+",this)'>"
+							return "<input value='"+data+"' data-name="+data+" onBlur='nameChage("+1+","+row.id+",this)'>"
 						}
 					}}, 
 					{'title':"发货电话",'data':"send_tel",'width': '75px',"defaultContent": "","render": function (data,type,row,meta) {
 						if(data == ""){
-							return "<input onBlur='nameChage("+2+","+row.id+",this)'>"
+							return "<input data-name='' onBlur='nameChage("+2+","+row.id+",this)'>"
 						}else{
-							return "<input value='"+data+"' onBlur='nameChage("+2+","+row.id+",this)'>"
+							return "<input value='"+data+"' data-name="+data+" onBlur='nameChage("+2+","+row.id+",this)'>"
 						}
 					}}, 
 					{'title':"代发价",'data':"assist_print",'width': '60px',"defaultContent": "","render": function (data,type,row,meta) {
@@ -786,6 +788,150 @@ var pages = new Vue({ //vue 模块入口
                 });
                 //很重要 不然vue付不了控件值
                 form.render('checkbox');
+			});
+			
+			$(document).on('click', '.edit-address', function () {
+				$(".zto_partner_show").css('display','none');
+				$(".yto_partner_show").css('display','none');
+				$(".yunda_partner_show").css('display','none');
+				$(".SF_appid_show").css('display','none');
+				$(".SF_appkey_show").css('display','none');
+				$(".SF_state_show").css('display','none');
+				$(".SF_paystate_show").css('display','none');
+				$(".SF_custId_show").css('display','none');
+				$(".JD_customerCode_show").css('display','none');
+				$(".JD_wareHouseCode_show").css('display','none');
+				$(".JD_shopid_show").css('display','none');
+				$(".JD_promiseTimeType_show").css('display','none');
+				$(".DBKD_customerCode_show").css('display','none');
+				$(".DBKD_customerCode_show").css('display','none');
+                var id = $(this).attr("id");
+				pages.id = id;
+				pages.no = tempjson[id].no;
+				pages.assist_print = tempjson[id].assist_print;
+				pages.express_name = tempjson[id].name;
+				pages.express_fee = tempjson[id].express_fee;
+				pages.send_username = tempjson[id].send_username;
+				pages.send_tel = tempjson[id].send_tel;
+				pages.ratio = tempjson[id].ratio;
+				pages.status = tempjson[id].status == 0 ? true : false;
+				pages.default = tempjson[id].default == 1 ? true : false;
+				if(tempjson[id].express_form == 'ZJ_ZTO'){
+					pages.zto_partner = tempjson[id].express_config;
+				}else if(tempjson[id].express_form == 'ZJ_SF' || tempjson[id].express_form == 'ZJ_SF_COD'){
+					if(tempjson[id].express_config != ''){
+						pages.sf_partner = JSON.parse(tempjson[id].express_config);
+						$("#expressType").val(pages.sf_partner.expressType);
+						$("#payMethod").val(pages.sf_partner.payMethod);
+						$("#printMethod").val(pages.sf_partner.printMethod);
+						form.render('select');
+					}
+				}else if(tempjson[id].express_form == 'JDKD_YTH_COD' || tempjson[id].express_form == 'JDKD_YTH_WD'){
+					if(tempjson[id].express_config != ''){
+						pages.jd_partner = JSON.parse(tempjson[id].express_config);
+						$("#JD_shopid").val(pages.jd_partner.JD_shopid);
+						form.render('select');
+					}
+				}else if(tempjson[id].express_form == 'ZJ_YTO_COD'){
+					if(tempjson[id].express_config != ''){
+						pages.yto_partner = JSON.parse(tempjson[id].express_config);
+					}
+				}else if(tempjson[id].express_form == 'ZJ_YUNDA_COD'){
+					if(tempjson[id].express_config != ''){
+						pages.yunda_partner = JSON.parse(tempjson[id].express_config);
+					}
+				}else if (tempjson[id].express_form == 'ZJ_DBKD' || tempjson[id].express_form == 'ZJ_DBKD_COD'){
+					if(tempjson[id].express_config != ''){
+						pages.dbkd_partner = JSON.parse(tempjson[id].express_config);
+						$("#payType").val(pages.dbkd_partner.payType);
+					}
+				}
+				
+				if(tempjson[id].no.indexOf("JDKD") > -1 ){
+					if(tempjson[id].express_config != ''){
+						pages.jd_partner = JSON.parse(tempjson[id].express_config);
+						$("#JD_promiseTimeType").val(pages.jd_partner.JD_promiseTimeType);
+						form.render('select');
+					}
+				}
+				
+				$("#status").prop("checked", pages.status);
+				$("#default").prop("checked", pages.default);
+				$(".shoplist input:checkbox").prop("checked", false)
+				if(tempjson[id].send_shopids){
+					var arr = tempjson[id].send_shopids.split(",");
+					for(var i=0;i<arr.length;i++){
+						$("#shop_"+arr[i]+"").prop("checked", true);
+					}
+				}
+				if(tempjson[id].print_province != ""){
+					loadProvince();
+					var areaValue = "";
+					var a = "";
+					var index1 = "";
+					$("#province1").val(tempjson[id].print_province);
+					
+					var value = $("#province1").find("option[value="+tempjson[id].print_province+"]").attr("name");
+					var d = value.split('_');
+					var code = d[0];
+					var count = d[1];
+					var index = d[2];
+					if(tempjson[id].print_city != ""){
+						loadCity(Area[index].mallCityList);
+						$("#city1").val(tempjson[id].print_city);
+						areaValue = $("#city1").find("option[value="+tempjson[id].print_city+"]").attr("name");
+						a = areaValue.split('_');
+						index1 = a[2];
+					}
+					if(tempjson[id].print_district != ""){
+						loadArea(Area[index].mallCityList[index1].mallAreaList);
+						$("#area1").val(tempjson[id].print_district);
+					}
+				}
+				if(tempjson[id].express_form == 'ZJ_ZTO'){
+					$(".zto_partner_show").css('display','block');
+				}else if(tempjson[id].express_form == 'ZJ_SF' || tempjson[id].express_form == 'ZJ_SF_COD'){
+					$(".SF_appid_show").css('display','block');
+					$(".SF_appkey_show").css('display','block');
+					$(".SF_state_show").css('display','block');
+					$(".SF_paystate_show").css('display','block');
+					$(".SF_custId_show").css('display','block');
+				}else if(tempjson[id].express_form == 'JDKD_YTH_COD' || tempjson[id].express_form == 'JDKD_YTH_WD'){
+					$(".JD_customerCode_show").css('display','block');
+					$(".JD_wareHouseCode_show").css('display','block');
+					$(".JD_shopid_show").css('display','block');
+				}else if(tempjson[id].express_form == 'ZJ_YTO_COD'){
+					$(".yto_partner_show").css('display','block');
+				}else if(tempjson[id].express_form == 'ZJ_YUNDA_COD'){
+					$(".yunda_partner_show").css('display','block');
+				}else if(tempjson[id].express_form == 'ZJ_DBKD' || tempjson[id].express_form == 'ZJ_DBKD_COD'){
+					$(".DBKD_customerCode_show").css('display','block');
+					$(".DBKD_payType_show").css('display','block');
+				}
+				
+				if(tempjson[id].no.indexOf("JDKD") > -1 ){
+					$(".JD_promiseTimeType_show").css('display','block');
+				}
+				
+				$("#detail1").val(tempjson[id].print_detail);
+				form.render();
+                layer.open({
+                    type: 1,
+                    title: '修改发货地址',
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['450px', '400px'], //宽高
+                    shade: 0.3,
+                    content: $("#edit-address"),
+                    cancel: function (index, layero) {
+                        //if (confirm('确定要关闭么')) { //只有当点击confirm框的确定时，该层才会关闭
+                        //layer.close(index)
+                        //$("#edit-pages").hide();
+                        // }
+                        // return false;
+                    }
+                });
+                //很重要 不然vue付不了控件值
+                form.render('checkbox');
             });
 			
 			form.on('submit(childAccount_addedit)', function (data) {
@@ -832,6 +978,23 @@ var pages = new Vue({ //vue 模块入口
 				data.field.area1 = area1;
 				
 				var re = pages.jqajax("/index.php?m=system&c=setup&a=updateExpress", data.field);
+				
+				setTimeout(function(e){
+					jqtb.ajax.reload();
+				},1500);
+				
+				layer.closeAll();
+				return false;
+			});
+			form.on('submit(childAccount_addedit1)', function (data) {
+				var province = $("#province1").val();
+				var city = $("#city1").val();
+				var area1 = $("#area1").val();
+				data.field.province = province;
+				data.field.city = city;
+				data.field.area1 = area1;
+				
+				var re = pages.jqajax("/index.php?m=system&c=setup&a=updateAddress", data.field);
 				
 				setTimeout(function(e){
 					jqtb.ajax.reload();
@@ -1298,19 +1461,32 @@ function GetRequest() {
 }
 
 function nameChage(state,obj,values){
-
-	var data={'cityid':obj,'value':$(values).val(),"status":state};
-	$.ajax({
-		url: "/index.php?m=system&c=setup&a=updatecityNew",
-		data: data,
-		dataType: "json",
-		type: "POST",
-		success: function (data) {
-		},
-		error: function () {
-			alert(data.msg)
-		}
-	})  
+	var old = values.dataset.name;
+	var val = $(values).val()
+	var data={'cityid':obj,'value':val,"status":state};
+	console.log(old);
+	console.log(val);
+	if(old != val){
+		$.ajax({
+			url: "/index.php?m=system&c=setup&a=updatecityNew",
+			data: data,
+			dataType: "json",
+			type: "POST",
+			success: function (data) {
+				values.dataset.name = val;
+				layer.msg(data.msg,{
+					icon: 1,
+					time: 2000
+				});
+			},
+			error: function () {
+				layer.msg(data.msg,{
+					icon: 0,
+					time: 2000
+				});
+			}
+		})  
+	}
 }
 
 function statusChage(id,values){

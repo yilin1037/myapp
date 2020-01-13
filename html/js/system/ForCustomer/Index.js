@@ -439,6 +439,7 @@ var dataList = {
 		,{field:'balance', width:120, title: '余额'}
 		,{field:'express_name', minWidth:150, title: '绑定快递类型'}
 		,{field:'fx_level', width:150, title: '分销商等级', align: 'center'}
+		,{field:'rebate', width:150, title: '返现规则', align: 'center'}
 		,{field:'check_status', width:150, title: '审核状态', align: 'center', templet: '#barType'}
 		,{fixed: 'right', width:600, title: '操作', align:'center', toolbar: '#barDemo'}
 	]]
@@ -794,7 +795,6 @@ function setReturnCash(){
 		url:"/?m=system&c=ForCustomer&a=popup",
 		title: "阶梯返现", width: 1200, height: 600,
 		onload: function () {
-
 			var iframe = this.getIFrameEl();
 			iframe.contentWindow.SetData(data);
 		},

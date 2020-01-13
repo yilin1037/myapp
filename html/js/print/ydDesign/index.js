@@ -49,6 +49,7 @@ layui.use(['layer'], function(){
                         if(data['code'] == 'ok'){
                             getPrintDesignList();
                             parent.parent.reMenuOpen();
+                            parent.parent.add_name();
                         }else{
                             layer.msg(data['msg'], {time: 2000, icon:2});
                         }
@@ -124,6 +125,7 @@ function getPrintDesignList(){
                                     layer.close(index);
                                     getPrintDesignList();
                                     parent.parent.reMenuOpen();
+                                    parent.parent.add_name();
                                 }else{
                                     layer.msg(data['msg'], {time: 2000, icon:2});
                                 }
@@ -148,6 +150,7 @@ function getPrintDesignList(){
                                     layer.close(index);
                                     getPrintDesignList();
                                     parent.parent.reMenuOpen();
+                                    parent.parent.add_name();
                                 }else{
                                     layer.msg(data['msg'], {time: 2000, icon:2});
                                 }

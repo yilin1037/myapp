@@ -50,6 +50,7 @@ layui.use(['layer','upload'], function(){
                         if(data['code'] == 'ok'){
                             getPrintDesignList();
                             parent.parent.reMenuOpen();
+                            parent.parent.add_name();
                         }else{
                             layer.msg(data['msg'], {time: 2000, icon:2});
                         }
@@ -73,6 +74,7 @@ layui.use(['layer','upload'], function(){
     				time: 2000
     			});
                 getPrintDesignList();
+                parent.parent.add_name();
                 parent.parent.reMenuOpen();
             }else{
                 layer.msg(res['msg'],{
@@ -172,6 +174,7 @@ function getPrintDesignList(){
                                     layer.close(index);
                                     getPrintDesignList();
                                     parent.parent.reMenuOpen();
+                                    parent.parent.add_name();
                                 }else{
                                     layer.msg(data['msg'], {time: 2000, icon:2});
                                 }
@@ -196,6 +199,7 @@ function getPrintDesignList(){
                                     layer.close(index);
                                     getPrintDesignList();
                                     parent.parent.reMenuOpen();
+                                    parent.parent.add_name();
                                 }else{
                                     layer.msg(data['msg'], {time: 2000, icon:2});
                                 }

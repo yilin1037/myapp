@@ -595,7 +595,7 @@ var tableList = new Vue({
 			var extra_amtn = $('#extra_amtn').val();
 			extra_amtn = $.trim(extra_amtn);
 			
-			if(WMS_TYPE == 'PT'){//入库并打印条码
+			if(WMS_TYPE == 'T'){//入库并打印条码
 				// if(str_prd_loc == ''){
 				// 	layer.msg("请先选择货位",{
 				// 		icon: 0,
@@ -649,7 +649,7 @@ var tableList = new Vue({
 							time: 2000
 						});
 						
-						if(WMS_TYPE == 'PT'){//入库并打印条码
+						if(WMS_TYPE == 'T'){//入库并打印条码
 							if(data.barcodeList){
 								for(var i = 0; i < data.barcodeList.length; i++){
 									printTpl[unprintTplBq](unprintname,data.barcodeList[i]);

@@ -205,8 +205,6 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'upload', 'element', 'table'],
 			if(!wh || wh == ""){
 				layer.msg('请选择仓库', {icon: 2});
 				return false;
-			}else{
-				prd_loc = '@'+wh;
 			}
 		}
     	if(!prd_loc || prd_loc == ""){
@@ -441,8 +439,6 @@ function scanProInventory(){
 		if(!wh || wh == ""){
 			layer.msg('请选择仓库', {icon: 2});
 			return false;
-		}else{
-			prd_loc = '@'+wh;
 		}
 	}
 	if(!prd_loc || prd_loc == ""){

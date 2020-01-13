@@ -43,9 +43,9 @@ function doConnect(func){
         };
         socket.onerror = function(event) {
             if(typeof(layer) == 'object'){
-                layer.alert('请下载菜鸟云打印插件');
+                layer.alert('请下载菜鸟云打印插件2');
             }else{
-                alert('请下载菜鸟云打印插件');
+                alert('请下载菜鸟云打印插件2');
             }
         };
     }

@@ -432,6 +432,7 @@ function saveTemplate(isView){
 					alert(data['msg']);
                 }
                 parent.parent.reMenuOpen();
+                parent.parent.add_name();
             }else{
                 alert(data['msg']);
             }

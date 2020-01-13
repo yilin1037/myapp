@@ -10735,6 +10735,8 @@ function searchALLNow(self,page,callback){
 	if(self.shopId != ''){
 		$("#searchArr .shop").remove();																																								//===========
 		$("#searchArr").append("<span class='add shop rem'>" + $("#shop").val() + "<i class='dele' id='specialGroup' onclick='closeNow(\"shop\")'></i></span>");
+	}else if (self.shopId == ''){
+		$("#searchArr .shop").remove();	
 	}
 	
 	

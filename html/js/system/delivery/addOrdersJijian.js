@@ -535,12 +535,6 @@ var vueObj = new Vue({
                         $("#express_no").val('');//快递单号
                         $("#address").val('');//一键粘贴
                         searchALLNow(self,'page');
-                        t1.setValue('');
-                        t1.setText('');
-                        t2.setValue('');
-                        t2.setText('');
-                        t3.setValue('');
-                        t3.setText('');
                     }else{
                         layer.msg(data.msg, {
                             icon: 2,
@@ -1255,10 +1249,6 @@ var vueObj = new Vue({
                         $("#receiver_address").val('');//区
                         $("#seller_memo").val('');//区
                         $("#remark").val('');//区
-                        $("#pages1_name_df").val('');//区
-                        $("#pages1_mobile_df").val('');//区
-                        $("#pages1_address_df").val('');//区
-                        $("#pages1_address_df").val('');//区
                          
                     } else {
                         layer.msg(data['msg'], {
@@ -1293,26 +1283,6 @@ function receiverChanged(e) {
         t2.setText(item.receiver_mobile);
         t3.setValue(item.receiver_address);
         t3.setText(item.receiver_address);
-    }else{
-        switch (sender_id) {
-            case 'pages1_name_df':
-                t1.setValue(e.value);
-                t1.setText(e.value);
-                t2.setValue('');
-                t2.setText('');
-                t3.setValue('');
-                t3.setText(''); 
-                break;
-            case 'pages1_mobile_df':
-                t2.setValue(e.value);
-                t2.setText(e.value);
-                break;
-            case 'pages1_address_df':
-                t3.setValue(e.value);
-                t3.setText(e.value); 
-                break;    
-        }
-
     }
 }
 function cbProductRows(data) {

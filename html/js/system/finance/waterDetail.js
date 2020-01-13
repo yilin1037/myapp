@@ -48,6 +48,7 @@ var flow = new Vue({
 					  ,{field:'type', title: '类型',"width":180}
 					  ,{field:'money', title: '金额（元）',"width":180}
 					  ,{field:'gift_tid', title: '面单数',"width":180}
+					  ,{field:'remark', title: '备注',"width":180}
 					]]
 					,id: 'testReload'
 					,page: true

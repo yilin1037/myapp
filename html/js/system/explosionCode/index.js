@@ -347,7 +347,6 @@ var tableList = new Vue({
 			doGetPrinters(function(data){
 				self.layprint = data;
 			});
-
 			layer.open({
 				type: 1,
 				title: '发货清单打印机设置',

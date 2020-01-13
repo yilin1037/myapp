@@ -7,7 +7,9 @@ var flow = new Vue({
 	   isHave:false,
        pinDD:false,
 	   turnTo:false,
-	   navbox:true,
+       navbox:true,
+       shopclick:false,
+       cashback:false,
 	},
     mounted: function() {
 		$("#quickStrike").attr('src','/images/index/wmsf.png','width','18px','height','19px;')
@@ -126,24 +128,6 @@ var flow = new Vue({
         			border: "1px solid rgb(201, 31, 57)"
         		})
             });
-            $("#cash_back").hover(function() {
-        		$(this).addClass("current");
-        		$(this).find(".content").show();
-        		$(this).css({
-        			"background-position": "0 -239px",
-        			color: "#3077D1",
-        			border: "1px solid rgb(201, 31, 57)"
-        		})
-            },
-        	function() {
-        		$(this).removeClass("current");
-        		$(this).find(".content").hide();
-        		$(this).css({
-        			"background-position": "0 -262px",
-        			color: "#FFFFFF",
-        			border: "1px solid rgb(201, 31, 57)"
-        		})
-        	});
         	$("#fankui").hover(function() {
         		$(this).addClass("current");
         		$(this).find(".content").show();
@@ -233,6 +217,24 @@ var flow = new Vue({
         			color: "#FFFFFF",
         			border: "1px solid rgb(201, 31, 57)"
         		})
+            });
+            $("#cash_back").hover(function() {
+        		$(this).addClass("current");
+        		$(this).find(".content").show();
+        		$(this).css({
+        			"background-position": "0 -239px",
+        			color: "#3077D1",
+        			border: "1px solid rgb(201, 31, 57)"
+        		})
+            },
+        	function() {
+        		$(this).removeClass("current");
+        		$(this).find(".content").hide();
+        		$(this).css({
+        			"background-position": "0 -262px",
+        			color: "#FFFFFF",
+        			border: "1px solid rgb(201, 31, 57)"
+        		})
         	});
             $("#openGetOrder").hover(function() {
         		$(this).addClass("current");
@@ -280,6 +282,7 @@ var flow = new Vue({
         loadShopConfig();
         lastGetOrderTime();
 		upLoadLog();
+
     },
     methods: {
         //修改密码
@@ -330,6 +333,59 @@ var flow = new Vue({
                 }
             });
         },
+        // // 店铺click
+        // shop_click:function(){
+        //     var self = this
+        //     self.shopclick = !self.shopclick
+        //     console.log(self.cashback)
+        //     if(self.shopclick == false){
+        //         $('.current').css('background','rgba(201, 31, 57,0.1)')
+        //         $('.current span').css('background','rgba(0, 0, 0,0)')
+        //         $('#shop').removeClass("current");
+        //         $('#shop').find(".content").hide();
+        // 		$('#shop').css({
+        // 			"background-position": "0 -262px",
+        // 			color: "#FFFFFF",
+        // 			border: "1px solid rgb(201, 31, 57)"
+        // 		})
+        //     }else if(self.shopclick == true ){
+        //         $('#shop').addClass("current");
+        //         $('.current').css('background','rgba(201, 31, 57,0.1)')
+        //         $('.current span').css('background','rgba(0, 0, 0,0.1)')
+        // 		$('#shop').find(".content").show();
+        // 		$('#shop').css({
+        // 			"background-position": "0 -262px",
+        // 			color: "#ffffff",
+        // 			border: "1px solid rgb(201, 31, 57)"
+        // 		})
+        //     }
+        // },
+        // cash_back_button:function(){
+        //     var self = this
+        //     self.cashback = !self.cashback
+        //     console.log(self.shopclick)
+        //     if(self.cashback == false){
+        //         $('.current').css('background','rgba(201, 31, 57,0.1)')
+        //         $('.current .back').css('background','rgba(0, 0, 0,0)')
+        //         $('#cash_back').removeClass("current");
+        //         $('#cash_back').find(".content").hide();
+        // 		$('#cash_back').css({
+        // 			"background-position": "0 -262px",
+        // 			color: "#FFFFFF",
+        // 			border: "1px solid rgb(201, 31, 57)"
+        // 		})
+        //     }else if(self.cashback == true ){
+        //         $('#cash_back').addClass("current");
+        //         $('.current').css('background','rgba(201, 31, 57,0.1)')
+        //         $('.current .back').css('background','rgba(0, 0, 0,0.1)')
+        // 		$('#cash_back').find(".content").show();
+        // 		$('#cash_back').css({
+        // 			"background-position": "0 -262px",
+        // 			color: "#ffffff",
+        // 			border: "1px solid rgb(201, 31, 57)"
+        // 		})
+        //     }
+        // },
         getBalance:function(){
             $.ajax({                        
                 url: "/index.php?m=system&c=index&a=getBalance",                    
@@ -399,9 +455,13 @@ var flow = new Vue({
         //账户充值
         payIdList:function(){
             addTab('recharge','?m=system&c=finance&a=oldRecharge','账户充值');
+
         },
         //打单反现
         cash_back:function(){
+            var self = this 
+            self.cash_back_button();
+            console.log(self.cashback)
             layer.open({																																											
 				type: 1,																																											
 				title: '设置',																																								
@@ -544,7 +604,17 @@ function upLoadLog()
 			}
 		});
 	}, 10000);
+}
+function hh(obj){
+    var id=$(obj).attr('id');
+    if($(obj).is('.hh')){
+        $("#iframe"+$(obj).attr('data-id')).attr('src',$(obj).attr('data-url'));
+        $("#"+id).removeClass("hh");
+    }
 }	
+function add_name(){
+    $(".menuNode").addClass('hh');
+}
 function loadShopConfig(){
     execAjax({
         m:'system',
@@ -618,7 +688,7 @@ function refreshIframe()
 
 function loadPage(){
 	var index = $(".layui-tab-content").find(".layui-show").index()+1;
-	window[index].location.reload();
+    window[index].location.reload();
 }
 
 //判断是否安装菜鸟组件

@@ -154,6 +154,9 @@ var flow = new Vue({
 		show:false,
 		onlySendWlList:'',
 		gridArr_list:'',
+		time_list:30,
+		box_Synchronization:false,
+		timer:0,
 	},
 	mounted: function() {
 		var self = this;
@@ -323,6 +326,7 @@ var flow = new Vue({
 			$("#batchSetRemark").hide();
 			$("#mulitPackage").hide();
 			$('#Synchronization').hide();
+			$('#Synchroniza').hide();
 			$('#packageImg').hide();
 			$("#warningTime").hide();
 			$("#warningText").hide();
@@ -352,6 +356,7 @@ var flow = new Vue({
 			$("#close_label").hide();
 			$("#mulitPackage").hide();
 			$('#Synchronization').hide();
+			$('#Synchroniza').hide();
 			$("#isexpress").show();
 			/*if(isexpress=='on'){
 			$("#isexpress").show();
@@ -431,6 +436,7 @@ var flow = new Vue({
 			$("#mulitPackage").hide();
 			$('#mulitPackage').hide();
 			$('#Synchronization').hide();
+			$('#Synchroniza').hide();
 			$("#warningTime").hide();
 			$("#warningText").hide();
 			$("#falseSendText").hide();
@@ -758,7 +764,8 @@ var flow = new Vue({
 			//					self.noRemark     --------  无留言且无备注 标签是否选中																												=============
 			//																																														=============
 			//===================================================================================================================================================================================================
-			else if(group == "conditionGroup"){																																						
+			else if(group == "conditionGroup"){		
+				console.log(who)																																				
 				$(".conditionGroup div").each(function(){																																				
 					$(".conditionGroup .ic").remove();																																					
 					$(this).removeClass("border");																																			
@@ -847,6 +854,8 @@ var flow = new Vue({
 					self.noRemark = false;
 					self.repeatOrder = false;
 					$(".conditionGroup .ic").remove();	
+					$("#searchArr .remar").remove();
+					$(toggle).removeClass("border");
 				}
 			}																																														
 			//=====================================================================================条件筛选组选择标签结束========================================================================================
@@ -1312,16 +1321,70 @@ var flow = new Vue({
 				$("#searchALL").removeClass("btnOnlyStyle");
 			});
 		},
+		// 同步订单
 		openGetOrder:function(){
-            layer.open({
-                title :'同步订单',
+			var self = this
+			layer.open({																																											
+				type: 1,
+				title: false,																																																																																			
+				skin: 'layui-layer-hui', //加上边框																																					
+				area: ['200px', '130px'], //宽高																																					
+				shade: 0.3,	
+				closeBtn: 0,																																										
+				content: $("#Synchronization-box"),	
+				time:30000,																																																																	
+			});
+			var time_list = 30
+			self.timer = setInterval(function(){
+				if(time_list == 0){
+					clearInterval(self.timer);
+					searchALLNow(self,'page');
+					self.refreshTotal();	
+					layer.closeAll();
+				}else{
+					time_list--;
+					self.time_list = time_list
+				}
+			},1000)
+			$.ajax({
+				url: "/index.php?m=widget&c=getOrder&a=downOrder",
+				type: 'post',
+				success: function (data) {
+					if(self.time_list > 0)
+					{
+						self.time_list = 0;
+						clearInterval(self.timer);
+						searchALLNow(self,'page');
+						self.refreshTotal();
+						layer.closeAll();	
+					}
+				}
+			});
+			self.time_list = 30
+		},
+		Synchronization:function(){
+			var self = this
+			layer.open({
+                title :'抓单',
                 type: 2,
                 shade: false,
                 area: ['650px', '550px'],
                 maxmin: false,
                 content: '?m=widget&c=getOrder&a=index'
             }); 
-        },
+		},
+		Synchronization_div:function(){
+			layer.open({																																											
+				type: 1,
+				title:"单个订单同步",																																																																																			
+				skin: 'layui-layer-rim', //加上边框																																					
+				area: ['500px', '250px'], //宽高																																					
+				shade: 0.3,																																											
+				content: $("#Synchroniza-box"),	
+				btn: ['确定', '取消'],																																																																	
+			});
+			$("#Synchroniza_input").val()
+		},
 		//========================查询方法结束=====================
 		
 		//========================选择省份弹窗=====================
@@ -4999,7 +5062,6 @@ var flow = new Vue({
 			self.showshop = !self.showshop;
 			var arr = [];
 			var name = [];
-			
 			$('input[name="shopList"]').each(function(){
 				$(this).on('ifChecked ifUnchecked', function(event){
 					var newArr = [];
@@ -7496,7 +7558,7 @@ var flow = new Vue({
 					cancel: function(index, layero){
 						if(type == "page"){
 							searchALLNow(self,'page');
-							$("input[name='order']").iCheck('uncheck');	
+							//$("input[name='order']").iCheck('uncheck');	
 							$(".inputTe").css("color","#FFF");
 							self.isAll = 0;
 							self.nowPage = false;
@@ -7515,7 +7577,6 @@ var flow = new Vue({
 			self.defaultMsg = [];
 			var data = "";
 			var nowIsAll = self.isAll;
-			
 			if(self.versionSwitch==true){
 					if($("#bottomDiv input[name='order']").filter(':checked').length == 0){
 						layer.msg('请选择至少一条数据',{
@@ -7528,14 +7589,8 @@ var flow = new Vue({
 					if(self.isAll == 0){//-----如果是当前页	
 						data = "";		
 						$("#bottomDiv input[name='order']:checkbox").each(function(){				
-
-		
 							if(true == $(this).is(':checked')){						
-
-			
-								data += ($(this).val()+",");							
-
-		
+								data += ($(this).val()+",");
 							}
 						});				
 						data = data.substring(0,data.length-1);	
@@ -7563,6 +7618,7 @@ var flow = new Vue({
 					self.isAll = 0;
 				}
 			}
+			//没有设置快的的  设置成默认快递
 			
 			if(self.isAll != 0 && (data.orderStatus == 'WAIT_ASSIGN' || data.orderStatus == 'UNLOCK')){
 				layer.msg('选择全部页打面单无法使用查询条件[订单状态-待发货][订单状态-待发货未锁定] ，请去掉此查询条件后再进行操作',{
@@ -8016,6 +8072,7 @@ var flow = new Vue({
 			}else{
 				isrepeat = "yes";
 			}
+			var kuaidi_num=self.expressSort.length;
 			
 			var btnObj = $(event.target);
 			btnObj.prop("disabled",true);
@@ -8101,8 +8158,7 @@ var flow = new Vue({
 								element.progress('delivery', data.per + '%');
 								$("#pages8-title").html(data.msg);					
 							});
-								
-							if(data.code == "end"){
+							if(data.code == "end" && kuaidi_num==1){
 								clearInterval(Interval);
 								searchALLNow(self,'page');
 							}
@@ -10899,7 +10955,6 @@ function ordernumber(a){																																											//===========
 function orderconditions(a){																																											//===========
 	var toggle = event.currentTarget;                                                                                                                                                               //===========
 
-
 	if(toggle.value == "select_send"){
 		flow.searchAdd('conditionGroup','haveRemark')
 	}else if ( toggle.value == "select_send_time") {
@@ -11865,6 +11920,8 @@ function searchALLNow(self,page,callback){
 	if(self.shopId != ''){
 		$("#searchArr .shop").remove();																																								//===========
 		$("#searchArr").append("<span class='add shop rem'>" + $("#shop").val() + "<i class='dele' id='specialGroup' onclick='closeNow(\"shop\")'></i></span>");
+	}else if (self.shopId == ''){
+		$("#searchArr .shop").remove();	
 	}
 	
 	
@@ -12358,7 +12415,7 @@ function formattingCode(miniDatas){
 		if(miniDatas[t]['itemInfo']){
 			
 			for(var u=0;u<miniDatas[t]['itemInfo'].length;u++){
-				oPrdNoListArray = oPrdNoListArray + "<div style='padding:2px;display:inline-block;width:30px;height:30px;'title='"+miniDatas[t]['itemInfo'][u]['title_naked']+"\n"+miniDatas[t]['itemInfo'][u]['prd_no']+"\n"+miniDatas[t]['itemInfo'][u]['sku_name']+"' onclick='modifyMess(\""+miniDatas[t]['itemInfo'][u].tid+"\", \""+miniDatas[t]['itemInfo'][u].oid+"\", \""+miniDatas[t]['itemInfo'][u].sku_id+"\", \""+t+"\", \""+miniDatas[t]['itemInfo'][u].refund_status+"\",\""+miniDatas[t]['itemInfo'][u].bom_id+"\",\""+miniDatas[t]['itemInfo'][u].prd_no+"\",\""+miniDatas[t]['itemInfo'][u].sku_name+"\")'> <a style='white-space:normal;display: block;' class='showCellTooltip'  data-tooltip='Tooltip left' data-placement='left' > <img id='img_pic_url_big' src='"+miniDatas[t]['itemInfo'][u]['pic_url']+"' > </a> <div style='position: absolute; top: -5px;right: -5px;height: 10px;background: #FFFFFF; border: 1px solid #b0b0b0;line-height: 10px;font-size: 12px;border-radius: 2px;min-width:10px;dispaly:flex;z-index:222'>"+miniDatas[t]['itemInfo'][u]['num']+"</div></div>";
+				oPrdNoListArray = oPrdNoListArray + "<div style='padding:2px;display:inline-block;width:30px;height:30px;'title='"+miniDatas[t]['itemInfo'][u]['title_naked']+"\n"+miniDatas[t]['itemInfo'][u]['prd_no']+"\n"+miniDatas[t]['itemInfo'][u]['sku_name']+"' onclick='modifyMess(\""+miniDatas[t]['itemInfo'][u].tid+"\", \""+miniDatas[t]['itemInfo'][u].oid+"\", \""+miniDatas[t]['itemInfo'][u].sku_id+"\", \""+t+"\", \""+miniDatas[t]['itemInfo'][u].refund_status+"\",\""+miniDatas[t]['itemInfo'][u].bom_id+"\",\""+miniDatas[t]['itemInfo'][u].prd_no+"\",\""+miniDatas[t]['itemInfo'][u].sku_name+"\")'> <a style='white-space:normal;display: block;' class='showCellTooltip'  data-tooltip='Tooltip top' data-placement='top' > <img id='img_pic_url_big' src='"+miniDatas[t]['itemInfo'][u]['pic_url']+"' > </a> <div style='position: absolute; top: -5px;right: -5px;height: 10px;background: #FFFFFF; border: 1px solid #b0b0b0;line-height: 10px;font-size: 12px;border-radius: 2px;min-width:10px;dispaly:flex;z-index:222'>"+miniDatas[t]['itemInfo'][u]['num']+"</div></div>";
 				this.gridArr_list(oPrdNoListArray_img,t)
 			}
 			

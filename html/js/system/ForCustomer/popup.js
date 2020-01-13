@@ -5,23 +5,13 @@ layui.use(['laydate', 'form', 'laypage', 'layer', 'element', 'table'], function(
 		,form = layui.form //表单
 		,element = layui.element; //元素操作
 	var table = layui.table;
-	tableLoad.tableLoadFunction();
-	
+
 });
-
-
-//回车搜索
-function searchTable(){
-	tableLoad.tableLoadFunction();
-}
-
-
 
 mini.parse();
 var grid = mini.get("datagrid1");
-var system_id = ''
 grid.load();
-var menu = new ColumnsMenu(grid);
+
 function onKeyEnter(e) {
 	search();
 }
@@ -38,16 +28,14 @@ function removeRow() {
 	}
 }
 function SetData(data) {
-	this.system_id= data['systems_id']
-	
+	// this.system_id= data['systems_id']
 }
 
 function saveData() {
 	grid.commitEdit();
 	var SynChange = grid.getChanges();
 	var data = mini.decode(SynChange);
-	var systems_id = this.system_id;
-	console.log(systems_id)
+	var systems_id = $('#systemId').val()
 	$.ajax({
 		url:'/?m=system&c=ForCustomer&a=editRetrunCatchM',
 		dataType: 'json',
@@ -57,7 +45,11 @@ function saveData() {
 			system_id: systems_id
 		},
 		success:function(res){
-			layer.msg(res.msg);
+			if(res.code == 'ok'){
+				window.CloseOwnerWindow()
+			}else{
+				layer.msg(res.msg);	
+			}
 		}
 	})
 }
@@ -80,7 +72,7 @@ grid.on("beforeload", function (e) {
 
 
 var grid2 = mini.get("datagrid2");
-var menu = new ColumnsMenu(grid2);
+
 function onKeyEnter(e) {
 	search();
 }

@@ -129,12 +129,12 @@ var tableLoad = {
 					
 					for(var i=0;i<data.length;i++){
 						if(data[i]['send_status'] == 'WAIT_SENDED'){  //已发货
-							speckText('此单已发货');
-							layer.msg('此单已发货',{
-								icon: 0,
-								time: 2000
-							});
-							deliveryOnoff = 0;
+							// speckText('此单已发货');
+							// layer.msg('此单已发货',{
+							// 	icon: 0,
+							// 	time: 2000
+							// });
+							// deliveryOnoff = 0;
 						}else if(data[i]['send_status'] == 'WAIT_FAULT'){  //已取消
 							speckText('此单已取消');
 							layer.msg('此单已取消',{

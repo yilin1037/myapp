@@ -820,6 +820,16 @@ function upLoadLog()
 			}
 		});
 	}, 10000);
+}
+function hh(obj){
+    var id=$(obj).attr('id');
+    if($(obj).is('.hh')){
+        $("#iframe"+$(obj).attr('data-id')).attr('src',$(obj).attr('data-url'));
+        $("#"+id).removeClass("hh");
+    }
+}  
+function add_name(){
+    $(".menuNode").addClass('hh');
 }	
 function loadShopConfig(){
     execAjax({
@@ -894,7 +904,7 @@ function refreshIframe()
 
 function loadPage(){
 	var index = $(".layui-tab-content").find(".layui-show").index()+1;
-	window[index].location.reload();
+    window[index].location.reload();
 }
 
 //判断是否安装菜鸟组件

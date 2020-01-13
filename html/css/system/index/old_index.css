@@ -1,4 +1,5 @@
 a{ text-decoration:none;}
+.top_div{display:flex;background-color:rgb(201, 31, 57)!important;}
 a:hover{ text-decoration:none;}
 .my-header {
     height: 62px;
@@ -40,7 +41,6 @@ margin: 9px 0;
 overflow: hidden;
 background-color: #E5E5E5;
 }
-
 @charset "utf-8";body{font-family:"Microsoft Yahei","SimSun","Arial Narrow",HELVETICA;_font-family:SimSun,Arial;overflow:hidden;font-size:12px;}*{margin:0;padding:0;}li{list-style:none;}image{border:none;}.top{width:100%;height:50px;position:relative;background-color:#3077D1;color:#FFF;z-index:99;}.top .logo{/*background-position:0 -38px;*/width:130px;height:50px;display:block;position:absolute;/*top:10px;*/left:10px;z-index:10002;}.top .links{border-bottom:1px solid #ccc;width:100%;height:30px;margin-top:3px;}.top .links a{color:#2f6da7;}.top .links a:hover{text-decoration:underline;background:none;color:#2f6da7;}.top .account{color:#777;overflow:hidden;width:220px;height:60px;margin-left:15px;margin-bottom:10px;}.top .account p{margin-top:8px;}.top p.com{padding-left:25px;background-position:-10px -98px;overflow:hidden;width:190px;height:20px;white-space:nowrap;text-overflow:ellipsis;}.top p.expire-date{padding-left:20px;background-position:-10px -75px;}.tb-wrap{z-index:10001;background-color:#3077D1;position:absolute;top:13px;right:150px;*width:450px;}.tb-wrap>ul li{float:right;line-height:22px;padding-left:26px;position:relative;cursor:default;height:22px;line-height:22px;border-left:1px solid #3077D1;border-right:1px solid #3077D1;}.tb-wrap>ul li>span,.tb-wrap>ul li>i{float:left;font-weight:bold;}.logout{margin-right:50px;}.logout a{color:#FFF;text-decoration:none;}.logout a:hover{color:#FFF;text-decoration:underline;}#user{background-position:0 -262px;}#kefu{cursor:default;background-position:0 -214px;}#help{cursor:default;background-position:0 -310px;}#dataCenter{cursor:default;background-position:0 -556px;}.link-crm{text-decoration:underline;color:#fff;cursor:pointer;position:absolute;top:38px;right:130px;z-index:10000;padding-left:23px;display:block;}#sync{cursor:pointer;position:absolute;top:38px;right:38px;z-index:10000;padding-left:23px;}
 #sync-more{cursor:pointer;position:absolute;top:38px;right:6px;z-index:10000;padding-left:23px;}#sync i{background-position:-5px -362px;width:18px;height:18px;display:block;float:left;}#sync b{background:url(base/loading-small.gif) 0 -1px no-repeat;width:18px;height:18px;display:block;float:left;}
 #sync:hover,#sync-more:hover{text-decoration:underline;}

@@ -115,7 +115,7 @@ var flow = new Vue({
 					,{field:'send_status', width:90, title: '订单状态'}
 					,{field:'items_num', width:90, title: '商品总数'}
 					,{field:'payment', width:90, title: '销售金额'}
-					,{field:'price', width:90, title: '商品成本'}
+					,{field:'take_price', width:90, title: '商品成本'}
 					,{field:'express_fee', width:90, title: '运费成本'}
 					,{field:'profits', width:90, title: '订单利润'}
 					,{field:'profitMargin', width:90, title: '利润率'}

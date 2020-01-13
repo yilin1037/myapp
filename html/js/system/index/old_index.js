@@ -317,6 +317,16 @@ function loadShopConfig(){
         }
     });
 }
+function hh(obj){
+    var id=$(obj).attr('id');
+    if($(obj).is('.hh')){
+        $("#iframe"+$(obj).attr('data-id')).attr('src',$(obj).attr('data-url'));
+        $("#"+id).removeClass("hh");
+    }
+}   
+function add_name(){
+    $(".menuNode").addClass('hh');
+}
 //上传执行时间
 function lastGetOrderTime(){
     execAjax({
@@ -340,7 +350,7 @@ var mainHeight = 0;
 var iframeArr = [];
 window.setInterval("refreshIframe()", 200);
 function addTab(id,url,title){
-	 mainHeight = window.innerHeight-100;
+	mainHeight = window.innerHeight-100;
     var tab = 'my-tab';
     var length 	= $(".layui-tab-title").children("li[lay-id='" + id + "']").length;
     if (!length) {
