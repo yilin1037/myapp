@@ -1,0 +1,6 @@
+1578736169---https://openapi.webuy.ai/gateway/open/api/order/listOrderIds
+1578736169---{"pageNo":"1","pageSize":"1","gmtStart":"2020-01-11 15:10:48","gmtEnd":"2020-01-11 15:34:48","supplierDockId":"https:\/\/openapi.ikucun.com\/api\/v2\/activity\/LIST?STATUS=1&appid=chaoQunSupplier","appId":"chaoQunSupplier","gmtRequest":1578736169372,"randomStr":"f50395d20e8b3507b6d384da846ee097","sign":"57D9691BA227D266DC71B8AC81350B82"}
+1578736170---{"count":0,"entry":null,"message":"supplierDockId不正确","responseCode":405,"status":false}
+1578736170---https://openapi.webuy.ai/gateway/open/api/order/listOrderIds
+1578736170---{"pageNo":1,"pageSize":50,"gmtStart":"2020-01-11 15:10:48","gmtEnd":"2020-01-11 15:34:48","supplierDockId":"https:\/\/openapi.ikucun.com\/api\/v2\/activity\/LIST?STATUS=1&appid=chaoQunSupplier","appId":"chaoQunSupplier","gmtRequest":1578736170485,"randomStr":"ad920c1a581ec734a0ecdf026ee2bb02","sign":"3E55EB00950984D4B37D112FB8E989A2"}
+1578736170---{"count":0,"entry":null,"message":"supplierDockId不正确","responseCode":405,"status":false}

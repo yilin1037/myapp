@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page height="312" width="800">
+<layout height="312" width="800" >
+<layout left="354" top="258" width="227.844" height="40" style="overflow:hidden;">
+<text fontFamily = "黑体" fontSize = "20"fontWeight = "bold" value="<%=data.shopsortname%>"  />
+</layout>
+<layout left="2" top="42" width="580" height="166" style="overflow:hidden;">
+<text fontFamily = "黑体" fontSize = "28"fontWeight = "bold"  value="<% for(i=0;i<data.item.length;i++) {%>(<%=i+1%>)<%=data.item[i].prd_no%>  <%=data.item[i].sku%>  【<%=data.item[i].qty%>件】
+<%}%>"  />
+</layout>
+<layout left="6" top="210" width="330" height="41.9376" style="overflow:hidden;">
+<text fontFamily = "黑体" fontSize = "36" value="<%=data.buyer_message%>"  />
+</layout>
+<layout left="342" top="210" width="238" height="44" style="overflow:hidden;">
+<text fontFamily = "黑体" fontSize = "36" value="<%=data.seller_memo%>"  />
+</layout>
+<layout left="6" top="252" width="237.844" height="41.9376" style="overflow:hidden;">
+<text fontFamily = "黑体" fontSize = "24" value="<%=data.payment_date%>"  />
+</layout>
+<layout left="88" top="0" width="123.9688" height="43.9688" style="overflow:hidden;">
+<text fontFamily = "黑体" valign="center"fontSize = "44"fontWeight = "bold" value="<%=data.prdt_sum%>"  />
+</layout>
+<layout left="22" top="0" width="93.9688" height="47.9688" style="overflow:hidden;">
+<text fontFamily = "黑体" valign="center"fontSize = "44"fontWeight = "bold"  value="总："  />
+</layout>
+<layout left="128" top="0" width="113.9376" height="43.9376" style="overflow:hidden;">
+<text fontFamily = "黑体" valign="left"fontSize = "44"fontWeight = "bold"  value="件"  />
+</layout>
+</layout>
+</page>

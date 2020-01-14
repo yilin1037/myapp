@@ -1220,7 +1220,7 @@ var flow = new Vue({
 				type: 'post',
 				data: {checkStatus:str},
 				dataType: 'json',
-				success: function (data) {	
+				success: function (data) {
 					if(data=='1'){
 						self.versionSwitch=true;
 					}else if(data=='2'){
@@ -1231,12 +1231,15 @@ var flow = new Vue({
 						$("#bottomDiv").css("display","none");
 						$("#grid1").css("display","block");
 						$("#biaotou").css("display","none");
+						$('.mini-fit').css('display','block');
 						$('.mini-fit').height($(window).height()-190);
 					}else{
 						$("[name='typeTable']").prop('checked',true);
 						$("#bottomDiv").css("display","block");
 						$("#grid1").css("display","none");
 						$("#biaotou").css("display","block");
+						$('.mini-fit').css('display','none');
+	
 					}
 				}
 			});	
@@ -5099,6 +5102,7 @@ var flow = new Vue({
 					$("#shop").attr("name",b);
 					
 					self.shopId = b;
+					searchALLNow(self,'page');					
 				});
 			});
 		},
@@ -8158,7 +8162,7 @@ var flow = new Vue({
 								element.progress('delivery', data.per + '%');
 								$("#pages8-title").html(data.msg);					
 							});
-							if(data.code == "end" && kuaidi_num==1){
+							if(data.code == "end" && kuaidi_num==1 && return_data.code != "error"){
 								clearInterval(Interval);
 								searchALLNow(self,'page');
 							}
@@ -11024,6 +11028,7 @@ function searchAllPlan(id){
 		data: {id: id},
 		dataType: 'json',																																						
 		success: function (data) {
+			console.log(data)
 			if(data.code == 'ok'){
 				var searchJson = data.searchJson;
 				
@@ -11104,16 +11109,16 @@ function searchAllPlan(id){
 					"sameBuyer":searchJson.sameBuyer,
 					"DROP_SHIPPING": flow.DROP_SHIPPING,
 					"shippingId": flow.shippingId,
+					"remark_id":searchJson.remark
 				};	
-				
 				flow.searchData = searchData;
-				
 				$.ajax({
 					url: "/index.php?m=system&c=delivery&a=getOrderTrade",
 					type: 'post',
 					data: {data: searchData},
 					dataType: 'json',
 					success: function (data) {
+						console.log(data)
 						var gridData = data.data;
 						var pageCount = data.pageCount;
 						var pageNo = data.pageNo;
@@ -11534,6 +11539,8 @@ function orderSelect(a){
 	}else if(a == "seller_memo"){
 		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='卖家备注' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(a == "buyer_message"){
+		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='备注' onkeydown='keyDownSearch()' name='reset'>");
+	}else if(a == "remark_id"){
 		$(".changeDiv").html("<input type='text' class='" + a + " inp' placeholder='买家备注' onkeydown='keyDownSearch()' name='reset'>");
 	}else if(a == "payment"){
 		$(".changeDiv").html("<input type='text' class='" + a + "1 inp' style='width:65.5px;background-image:url(images/mon.png);background-size:8px 10px;background-repeat:no-repeat;background-position:3px center;border:1px solid #c2c2c2;padding-left:14px;' onkeydown='keyDownSearch()' name='reset'> - <input type='text' class='" + a + "2 inp' style='width:65.5px;background-image:url(images/mon.png);background-size:8px 10px;background-repeat:no-repeat;background-position:3px center;border:1px solid #c2c2c2;padding-left:14px;' onkeydown='keyDownSearch()' name='reset'>");
@@ -11701,6 +11708,7 @@ function searchALLNow(self,page,callback){
 	var receiver_mobile = $('.receiver_mobile').val();
 	var receiver_address = $('.receiver_address').val();
 	var seller_memo = $('.seller_memo').val();
+	var remark_id = $('.remark_id').val();
 	var buyer_message = $('.buyer_message').val();
 	var payment1 = $('.payment1').val();
 	var payment2 = $('.payment2').val();
@@ -11747,8 +11755,6 @@ function searchALLNow(self,page,callback){
 	var outer_id = $('.outer_id').val();
 	var outer_sku_id = $('.outer_sku_id').val();
 	/***********/
-
-
 	var now = new Date();
 	var Year = now.getFullYear();//获取当前年
 	var Month =  now.getMonth()+1;
@@ -11850,6 +11856,9 @@ function searchALLNow(self,page,callback){
 		$("#searchArr").append("<span class='add sear_left rem'>卖家备注:"+seller_memo+"<i class='dele' id='sear_left' onclick='closeNow(\"sear_left\")'></i></span>");
 	}else if(buyer_message != undefined && buyer_message != ""){
 		$("#searchArr").append("<span class='add sear_left rem'>买家备注:"+buyer_message+"<i class='dele' id='sear_left' onclick='closeNow(\"sear_left\")'></i></span>");
+	}else if(remark_id != undefined && remark_id != ""){
+		console.log(remark_id)
+		$("#searchArr").append("<span class='add sear_left rem'>备注:"+remark_id+"<i class='dele' id='sear_left' onclick='closeNow(\"sear_left\")'></i></span>");
 	}else if(payment1 != undefined && payment1 != ""){
 		if(payment2 != undefined && payment2 != ""){
 			$("#searchArr").append("<span class='add sear_left rem'>订单金额:"+payment1+"-"+payment2+"<i class='dele' id='sear_left' onclick='closeNow(\"sear_left\")'></i></span>");
@@ -12030,7 +12039,6 @@ function searchALLNow(self,page,callback){
 		'check_stock_status': check_stock_status,
 	};	
 	self.searchData = data;
-	
 	$.ajax({
 		url: "/index.php?m=system&c=delivery&a=getOrderTrade",
 		type: 'post',
@@ -12585,6 +12593,8 @@ function formattingCode(miniDatas){
 			miniDatas[t]['shopname_all'] = shopname_all;
 			var web_status_name_all = '<img src="'+miniDatas[t].seller_flag_pic +'" style="width:14px;height:14px;">'+miniDatas[t].web_status_name;
 			miniDatas[t]['web_status_name_all'] = web_status_name_all;
+			// 备注
+			var remark_id = miniDatas[t]['remark']
 			//状态
 			
 			//数量金额

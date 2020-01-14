@@ -10,6 +10,7 @@ var flow = new Vue({
        navbox:true,
        shopclick:false,
        cashback:false,
+       img_url:'images/jijian/header.png'
 	},
     mounted: function() {
 		$("#quickStrike").attr('src','/images/index/wmsf.png','width','18px','height','19px;')
@@ -460,8 +461,7 @@ var flow = new Vue({
         //打单反现
         cash_back:function(){
             var self = this 
-            self.cash_back_button();
-            console.log(self.cashback)
+            // self.cash_back();
             layer.open({																																											
 				type: 1,																																											
 				title: '设置',																																								
@@ -481,15 +481,15 @@ var flow = new Vue({
 						});	
 		                return;
 					}
-					$.ajax({																																														
-						url: "",																																		
+					$.ajax({		
+                        url: "/index.php?m=system&c=index&a=editAlipay",    																																																																												
 						type: 'post',																																												
 						data: {receiver_address:receiver_address},																																													
 						dataType: 'json',																																											
 						success: function (data) {
 							if(data.code=='ok'){
 								layer.close(index);
-								reloadRow(self,order_index);
+								// reloadRow(self,order_index);
 								layer.msg('修改成功',{
 									icon: 1,
 									time: 2000

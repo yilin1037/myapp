@@ -1,0 +1,30 @@
+1578732442--13123456789-select count(1) from u13123456789_tid_items as a
+			 inner join (select new_tid,items_num,sku_num,tid,seller_flag,mark_status from u13123456789_tid_orders where   send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN')  ) as b on b.tid=a.tid where 1=1 
+			  and a.refund_status != 'SUCCESS' and a.close_unique_code=0 and a.check_stock='0' and b.mark_status <> 'LOCK' and  a.exception_online='0' and a.is_refund<>'1' 
+			group by a.prd_no  order by a.payment_time desc
+Unknown column 'a.exception_online' in 'where clause'
+1578732442--13123456789-select a.prd_no,a.num_iid,a.title,a.id,a.pic_url from u13123456789_tid_items as a
+			 inner join (select new_tid,items_num,sku_num,tid,seller_flag,mark_status from u13123456789_tid_orders where   send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN')  ) as b on b.tid=a.tid where 1=1 
+			  and a.refund_status != 'SUCCESS' and a.close_unique_code=0 and a.check_stock='0' and b.mark_status <> 'LOCK' and  a.exception_online='0' and a.is_refund<>'1' 
+			group by a.prd_no  order by a.payment_time desc limit 0,100
+Unknown column 'a.exception_online' in 'where clause'
+1578736109--13123456789-select count(1) from u13123456789_tid_items as a
+			 inner join (select new_tid,items_num,sku_num,tid,seller_flag,mark_status from u13123456789_tid_orders where   send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN')  ) as b on b.tid=a.tid where 1=1 
+			  and a.refund_status != 'SUCCESS' and a.close_unique_code=0 and a.check_stock='0' and b.mark_status <> 'LOCK' and  a.exception_online='0' and a.is_refund<>'1' 
+			group by a.prd_no  order by a.payment_time desc
+Unknown column 'a.exception_online' in 'where clause'
+1578736109--13123456789-select a.prd_no,a.num_iid,a.title,a.id,a.pic_url from u13123456789_tid_items as a
+			 inner join (select new_tid,items_num,sku_num,tid,seller_flag,mark_status from u13123456789_tid_orders where   send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN')  ) as b on b.tid=a.tid where 1=1 
+			  and a.refund_status != 'SUCCESS' and a.close_unique_code=0 and a.check_stock='0' and b.mark_status <> 'LOCK' and  a.exception_online='0' and a.is_refund<>'1' 
+			group by a.prd_no  order by a.payment_time desc limit 0,100
+Unknown column 'a.exception_online' in 'where clause'
+1578737207--13123456789-select count(1) from u13123456789_tid_items as a
+			 inner join (select new_tid,items_num,sku_num,tid,seller_flag,mark_status from u13123456789_tid_orders where   send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN')  ) as b on b.tid=a.tid where 1=1 
+			  and a.refund_status != 'SUCCESS' and a.close_unique_code=0 and a.check_stock='0' and b.mark_status <> 'LOCK' and  a.exception_online='0' and a.is_refund<>'1' 
+			group by a.prd_no  order by a.payment_time desc
+Unknown column 'a.exception_online' in 'where clause'
+1578737207--13123456789-select a.prd_no,a.num_iid,a.title,a.id,a.pic_url from u13123456789_tid_items as a
+			 inner join (select new_tid,items_num,sku_num,tid,seller_flag,mark_status from u13123456789_tid_orders where   send_status in  ('WAIT_ASSIGN','WAIT_FINISH_ASSIGN')  ) as b on b.tid=a.tid where 1=1 
+			  and a.refund_status != 'SUCCESS' and a.close_unique_code=0 and a.check_stock='0' and b.mark_status <> 'LOCK' and  a.exception_online='0' and a.is_refund<>'1' 
+			group by a.prd_no  order by a.payment_time desc limit 0,100
+Unknown column 'a.exception_online' in 'where clause'
